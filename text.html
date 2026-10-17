@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>You-Cheng Chou 周祐正</title>
 
 <style>
@@ -32,6 +33,8 @@ nav a.active {
 }
 
 main {
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 25px;
 }
 
@@ -42,38 +45,111 @@ main {
 .page-section.active {
     display: block;
 }
+
+.paper-list {
+    padding-left: 22px;
+}
+
+.paper-list li {
+    margin-bottom: 18px;
+}
+
+
+/* Talks & Travels */
+
+.travel-year {
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 8px;
+}
+
+.travel-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    column-gap: 20px;
+    margin-bottom: 8px;
+}
+
+.travel-date {
+    white-space: nowrap;
+}
+
+
+/* Teaching */
+
+.teaching-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    column-gap: 20px;
+    margin-bottom: 8px;
+}
+
+
+@media (max-width: 650px) {
+
+    nav {
+        padding: 14px 20px;
+    }
+
+    nav a {
+        margin-right: 18px;
+        line-height: 2;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .travel-row,
+    .teaching-row {
+        grid-template-columns: 1fr;
+        margin-bottom: 15px;
+    }
+}
 </style>
+
 </head>
 
 <body>
 
 <nav>
-    <a id="nav-home" href="#home" onclick="showSection('home'); return false;">Home</a>
-    <a id="nav-papers" href="#papers" onclick="showSection('papers'); return false;">Papers</a>
-    <a id="nav-talks" href="#talks" onclick="showSection('talks'); return false;">Talks &amp; Travels</a>
-    <a id="nav-teaching" href="#teaching" onclick="showSection('teaching'); return false;">Teaching</a>
+    <a id="nav-home" href="#home"
+       onclick="showSection('home'); return false;">Home</a>
+
+    <a id="nav-papers" href="#papers"
+       onclick="showSection('papers'); return false;">Papers</a>
+
+    <a id="nav-talks" href="#talks"
+       onclick="showSection('talks'); return false;">Talks &amp; Travels</a>
+
+    <a id="nav-teaching" href="#teaching"
+       onclick="showSection('teaching'); return false;">Teaching</a>
 </nav>
 
 <main>
 
+
+<!-- ====================================================== -->
 <!-- HOME -->
+<!-- ====================================================== -->
 
 <section id="home" class="page-section active">
 
 <h1><strong>You-Cheng Chou 周祐正</strong></h1>
-<hr />
+<hr>
 
 <p>
 <img style="float: right;"
      src="Picture(Hiking).jpg"
      alt=""
      width="240"
-     height="320" />
+     height="320">
 </p>
 
 <p>Contact Information:</p>
 
 <p>E-mail:</p>
+
 <p>
 bensonchou72@gmail.com<br>
 bensonchou@kias.re.kr
@@ -85,7 +161,7 @@ Office: Room 8317, Building 8, Korea Institute for Advanced Study
 
 <br><br><br>
 
-<hr />
+<hr>
 
 <p>
 I am a HCMC fellow (Postdoc) at Korea Institute for Advanced Study.
@@ -101,14 +177,16 @@ Here is my <a href="CV Nov 2024.pdf">CV</a>.
 </section>
 
 
+<!-- ====================================================== -->
 <!-- PAPERS -->
+<!-- ====================================================== -->
 
 <section id="papers" class="page-section">
 
 <h1>Papers</h1>
-<hr />
+<hr>
 
-<ul>
+<ul class="paper-list">
 
 <li>
 <i>Virasoro Recursions for Simplicially Stable Curves with Colliding Markings</i>,
@@ -116,7 +194,6 @@ with <a href="https://people.math.osu.edu/tseng.109/">Hsian-Hua Tseng</a>
 <br>
 submitted |
 <a href="https://arxiv.org/abs/2608.12507">arXiv:2608.12507</a>
-<br><br>
 </li>
 
 <li>
@@ -129,7 +206,6 @@ and <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
 <br>
 submitted |
 <a href="https://arxiv.org/abs/2607.13376">arXiv:2607.13376</a>
-<br><br>
 </li>
 
 <li>
@@ -139,7 +215,6 @@ and Po-Sheng Wu
 <br>
 submitted |
 <a href="https://arxiv.org/abs/2604.21880">arXiv:2604.21880</a>
-<br><br>
 </li>
 
 <li>
@@ -149,7 +224,6 @@ and Po-Sheng Wu
 <br>
 Transactions of the American Mathematical Society (2024) |
 <a href="https://arxiv.org/abs/2402.16286">arXiv:2402.16286</a>
-<br><br>
 </li>
 
 <li>
@@ -157,7 +231,6 @@ Transactions of the American Mathematical Society (2024) |
 <br>
 GLSM@30 proceedings (2024) |
 <a href="https://arxiv.org/abs/2312.01413">arXiv:2312.01413</a>
-<br><br>
 </li>
 
 <li>
@@ -167,7 +240,6 @@ and <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
 <br>
 Pacific Journal of Mathematics (2024) |
 <a href="https://arxiv.org/abs/2305.10137">arXiv:2305.10137</a>
-<br><br>
 </li>
 
 <li>
@@ -177,7 +249,6 @@ with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
 <br>
 Geometry &amp; Topology (2024) |
 <a href="https://arxiv.org/abs/2305.08480">arXiv:2305.08480</a>
-<br><br>
 </li>
 
 <li>
@@ -187,7 +258,6 @@ with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
 <br>
 American Journal of Mathematics (2024) |
 <a href="https://arxiv.org/abs/2211.00788">arXiv:2211.00788</a>
-<br><br>
 </li>
 
 <li>
@@ -196,7 +266,6 @@ with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
 <br>
 Bumsig Kim memorial (2024) |
 <a href="https://arxiv.org/abs/2212.13432">arXiv:2212.13432</a>
-<br><br>
 </li>
 
 <li>
@@ -206,7 +275,6 @@ and <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
 <br>
 Mathematical Proceedings of the Cambridge Philosophical Society (2023) |
 <a href="https://arxiv.org/abs/2012.09379">arXiv:2012.09379</a>
-<br><br>
 </li>
 
 <li>
@@ -215,7 +283,6 @@ with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
 <br>
 Journal of the London Mathematical Society (2022) |
 <a href="https://arxiv.org/abs/1908.09027">arXiv:1908.09027</a>
-<br><br>
 </li>
 
 <li>
@@ -223,7 +290,6 @@ Journal of the London Mathematical Society (2022) |
 <br>
 Bachelor Thesis,
 <a href="https://arxiv.org/abs/1611.06643">arXiv:1611.06643</a>
-<br><br>
 </li>
 
 </ul>
@@ -231,135 +297,217 @@ Bachelor Thesis,
 </section>
 
 
+<!-- ====================================================== -->
 <!-- TALKS & TRAVELS -->
+<!-- ====================================================== -->
 
 <section id="talks" class="page-section">
 
 <h1>Talks &amp; Travels</h1>
-<hr />
+<hr>
+
 
 <h3>Upcoming talks and/or travels in 2026</h3>
 
-<p>
-2026 09/14-09/18,
-3rd Korea–Taiwan Enumerative Geometry Meeting (Gangneung),
-<a href="https://symposia.kias.re.kr/KTEGM">website</a>
-</p>
+<div class="travel-year">2026</div>
 
-<hr />
+<div class="travel-row">
+    <div class="travel-date">09/14 – 09/18</div>
+    <div>
+        3rd Korea–Taiwan Enumerative Geometry Meeting (Gangneung),
+        <a href="https://symposia.kias.re.kr/KTEGM">website</a>
+    </div>
+</div>
+
 
 <h3>Invited Talks</h3>
 
-<p>
-2026 04,
-Moduli of generalized Lamé curves,
-Special Geometry, D-modules, and Modular Forms (Taipei)
-<a href="https://www.tims.ntu.edu.tw/modules/news/article.php?storyid=3864">website</a>
-</p>
 
-<p>
-2025 11,
-KIAS Math-HCMC Fall Workshop 2025 (Seoul)
-<a href="https://sites.google.com/view/hcmcfallworkshop2025/home">website</a>
-</p>
+<div class="travel-year">2026</div>
 
-<p>
-2025 11,
-Permutation-equivariant quantum K-theory of a point,
-Korea-Taiwan Enumerative Geometry Meeting 2025
-<a href="https://idv.sinica.edu.tw/ypleemath/kteg_2025/">website</a>
-</p>
+<div class="travel-row">
+    <div class="travel-date">04</div>
+    <div>
+        Moduli of generalized Lamé curves,
+        Special Geometry, D-modules, and Modular Forms (Taipei),
+        <a href="https://www.tims.ntu.edu.tw/modules/news/article.php?storyid=3864">website</a>
+    </div>
+</div>
 
-<p>
-2025 09,
-K-theoretic multiple cover formula on semi-positive varieties,
-East Asian Symplectic Conference 2025 in Sapporo
-<a href="https://pseudoholomorphic.fpark.tmu.ac.jp/EASC2025/EASC2025.html">website</a>
-</p>
 
-<p>
-2025 09,
-Genus 1 quantum K-theory of a point,
-SIMIS-Sinica Interdisciplinary workshop
-<a href="https://arkadijbojko.github.io/webpage/seminars/Sinica/">website</a>
-</p>
+<div class="travel-year">2025</div>
 
-<p>
-2025 08,
-Genus 1 quantum K-theory of a point,
-Academia Sinica
-<a href="https://www.math.sinica.edu.tw/f59addca-1da6-47fd-9bb8-18d087da6088/posts/15509">website</a>
-</p>
+<div class="travel-row">
+    <div class="travel-date">11</div>
+    <div>
+        KIAS Math-HCMC Fall Workshop 2025 (Seoul),
+        <a href="https://sites.google.com/view/hcmcfallworkshop2025/home">website</a>
+    </div>
+</div>
 
-<p>
-2024 10,
-K-theoretic multiple cover formula on Calabi-Yau threefold,
-Kalvi IPMU
-<a href="https://research.ipmu.jp/seminar/?seminar_id=3261">website</a>
-</p>
+<div class="travel-row">
+    <div class="travel-date">11</div>
+    <div>
+        Permutation-equivariant quantum K-theory of a point,
+        Korea-Taiwan Enumerative Geometry Meeting 2025,
+        <a href="https://idv.sinica.edu.tw/ypleemath/kteg_2025/">website</a>
+    </div>
+</div>
 
-<p>
-2024 10,
-K-theoretic multiple cover formula,
-Seoul-Taipei enumerative geometry meeting
-<a href="https://sites.google.com/view/seoul-taipei-meeting">website</a>
-</p>
+<div class="travel-row">
+    <div class="travel-date">09</div>
+    <div>
+        K-theoretic multiple cover formula on semi-positive varieties,
+        East Asian Symplectic Conference 2025 in Sapporo,
+        <a href="https://pseudoholomorphic.fpark.tmu.ac.jp/EASC2025/EASC2025.html">website</a>
+    </div>
+</div>
 
-<p>
-2023 11,
-Quantum K-invariants = Gopakumar-Vafa invariants on Calabi-Yau threefolds at genus zero,
-Korea Institute for Advanced Study (KIAS),
-Algebraic Geometry in East Asia (AGEA)
-<a href="http://events.kias.re.kr/h/AGEA23/">website</a>
-</p>
+<div class="travel-row">
+    <div class="travel-date">09</div>
+    <div>
+        Genus 1 quantum K-theory of a point,
+        SIMIS-Sinica Interdisciplinary workshop,
+        <a href="https://arkadijbojko.github.io/webpage/seminars/Sinica/">website</a>
+    </div>
+</div>
 
-<p>
-2023 07,
-Quantum K-invariants = Gopakumar-Vafa invariants on Calabi-Yau threefolds at genus zero,
-Institute for Advanced Study in Mathematics (IASM),
-Concerto in quantum K theory
-</p>
+<div class="travel-row">
+    <div class="travel-date">08</div>
+    <div>
+        Genus 1 quantum K-theory of a point,
+        Academia Sinica,
+        <a href="https://www.math.sinica.edu.tw/f59addca-1da6-47fd-9bb8-18d087da6088/posts/15509">website</a>
+    </div>
+</div>
 
-<p>
-2023 06,
-BCOV conjectures on quintic 3-folds,
-Taida Institute for Mathematical Sciences (TIMS),
-Calabi-Yau with small parameters
-<a href="https://www.tims.ntu.edu.tw/modules/news/article.php?storyid=4465">website</a>
-</p>
 
-<p>
-2019,
-Virasoro constraints for moduli of weighted pointed stable curves,
-Colorado State University,
-FRAGMENT seminar
-</p>
+<div class="travel-year">2024</div>
+
+<div class="travel-row">
+    <div class="travel-date">10</div>
+    <div>
+        K-theoretic multiple cover formula on Calabi-Yau threefold,
+        Kalvi IPMU,
+        <a href="https://research.ipmu.jp/seminar/?seminar_id=3261">website</a>
+    </div>
+</div>
+
+<div class="travel-row">
+    <div class="travel-date">10</div>
+    <div>
+        K-theoretic multiple cover formula,
+        Seoul-Taipei enumerative geometry meeting,
+        <a href="https://sites.google.com/view/seoul-taipei-meeting">website</a>
+    </div>
+</div>
+
+
+<div class="travel-year">2023</div>
+
+<div class="travel-row">
+    <div class="travel-date">11</div>
+    <div>
+        Quantum K-invariants = Gopakumar-Vafa invariants on
+        Calabi-Yau threefolds at genus zero,
+        Korea Institute for Advanced Study (KIAS),
+        Algebraic Geometry in East Asia (AGEA),
+        <a href="http://events.kias.re.kr/h/AGEA23/">website</a>
+    </div>
+</div>
+
+<div class="travel-row">
+    <div class="travel-date">07</div>
+    <div>
+        Quantum K-invariants = Gopakumar-Vafa invariants on
+        Calabi-Yau threefolds at genus zero,
+        Institute for Advanced Study in Mathematics (IASM),
+        Concerto in quantum K theory
+    </div>
+</div>
+
+<div class="travel-row">
+    <div class="travel-date">06</div>
+    <div>
+        BCOV conjectures on quintic 3-folds,
+        Taida Institute for Mathematical Sciences (TIMS),
+        Calabi-Yau with small parameters,
+        <a href="https://www.tims.ntu.edu.tw/modules/news/article.php?storyid=4465">website</a>
+    </div>
+</div>
+
+
+<div class="travel-year">2019</div>
+
+<div class="travel-row">
+    <div class="travel-date"></div>
+    <div>
+        Virasoro constraints for moduli of weighted pointed stable curves,
+        Colorado State University,
+        FRAGMENT seminar
+    </div>
+</div>
 
 </section>
 
 
+<!-- ====================================================== -->
 <!-- TEACHING -->
+<!-- ====================================================== -->
 
 <section id="teaching" class="page-section">
 
 <h1>Teaching</h1>
-<hr />
+<hr>
 
-<p>2022 Spring, Math 1090 Business Algebra (Instructor)</p>
-<p>2021 Fall, Math 1090 Business Algebra (Instructor)</p>
-<p>2020 Fall, Math 1060 Trigonometry (Instructor)</p>
-<p>2020 Spring, Math 1060 Trignometry (Instructor)</p>
-<p>2019 Fall, Math 1090 Business Algebra (Instructor)</p>
-<p>2018 Fall, Math 1060 Trigonometry (Instructor)</p>
-<p>2018 Spring, Math 2250 Diff Equation and Linear Algebra (Teaching assistant)</p>
-<p>2017 Fall, Math 1210 Calculus I (Teaching assistant)</p>
+<div class="teaching-row">
+    <div>Spring 2022</div>
+    <div>Math 1090 Business Algebra (Instructor)</div>
+</div>
+
+<div class="teaching-row">
+    <div>Fall 2021</div>
+    <div>Math 1090 Business Algebra (Instructor)</div>
+</div>
+
+<div class="teaching-row">
+    <div>Fall 2020</div>
+    <div>Math 1060 Trigonometry (Instructor)</div>
+</div>
+
+<div class="teaching-row">
+    <div>Spring 2020</div>
+    <div>Math 1060 Trignometry (Instructor)</div>
+</div>
+
+<div class="teaching-row">
+    <div>Fall 2019</div>
+    <div>Math 1090 Business Algebra (Instructor)</div>
+</div>
+
+<div class="teaching-row">
+    <div>Fall 2018</div>
+    <div>Math 1060 Trigonometry (Instructor)</div>
+</div>
+
+<div class="teaching-row">
+    <div>Spring 2018</div>
+    <div>Math 2250 Diff Equation and Linear Algebra (Teaching assistant)</div>
+</div>
+
+<div class="teaching-row">
+    <div>Fall 2017</div>
+    <div>Math 1210 Calculus I (Teaching assistant)</div>
+</div>
 
 </section>
 
 </main>
 
+
 <script>
 function showSection(sectionId) {
+
     var sections = document.querySelectorAll('.page-section');
     var links = document.querySelectorAll('nav a');
 
