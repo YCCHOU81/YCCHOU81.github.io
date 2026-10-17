@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,72 +17,23 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5;
+    line-height: 1.55;
+    color: #222222;
+    background: white;
 }
 
 main {
-    max-width: 900px;
+    max-width: 850px;
     margin: 0 auto;
-    padding: 32px 28px 50px 28px;
+    padding: 38px 24px 60px 24px;
 }
-
-h1 {
-    margin-top: 0;
-    margin-bottom: 12px;
-}
-
-h3 {
-    margin-top: 32px;
-    margin-bottom: 16px;
-}
-
-hr {
-    border: 0;
-    border-top: 1px solid #cccccc;
-    margin-bottom: 26px;
-}
-
-a {
-    word-break: break-word;
-}
-
-
-/* ====================================================== */
-/* Navigation */
-/* ====================================================== */
-
-nav {
-    background-color: white;
-    border-bottom: 1px solid #cccccc;
-    padding: 15px 30px;
-
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 35px;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-nav a:hover {
-    color: #666666;
-}
-
-nav a.active {
-    color: #336699;
-}
-
-
-/* ====================================================== */
-/* Page tabs */
-/* ====================================================== */
 
 .page-section {
     display: none;
@@ -91,25 +43,106 @@ nav a.active {
     display: block;
 }
 
+h1 {
+    margin: 0 0 12px 0;
+    font-size: 1.7em;
+    font-weight: normal;
+}
+
+h3 {
+    margin-top: 36px;
+    margin-bottom: 16px;
+    font-size: 1.08em;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 0 0 30px 0;
+}
+
+a {
+    color: #336699;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* ====================================================== */
+/* Navigation */
+/* ====================================================== */
+
+nav {
+    background: white;
+    border-bottom: 1px solid #cccccc;
+}
+
+.nav-inner {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 15px 24px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 34px;
+}
+
+nav a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: #666666;
+    text-decoration: none;
+}
+
+nav a.active {
+    color: #336699;
+}
+
 
 /* ====================================================== */
 /* Home */
 /* ====================================================== */
 
+.home-header {
+    overflow: auto;
+}
+
 .profile-photo {
     float: right;
-    width: 240px;
+    width: 220px;
+    max-width: 100%;
     height: auto;
-    margin-left: 35px;
-    margin-bottom: 25px;
+    margin: 0 0 28px 38px;
+}
+
+.affiliation {
+    margin-top: 20px;
+    margin-bottom: 22px;
+}
+
+.contact {
+    margin-bottom: 30px;
+}
+
+.contact p {
+    margin: 5px 0;
 }
 
 .home-intro {
-    margin-top: 35px;
+    max-width: 650px;
+    margin-top: 30px;
 }
 
 .last-updated {
-    margin-top: 35px;
+    margin-top: 38px;
 }
 
 
@@ -118,11 +151,12 @@ nav a.active {
 /* ====================================================== */
 
 .paper-entry {
-    margin-bottom: 20px;
+    margin-bottom: 19px;
 }
 
 #papers h3 {
-    margin-top: 34px;
+    margin-top: 38px;
+    margin-bottom: 18px;
 }
 
 
@@ -132,16 +166,16 @@ nav a.active {
 
 .travel-year {
     font-weight: bold;
-    margin-top: 28px;
-    margin-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 11px;
 }
 
 .travel-row {
     display: grid;
-    grid-template-columns: 125px minmax(0, 1fr);
-    column-gap: 24px;
-    margin-bottom: 11px;
+    grid-template-columns: 118px minmax(0, 1fr);
+    column-gap: 26px;
     align-items: start;
+    margin-bottom: 12px;
 }
 
 .travel-date {
@@ -154,15 +188,15 @@ nav a.active {
 /* ====================================================== */
 
 .teaching-list {
-    margin-top: 24px;
+    margin-top: 26px;
 }
 
 .teaching-row {
     display: grid;
-    grid-template-columns: 125px minmax(0, 1fr);
-    column-gap: 24px;
-    margin-bottom: 13px;
+    grid-template-columns: 118px minmax(0, 1fr);
+    column-gap: 26px;
     align-items: start;
+    margin-bottom: 14px;
 }
 
 .teaching-date {
@@ -174,20 +208,20 @@ nav a.active {
 /* Tablet */
 /* ====================================================== */
 
-@media (max-width: 800px) {
+@media (max-width: 760px) {
 
     main {
-        padding: 28px 24px 45px 24px;
+        padding: 30px 22px 50px 22px;
     }
 
-    nav {
-        padding: 14px 24px;
-        gap: 8px 25px;
+    .nav-inner {
+        padding: 14px 22px;
+        gap: 9px 25px;
     }
 
     .profile-photo {
-        width: 210px;
-        margin-left: 25px;
+        width: 200px;
+        margin-left: 28px;
     }
 }
 
@@ -198,60 +232,63 @@ nav a.active {
 
 @media (max-width: 600px) {
 
-    nav {
-        padding: 12px 18px;
+    main {
+        padding: 26px 18px 45px 18px;
+    }
+
+    .nav-inner {
+        padding: 13px 18px;
         gap: 8px 22px;
     }
 
-    main {
-        padding: 24px 18px 40px 18px;
-    }
-
     h1 {
-        font-size: 1.7em;
+        font-size: 1.55em;
     }
 
     h3 {
-        margin-top: 28px;
+        margin-top: 32px;
     }
 
     .profile-photo {
         float: none;
         display: block;
-        width: 190px;
-        max-width: 100%;
+        width: 185px;
         height: auto;
-        margin: 0 0 25px 0;
+        margin: 0 0 28px 0;
+    }
+
+    .home-intro {
+        max-width: none;
     }
 
     .travel-row {
-        grid-template-columns: 90px minmax(0, 1fr);
-        column-gap: 15px;
-        margin-bottom: 14px;
+        grid-template-columns: 95px minmax(0, 1fr);
+        column-gap: 16px;
+        margin-bottom: 15px;
     }
 
     .teaching-row {
         grid-template-columns: 105px minmax(0, 1fr);
-        column-gap: 15px;
-        margin-bottom: 14px;
+        column-gap: 16px;
+        margin-bottom: 15px;
     }
 }
 
 
 /* ====================================================== */
-/* Very small screens */
+/* Small mobile */
 /* ====================================================== */
 
 @media (max-width: 420px) {
 
-    nav {
+    .nav-inner {
         gap: 7px 18px;
     }
 
     .travel-row {
         grid-template-columns: 1fr;
         row-gap: 2px;
-        margin-bottom: 18px;
+        margin-bottom: 19px;
     }
 
     .travel-date {
@@ -261,7 +298,7 @@ nav a.active {
     .teaching-row {
         grid-template-columns: 1fr;
         row-gap: 2px;
-        margin-bottom: 18px;
+        margin-bottom: 19px;
     }
 
     .teaching-date {
@@ -281,31 +318,33 @@ nav a.active {
 <!-- ====================================================== -->
 
 <nav>
+<div class="nav-inner">
 
     <a id="nav-home"
        href="#home"
-       onclick="showSection('home'); return false;">
+       onclick="showSection('home');">
        Home
     </a>
 
     <a id="nav-papers"
        href="#papers"
-       onclick="showSection('papers'); return false;">
+       onclick="showSection('papers');">
        Papers
     </a>
 
     <a id="nav-talks"
        href="#talks"
-       onclick="showSection('talks'); return false;">
+       onclick="showSection('talks');">
        Talks &amp; Travels
     </a>
 
     <a id="nav-teaching"
        href="#teaching"
-       onclick="showSection('teaching'); return false;">
+       onclick="showSection('teaching');">
        Teaching
     </a>
 
+</div>
 </nav>
 
 
@@ -318,7 +357,9 @@ nav a.active {
 
 <section id="home" class="page-section active">
 
-<h1><strong>You-Cheng Chou 周祐正</strong></h1>
+<div class="home-header">
+
+<h1>You-Cheng Chou 周祐正</h1>
 
 <hr>
 
@@ -326,18 +367,31 @@ nav a.active {
      src="Picture(Hiking).jpg"
      alt="You-Cheng Chou">
 
-<p>Contact Information:</p>
+<div class="affiliation">
+HCMC Fellow (Postdoctoral Researcher)<br>
+Korea Institute for Advanced Study
+</div>
 
-<p>E-mail:</p>
+<div class="contact">
 
 <p>
-bensonchou72@gmail.com<br>
+<a href="mailto:bensonchou@kias.re.kr">
 bensonchou@kias.re.kr
+</a>
 </p>
 
 <p>
-Office: Room 8317, Building 8, Korea Institute for Advanced Study
+<a href="mailto:bensonchou72@gmail.com">
+bensonchou72@gmail.com
+</a>
 </p>
+
+<p>
+Room 8317, Building 8<br>
+Korea Institute for Advanced Study
+</p>
+
+</div>
 
 <div class="home-intro">
 
@@ -357,6 +411,8 @@ Here is my <a href="CV_GitHub.pdf">CV</a>.
 <p class="last-updated">
 <small>Last updated 17 October 2026</small>
 </p>
+
+</div>
 
 </section>
 
@@ -518,7 +574,10 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 <div class="travel-year">2026</div>
 
 <div class="travel-row">
-    <div class="travel-date">12/7 – 12/11</div>
+
+    <div class="travel-date">
+    12/7 – 12/11
+    </div>
 
     <div>
         <a href="https://www.preschema.com/travel.html">
@@ -526,6 +585,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
         </a>
         (Hong Kong)
     </div>
+
 </div>
 
 
@@ -535,7 +595,10 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 <div class="travel-year">2026</div>
 
 <div class="travel-row">
-    <div class="travel-date">9/14 – 9/18</div>
+
+    <div class="travel-date">
+    9/14 – 9/18
+    </div>
 
     <div>
         Permutation-equivariant K-theoretic string equation,
@@ -544,10 +607,15 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
         </a>
         (Gangneung)
     </div>
+
 </div>
 
+
 <div class="travel-row">
-    <div class="travel-date">6/22 – 6/25</div>
+
+    <div class="travel-date">
+    6/22 – 6/25
+    </div>
 
     <div>
         Moduli of generalized Lamé curves,
@@ -556,10 +624,15 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
         </a>
         (Seoul)
     </div>
+
 </div>
 
+
 <div class="travel-row">
-    <div class="travel-date">4/27 – 4/30</div>
+
+    <div class="travel-date">
+    4/27 – 4/30
+    </div>
 
     <div>
         Moduli of generalized Lamé curves,
@@ -568,13 +641,17 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
         </a>
         (Taipei)
     </div>
+
 </div>
 
 
 <div class="travel-year">2025</div>
 
 <div class="travel-row">
-    <div class="travel-date">11/19 – 11/21</div>
+
+    <div class="travel-date">
+    11/19 – 11/21
+    </div>
 
     <div>
         Permutation-equivariant quantum K-theory of a point,
@@ -583,10 +660,15 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
         </a>
         (Jeongseon)
     </div>
+
 </div>
 
+
 <div class="travel-row">
-    <div class="travel-date">11/3 – 11/7</div>
+
+    <div class="travel-date">
+    11/3 – 11/7
+    </div>
 
     <div>
         Permutation-equivariant quantum K-theory of a point,
@@ -595,22 +677,33 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
         </a>
         (Tainan)
     </div>
+
 </div>
 
+
 <div class="travel-row">
-    <div class="travel-date">9/25 – 9/29</div>
+
+    <div class="travel-date">
+    9/25 – 9/29
+    </div>
 
     <div>
-        Genus zero quantum K-invariants and Gopakumar–Vafa invariants on semi-positive varieties,
+        Genus zero quantum K-invariants and Gopakumar–Vafa invariants
+        on semi-positive varieties,
         <a href="https://pseudoholomorphic.fpark.tmu.ac.jp/EASC2025/EASC2025.html">
         East Asian Symplectic Conference 2025
         </a>
         (Sapporo)
     </div>
+
 </div>
 
+
 <div class="travel-row">
-    <div class="travel-date">9/16 – 9/19</div>
+
+    <div class="travel-date">
+    9/16 – 9/19
+    </div>
 
     <div>
         Permutation-equivariant quantum K-theory of a point,
@@ -619,10 +712,15 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
         </a>
         (Shanghai)
     </div>
+
 </div>
 
+
 <div class="travel-row">
-    <div class="travel-date">8/7</div>
+
+    <div class="travel-date">
+    8/7
+    </div>
 
     <div>
         Genus 1 quantum K-theory of a point,
@@ -631,13 +729,17 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
         </a>
         (Taipei)
     </div>
+
 </div>
 
 
 <div class="travel-year">2024</div>
 
 <div class="travel-row">
-    <div class="travel-date">10/16</div>
+
+    <div class="travel-date">
+    10/16
+    </div>
 
     <div>
         K-theoretic multiple cover formula on Calabi-Yau threefolds,
@@ -646,10 +748,15 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
         </a>
         (Kashiwa)
     </div>
+
 </div>
 
+
 <div class="travel-row">
-    <div class="travel-date">9/30 – 10/4</div>
+
+    <div class="travel-date">
+    9/30 – 10/4
+    </div>
 
     <div>
         K-theoretic multiple cover formula,
@@ -658,35 +765,51 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
         </a>
         (Busan)
     </div>
+
 </div>
 
 
 <div class="travel-year">2023</div>
 
 <div class="travel-row">
-    <div class="travel-date">11/6 – 11/10</div>
+
+    <div class="travel-date">
+    11/6 – 11/10
+    </div>
 
     <div>
-        Quantum K-invariants = Gopakumar-Vafa invariants on Calabi-Yau threefolds at genus zero,
+        Quantum K-invariants = Gopakumar-Vafa invariants on
+        Calabi-Yau threefolds at genus zero,
         <a href="http://events.kias.re.kr/h/AGEA23/">
         Algebraic Geometry in East Asia
         </a>
         (Seoul)
     </div>
+
 </div>
 
+
 <div class="travel-row">
-    <div class="travel-date">7/5 – 7/6</div>
+
+    <div class="travel-date">
+    7/5 – 7/6
+    </div>
 
     <div>
-        Quantum K-invariants = Gopakumar-Vafa invariants on Calabi-Yau threefolds at genus zero,
+        Quantum K-invariants = Gopakumar-Vafa invariants on
+        Calabi-Yau threefolds at genus zero,
         Concerto in Quantum K-theory
         (Hangzhou)
     </div>
+
 </div>
 
+
 <div class="travel-row">
-    <div class="travel-date">6/2 – 6/16</div>
+
+    <div class="travel-date">
+    6/2 – 6/16
+    </div>
 
     <div>
         BCOV conjectures on quintic threefolds,
@@ -695,12 +818,14 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
         </a>
         (Taipei)
     </div>
+
 </div>
 
 
 <div class="travel-year">2019</div>
 
 <div class="travel-row">
+
     <div class="travel-date"></div>
 
     <div>
@@ -708,6 +833,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
         FRAGMENT Seminar
         (Fort Collins)
     </div>
+
 </div>
 
 </section>
@@ -769,6 +895,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 </section>
 
+
 </main>
 
 
@@ -789,14 +916,30 @@ function showSection(sectionId) {
 
     document.getElementById(sectionId).classList.add('active');
     document.getElementById('nav-' + sectionId).classList.add('active');
-
-    window.scrollTo(0, 0);
 }
 
 
-/* Start on Home */
+/* Allow direct links such as #papers or #talks */
 
-document.getElementById('nav-home').classList.add('active');
+function loadSectionFromHash() {
+
+    var sectionId = window.location.hash.substring(1);
+
+    if (
+        sectionId === 'home' ||
+        sectionId === 'papers' ||
+        sectionId === 'talks' ||
+        sectionId === 'teaching'
+    ) {
+        showSection(sectionId);
+    } else {
+        showSection('home');
+    }
+}
+
+window.addEventListener('hashchange', loadSectionFromHash);
+
+loadSectionFromHash();
 
 </script>
 
