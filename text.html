@@ -10,12 +10,9 @@ body {
 }
 
 nav {
-    position: sticky;
-    top: 0;
     background-color: white;
     border-bottom: 1px solid #cccccc;
-    padding: 14px 30px;
-    z-index: 1000;
+    padding: 15px 30px;
 }
 
 nav a {
@@ -23,39 +20,45 @@ nav a {
     text-decoration: none;
     color: black;
     font-weight: bold;
+    cursor: pointer;
 }
 
 nav a:hover {
-    color: #555555;
+    color: #666666;
+}
+
+nav a.active {
+    color: #336699;
 }
 
 main {
-    padding: 20px;
+    padding: 25px;
 }
 
-section {
-    scroll-margin-top: 70px;
+.page-section {
+    display: none;
+}
+
+.page-section.active {
+    display: block;
 }
 </style>
-
 </head>
 
 <body>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#papers">Papers</a>
-    <a href="#talks">Talks &amp; Travels</a>
-    <a href="#teaching">Teaching</a>
+    <a id="nav-home" href="#home" onclick="showSection('home'); return false;">Home</a>
+    <a id="nav-papers" href="#papers" onclick="showSection('papers'); return false;">Papers</a>
+    <a id="nav-talks" href="#talks" onclick="showSection('talks'); return false;">Talks &amp; Travels</a>
+    <a id="nav-teaching" href="#teaching" onclick="showSection('teaching'); return false;">Teaching</a>
 </nav>
 
 <main>
 
-<!-- ====================================================== -->
 <!-- HOME -->
-<!-- ====================================================== -->
 
-<section id="home">
+<section id="home" class="page-section active">
 
 <h1><strong>You-Cheng Chou 周祐正</strong></h1>
 <hr />
@@ -68,22 +71,21 @@ section {
      height="320" />
 </p>
 
-<p><strong>Contact Information</strong></p>
+<p>Contact Information:</p>
 
 <p>E-mail:</p>
-
 <p>
 bensonchou72@gmail.com<br>
 bensonchou@kias.re.kr
 </p>
 
 <p>
-Office: Room 8317, Building 8,<br>
-Korea Institute for Advanced Study
+Office: Room 8317, Building 8, Korea Institute for Advanced Study
 </p>
 
-<br>
-<br>
+<br><br><br>
+
+<hr />
 
 <p>
 I am a HCMC fellow (Postdoc) at Korea Institute for Advanced Study.
@@ -99,20 +101,18 @@ Here is my <a href="CV Nov 2024.pdf">CV</a>.
 </section>
 
 
-<!-- ====================================================== -->
 <!-- PAPERS -->
-<!-- ====================================================== -->
 
-<section id="papers">
+<section id="papers" class="page-section">
 
+<h1>Papers</h1>
 <hr />
 
-<h2>Papers</h2>
+<ul>
 
 <li>
 <i>Virasoro Recursions for Simplicially Stable Curves with Colliding Markings</i>,
-with
-<a href="https://people.math.osu.edu/tseng.109/">Hsian-Hua Tseng</a>
+with <a href="https://people.math.osu.edu/tseng.109/">Hsian-Hua Tseng</a>
 <br>
 submitted |
 <a href="https://arxiv.org/abs/2608.12507">arXiv:2608.12507</a>
@@ -125,8 +125,7 @@ with Kamyar Amini,
 <a href="http://www.logetale.com">Leo Herr</a>,
 <a href="https://davidholmes.nl">David Holmes</a>,
 <a href="https://irit.hk">Irit Huq-Kuruvilla</a>,
-and
-<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+and <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
 <br>
 submitted |
 <a href="https://arxiv.org/abs/2607.13376">arXiv:2607.13376</a>
@@ -135,8 +134,7 @@ submitted |
 
 <li>
 <i>A theory of generalized Lamé curve</i>,
-with
-<a href="http://www.math.ntu.edu.tw/~dragon/">Chin-Lung Wang</a>
+with <a href="http://www.math.ntu.edu.tw/~dragon/">Chin-Lung Wang</a>
 and Po-Sheng Wu
 <br>
 submitted |
@@ -146,8 +144,7 @@ submitted |
 
 <li>
 <i>Characterization and enumeration on Lamé equations with finite monodromy</i>,
-with
-<a href="http://www.math.ntu.edu.tw/~dragon/">Chin-Lung Wang</a>
+with <a href="http://www.math.ntu.edu.tw/~dragon/">Chin-Lung Wang</a>
 and Po-Sheng Wu
 <br>
 Transactions of the American Mathematical Society (2024) |
@@ -165,10 +162,8 @@ GLSM@30 proceedings (2024) |
 
 <li>
 <i>Higher Genus Quantum K-theory</i>,
-with
-<a href="http://www.logetale.com">Leo Herr</a>
-and
-<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+with <a href="http://www.logetale.com">Leo Herr</a>
+and <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
 <br>
 Pacific Journal of Mathematics (2024) |
 <a href="https://arxiv.org/abs/2305.10137">arXiv:2305.10137</a>
@@ -178,8 +173,7 @@ Pacific Journal of Mathematics (2024) |
 <li>
 <i>Quantum K-invariants and Gopakumar-Vafa invariants II.
 Calabi-Yau threefolds at genus zero</i>,
-with
-<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
 <br>
 Geometry &amp; Topology (2024) |
 <a href="https://arxiv.org/abs/2305.08480">arXiv:2305.08480</a>
@@ -189,8 +183,7 @@ Geometry &amp; Topology (2024) |
 <li>
 <i>Quantum K-invariants and Gopakumar-Vafa invariants I.
 The quintic threefold</i>,
-with
-<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
 <br>
 American Journal of Mathematics (2024) |
 <a href="https://arxiv.org/abs/2211.00788">arXiv:2211.00788</a>
@@ -199,8 +192,7 @@ American Journal of Mathematics (2024) |
 
 <li>
 <i>Gopakumar-Vafa Invariants = Quantum K-invariants on Calabi-Yau threefolds</i>,
-with
-<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
 <br>
 Bumsig Kim memorial (2024) |
 <a href="https://arxiv.org/abs/2212.13432">arXiv:2212.13432</a>
@@ -209,10 +201,8 @@ Bumsig Kim memorial (2024) |
 
 <li>
 <i>The Log Product Formula in quantum K-theory</i>,
-with
-<a href="http://www.logetale.com">Leo Herr</a>
-and
-<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+with <a href="http://www.logetale.com">Leo Herr</a>
+and <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
 <br>
 Mathematical Proceedings of the Cambridge Philosophical Society (2023) |
 <a href="https://arxiv.org/abs/2012.09379">arXiv:2012.09379</a>
@@ -221,8 +211,7 @@ Mathematical Proceedings of the Cambridge Philosophical Society (2023) |
 
 <li>
 <i>Virasoro constraints for moduli of weighted pointed stable curves</i>,
-with
-<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
 <br>
 Journal of the London Mathematical Society (2022) |
 <a href="https://arxiv.org/abs/1908.09027">arXiv:1908.09027</a>
@@ -237,18 +226,17 @@ Bachelor Thesis,
 <br><br>
 </li>
 
+</ul>
+
 </section>
 
 
-<!-- ====================================================== -->
 <!-- TALKS & TRAVELS -->
-<!-- ====================================================== -->
 
-<section id="talks">
+<section id="talks" class="page-section">
 
+<h1>Talks &amp; Travels</h1>
 <hr />
-
-<h2>Talks &amp; Travels</h2>
 
 <h3>Upcoming talks and/or travels in 2026</h3>
 
@@ -258,6 +246,7 @@ Bachelor Thesis,
 <a href="https://symposia.kias.re.kr/KTEGM">website</a>
 </p>
 
+<hr />
 
 <h3>Invited Talks</h3>
 
@@ -265,88 +254,68 @@ Bachelor Thesis,
 2026 04,
 Moduli of generalized Lamé curves,
 Special Geometry, D-modules, and Modular Forms (Taipei)
-<a href="https://www.tims.ntu.edu.tw/modules/news/article.php?storyid=3864">
-website
-</a>
+<a href="https://www.tims.ntu.edu.tw/modules/news/article.php?storyid=3864">website</a>
 </p>
 
 <p>
 2025 11,
 KIAS Math-HCMC Fall Workshop 2025 (Seoul)
-<a href="https://sites.google.com/view/hcmcfallworkshop2025/home">
-website
-</a>
+<a href="https://sites.google.com/view/hcmcfallworkshop2025/home">website</a>
 </p>
 
 <p>
 2025 11,
 Permutation-equivariant quantum K-theory of a point,
 Korea-Taiwan Enumerative Geometry Meeting 2025
-<a href="https://idv.sinica.edu.tw/ypleemath/kteg_2025/">
-website
-</a>
+<a href="https://idv.sinica.edu.tw/ypleemath/kteg_2025/">website</a>
 </p>
 
 <p>
 2025 09,
 K-theoretic multiple cover formula on semi-positive varieties,
 East Asian Symplectic Conference 2025 in Sapporo
-<a href="https://pseudoholomorphic.fpark.tmu.ac.jp/EASC2025/EASC2025.html">
-website
-</a>
+<a href="https://pseudoholomorphic.fpark.tmu.ac.jp/EASC2025/EASC2025.html">website</a>
 </p>
 
 <p>
 2025 09,
 Genus 1 quantum K-theory of a point,
 SIMIS-Sinica Interdisciplinary workshop
-<a href="https://arkadijbojko.github.io/webpage/seminars/Sinica/">
-website
-</a>
+<a href="https://arkadijbojko.github.io/webpage/seminars/Sinica/">website</a>
 </p>
 
 <p>
 2025 08,
 Genus 1 quantum K-theory of a point,
 Academia Sinica
-<a href="https://www.math.sinica.edu.tw/f59addca-1da6-47fd-9bb8-18d087da6088/posts/15509">
-website
-</a>
+<a href="https://www.math.sinica.edu.tw/f59addca-1da6-47fd-9bb8-18d087da6088/posts/15509">website</a>
 </p>
 
 <p>
 2024 10,
 K-theoretic multiple cover formula on Calabi-Yau threefold,
 Kalvi IPMU
-<a href="https://research.ipmu.jp/seminar/?seminar_id=3261">
-website
-</a>
+<a href="https://research.ipmu.jp/seminar/?seminar_id=3261">website</a>
 </p>
 
 <p>
 2024 10,
 K-theoretic multiple cover formula,
 Seoul-Taipei enumerative geometry meeting
-<a href="https://sites.google.com/view/seoul-taipei-meeting">
-website
-</a>
+<a href="https://sites.google.com/view/seoul-taipei-meeting">website</a>
 </p>
 
 <p>
 2023 11,
-Quantum K-invariants = Gopakumar-Vafa invariants on Calabi-Yau threefolds
-at genus zero,
-Korea Institute for advanced Study (KIAS),
+Quantum K-invariants = Gopakumar-Vafa invariants on Calabi-Yau threefolds at genus zero,
+Korea Institute for Advanced Study (KIAS),
 Algebraic Geometry in East Asia (AGEA)
-<a href="http://events.kias.re.kr/h/AGEA23/">
-website
-</a>
+<a href="http://events.kias.re.kr/h/AGEA23/">website</a>
 </p>
 
 <p>
 2023 07,
-Quantum K-invariants = Gopakumar-Vafa invariants on Calabi-Yau threefolds
-at genus zero,
+Quantum K-invariants = Gopakumar-Vafa invariants on Calabi-Yau threefolds at genus zero,
 Institute for Advanced Study in Mathematics (IASM),
 Concerto in quantum K theory
 </p>
@@ -356,9 +325,7 @@ Concerto in quantum K theory
 BCOV conjectures on quintic 3-folds,
 Taida Institute for Mathematical Sciences (TIMS),
 Calabi-Yau with small parameters
-<a href="https://www.tims.ntu.edu.tw/modules/news/article.php?storyid=4465">
-website
-</a>
+<a href="https://www.tims.ntu.edu.tw/modules/news/article.php?storyid=4465">website</a>
 </p>
 
 <p>
@@ -371,40 +338,47 @@ FRAGMENT seminar
 </section>
 
 
-<!-- ====================================================== -->
 <!-- TEACHING -->
-<!-- ====================================================== -->
 
-<section id="teaching">
+<section id="teaching" class="page-section">
 
+<h1>Teaching</h1>
 <hr />
 
-<h2>Teaching</h2>
-
 <p>2022 Spring, Math 1090 Business Algebra (Instructor)</p>
-
 <p>2021 Fall, Math 1090 Business Algebra (Instructor)</p>
-
 <p>2020 Fall, Math 1060 Trigonometry (Instructor)</p>
-
 <p>2020 Spring, Math 1060 Trignometry (Instructor)</p>
-
 <p>2019 Fall, Math 1090 Business Algebra (Instructor)</p>
-
 <p>2018 Fall, Math 1060 Trigonometry (Instructor)</p>
-
 <p>2018 Spring, Math 2250 Diff Equation and Linear Algebra (Teaching assistant)</p>
-
 <p>2017 Fall, Math 1210 Calculus I (Teaching assistant)</p>
 
 </section>
 
-
-<hr />
-
-<p><small>Last updated 13 September 2026</small></p>
-
 </main>
+
+<script>
+function showSection(sectionId) {
+    var sections = document.querySelectorAll('.page-section');
+    var links = document.querySelectorAll('nav a');
+
+    sections.forEach(function(section) {
+        section.classList.remove('active');
+    });
+
+    links.forEach(function(link) {
+        link.classList.remove('active');
+    });
+
+    document.getElementById(sectionId).classList.add('active');
+    document.getElementById('nav-' + sectionId).classList.add('active');
+
+    window.scrollTo(0, 0);
+}
+
+document.getElementById('nav-home').classList.add('active');
+</script>
 
 </body>
 </html>
