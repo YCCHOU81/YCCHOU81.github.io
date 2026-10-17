@@ -1,3 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>You-Cheng Chou 周祐正</title>
+
+<style>
+
+/* ====================================================== */
+/* General */
+/* ====================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.55;
+    color: #222222;
+    background: white;
+}
+
+main {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 38px 24px 60px 24px;
+}
+
+.page-section {
+    display: none;
+}
+
+.page-section.active {
+    display: block;
+}
+
+h1 {
+    margin: 0 0 12px 0;
+    font-size: 1.7em;
+    font-weight: normal;
+}
+
+h3 {
+    margin-top: 36px;
+    margin-bottom: 16px;
+    font-size: 1.08em;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 0 0 30px 0;
+}
+
+a {
+    color: #336699;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* ====================================================== */
+/* Navigation */
+/* ====================================================== */
+
+nav {
+    background: white;
+    border-bottom: 1px solid #cccccc;
+}
+
+.nav-inner {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 15px 24px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 34px;
+}
+
+nav a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: #666666;
+    text-decoration: none;
+}
+
+nav a.active {
+    color: #336699;
+}
+
+
+/* ====================================================== */
+/* Home */
+/* ====================================================== */
+
+.home-header {
+    overflow: auto;
+}
+
+.profile-photo {
+    float: right;
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 0 28px 38px;
+}
+
+.affiliation {
+    margin-top: 20px;
+    margin-bottom: 22px;
+}
+
+.contact {
+    margin-bottom: 30px;
+}
+
+.contact p {
+    margin: 5px 0;
+}
+
+.home-intro {
+    max-width: 650px;
+    margin-top: 30px;
+}
+
+.last-updated {
+    margin-top: 38px;
+}
+
+
+/* ====================================================== */
+/* Papers */
+/* ====================================================== */
+
+.paper-entry {
+    margin-bottom: 19px;
+}
+
+#papers h3 {
+    margin-top: 38px;
+    margin-bottom: 18px;
+}
+
+
+/* ====================================================== */
+/* Talks & Travels */
+/* ====================================================== */
+
+.travel-year {
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 11px;
+}
+
+.travel-row {
+    display: grid;
+    grid-template-columns: 118px minmax(0, 1fr);
+    column-gap: 26px;
+    align-items: start;
+    margin-bottom: 12px;
+}
+
+.travel-date {
+    white-space: nowrap;
+}
+
+
+/* ====================================================== */
+/* Teaching */
+/* ====================================================== */
+
+.teaching-list {
+    margin-top: 20px;
+}
+
+.teaching-row {
+    display: grid;
+    grid-template-columns: 118px minmax(0, 1fr);
+    column-gap: 26px;
+    align-items: start;
+    margin-bottom: 14px;
+}
+
+.teaching-date {
+    white-space: nowrap;
+}
+
+
+/* ====================================================== */
+/* Tablet */
+/* ====================================================== */
+
+@media (max-width: 760px) {
+
+    main {
+        padding: 30px 22px 50px 22px;
+    }
+
+    .nav-inner {
+        padding: 14px 22px;
+        gap: 9px 25px;
+    }
+
+    .profile-photo {
+        width: 200px;
+        margin-left: 28px;
+    }
+}
+
+
+/* ====================================================== */
+/* Mobile */
+/* ====================================================== */
+
+@media (max-width: 600px) {
+
+    main {
+        padding: 26px 18px 45px 18px;
+    }
+
+    .nav-inner {
+        padding: 13px 18px;
+        gap: 8px 22px;
+    }
+
+    h1 {
+        font-size: 1.55em;
+    }
+
+    h3 {
+        margin-top: 32px;
+    }
+
+    .profile-photo {
+        float: none;
+        display: block;
+        width: 185px;
+        height: auto;
+        margin: 0 0 28px 0;
+    }
+
+    .home-intro {
+        max-width: none;
+    }
+
+    .travel-row {
+        grid-template-columns: 95px minmax(0, 1fr);
+        column-gap: 16px;
+        margin-bottom: 15px;
+    }
+
+    .teaching-row {
+        grid-template-columns: 105px minmax(0, 1fr);
+        column-gap: 16px;
+        margin-bottom: 15px;
+    }
+}
+
+
+/* ====================================================== */
+/* Small mobile */
+/* ====================================================== */
+
+@media (max-width: 420px) {
+
+    .nav-inner {
+        gap: 7px 18px;
+    }
+
+    .travel-row {
+        grid-template-columns: 1fr;
+        row-gap: 2px;
+        margin-bottom: 19px;
+    }
+
+    .travel-date {
+        white-space: normal;
+    }
+
+    .teaching-row {
+        grid-template-columns: 1fr;
+        row-gap: 2px;
+        margin-bottom: 19px;
+    }
+
+    .teaching-date {
+        white-space: normal;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ====================================================== -->
+<!-- Navigation -->
+<!-- ====================================================== -->
+
+<nav>
+<div class="nav-inner">
+
+    <a id="nav-home"
+       href="#home"
+       onclick="showSection('home');">
+       Home
+    </a>
+
+    <a id="nav-papers"
+       href="#papers"
+       onclick="showSection('papers');">
+       Papers
+    </a>
+
+    <a id="nav-talks"
+       href="#talks"
+       onclick="showSection('talks');">
+       Talks &amp; Travels
+    </a>
+
+    <a id="nav-teaching"
+       href="#teaching"
+       onclick="showSection('teaching');">
+       Teaching
+    </a>
+
+</div>
+</nav>
+
+
+<main>
+
+
+<!-- ====================================================== -->
+<!-- HOME -->
+<!-- ====================================================== -->
+
+<section id="home" class="page-section active">
+
+<div class="home-header">
+
+<h1>You-Cheng Chou 周祐正</h1>
+
+<hr>
+
+<img class="profile-photo"
+     src="Picture(Hiking).jpg"
+     alt="You-Cheng Chou">
+
+<div class="affiliation">
+HCMC Fellow (Postdoctoral Researcher)<br>
+Korea Institute for Advanced Study
+</div>
+
+<div class="contact">
+
+<p>
+<a href="mailto:bensonchou@kias.re.kr">
+bensonchou@kias.re.kr
+</a>
+</p>
+
+<p>
+<a href="mailto:bensonchou72@gmail.com">
+bensonchou72@gmail.com
+</a>
+</p>
+
+<p>
+Room 8317, Building 8<br>
+Korea Institute for Advanced Study
+</p>
+
+</div>
+
+<div class="home-intro">
+
+<p>
+I am a HCMC fellow (Postdoc) at Korea Institute for Advanced Study.
+Previously, I was a postdoc at Academia Sinica.
+I received my PhD in Department of Mathematics at the University of Utah
+in May 2022 supervised by
+<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>.
+My research interests are in algebraic geometry, enumerative geometry,
+mean field equation, and related topics.
+Here is my <a href="CV_GitHub.pdf">CV</a>.
+</p>
+
+</div>
+
+<p class="last-updated">
+<small>Last updated 17 October 2026</small>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ====================================================== -->
+<!-- PAPERS -->
+<!-- ====================================================== -->
+
+<section id="papers" class="page-section">
+
+<h1>Papers</h1>
+
+<hr>
+
+
+<h3>Preprints</h3>
+
+<div class="paper-entry">
+<i>RC-positivity of complex surfaces</i>,
+with <a href="https://wuuuruuu.github.io/">Kuang-Ru Wu</a>
+<br>
+<a href="https://arxiv.org/abs/2609.33656">arXiv:2609.33656</a>
+</div>
+
+<div class="paper-entry">
+<i>Virasoro Recursions for Simplicially Stable Curves with Colliding Markings</i>,
+with <a href="https://people.math.osu.edu/tseng.109/">Hsian-Hua Tseng</a>
+<br>
+<a href="https://arxiv.org/abs/2608.12507">arXiv:2608.12507</a> |
+submitted
+</div>
+
+<div class="paper-entry">
+<i>On the K-theoretic logarithmic double ramification class</i>,
+with Kamyar Amini,
+<a href="http://www.logetale.com">Leo Herr</a>,
+<a href="https://davidholmes.nl">David Holmes</a>,
+<a href="https://irit.hk">Irit Huq-Kuruvilla</a>,
+and <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+<br>
+<a href="https://arxiv.org/abs/2607.13376">arXiv:2607.13376</a> |
+submitted
+</div>
+
+<div class="paper-entry">
+<i>A theory of generalized Lamé curves</i>,
+with <a href="http://www.math.ntu.edu.tw/~dragon/">Chin-Lung Wang</a>
+and Po-Sheng Wu
+<br>
+<a href="https://arxiv.org/abs/2604.21880">arXiv:2604.21880</a> |
+submitted
+</div>
+
+
+<h3>Published papers</h3>
+
+<div class="paper-entry">
+<i>Characterization and enumeration on Lamé equations with finite monodromy</i>,
+with <a href="http://www.math.ntu.edu.tw/~dragon/">Chin-Lung Wang</a>
+and Po-Sheng Wu
+<br>
+<a href="https://arxiv.org/abs/2402.16286">arXiv:2402.16286</a> |
+Trans. Amer. Math. Soc. 378 (2025), no. 8, 5279–5304
+<a href="https://doi.org/10.1090/tran/9195">[link]</a>
+</div>
+
+<div class="paper-entry">
+<i>Integrality of genus zero Gopakumar-Vafa type invariants of semi-positive varieties</i>
+<br>
+<a href="https://arxiv.org/abs/2312.01413">arXiv:2312.01413</a> |
+Internat. J. Modern Phys. A 39 (2024), no. 33, 2446014
+<a href="https://doi.org/10.1142/S0217751X2446014X">[link]</a>
+</div>
+
+<div class="paper-entry">
+<i>Higher-genus quantum K-theory</i>,
+with <a href="http://www.logetale.com">Leo Herr</a>
+and <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+<br>
+<a href="https://arxiv.org/abs/2305.10137">arXiv:2305.10137</a> |
+Pacific J. Math. 330 (2024), no. 1, 85–121
+<a href="https://doi.org/10.2140/pjm.2024.330.85">[link]</a>
+</div>
+
+<div class="paper-entry">
+<i>Quantum K-invariants and Gopakumar-Vafa invariants II.
+Calabi-Yau threefolds at genus zero</i>,
+with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+<br>
+<a href="https://arxiv.org/abs/2305.08480">arXiv:2305.08480</a> |
+Geom. Topol. 29 (2025), no. 9, 4665–4693
+<a href="https://msp.org/gt/2025/29-9/p03.xhtml">[link]</a>
+</div>
+
+<div class="paper-entry">
+<i>Gopakumar-Vafa Invariants = Quantum K-invariants on Calabi-Yau threefolds</i>,
+with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+<br>
+<a href="https://arxiv.org/abs/2212.13432">arXiv:2212.13432</a> |
+in <i>Categorical and Enumerative Aspects of Mirror Symmetry</i>,
+KIAS Springer Ser. Math. 5, Springer, Singapore, 2026, pp. 1–19
+<a href="https://link.springer.com/chapter/10.1007/978-981-95-0385-8_1">[link]</a>
+</div>
+
+<div class="paper-entry">
+<i>Quantum K-invariants and Gopakumar-Vafa invariants I.
+The quintic threefold</i>,
+with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+<br>
+<a href="https://arxiv.org/abs/2211.00788">arXiv:2211.00788</a> |
+Amer. J. Math., accepted for publication
+<a href="https://www.press.jhu.edu/journals/american-journal-mathematics">[link]</a>
+</div>
+
+<div class="paper-entry">
+<i>The Log Product Formula in quantum K-theory</i>,
+with <a href="http://www.logetale.com">Leo Herr</a>
+and <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+<br>
+<a href="https://arxiv.org/abs/2012.09379">arXiv:2012.09379</a> |
+Math. Proc. Cambridge Philos. Soc. 175 (2023), no. 2, 225–252
+<a href="https://doi.org/10.1017/S0305004123000063">[link]</a>
+</div>
+
+<div class="paper-entry">
+<i>Virasoro constraints for moduli of weighted pointed stable curves</i>,
+with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+<br>
+<a href="https://arxiv.org/abs/1908.09027">arXiv:1908.09027</a> |
+J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
+<a href="https://doi.org/10.1112/jlms.12618">[link]</a>
+</div>
+
+
+<h3>Bachelor thesis</h3>
+
+<div class="paper-entry">
+<i>Generalized Lamé equation with finite monodromy</i>
+<br>
+<a href="https://arxiv.org/abs/1611.06643">arXiv:1611.06643</a>
+</div>
+
+</section>
+
+
+<!-- ====================================================== -->
+<!-- TALKS & TRAVELS -->
+<!-- ====================================================== -->
+
+<section id="talks" class="page-section">
+
+<h1>Talks &amp; Travels</h1>
+
+<hr>
+
+
+<h3>Upcoming talks &amp; travel</h3>
+
+<div class="travel-year">2026</div>
+
+<div class="travel-row">
+
+    <div class="travel-date">
+    12/7 – 12/11
+    </div>
+
+    <div>
+        <a href="https://www.preschema.com/travel.html">
+        Enumerative Geometry in East Asia 2026
+        </a>
+        (Hong Kong)
+    </div>
+
+</div>
+
+
+<h3>Past talks &amp; travel</h3>
+
+
+<div class="travel-year">2026</div>
+
+<div class="travel-row">
+
+    <div class="travel-date">
+    9/14 – 9/18
+    </div>
+
+    <div>
+        Permutation-equivariant K-theoretic string equation,
+        <a href="https://symposia.kias.re.kr/KTEGM">
+        3rd Korea–Taiwan Enumerative Geometry Meeting
+        </a>
+        (Gangneung)
+    </div>
+
+</div>
+
+
+<div class="travel-row">
+
+    <div class="travel-date">
+    6/22 – 6/25
+    </div>
+
+    <div>
+        Moduli of generalized Lamé curves,
+        <a href="https://www.kms.or.kr/file/fileboard/3068357271_09fd86a1_2026spring_DayByDay-Program.pdf">
+        International Conference for the 80th Anniversary of the Korean Mathematical Society
+        </a>
+        (Seoul)
+    </div>
+
+</div>
+
+
+<div class="travel-row">
+
+    <div class="travel-date">
+    4/27 – 4/30
+    </div>
+
+    <div>
+        Moduli of generalized Lamé curves,
+        <a href="https://www.tims.ntu.edu.tw/modules/news/article.php?storyid=3864">
+        Special Geometry, D-modules, and Modular Forms
+        </a>
+        (Taipei)
+    </div>
+
+</div>
+
+
+<div class="travel-year">2025</div>
+
+<div class="travel-row">
+
+    <div class="travel-date">
+    11/19 – 11/21
+    </div>
+
+    <div>
+        Permutation-equivariant quantum K-theory of a point,
+        <a href="https://sites.google.com/view/hcmcfallworkshop2025/home">
+        KIAS Math–HCMC Fall Workshop 2025
+        </a>
+        (Jeongseon)
+    </div>
+
+</div>
+
+
+<div class="travel-row">
+
+    <div class="travel-date">
+    11/3 – 11/7
+    </div>
+
+    <div>
+        Permutation-equivariant quantum K-theory of a point,
+        <a href="https://idv.sinica.edu.tw/ypleemath/kteg_2025/">
+        Korea–Taiwan Enumerative Geometry Meeting 2025
+        </a>
+        (Tainan)
+    </div>
+
+</div>
+
+
+<div class="travel-row">
+
+    <div class="travel-date">
+    9/25 – 9/29
+    </div>
+
+    <div>
+        Genus zero quantum K-invariants and Gopakumar–Vafa invariants
+        on semi-positive varieties,
+        <a href="https://pseudoholomorphic.fpark.tmu.ac.jp/EASC2025/EASC2025.html">
+        East Asian Symplectic Conference 2025
+        </a>
+        (Sapporo)
+    </div>
+
+</div>
+
+
+<div class="travel-row">
+
+    <div class="travel-date">
+    9/16 – 9/19
+    </div>
+
+    <div>
+        Permutation-equivariant quantum K-theory of a point,
+        <a href="https://arkadijbojko.github.io/webpage/seminars/Sinica/">
+        SIMIS–Sinica Interdisciplinary Workshop
+        </a>
+        (Shanghai)
+    </div>
+
+</div>
+
+
+<div class="travel-row">
+
+    <div class="travel-date">
+    8/7
+    </div>
+
+    <div>
+        Genus 1 quantum K-theory of a point,
+        <a href="https://www.math.sinica.edu.tw/f59addca-1da6-47fd-9bb8-18d087da6088/posts/15509">
+        Academia Sinica
+        </a>
+        (Taipei)
+    </div>
+
+</div>
+
+
+<div class="travel-year">2024</div>
+
+<div class="travel-row">
+
+    <div class="travel-date">
+    10/16
+    </div>
+
+    <div>
+        K-theoretic multiple cover formula on Calabi-Yau threefolds,
+        <a href="https://research.ipmu.jp/seminar/?seminar_id=3261">
+        Special Seminar, Kavli IPMU
+        </a>
+        (Kashiwa)
+    </div>
+
+</div>
+
+
+<div class="travel-row">
+
+    <div class="travel-date">
+    9/30 – 10/4
+    </div>
+
+    <div>
+        K-theoretic multiple cover formula,
+        <a href="https://sites.google.com/view/seoul-taipei-meeting">
+        Seoul–Taipei Enumerative Geometry Meeting
+        </a>
+        (Busan)
+    </div>
+
+</div>
+
+
+<div class="travel-year">2023</div>
+
+<div class="travel-row">
+
+    <div class="travel-date">
+    11/6 – 11/10
+    </div>
+
+    <div>
+        Quantum K-invariants = Gopakumar-Vafa invariants on
+        Calabi-Yau threefolds at genus zero,
+        <a href="http://events.kias.re.kr/h/AGEA23/">
+        Algebraic Geometry in East Asia
+        </a>
+        (Seoul)
+    </div>
+
+</div>
+
+
+<div class="travel-row">
+
+    <div class="travel-date">
+    7/5 – 7/6
+    </div>
+
+    <div>
+        Quantum K-invariants = Gopakumar-Vafa invariants on
+        Calabi-Yau threefolds at genus zero,
+        Concerto in Quantum K-theory
+        (Hangzhou)
+    </div>
+
+</div>
+
+
+<div class="travel-row">
+
+    <div class="travel-date">
+    6/2 – 6/16
+    </div>
+
+    <div>
+        BCOV conjectures on quintic threefolds,
+        <a href="https://www.tims.ntu.edu.tw/modules/news/article.php?storyid=4129">
+        Calabi–Yau with Small Parameters
+        </a>
+        (Taipei)
+    </div>
+
+</div>
+
+
+<div class="travel-year">2019</div>
+
+<div class="travel-row">
+
+    <div class="travel-date"></div>
+
+    <div>
+        Virasoro constraints for moduli of weighted pointed stable curves,
+        FRAGMENT Seminar
+        (Fort Collins)
+    </div>
+
+</div>
+
+</section>
+
+
 <!-- ====================================================== -->
 <!-- TEACHING -->
 <!-- ====================================================== -->
@@ -55,3 +896,55 @@
 </div>
 
 </section>
+
+
+</main>
+
+
+<script>
+
+function showSection(sectionId) {
+
+    var sections = document.querySelectorAll('.page-section');
+    var links = document.querySelectorAll('nav a');
+
+    sections.forEach(function(section) {
+        section.classList.remove('active');
+    });
+
+    links.forEach(function(link) {
+        link.classList.remove('active');
+    });
+
+    document.getElementById(sectionId).classList.add('active');
+    document.getElementById('nav-' + sectionId).classList.add('active');
+}
+
+
+/* Allow direct links such as #papers or #talks */
+
+function loadSectionFromHash() {
+
+    var sectionId = window.location.hash.substring(1);
+
+    if (
+        sectionId === 'home' ||
+        sectionId === 'papers' ||
+        sectionId === 'talks' ||
+        sectionId === 'teaching'
+    ) {
+        showSection(sectionId);
+    } else {
+        showSection('home');
+    }
+}
+
+window.addEventListener('hashchange', loadSectionFromHash);
+
+loadSectionFromHash();
+
+</script>
+
+
+</body>
+</html>
