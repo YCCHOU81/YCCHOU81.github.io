@@ -2,22 +2,68 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>You-Cheng Chou 周祐正</title>
 
 <style>
+
+/* ====================================================== */
+/* General */
+/* ====================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
 }
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 28px 50px 28px;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+h3 {
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin-bottom: 26px;
+}
+
+a {
+    word-break: break-word;
+}
+
+
+/* ====================================================== */
+/* Navigation */
+/* ====================================================== */
 
 nav {
     background-color: white;
     border-bottom: 1px solid #cccccc;
     padding: 15px 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 35px;
 }
 
 nav a {
-    margin-right: 35px;
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -32,11 +78,10 @@ nav a.active {
     color: #336699;
 }
 
-main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 25px;
-}
+
+/* ====================================================== */
+/* Page tabs */
+/* ====================================================== */
 
 .page-section {
     display: none;
@@ -47,26 +92,56 @@ main {
 }
 
 
-/* Papers */
+/* ====================================================== */
+/* Home */
+/* ====================================================== */
 
-.paper-entry {
-    margin-bottom: 14px;
+.profile-photo {
+    float: right;
+    width: 240px;
+    height: auto;
+    margin-left: 35px;
+    margin-bottom: 25px;
+}
+
+.home-intro {
+    margin-top: 35px;
+}
+
+.last-updated {
+    margin-top: 35px;
 }
 
 
+/* ====================================================== */
+/* Papers */
+/* ====================================================== */
+
+.paper-entry {
+    margin-bottom: 20px;
+}
+
+#papers h3 {
+    margin-top: 34px;
+}
+
+
+/* ====================================================== */
 /* Talks & Travels */
+/* ====================================================== */
 
 .travel-year {
     font-weight: bold;
-    margin-top: 25px;
-    margin-bottom: 8px;
+    margin-top: 28px;
+    margin-bottom: 10px;
 }
 
 .travel-row {
     display: grid;
-    grid-template-columns: 130px 1fr;
-    column-gap: 20px;
-    margin-bottom: 8px;
+    grid-template-columns: 125px minmax(0, 1fr);
+    column-gap: 24px;
+    margin-bottom: 11px;
+    align-items: start;
 }
 
 .travel-date {
@@ -74,17 +149,19 @@ main {
 }
 
 
+/* ====================================================== */
 /* Teaching */
+/* ====================================================== */
 
 .teaching-list {
-    margin-top: 20px;
+    margin-top: 24px;
 }
 
 .teaching-row {
     display: grid;
-    grid-template-columns: 120px 1fr;
-    column-gap: 28px;
-    margin-bottom: 12px;
+    grid-template-columns: 125px minmax(0, 1fr);
+    column-gap: 24px;
+    margin-bottom: 13px;
     align-items: start;
 }
 
@@ -92,56 +169,145 @@ main {
     white-space: nowrap;
 }
 
-.teaching-course {
-    min-width: 0;
+
+/* ====================================================== */
+/* Tablet */
+/* ====================================================== */
+
+@media (max-width: 800px) {
+
+    main {
+        padding: 28px 24px 45px 24px;
+    }
+
+    nav {
+        padding: 14px 24px;
+        gap: 8px 25px;
+    }
+
+    .profile-photo {
+        width: 210px;
+        margin-left: 25px;
+    }
 }
 
 
-@media (max-width: 650px) {
+/* ====================================================== */
+/* Mobile */
+/* ====================================================== */
+
+@media (max-width: 600px) {
 
     nav {
-        padding: 14px 20px;
-    }
-
-    nav a {
-        margin-right: 18px;
-        line-height: 2;
+        padding: 12px 18px;
+        gap: 8px 22px;
     }
 
     main {
-        padding: 20px;
+        padding: 24px 18px 40px 18px;
+    }
+
+    h1 {
+        font-size: 1.7em;
+    }
+
+    h3 {
+        margin-top: 28px;
+    }
+
+    .profile-photo {
+        float: none;
+        display: block;
+        width: 190px;
+        max-width: 100%;
+        height: auto;
+        margin: 0 0 25px 0;
+    }
+
+    .travel-row {
+        grid-template-columns: 90px minmax(0, 1fr);
+        column-gap: 15px;
+        margin-bottom: 14px;
+    }
+
+    .teaching-row {
+        grid-template-columns: 105px minmax(0, 1fr);
+        column-gap: 15px;
+        margin-bottom: 14px;
+    }
+}
+
+
+/* ====================================================== */
+/* Very small screens */
+/* ====================================================== */
+
+@media (max-width: 420px) {
+
+    nav {
+        gap: 7px 18px;
     }
 
     .travel-row {
         grid-template-columns: 1fr;
-        margin-bottom: 15px;
+        row-gap: 2px;
+        margin-bottom: 18px;
+    }
+
+    .travel-date {
+        white-space: normal;
     }
 
     .teaching-row {
-        grid-template-columns: 105px 1fr;
-        column-gap: 18px;
-        margin-bottom: 12px;
+        grid-template-columns: 1fr;
+        row-gap: 2px;
+        margin-bottom: 18px;
+    }
+
+    .teaching-date {
+        white-space: normal;
     }
 }
-</style>
 
+</style>
 </head>
+
 
 <body>
 
+
+<!-- ====================================================== -->
+<!-- Navigation -->
+<!-- ====================================================== -->
+
 <nav>
-    <a id="nav-home" href="#home"
-       onclick="showSection('home'); return false;">Home</a>
 
-    <a id="nav-papers" href="#papers"
-       onclick="showSection('papers'); return false;">Papers</a>
+    <a id="nav-home"
+       href="#home"
+       onclick="showSection('home'); return false;">
+       Home
+    </a>
 
-    <a id="nav-talks" href="#talks"
-       onclick="showSection('talks'); return false;">Talks &amp; Travels</a>
+    <a id="nav-papers"
+       href="#papers"
+       onclick="showSection('papers'); return false;">
+       Papers
+    </a>
 
-    <a id="nav-teaching" href="#teaching"
-       onclick="showSection('teaching'); return false;">Teaching</a>
+    <a id="nav-talks"
+       href="#talks"
+       onclick="showSection('talks'); return false;">
+       Talks &amp; Travels
+    </a>
+
+    <a id="nav-teaching"
+       href="#teaching"
+       onclick="showSection('teaching'); return false;">
+       Teaching
+    </a>
+
 </nav>
+
 
 <main>
 
@@ -153,15 +319,12 @@ main {
 <section id="home" class="page-section active">
 
 <h1><strong>You-Cheng Chou 周祐正</strong></h1>
+
 <hr>
 
-<p>
-<img style="float: right;"
+<img class="profile-photo"
      src="Picture(Hiking).jpg"
-     alt=""
-     width="240"
-     height="320">
-</p>
+     alt="You-Cheng Chou">
 
 <p>Contact Information:</p>
 
@@ -176,9 +339,7 @@ bensonchou@kias.re.kr
 Office: Room 8317, Building 8, Korea Institute for Advanced Study
 </p>
 
-<br><br><br>
-
-<hr>
+<div class="home-intro">
 
 <p>
 I am a HCMC fellow (Postdoc) at Korea Institute for Advanced Study.
@@ -191,7 +352,9 @@ mean field equation, and related topics.
 Here is my <a href="CV_GitHub.pdf">CV</a>.
 </p>
 
-<p>
+</div>
+
+<p class="last-updated">
 <small>Last updated 17 October 2026</small>
 </p>
 
@@ -205,6 +368,7 @@ Here is my <a href="CV_GitHub.pdf">CV</a>.
 <section id="papers" class="page-section">
 
 <h1>Papers</h1>
+
 <hr>
 
 
@@ -345,7 +509,9 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 <section id="talks" class="page-section">
 
 <h1>Talks &amp; Travels</h1>
+
 <hr>
+
 
 <h3>Upcoming talks &amp; travel</h3>
 
@@ -353,6 +519,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 <div class="travel-row">
     <div class="travel-date">12/7 – 12/11</div>
+
     <div>
         <a href="https://www.preschema.com/travel.html">
         Enumerative Geometry in East Asia 2026
@@ -364,10 +531,12 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 <h3>Past talks &amp; travel</h3>
 
+
 <div class="travel-year">2026</div>
 
 <div class="travel-row">
     <div class="travel-date">9/14 – 9/18</div>
+
     <div>
         Permutation-equivariant K-theoretic string equation,
         <a href="https://symposia.kias.re.kr/KTEGM">
@@ -379,6 +548,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 <div class="travel-row">
     <div class="travel-date">6/22 – 6/25</div>
+
     <div>
         Moduli of generalized Lamé curves,
         <a href="https://www.kms.or.kr/file/fileboard/3068357271_09fd86a1_2026spring_DayByDay-Program.pdf">
@@ -390,6 +560,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 <div class="travel-row">
     <div class="travel-date">4/27 – 4/30</div>
+
     <div>
         Moduli of generalized Lamé curves,
         <a href="https://www.tims.ntu.edu.tw/modules/news/article.php?storyid=3864">
@@ -404,6 +575,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 <div class="travel-row">
     <div class="travel-date">11/19 – 11/21</div>
+
     <div>
         Permutation-equivariant quantum K-theory of a point,
         <a href="https://sites.google.com/view/hcmcfallworkshop2025/home">
@@ -415,6 +587,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 <div class="travel-row">
     <div class="travel-date">11/3 – 11/7</div>
+
     <div>
         Permutation-equivariant quantum K-theory of a point,
         <a href="https://idv.sinica.edu.tw/ypleemath/kteg_2025/">
@@ -426,6 +599,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 <div class="travel-row">
     <div class="travel-date">9/25 – 9/29</div>
+
     <div>
         Genus zero quantum K-invariants and Gopakumar–Vafa invariants on semi-positive varieties,
         <a href="https://pseudoholomorphic.fpark.tmu.ac.jp/EASC2025/EASC2025.html">
@@ -437,6 +611,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 <div class="travel-row">
     <div class="travel-date">9/16 – 9/19</div>
+
     <div>
         Permutation-equivariant quantum K-theory of a point,
         <a href="https://arkadijbojko.github.io/webpage/seminars/Sinica/">
@@ -448,6 +623,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 <div class="travel-row">
     <div class="travel-date">8/7</div>
+
     <div>
         Genus 1 quantum K-theory of a point,
         <a href="https://www.math.sinica.edu.tw/f59addca-1da6-47fd-9bb8-18d087da6088/posts/15509">
@@ -462,6 +638,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 <div class="travel-row">
     <div class="travel-date">10/16</div>
+
     <div>
         K-theoretic multiple cover formula on Calabi-Yau threefolds,
         <a href="https://research.ipmu.jp/seminar/?seminar_id=3261">
@@ -473,6 +650,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 <div class="travel-row">
     <div class="travel-date">9/30 – 10/4</div>
+
     <div>
         K-theoretic multiple cover formula,
         <a href="https://sites.google.com/view/seoul-taipei-meeting">
@@ -487,6 +665,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 <div class="travel-row">
     <div class="travel-date">11/6 – 11/10</div>
+
     <div>
         Quantum K-invariants = Gopakumar-Vafa invariants on Calabi-Yau threefolds at genus zero,
         <a href="http://events.kias.re.kr/h/AGEA23/">
@@ -498,6 +677,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 <div class="travel-row">
     <div class="travel-date">7/5 – 7/6</div>
+
     <div>
         Quantum K-invariants = Gopakumar-Vafa invariants on Calabi-Yau threefolds at genus zero,
         Concerto in Quantum K-theory
@@ -507,6 +687,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 <div class="travel-row">
     <div class="travel-date">6/2 – 6/16</div>
+
     <div>
         BCOV conjectures on quintic threefolds,
         <a href="https://www.tims.ntu.edu.tw/modules/news/article.php?storyid=4129">
@@ -521,6 +702,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 <div class="travel-row">
     <div class="travel-date"></div>
+
     <div>
         Virasoro constraints for moduli of weighted pointed stable curves,
         FRAGMENT Seminar
@@ -538,64 +720,49 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 <section id="teaching" class="page-section">
 
 <h1>Teaching</h1>
+
 <hr>
 
 <div class="teaching-list">
 
 <div class="teaching-row">
     <div class="teaching-date">Spring 2022</div>
-    <div class="teaching-course">
-        Math 1090 Business Algebra (Instructor)
-    </div>
+    <div>Math 1090 Business Algebra (Instructor)</div>
 </div>
 
 <div class="teaching-row">
     <div class="teaching-date">Fall 2021</div>
-    <div class="teaching-course">
-        Math 1090 Business Algebra (Instructor)
-    </div>
+    <div>Math 1090 Business Algebra (Instructor)</div>
 </div>
 
 <div class="teaching-row">
     <div class="teaching-date">Fall 2020</div>
-    <div class="teaching-course">
-        Math 1060 Trigonometry (Instructor)
-    </div>
+    <div>Math 1060 Trigonometry (Instructor)</div>
 </div>
 
 <div class="teaching-row">
     <div class="teaching-date">Spring 2020</div>
-    <div class="teaching-course">
-        Math 1060 Trigonometry (Instructor)
-    </div>
+    <div>Math 1060 Trigonometry (Instructor)</div>
 </div>
 
 <div class="teaching-row">
     <div class="teaching-date">Fall 2019</div>
-    <div class="teaching-course">
-        Math 1090 Business Algebra (Instructor)
-    </div>
+    <div>Math 1090 Business Algebra (Instructor)</div>
 </div>
 
 <div class="teaching-row">
     <div class="teaching-date">Fall 2018</div>
-    <div class="teaching-course">
-        Math 1060 Trigonometry (Instructor)
-    </div>
+    <div>Math 1060 Trigonometry (Instructor)</div>
 </div>
 
 <div class="teaching-row">
     <div class="teaching-date">Spring 2018</div>
-    <div class="teaching-course">
-        Math 2250 Differential Equations and Linear Algebra (Teaching assistant)
-    </div>
+    <div>Math 2250 Differential Equations and Linear Algebra (Teaching assistant)</div>
 </div>
 
 <div class="teaching-row">
     <div class="teaching-date">Fall 2017</div>
-    <div class="teaching-course">
-        Math 1210 Calculus I (Teaching assistant)
-    </div>
+    <div>Math 1210 Calculus I (Teaching assistant)</div>
 </div>
 
 </div>
@@ -606,6 +773,7 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 
 
 <script>
+
 function showSection(sectionId) {
 
     var sections = document.querySelectorAll('.page-section');
@@ -625,9 +793,13 @@ function showSection(sectionId) {
     window.scrollTo(0, 0);
 }
 
+
+/* Start on Home */
+
 document.getElementById('nav-home').classList.add('active');
+
 </script>
 
+
 </body>
-</html>
 </html>
