@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hemisphere Atlas — Limits &amp; Zoom</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="text.html" data-page="text.html">
+      Hemisphere Atlas
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="text.html" data-page="text.html">Home</a>
+      <a href="explore.html" data-page="explore.html">Explore</a>
+      <a href="limits.html" data-page="limits.html"
+         aria-current="page">Limits &amp; Zoom</a>
+      <a href="mathematics.html"
+         data-page="mathematics.html">Mathematics</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-heading">
+      <p class="eyebrow">LIMITS &amp; ZOOM</p>
+      <h1>Follow an approach.</h1>
+      <p class="description">
+        This page will contain boundary approaches, local zoom,
+        and graphs of the period ratio.
+      </p>
+      <p id="selection-context" class="context"></p>
+    </section>
+
+    <div class="experiment-layout">
+      <form id="limit-form" class="panel">
+        <h2>Approach settings</h2>
+
+        <label for="approach">
+          Approach type
+          <select id="approach" name="approach">
+            <option value="edge">Edge approach</option>
+            <option value="vertex">Vertex approach</option>
+          </select>
+        </label>
+
+        <label for="depth">
+          Depth
+          <input id="depth" name="depth" type="number"
+                 min="3" max="10" step="1" value="6" required>
+        </label>
+
+        <p class="caption">
+          The meaning of depth will be explained when the
+          numerical continuation is added.
+        </p>
+
+        <button type="submit">Prepare approach</button>
+
+        <p id="limit-status" class="status"
+           role="status" aria-live="polite">
+          Choose an approach to begin.
+        </p>
+      </form>
+
+      <section class="panel">
+        <h2>Local view and trend</h2>
+
+        <!-- Later: add zoom controls, trajectories, and graphs. -->
+        <div class="plot-placeholder">
+          <p id="limit-message">
+            Your magnified image and asymptotic graph go here.
+          </p>
+        </div>
+
+        <p class="caption">
+          Visualization placeholder — no trajectory is computed yet.
+        </p>
+      </section>
+    </div>
+
+    <p class="next-step">
+      <a href="explore.html" data-page="explore.html">
+        ← Return to Explore
+      </a>
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    Your name / institution
+  </footer>
+</body>
+</html>
