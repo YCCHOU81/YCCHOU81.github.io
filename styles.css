@@ -1,4 +1,267 @@
-/* Numerical Explore page */
+:root {
+  --background: #f6f4ed;
+  --panel: #fcfcf7;
+  --text: #253b33;
+  --muted: #596e62;
+  --accent: #285f65;
+  --border: #d6ded2;
+  --page-width: 1100px;
+}
+
+/* General appearance */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font: 16px/1.65 system-ui, sans-serif;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 4px;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid #8aa6a0;
+  outline-offset: 4px;
+}
+
+/* Shared navigation */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+
+  padding: 18px max(
+    24px,
+    calc((100% - var(--page-width)) / 2)
+  );
+
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  font-weight: 650;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+nav a {
+  padding: 7px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background: #e9eee4;
+}
+
+nav a[aria-current="page"] {
+  color: white;
+  background: var(--accent);
+}
+
+/* Shared page layout */
+
+main,
+.site-footer {
+  width: min(var(--page-width), calc(100% - 48px));
+  margin: auto;
+}
+
+main {
+  padding-bottom: 48px;
+}
+
+.introduction {
+  padding: 76px 0 48px;
+}
+
+.page-heading {
+  padding: 48px 0 24px;
+}
+
+/* Typography */
+
+h1,
+h2 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: clamp(36px, 5vw, 60px);
+}
+
+h2 {
+  margin: 0 0 20px;
+  font-size: 27px;
+}
+
+p {
+  margin: 0 0 18px;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.description {
+  max-width: 750px;
+  color: var(--muted);
+}
+
+.context {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+/* Panels and content */
+
+.panel {
+  min-width: 0;
+  padding: 24px;
+
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.panel > :last-child {
+  margin-bottom: 0;
+}
+
+.content-stack {
+  display: grid;
+  gap: 20px;
+}
+
+/* Skeleton layouts used by the Limits page */
+
+.experiment-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.plot-placeholder {
+  display: grid;
+  place-items: center;
+
+  min-height: 280px;
+  padding: 24px;
+
+  color: var(--muted);
+  background: #eff3e9;
+  border: 1px dashed #a7b8a4;
+  border-radius: 5px;
+
+  text-align: center;
+}
+
+/* Form controls */
+
+label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 8px 12px;
+
+  color: var(--text);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
+
+button,
+.button {
+  display: inline-block;
+  padding: 10px 16px;
+
+  color: white;
+  background: var(--accent);
+  border: 0;
+  border-radius: 5px;
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form button {
+  width: 100%;
+}
+
+button:hover,
+.button:hover {
+  filter: brightness(0.92);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Status messages and captions */
+
+.status {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.status.error {
+  color: #a03f2b;
+}
+
+.caption {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Numerical Explore page: attachment controls */
 
 .attachment-bar {
   display: grid;
@@ -6,6 +269,7 @@
     repeat(3, minmax(65px, 1fr))
     minmax(165px, 2fr)
     auto auto;
+
   align-items: end;
   gap: 14px;
 }
@@ -19,10 +283,7 @@
   width: auto;
 }
 
-button:disabled {
-  opacity: 0.5;
-  cursor: default;
-}
+/* Numerical Explore page: image panels */
 
 .image-pair {
   display: grid;
@@ -37,11 +298,49 @@ button:disabled {
   height: 340px;
 }
 
+/* Shared footer */
+
+.site-footer {
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Tablet layout */
+
 @media (max-width: 950px) {
   .attachment-bar {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+/* Smaller screens */
+
+@media (max-width: 760px) {
+  .experiment-layout,
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header {
+    gap: 10px;
+  }
+
+  nav {
+    font-size: 14px;
+  }
+
+  nav a {
+    padding: 6px 8px;
+  }
+
+  .introduction {
+    padding-top: 48px;
+  }
+}
+
+/* Mobile Explore layout */
 
 @media (max-width: 700px) {
   .attachment-bar > div:nth-child(4) {
