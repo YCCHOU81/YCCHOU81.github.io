@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Hemisphere Atlas — Limits &amp; Zoom</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="text.html" data-page="text.html">
+      Hemisphere Atlas
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="text.html" data-page="text.html">Home</a>
+
+      <a href="explore.html" data-page="explore.html">
+        Explore
+      </a>
+
+      <a href="limits.html"
+         data-page="limits.html"
+         aria-current="page">
+        Limits &amp; Zoom
+      </a>
+
+      <a href="mathematics.html" data-page="mathematics.html">
+        Mathematics
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-heading">
+      <p class="eyebrow">LIMITS &amp; ZOOM</p>
+      <h1>Boundary behaviour</h1>
+
+      <p class="description">
+        This page will show boundary approaches, magnified images,
+        and asymptotic behaviour of the conformal structure.
+      </p>
+
+      <p id="selection-context" class="context"></p>
+    </section>
+
+    <div class="experiment-layout">
+      <form id="limit-form" class="panel">
+        <h2>View settings</h2>
+
+        <label for="approach">Approach</label>
+        <select id="approach" name="approach">
+          <option value="edge">Toward an edge</option>
+          <option value="vertex">Toward a vertex</option>
+        </select>
+
+        <label for="zoom">Zoom factor</label>
+        <input id="zoom" name="zoom"
+               type="number" min="1" step="1"
+               value="10" required>
+
+        <button type="submit">Apply settings</button>
+
+        <p id="limit-status"
+           class="status"
+           role="status"
+           aria-live="polite">
+          Choose an approach and zoom factor.
+        </p>
+      </form>
+
+      <section class="panel" aria-labelledby="local-heading">
+        <h2 id="local-heading">Local view and asymptotics</h2>
+
+        <div id="limit-placeholder" class="plot-placeholder">
+          Magnified image and asymptotic graph
+        </div>
+
+        <p class="caption">
+          Plot placeholder. Numerical continuation will be added here.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    Your name / institution
+  </footer>
+</body>
+</html>
