@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hemisphere Atlas — Explore</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="text.html" data-page="text.html">
+      Hemisphere Atlas
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="text.html" data-page="text.html">Home</a>
+      <a href="explore.html" data-page="explore.html"
+         aria-current="page">Explore</a>
+      <a href="limits.html" data-page="limits.html">Limits &amp; Zoom</a>
+      <a href="mathematics.html"
+         data-page="mathematics.html">Mathematics</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-heading">
+      <p class="eyebrow">EXPLORE</p>
+      <h1>Choose an attachment.</h1>
+      <p class="description">
+        This page will contain the monodromy triangle and the
+        comparison of conformal structures.
+      </p>
+      <p id="selection-context" class="context"></p>
+    </section>
+
+    <div class="experiment-layout">
+      <form id="parameter-form" class="panel">
+        <h2>Attachment counts</h2>
+
+        <label for="a">
+          a
+          <input id="a" name="a" type="number"
+                 min="0" step="1" value="1" required>
+        </label>
+
+        <label for="b">
+          b
+          <input id="b" name="b" type="number"
+                 min="0" step="1" value="0" required>
+        </label>
+
+        <label for="c">
+          c
+          <input id="c" name="c" type="number"
+                 min="0" step="1" value="0" required>
+        </label>
+
+        <button type="submit">Apply attachment</button>
+
+        <p id="parameter-status" class="status"
+           role="status" aria-live="polite">
+          Choose counts and apply them.
+        </p>
+      </form>
+
+      <section class="panel">
+        <h2>Comparison</h2>
+
+        <!-- Later: add the source triangle and comparison plots. -->
+        <div class="plot-placeholder">
+          <p id="comparison-message">
+            Your monodromy triangle and conformal images go here.
+          </p>
+        </div>
+
+        <p class="caption">
+          Visualization placeholder — the solver is not connected yet.
+        </p>
+      </section>
+    </div>
+
+    <p class="next-step">
+      <a class="button" href="limits.html" data-page="limits.html">
+        Continue in Limits &amp; Zoom →
+      </a>
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    Your name / institution
+  </footer>
+</body>
+</html>
