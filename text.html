@@ -1,589 +1,327 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>You-Cheng Chou 周祐正</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
+  <!-- EDIT: page title -->
+  <title>Hemisphere Atlas</title>
 
-nav {
-    background-color: white;
-    border-bottom: 1px solid #cccccc;
-    padding: 15px 30px;
-}
+  <style>
+    /* EDIT: colors and page width */
+    :root {
+      --background: #f6f4ed;
+      --panel: #fcfcf7;
+      --text: #253b33;
+      --muted: #596e62;
+      --accent: #285f65;
+      --border: #d6ded2;
+      --width: 1100px;
+    }
 
-nav a {
-    margin-right: 35px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    cursor: pointer;
-}
+    * { box-sizing: border-box; }
 
-nav a:hover {
-    color: #666666;
-}
+    html { scroll-behavior: smooth; }
 
-nav a.active {
-    color: #336699;
-}
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font: 16px/1.65 system-ui, sans-serif;
+    }
 
-main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 25px;
-}
+    a {
+      color: var(--accent);
+      text-underline-offset: 4px;
+    }
 
-.page-section {
-    display: none;
-}
+    button, input { font: inherit; }
 
-.page-section.active {
-    display: block;
-}
+    a, button, input { outline-offset: 4px; }
 
-.paper-list {
-    padding-left: 22px;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      padding: 18px max(24px, calc((100% - var(--width)) / 2));
+      background: var(--background);
+      border-bottom: 1px solid var(--border);
+    }
 
-.paper-list li {
-    margin-bottom: 18px;
-}
-
-
-/* Talks & Travels */
-
-.travel-year {
-    font-weight: bold;
-    margin-top: 25px;
-    margin-bottom: 8px;
-}
-
-.travel-row {
-    display: grid;
-    grid-template-columns: 130px 1fr;
-    column-gap: 20px;
-    margin-bottom: 8px;
-}
-
-.travel-date {
-    white-space: nowrap;
-}
-
-
-/* Teaching */
-
-.teaching-row {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    column-gap: 20px;
-    margin-bottom: 8px;
-}
-
-
-@media (max-width: 650px) {
+    .brand {
+      font-weight: 650;
+      text-decoration: none;
+    }
 
     nav {
-        padding: 14px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
     }
 
-    nav a {
-        margin-right: 18px;
-        line-height: 2;
+    nav a { text-decoration: none; }
+
+    nav a:hover { text-decoration: underline; }
+
+    main, footer {
+      width: min(var(--width), calc(100% - 48px));
+      margin: auto;
     }
 
-    main {
-        padding: 20px;
+    section {
+      padding: 48px 0;
+      scroll-margin-top: 120px;
     }
 
-    .travel-row,
-    .teaching-row {
-        grid-template-columns: 1fr;
-        margin-bottom: 15px;
+    section + section {
+      border-top: 1px solid var(--border);
     }
-}
-</style>
 
+    h1, h2 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(36px, 5vw, 60px);
+    }
+
+    h2 { font-size: 32px; }
+
+    h3 { margin-top: 0; }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .description {
+      max-width: 700px;
+      color: var(--muted);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .panel {
+      min-width: 0;
+      padding: 24px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+
+    input {
+      width: 130px;
+      min-width: 0;
+      padding: 8px 12px;
+      color: var(--text);
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 16px;
+      color: white;
+      background: var(--accent);
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button { width: 100%; }
+
+    .status, .caption {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .error { color: #a03f2b; }
+
+    .plot {
+      display: grid;
+      place-items: center;
+      min-height: 280px;
+      padding: 24px;
+      background: #eff3e9;
+      border: 1px dashed #a7b8a4;
+      border-radius: 5px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 650px) {
+      .layout { grid-template-columns: 1fr; }
+      nav { gap: 18px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- EDIT: site name and navigation -->
+  <header>
+    <a class="brand" href="#home">Hemisphere Atlas</a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#explore">Explore</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- EDIT: introduction -->
+    <section id="home">
+      <p class="eyebrow">INTERACTIVE MATHEMATICS</p>
+      <h1>Explore spherical tori.</h1>
+      <p class="description">
+        Write a short introduction to your project here.
+        Explain what visitors can change and what the pictures represent.
+      </p>
+      <a href="#explore">Start exploring ↓</a>
+    </section>
+
+    <!-- EDIT: controls and visualization -->
+    <section id="explore" aria-labelledby="explore-title">
+      <p class="eyebrow">EXPERIMENT</p>
+      <h2 id="explore-title">Choose your parameters</h2>
+      <p class="description">
+        Enter three attachment counts, then apply them.
+        The visualization below is a placeholder.
+      </p>
+
+      <div class="layout">
+        <form id="parameter-form" class="panel">
+          <h3>Attachment counts</h3>
+
+          <label for="a">
+            a
+            <input id="a" type="number" min="0" step="1" value="1" required>
+          </label>
+
+          <label for="b">
+            b
+            <input id="b" type="number" min="0" step="1" value="0" required>
+          </label>
+
+          <label for="c">
+            c
+            <input id="c" type="number" min="0" step="1" value="0" required>
+          </label>
+
+          <button type="submit">Apply parameters</button>
+          <p id="status" class="status" role="status" aria-live="polite">
+            Choose parameters to begin.
+          </p>
+        </form>
+
+        <div class="panel">
+          <h3>Visualization</h3>
+
+          <!-- Replace this container with your canvas or SVG -->
+          <div id="plot" class="plot">
+            <p id="plot-message">Your visualization goes here.</p>
+          </div>
+
+          <p class="caption">
+            This skeleton does not yet include the numerical solver.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDIT: explanation and references -->
+    <section id="about" aria-labelledby="about-title">
+      <p class="eyebrow">BACKGROUND</p>
+      <h2 id="about-title">About this project</h2>
+      <p class="description">
+        Add your mathematical explanation, instructions, and references here.
+      </p>
+    </section>
+
+    <!-- To add another section, copy the About section above,
+         give it a unique ID, and add its link to the navigation. -->
+  </main>
+
+  <footer>
+    <span>Your name / institution</span>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+
+  <script>
+    const form = document.getElementById("parameter-form");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const values = ["a", "b", "c"].map(function (id) {
+        return Number(document.getElementById(id).value);
+      });
+
+      const valid = values.every(function (value) {
+        return Number.isSafeInteger(value) && value >= 0;
+      });
 
-<nav>
-    <a id="nav-home" href="#home"
-       onclick="showSection('home'); return false;">Home</a>
+      const n = 1 + values.reduce(function (sum, value) {
+        return sum + value;
+      }, 0);
 
-    <a id="nav-papers" href="#papers"
-       onclick="showSection('papers'); return false;">Papers</a>
+      if (!valid || !Number.isSafeInteger(n)) {
+        status.textContent = "Please enter smaller nonnegative whole numbers.";
+        status.classList.add("error");
+        return;
+      }
 
-    <a id="nav-talks" href="#talks"
-       onclick="showSection('talks'); return false;">Talks &amp; Travels</a>
-
-    <a id="nav-teaching" href="#teaching"
-       onclick="showSection('teaching'); return false;">Teaching</a>
-</nav>
-
-<main>
-
-
-<!-- ====================================================== -->
-<!-- HOME -->
-<!-- ====================================================== -->
-
-<section id="home" class="page-section active">
-
-<h1><strong>You-Cheng Chou 周祐正</strong></h1>
-<hr>
-
-<p>
-<img style="float: right;"
-     src="Picture(Hiking).jpg"
-     alt=""
-     width="240"
-     height="320">
-</p>
-
-<p>Contact Information:</p>
-
-<p>E-mail:</p>
-
-<p>
-bensonchou72@gmail.com<br>
-bensonchou@kias.re.kr
-</p>
-
-<p>
-Office: Room 8317, Building 8, Korea Institute for Advanced Study
-</p>
-
-<br><br><br>
-
-<hr>
-
-<p>
-I am a HCMC fellow (Postdoc) at Korea Institute for Advanced Study.
-Previously, I was a postdoc at Academia Sinica.
-I received my PhD in Department of Mathematics at the University of Utah
-in May 2022 supervised by
-<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>.
-My research interests are in algebraic geometry, enumerative geometry,
-mean field equation, and related topics.
-Here is my <a href="CV Nov 2024.pdf">CV</a>.
-</p>
-
-</section>
-
-
-<!-- ====================================================== -->
-<!-- PAPERS -->
-<!-- ====================================================== -->
-
-<section id="papers" class="page-section">
-
-<h1>Papers</h1>
-<hr>
-
-<ul class="paper-list">
-
-<li>
-<i>RC-positivity of complex surfaces</i>,
-with <a href="https://wuuuruuu.github.io/">Kuang-Ru Wu</a>
-<br>
-<a href="https://arxiv.org/abs/2609.33656">arXiv:2609.33656</a>
-</li>
-
-<li>
-<i>Virasoro Recursions for Simplicially Stable Curves with Colliding Markings</i>,
-with <a href="https://people.math.osu.edu/tseng.109/">Hsian-Hua Tseng</a>
-<br>
-<a href="https://arxiv.org/abs/2608.12507">arXiv:2608.12507</a> |
-submitted
-</li>
-
-<li>
-<i>On the K-theoretic logarithmic double ramification class</i>,
-with Kamyar Amini,
-<a href="http://www.logetale.com">Leo Herr</a>,
-<a href="https://davidholmes.nl">David Holmes</a>,
-<a href="https://irit.hk">Irit Huq-Kuruvilla</a>,
-and <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
-<br>
-<a href="https://arxiv.org/abs/2607.13376">arXiv:2607.13376</a> |
-submitted
-</li>
-
-<li>
-<i>A theory of generalized Lamé curves</i>,
-with <a href="http://www.math.ntu.edu.tw/~dragon/">Chin-Lung Wang</a>
-and Po-Sheng Wu
-<br>
-<a href="https://arxiv.org/abs/2604.21880">arXiv:2604.21880</a> |
-submitted
-</li>
-
-<li>
-<i>Characterization and enumeration on Lamé equations with finite monodromy</i>,
-with <a href="http://www.math.ntu.edu.tw/~dragon/">Chin-Lung Wang</a>
-and Po-Sheng Wu
-<br>
-<a href="https://arxiv.org/abs/2402.16286">arXiv:2402.16286</a> |
-Trans. Amer. Math. Soc. 378 (2025), no. 8, 5279–5304
-<a href="https://doi.org/10.1090/tran/9195">[link]</a>
-</li>
-
-<li>
-<i>Integrality of genus zero Gopakumar-Vafa type invariants of semi-positive varieties</i>
-<br>
-<a href="https://arxiv.org/abs/2312.01413">arXiv:2312.01413</a> |
-Internat. J. Modern Phys. A 39 (2024), no. 33, 2446014
-<a href="https://doi.org/10.1142/S0217751X2446014X">[link]</a>
-</li>
-
-<li>
-<i>Higher-genus quantum K-theory</i>,
-with <a href="http://www.logetale.com">Leo Herr</a>
-and <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
-<br>
-<a href="https://arxiv.org/abs/2305.10137">arXiv:2305.10137</a> |
-Pacific J. Math. 330 (2024), no. 1, 85–121
-<a href="https://doi.org/10.2140/pjm.2024.330.85">[link]</a>
-</li>
-
-<li>
-<i>Quantum K-invariants and Gopakumar-Vafa invariants II.
-Calabi-Yau threefolds at genus zero</i>,
-with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
-<br>
-<a href="https://arxiv.org/abs/2305.08480">arXiv:2305.08480</a> |
-Geom. Topol. 29 (2025), no. 9, 4665–4693
-<a href="https://msp.org/gt/2025/29-9/p03.xhtml">[link]</a>
-</li>
-
-<li>
-<i>Gopakumar-Vafa Invariants = Quantum K-invariants on Calabi-Yau threefolds</i>,
-with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
-<br>
-<a href="https://arxiv.org/abs/2212.13432">arXiv:2212.13432</a> |
-in <i>Categorical and Enumerative Aspects of Mirror Symmetry</i>,
-KIAS Springer Ser. Math. 5, Springer, Singapore, 2026, pp. 1–19
-<a href="https://link.springer.com/chapter/10.1007/978-981-95-0385-8_1">[link]</a>
-</li>
-
-<li>
-<i>Quantum K-invariants and Gopakumar-Vafa invariants I.
-The quintic threefold</i>,
-with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
-<br>
-<a href="https://arxiv.org/abs/2211.00788">arXiv:2211.00788</a> |
-Amer. J. Math., accepted for publication
-<a href="https://www.press.jhu.edu/journals/american-journal-mathematics">[link]</a>
-</li>
-
-<li>
-<i>The Log Product Formula in quantum K-theory</i>,
-with <a href="http://www.logetale.com">Leo Herr</a>
-and <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
-<br>
-<a href="https://arxiv.org/abs/2012.09379">arXiv:2012.09379</a> |
-Math. Proc. Cambridge Philos. Soc. 175 (2023), no. 2, 225–252
-<a href="https://doi.org/10.1017/S0305004123000063">[link]</a>
-</li>
-
-<li>
-<i>Virasoro constraints for moduli of weighted pointed stable curves</i>,
-with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
-<br>
-<a href="https://arxiv.org/abs/1908.09027">arXiv:1908.09027</a> |
-J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
-<a href="https://doi.org/10.1112/jlms.12618">[link]</a>
-</li>
-
-<li>
-<i>Generalized Lamé equation with finite monodromy</i>
-<br>
-<a href="https://arxiv.org/abs/1611.06643">arXiv:1611.06643</a> |
-Bachelor thesis
-</li>
-
-</ul>
-
-</section>
-
-
-<!-- ====================================================== -->
-<!-- TALKS & TRAVELS -->
-<!-- ====================================================== -->
-
-<section id="talks" class="page-section">
-
-<h1>Talks &amp; Travels</h1>
-<hr>
-
-
-<h3>Upcoming talks &amp; travel</h3>
-
-<div class="travel-year">2026</div>
-
-<div class="travel-row">
-    <div class="travel-date">12/7 – 12/11</div>
-    <div>
-        <a href="https://www.preschema.com/travel.html">
-        Enumerative Geometry in East Asia 2026
-        </a>
-        (Hong Kong)
-    </div>
-</div>
-
-
-<h3>Past talks &amp; travel</h3>
-
-
-<div class="travel-year">2026</div>
-
-<div class="travel-row">
-    <div class="travel-date">9/14 – 9/18</div>
-    <div>
-        Permutation-equivariant K-theoretic string equation,
-        <a href="https://symposia.kias.re.kr/KTEGM">
-        3rd Korea–Taiwan Enumerative Geometry Meeting
-        </a>
-        (Gangneung)
-    </div>
-</div>
-
-<div class="travel-row">
-    <div class="travel-date">6/22 – 6/25</div>
-    <div>
-        Moduli of generalized Lamé curves,
-        <a href="https://www.kms.or.kr/file/fileboard/3068357271_09fd86a1_2026spring_DayByDay-Program.pdf">
-        International Conference for the 80th Anniversary of the Korean Mathematical Society
-        </a>
-        (Seoul)
-    </div>
-</div>
-
-<div class="travel-row">
-    <div class="travel-date">4/27 – 4/30</div>
-    <div>
-        Moduli of generalized Lamé curves,
-        <a href="https://www.tims.ntu.edu.tw/modules/news/article.php?storyid=3864">
-        Special Geometry, D-modules, and Modular Forms
-        </a>
-        (Taipei)
-    </div>
-</div>
-
-
-<div class="travel-year">2025</div>
-
-<div class="travel-row">
-    <div class="travel-date">11/19 – 11/21</div>
-    <div>
-        Permutation-equivariant quantum K-theory of a point,
-        <a href="https://sites.google.com/view/hcmcfallworkshop2025/home">
-        KIAS Math–HCMC Fall Workshop 2025
-        </a>
-        (Jeongseon)
-    </div>
-</div>
-
-<div class="travel-row">
-    <div class="travel-date">11/3 – 11/7</div>
-    <div>
-        Permutation-equivariant quantum K-theory of a point,
-        <a href="https://idv.sinica.edu.tw/ypleemath/kteg_2025/">
-        Korea–Taiwan Enumerative Geometry Meeting 2025
-        </a>
-        (Tainan)
-    </div>
-</div>
-
-<div class="travel-row">
-    <div class="travel-date">9/25 – 9/29</div>
-    <div>
-        Genus zero quantum K-invariants and Gopakumar–Vafa invariants on semi-positive varieties,
-        <a href="https://pseudoholomorphic.fpark.tmu.ac.jp/EASC2025/EASC2025.html">
-        East Asian Symplectic Conference 2025
-        </a>
-        (Sapporo)
-    </div>
-</div>
-
-<div class="travel-row">
-    <div class="travel-date">9/16 – 9/19</div>
-    <div>
-        Permutation-equivariant quantum K-theory of a point,
-        <a href="https://arkadijbojko.github.io/webpage/seminars/Sinica/">
-        SIMIS–Sinica Interdisciplinary Workshop
-        </a>
-        (Shanghai)
-    </div>
-</div>
-
-<div class="travel-row">
-    <div class="travel-date">8/7</div>
-    <div>
-        Genus 1 quantum K-theory of a point,
-        <a href="https://www.math.sinica.edu.tw/f59addca-1da6-47fd-9bb8-18d087da6088/posts/15509">
-        Academia Sinica
-        </a>
-        (Taipei)
-    </div>
-</div>
-
-
-<div class="travel-year">2024</div>
-
-<div class="travel-row">
-    <div class="travel-date">10/16</div>
-    <div>
-        K-theoretic multiple cover formula on Calabi–Yau threefolds,
-        <a href="https://research.ipmu.jp/seminar/?seminar_id=3261">
-        Special Seminar, Kavli IPMU
-        </a>
-        (Kashiwa)
-    </div>
-</div>
-
-<div class="travel-row">
-    <div class="travel-date">9/30 – 10/4</div>
-    <div>
-        K-theoretic multiple cover formula,
-        <a href="https://sites.google.com/view/seoul-taipei-meeting">
-        Seoul–Taipei Enumerative Geometry Meeting
-        </a>
-        (Busan)
-    </div>
-</div>
-
-
-<div class="travel-year">2023</div>
-
-<div class="travel-row">
-    <div class="travel-date">11/6 – 11/10</div>
-    <div>
-        Quantum K-invariants = Gopakumar–Vafa invariants on Calabi–Yau threefolds at genus zero,
-        <a href="http://events.kias.re.kr/h/AGEA23/">
-        Algebraic Geometry in East Asia
-        </a>
-        (Seoul)
-    </div>
-</div>
-
-<div class="travel-row">
-    <div class="travel-date">7/5 – 7/6</div>
-    <div>
-        Quantum K-invariants = Gopakumar–Vafa invariants on Calabi–Yau threefolds at genus zero,
-        Concerto in Quantum K-theory
-        (Hangzhou)
-    </div>
-</div>
-
-<div class="travel-row">
-    <div class="travel-date">6/2 – 6/16</div>
-    <div>
-        BCOV conjectures on quintic threefolds,
-        <a href="https://www.tims.ntu.edu.tw/modules/news/article.php?storyid=4129">
-        Calabi–Yau with Small Parameters
-        </a>
-        (Taipei)
-    </div>
-</div>
-
-
-<div class="travel-year">2019</div>
-
-<div class="travel-row">
-    <div class="travel-date"></div>
-    <div>
-        Virasoro constraints for moduli of weighted pointed stable curves,
-        FRAGMENT Seminar
-        (Fort Collins)
-    </div>
-</div>
-
-</section>
-
-
-<!-- ====================================================== -->
-<!-- TEACHING -->
-<!-- ====================================================== -->
-
-<section id="teaching" class="page-section">
-
-<h1>Teaching</h1>
-<hr>
-
-<div class="teaching-row">
-    <div>Spring 2022</div>
-    <div>Math 1090 Business Algebra (Instructor)</div>
-</div>
-
-<div class="teaching-row">
-    <div>Fall 2021</div>
-    <div>Math 1090 Business Algebra (Instructor)</div>
-</div>
-
-<div class="teaching-row">
-    <div>Fall 2020</div>
-    <div>Math 1060 Trigonometry (Instructor)</div>
-</div>
-
-<div class="teaching-row">
-    <div>Spring 2020</div>
-    <div>Math 1060 Trigonometry (Instructor)</div>
-</div>
-
-<div class="teaching-row">
-    <div>Fall 2019</div>
-    <div>Math 1090 Business Algebra (Instructor)</div>
-</div>
-
-<div class="teaching-row">
-    <div>Fall 2018</div>
-    <div>Math 1060 Trigonometry (Instructor)</div>
-</div>
-
-<div class="teaching-row">
-    <div>Spring 2018</div>
-    <div>Math 2250 Differential Equations and Linear Algebra (Teaching assistant)</div>
-</div>
-
-<div class="teaching-row">
-    <div>Fall 2017</div>
-    <div>Math 1210 Calculus I (Teaching assistant)</div>
-</div>
-
-</section>
-
-</main>
-
-
-<script>
-function showSection(sectionId) {
-
-    var sections = document.querySelectorAll('.page-section');
-    var links = document.querySelectorAll('nav a');
-
-    sections.forEach(function(section) {
-        section.classList.remove('active');
+      const [a, b, c] = values;
+
+      status.classList.remove("error");
+      status.textContent = `Applied (${a}, ${b}, ${c}). Order n = ${n}.`;
+
+      updateVisualization({ a, b, c, n });
     });
 
-    links.forEach(function(link) {
-        link.classList.remove('active');
-    });
+    function updateVisualization(parameters) {
+      // TODO: connect your numerical solver and plotting code here.
+      // No period ratio is computed by this placeholder.
 
-    document.getElementById(sectionId).classList.add('active');
-    document.getElementById('nav-' + sectionId).classList.add('active');
-
-    window.scrollTo(0, 0);
-}
-
-document.getElementById('nav-home').classList.add('active');
-</script>
-
+      document.getElementById("plot-message").textContent =
+        `Parameters received for n = ${parameters.n}. Add your visualization here.`;
+    }
+  </script>
 </body>
 </html>
