@@ -86,7 +86,7 @@ nav a[aria-current="page"] {
   background: var(--accent);
 }
 
-/* Shared page layout */
+/* Shared layout */
 
 main,
 .site-footer {
@@ -105,8 +105,6 @@ main {
 .page-heading {
   padding: 48px 0 24px;
 }
-
-/* Typography */
 
 h1,
 h2 {
@@ -145,12 +143,9 @@ p {
   font-size: 14px;
 }
 
-/* Panels and content */
-
 .panel {
   min-width: 0;
   padding: 24px;
-
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -165,7 +160,7 @@ p {
   gap: 20px;
 }
 
-/* Skeleton layouts used by the Limits page */
+/* Skeleton layouts */
 
 .experiment-layout {
   display: grid;
@@ -183,7 +178,6 @@ p {
 .plot-placeholder {
   display: grid;
   place-items: center;
-
   min-height: 280px;
   padding: 24px;
 
@@ -191,11 +185,10 @@ p {
   background: #eff3e9;
   border: 1px dashed #a7b8a4;
   border-radius: 5px;
-
   text-align: center;
 }
 
-/* Form controls */
+/* Controls */
 
 label {
   display: block;
@@ -243,8 +236,6 @@ button:disabled {
   cursor: default;
 }
 
-/* Status messages and captions */
-
 .status {
   margin: 18px 0 0;
   color: var(--muted);
@@ -261,7 +252,7 @@ button:disabled {
   font-size: 14px;
 }
 
-/* Numerical Explore page: attachment controls */
+/* Explore */
 
 .attachment-bar {
   display: grid;
@@ -269,7 +260,6 @@ button:disabled {
     repeat(3, minmax(65px, 1fr))
     minmax(165px, 2fr)
     auto auto;
-
   align-items: end;
   gap: 14px;
 }
@@ -282,8 +272,6 @@ button:disabled {
 .attachment-bar button {
   width: auto;
 }
-
-/* Numerical Explore page: image panels */
 
 .image-pair {
   display: grid;
@@ -298,7 +286,142 @@ button:disabled {
   height: 340px;
 }
 
-/* Shared footer */
+/* Limits controls */
+
+.limits-inputs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.limits-inputs .wide-control {
+  grid-column: span 2;
+}
+
+.limits-inputs input,
+.limits-inputs select {
+  margin-bottom: 0;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+form .button-row {
+  margin-top: 20px;
+}
+
+.button-row button {
+  width: auto;
+}
+
+.limit-statuses {
+  margin: 16px 0;
+}
+
+.limit-statuses .status {
+  margin: 4px 0;
+}
+
+.limits-toolbar {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.limits-toolbar select {
+  max-width: 340px;
+  margin-bottom: 0;
+}
+
+.limits-toolbar input[type="range"] {
+  margin-bottom: 0;
+}
+
+.pan-buttons button {
+  min-width: 44px;
+}
+
+/* Limits plots */
+
+.limit-plots {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.limit-canvas {
+  display: block;
+  width: 100%;
+  height: 340px;
+}
+
+#limit-lens {
+  cursor: grab;
+  touch-action: none;
+}
+
+#limit-lens:active {
+  cursor: grabbing;
+}
+
+.check-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.check-label input {
+  width: auto;
+  margin: 0;
+}
+
+.precision-note {
+  overflow-wrap: anywhere;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Trace records */
+
+.trace-record {
+  margin-top: 24px;
+}
+
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.trace-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+
+.trace-table th,
+.trace-table td {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.trace-table tr.selected {
+  background: #eff3e9;
+}
+
+.trace-table button {
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+/* Footer */
 
 .site-footer {
   padding: 24px 0;
@@ -307,7 +430,7 @@ button:disabled {
   font-size: 14px;
 }
 
-/* Tablet layout */
+/* Responsive layouts */
 
 @media (max-width: 950px) {
   .attachment-bar {
@@ -315,7 +438,15 @@ button:disabled {
   }
 }
 
-/* Smaller screens */
+@media (max-width: 800px) {
+  .limit-plots {
+    grid-template-columns: 1fr;
+  }
+
+  .limits-inputs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
 @media (max-width: 760px) {
   .experiment-layout,
@@ -340,8 +471,6 @@ button:disabled {
   }
 }
 
-/* Mobile Explore layout */
-
 @media (max-width: 700px) {
   .attachment-bar > div:nth-child(4) {
     grid-column: 1 / -1;
@@ -362,5 +491,19 @@ button:disabled {
   .attachment-bar select,
   .attachment-bar button {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .limits-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .limits-inputs .wide-control {
+    grid-column: auto;
+  }
+
+  .limit-plots .panel {
+    padding: 14px;
   }
 }
