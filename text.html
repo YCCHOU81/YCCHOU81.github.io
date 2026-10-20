@@ -4,110 +4,61 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- EDIT: browser title -->
-  <title>Hemisphere Atlas</title>
+  <title>Hemisphere Atlas — Home</title>
 
   <link rel="stylesheet" href="styles.css">
   <script src="main.js" defer></script>
 </head>
 
 <body>
-  <!-- EDIT: project name and navigation -->
   <header class="site-header">
-    <a class="brand" href="#home">Hemisphere Atlas</a>
+    <a class="brand" href="text.html" data-page="text.html">
+      Hemisphere Atlas
+    </a>
 
     <nav aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#explore">Explore</a>
-      <a href="#about">About</a>
+      <a href="text.html"
+         data-page="text.html"
+         aria-current="page">
+        Home
+      </a>
+
+      <a href="explore.html" data-page="explore.html">
+        Explore
+      </a>
+
+      <a href="limits.html" data-page="limits.html">
+        Limits &amp; Zoom
+      </a>
+
+      <a href="mathematics.html" data-page="mathematics.html">
+        Mathematics
+      </a>
     </nav>
   </header>
 
+  <!-- This file contains ONLY the Home content. -->
   <main>
-    <!-- EDIT: introduction -->
-    <section id="home">
+    <section class="introduction">
       <p class="eyebrow">INTERACTIVE MATHEMATICS</p>
-      <h1>Explore spherical tori.</h1>
+
+      <h1>Hemisphere Atlas</h1>
 
       <p class="description">
-        Write a short introduction to your project here.
-        Explain what visitors can change and what the pictures represent.
+        An interactive project exploring spherical tori,
+        hemisphere attachments, and conformal structures.
       </p>
 
-      <a href="#explore">Start exploring ↓</a>
-    </section>
-
-    <!-- EDIT: controls and visualization -->
-    <section id="explore" aria-labelledby="explore-title">
-      <p class="eyebrow">EXPERIMENT</p>
-      <h2 id="explore-title">Choose your parameters</h2>
-
-      <p class="description">
-        Enter three attachment counts, then apply them.
-      </p>
-
-      <div class="experiment-layout">
-        <form id="parameter-form" class="panel">
-          <h3>Attachment counts</h3>
-
-          <label for="a">
-            a
-            <input id="a" name="a" type="number"
-                   min="0" step="1" value="1" required>
-          </label>
-
-          <label for="b">
-            b
-            <input id="b" name="b" type="number"
-                   min="0" step="1" value="0" required>
-          </label>
-
-          <label for="c">
-            c
-            <input id="c" name="c" type="number"
-                   min="0" step="1" value="0" required>
-          </label>
-
-          <button type="submit">Apply parameters</button>
-
-          <p id="status" class="status"
-             role="status" aria-live="polite">
-            Choose values and click Apply parameters.
-          </p>
-        </form>
-
-        <div class="panel">
-          <h3>Visualization</h3>
-
-          <!-- Later, replace this placeholder with a canvas or SVG. -->
-          <div id="plot" class="plot-placeholder">
-            <p id="plot-message">Your visualization goes here.</p>
-          </div>
-
-          <p class="caption">
-            This skeleton includes only the interface.
-            The mathematical solver will be added later.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDIT: mathematical explanation and references -->
-    <section id="about" aria-labelledby="about-title">
-      <p class="eyebrow">BACKGROUND</p>
-      <h2 id="about-title">About this project</h2>
-
-      <p class="description">
-        Add your mathematical explanation, instructions,
-        and references here.
-      </p>
+      <a class="button"
+         href="explore.html"
+         data-page="explore.html">
+        Open the explorer →
+      </a>
     </section>
   </main>
 
-  <!-- EDIT: author information -->
-  <footer>
-    <span>Your name / institution</span>
-    <a href="#home">Back to top ↑</a>
+  <footer class="site-footer">
+    Your name / institution
   </footer>
 </body>
 </html>
