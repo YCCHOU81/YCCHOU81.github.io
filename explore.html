@@ -41,58 +41,99 @@
       <h1>Hemisphere attachments</h1>
 
       <p class="description">
-        Choose attachment counts and compare the base triangle
-        with the resulting triangle.
+        Enter attachment counts to compare the conformal image of the
+        base triangle with the image after attaching hemispheres.
       </p>
     </section>
 
-    <div class="experiment-layout">
-      <form id="attachment-form" class="panel">
-        <h2>Attachment counts</h2>
-
+    <form id="attachment-form" class="panel attachment-bar">
+      <div>
         <label for="a">Edge a</label>
-        <input id="a" name="a"
-               type="number" min="0" step="1"
+        <input id="a"
+               type="number"
+               min="0" max="11" step="1"
                value="1" required>
+      </div>
 
+      <div>
         <label for="b">Edge b</label>
-        <input id="b" name="b"
-               type="number" min="0" step="1"
+        <input id="b"
+               type="number"
+               min="0" max="11" step="1"
                value="0" required>
+      </div>
 
+      <div>
         <label for="c">Edge c</label>
-        <input id="c" name="c"
-               type="number" min="0" step="1"
+        <input id="c"
+               type="number"
+               min="0" max="11" step="1"
                value="0" required>
+      </div>
 
-        <button type="submit">Apply attachment</button>
+      <div>
+        <label for="quality">Sampling</label>
+        <select id="quality">
+          <option value="8">Quick — 45 points</option>
+          <option value="12" selected>Standard — 91 points</option>
+          <option value="18">Fine — 190 points</option>
+        </select>
+      </div>
 
-        <p id="attachment-status"
-           class="status"
-           role="status"
-           aria-live="polite">
-          Choose counts and apply them.
-        </p>
-      </form>
+      <button id="compute" type="submit">
+        Compute images
+      </button>
 
-      <section class="panel" aria-labelledby="comparison-heading">
-        <h2 id="comparison-heading">Comparison</h2>
+      <button id="cancel" type="button" disabled>
+        Cancel
+      </button>
+    </form>
 
-        <div class="comparison-grid">
-          <div class="plot-placeholder">
-            Base triangle: n = 1
-          </div>
+    <p id="attachment-status"
+       class="status"
+       role="status"
+       aria-live="polite"></p>
 
-          <div id="result-placeholder" class="plot-placeholder">
-            Resulting triangle
-          </div>
-        </div>
+    <p class="caption">
+      Supported: a + b + c ≤ 11; n = 1 + a + b + c.
+    </p>
 
-        <p class="caption">
-          Plot placeholders. The numerical solver is not connected yet.
-        </p>
+    <div class="image-pair">
+      <section class="panel">
+        <h2>Base: n = 1</h2>
+
+        <canvas id="base-image"
+                class="image-canvas"
+                role="img"
+                aria-label="Base conformal image in the marked tau chart">
+          The base conformal image appears here.
+        </canvas>
+      </section>
+
+      <section class="panel">
+        <h2 id="result-heading">Resulting image</h2>
+
+        <canvas id="result-image"
+                class="image-canvas"
+                role="img"
+                aria-label="Attached conformal image in the marked tau chart">
+          The attached conformal image appears here.
+        </canvas>
       </section>
     </div>
+
+    <p class="caption">
+      Both plots use the same marked τ chart, with 0 &lt; Re τ &lt; 1.
+      Height is compactified to include infinity.
+      Shading shows a sampled interior; dashed edges mark the inset
+      sampling boundary. The true boundary and cusp limits are not
+      computed here. Unresolved samples are omitted.
+      These are numerical approximations.
+    </p>
+
+    <noscript>
+      <p>Enable JavaScript to run the numerical computation.</p>
+    </noscript>
   </main>
 
   <footer class="site-footer">
