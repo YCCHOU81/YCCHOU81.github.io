@@ -4,198 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- EDIT: page title -->
+  <!-- EDIT: browser title -->
   <title>Hemisphere Atlas</title>
 
-  <style>
-    /* EDIT: colors and page width */
-    :root {
-      --background: #f6f4ed;
-      --panel: #fcfcf7;
-      --text: #253b33;
-      --muted: #596e62;
-      --accent: #285f65;
-      --border: #d6ded2;
-      --width: 1100px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      font: 16px/1.65 system-ui, sans-serif;
-    }
-
-    a {
-      color: var(--accent);
-      text-underline-offset: 4px;
-    }
-
-    button, input { font: inherit; }
-
-    a, button, input { outline-offset: 4px; }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px 24px;
-      padding: 18px max(24px, calc((100% - var(--width)) / 2));
-      background: var(--background);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .brand {
-      font-weight: 650;
-      text-decoration: none;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-
-    nav a { text-decoration: none; }
-
-    nav a:hover { text-decoration: underline; }
-
-    main, footer {
-      width: min(var(--width), calc(100% - 48px));
-      margin: auto;
-    }
-
-    section {
-      padding: 48px 0;
-      scroll-margin-top: 120px;
-    }
-
-    section + section {
-      border-top: 1px solid var(--border);
-    }
-
-    h1, h2 {
-      font-family: Georgia, serif;
-      font-weight: 400;
-      line-height: 1.15;
-    }
-
-    h1 {
-      margin: 0 0 20px;
-      font-size: clamp(36px, 5vw, 60px);
-    }
-
-    h2 { font-size: 32px; }
-
-    h3 { margin-top: 0; }
-
-    .eyebrow {
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: 2px;
-    }
-
-    .description {
-      max-width: 700px;
-      color: var(--muted);
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 260px minmax(0, 1fr);
-      gap: 24px;
-      margin-top: 28px;
-    }
-
-    .panel {
-      min-width: 0;
-      padding: 24px;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-
-    label {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 16px;
-    }
-
-    input {
-      width: 130px;
-      min-width: 0;
-      padding: 8px 12px;
-      color: var(--text);
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 5px;
-    }
-
-    button {
-      padding: 10px 16px;
-      color: white;
-      background: var(--accent);
-      border: 0;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    form button { width: 100%; }
-
-    .status, .caption {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .error { color: #a03f2b; }
-
-    .plot {
-      display: grid;
-      place-items: center;
-      min-height: 280px;
-      padding: 24px;
-      background: #eff3e9;
-      border: 1px dashed #a7b8a4;
-      border-radius: 5px;
-      text-align: center;
-      color: var(--muted);
-    }
-
-    footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 24px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    @media (max-width: 650px) {
-      .layout { grid-template-columns: 1fr; }
-      nav { gap: 18px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
 </head>
 
 <body>
-  <!-- EDIT: site name and navigation -->
-  <header>
+  <!-- EDIT: project name and navigation -->
+  <header class="site-header">
     <a class="brand" href="#home">Hemisphere Atlas</a>
+
     <nav aria-label="Main navigation">
       <a href="#home">Home</a>
       <a href="#explore">Explore</a>
@@ -208,10 +28,12 @@
     <section id="home">
       <p class="eyebrow">INTERACTIVE MATHEMATICS</p>
       <h1>Explore spherical tori.</h1>
+
       <p class="description">
         Write a short introduction to your project here.
         Explain what visitors can change and what the pictures represent.
       </p>
+
       <a href="#explore">Start exploring ↓</a>
     </section>
 
@@ -219,109 +41,73 @@
     <section id="explore" aria-labelledby="explore-title">
       <p class="eyebrow">EXPERIMENT</p>
       <h2 id="explore-title">Choose your parameters</h2>
+
       <p class="description">
         Enter three attachment counts, then apply them.
-        The visualization below is a placeholder.
       </p>
 
-      <div class="layout">
+      <div class="experiment-layout">
         <form id="parameter-form" class="panel">
           <h3>Attachment counts</h3>
 
           <label for="a">
             a
-            <input id="a" type="number" min="0" step="1" value="1" required>
+            <input id="a" name="a" type="number"
+                   min="0" step="1" value="1" required>
           </label>
 
           <label for="b">
             b
-            <input id="b" type="number" min="0" step="1" value="0" required>
+            <input id="b" name="b" type="number"
+                   min="0" step="1" value="0" required>
           </label>
 
           <label for="c">
             c
-            <input id="c" type="number" min="0" step="1" value="0" required>
+            <input id="c" name="c" type="number"
+                   min="0" step="1" value="0" required>
           </label>
 
           <button type="submit">Apply parameters</button>
-          <p id="status" class="status" role="status" aria-live="polite">
-            Choose parameters to begin.
+
+          <p id="status" class="status"
+             role="status" aria-live="polite">
+            Choose values and click Apply parameters.
           </p>
         </form>
 
         <div class="panel">
           <h3>Visualization</h3>
 
-          <!-- Replace this container with your canvas or SVG -->
-          <div id="plot" class="plot">
+          <!-- Later, replace this placeholder with a canvas or SVG. -->
+          <div id="plot" class="plot-placeholder">
             <p id="plot-message">Your visualization goes here.</p>
           </div>
 
           <p class="caption">
-            This skeleton does not yet include the numerical solver.
+            This skeleton includes only the interface.
+            The mathematical solver will be added later.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- EDIT: explanation and references -->
+    <!-- EDIT: mathematical explanation and references -->
     <section id="about" aria-labelledby="about-title">
       <p class="eyebrow">BACKGROUND</p>
       <h2 id="about-title">About this project</h2>
+
       <p class="description">
-        Add your mathematical explanation, instructions, and references here.
+        Add your mathematical explanation, instructions,
+        and references here.
       </p>
     </section>
-
-    <!-- To add another section, copy the About section above,
-         give it a unique ID, and add its link to the navigation. -->
   </main>
 
+  <!-- EDIT: author information -->
   <footer>
     <span>Your name / institution</span>
     <a href="#home">Back to top ↑</a>
   </footer>
-
-  <script>
-    const form = document.getElementById("parameter-form");
-    const status = document.getElementById("status");
-
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      const values = ["a", "b", "c"].map(function (id) {
-        return Number(document.getElementById(id).value);
-      });
-
-      const valid = values.every(function (value) {
-        return Number.isSafeInteger(value) && value >= 0;
-      });
-
-      const n = 1 + values.reduce(function (sum, value) {
-        return sum + value;
-      }, 0);
-
-      if (!valid || !Number.isSafeInteger(n)) {
-        status.textContent = "Please enter smaller nonnegative whole numbers.";
-        status.classList.add("error");
-        return;
-      }
-
-      const [a, b, c] = values;
-
-      status.classList.remove("error");
-      status.textContent = `Applied (${a}, ${b}, ${c}). Order n = ${n}.`;
-
-      updateVisualization({ a, b, c, n });
-    });
-
-    function updateVisualization(parameters) {
-      // TODO: connect your numerical solver and plotting code here.
-      // No period ratio is computed by this placeholder.
-
-      document.getElementById("plot-message").textContent =
-        `Parameters received for n = ${parameters.n}. Add your visualization here.`;
-    }
-  </script>
 </body>
 </html>
