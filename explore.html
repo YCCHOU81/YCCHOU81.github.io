@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Hemisphere Atlas — Explore</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="text.html" data-page="text.html">
+      Hemisphere Atlas
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="text.html" data-page="text.html">Home</a>
+
+      <a href="explore.html"
+         data-page="explore.html"
+         aria-current="page">
+        Explore
+      </a>
+
+      <a href="limits.html" data-page="limits.html">
+        Limits &amp; Zoom
+      </a>
+
+      <a href="mathematics.html" data-page="mathematics.html">
+        Mathematics
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-heading">
+      <p class="eyebrow">EXPLORE</p>
+      <h1>Hemisphere attachments</h1>
+
+      <p class="description">
+        Choose attachment counts and compare the base triangle
+        with the resulting triangle.
+      </p>
+    </section>
+
+    <div class="experiment-layout">
+      <form id="attachment-form" class="panel">
+        <h2>Attachment counts</h2>
+
+        <label for="a">Edge a</label>
+        <input id="a" name="a"
+               type="number" min="0" step="1"
+               value="1" required>
+
+        <label for="b">Edge b</label>
+        <input id="b" name="b"
+               type="number" min="0" step="1"
+               value="0" required>
+
+        <label for="c">Edge c</label>
+        <input id="c" name="c"
+               type="number" min="0" step="1"
+               value="0" required>
+
+        <button type="submit">Apply attachment</button>
+
+        <p id="attachment-status"
+           class="status"
+           role="status"
+           aria-live="polite">
+          Choose counts and apply them.
+        </p>
+      </form>
+
+      <section class="panel" aria-labelledby="comparison-heading">
+        <h2 id="comparison-heading">Comparison</h2>
+
+        <div class="comparison-grid">
+          <div class="plot-placeholder">
+            Base triangle: n = 1
+          </div>
+
+          <div id="result-placeholder" class="plot-placeholder">
+            Resulting triangle
+          </div>
+        </div>
+
+        <p class="caption">
+          Plot placeholders. The numerical solver is not connected yet.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    Your name / institution
+  </footer>
+</body>
+</html>
