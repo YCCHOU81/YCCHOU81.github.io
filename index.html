@@ -18,7 +18,8 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+    overflow-y: scroll;
 }
 
 body {
@@ -90,20 +91,35 @@ nav {
     gap: 10px 34px;
 }
 
-nav a {
-    color: black;
+.nav-link {
+    appearance: none;
+    -webkit-appearance: none;
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+
+    font-family: inherit;
+    font-size: inherit;
     font-weight: bold;
+
+    color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-nav a:hover {
+.nav-link:hover {
     color: #666666;
-    text-decoration: none;
 }
 
-nav a.active {
+.nav-link.active {
     color: #336699;
+}
+
+.nav-link:focus-visible {
+    outline: 1px solid #666666;
+    outline-offset: 4px;
 }
 
 
@@ -150,7 +166,13 @@ nav a.active {
 /* Papers */
 /* ====================================================== */
 
-.paper-entry {
+.paper-list {
+    padding-left: 22px;
+    margin-top: 0;
+}
+
+.paper-list .paper-entry {
+    padding-left: 3px;
     margin-bottom: 19px;
 }
 
@@ -318,33 +340,57 @@ nav a.active {
 <!-- ====================================================== -->
 
 <nav>
-<div class="nav-inner">
 
-    <a id="nav-home"
-       href="#home"
-       onclick="showSection('home');">
-       Home
-    </a>
+<div class="nav-inner"
+     role="tablist"
+     aria-label="Website sections">
 
-    <a id="nav-papers"
-       href="#papers"
-       onclick="showSection('papers');">
-       Papers
-    </a>
+    <button
+        class="nav-link"
+        id="nav-home"
+        type="button"
+        role="tab"
+        aria-controls="home"
+        aria-selected="true"
+        onclick="showSection('home')">
+        Home
+    </button>
 
-    <a id="nav-talks"
-       href="#talks"
-       onclick="showSection('talks');">
-       Talks &amp; Travels
-    </a>
+    <button
+        class="nav-link"
+        id="nav-papers"
+        type="button"
+        role="tab"
+        aria-controls="papers"
+        aria-selected="false"
+        onclick="showSection('papers')">
+        Papers
+    </button>
 
-    <a id="nav-teaching"
-       href="#teaching"
-       onclick="showSection('teaching');">
-       Teaching
-    </a>
+    <button
+        class="nav-link"
+        id="nav-talks"
+        type="button"
+        role="tab"
+        aria-controls="talks"
+        aria-selected="false"
+        onclick="showSection('talks')">
+        Talks &amp; Travels
+    </button>
+
+    <button
+        class="nav-link"
+        id="nav-teaching"
+        type="button"
+        role="tab"
+        aria-controls="teaching"
+        aria-selected="false"
+        onclick="showSection('teaching')">
+        Teaching
+    </button>
 
 </div>
+
 </nav>
 
 
@@ -355,7 +401,10 @@ nav a.active {
 <!-- HOME -->
 <!-- ====================================================== -->
 
-<section id="home" class="page-section active">
+<section id="home"
+         class="page-section active"
+         role="tabpanel"
+         aria-labelledby="nav-home">
 
 <div class="home-header">
 
@@ -396,7 +445,14 @@ Korea Institute for Advanced Study
 <div class="home-intro">
 
 <p>
-I am an HCMC Fellow at the Korea Institute for Advanced Study (KIAS), working in algebraic geometry with interests in enumerative geometry, quantum K-theory, and integrable systems. My recent research focuses on two main directions: quantum K-theory and Gopakumar--Vafa invariants, and the geometry of generalized Lamé equations and their monodromy. I received my PhD in Mathematics from the University of Utah in May 2022 under the supervision of
+I am an HCMC Fellow at the Korea Institute for Advanced Study (KIAS),
+working in algebraic geometry with interests in enumerative geometry,
+quantum K-theory, and integrable systems.
+My recent research focuses on two main directions:
+quantum K-theory and Gopakumar--Vafa invariants,
+and the geometry of generalized Lamé equations and their monodromy.
+I received my PhD in Mathematics from the University of Utah in May 2022
+under the supervision of
 <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>,
 and previously held a postdoctoral position at Academia Sinica.
 Here is my <a href="CV_GitHub.pdf">CV</a>.
@@ -417,7 +473,10 @@ Here is my <a href="CV_GitHub.pdf">CV</a>.
 <!-- PAPERS -->
 <!-- ====================================================== -->
 
-<section id="papers" class="page-section">
+<section id="papers"
+         class="page-section"
+         role="tabpanel"
+         aria-labelledby="nav-papers">
 
 <h1>Papers</h1>
 
@@ -429,39 +488,82 @@ Here is my <a href="CV_GitHub.pdf">CV</a>.
 <ul class="paper-list">
 
 <li class="paper-entry">
+
 <i>RC-positivity of complex surfaces</i>,
-with <a href="https://wuuuruuu.github.io/">Kuang-Ru Wu</a>
+with
+<a href="https://wuuuruuu.github.io/">Kuang-Ru Wu</a>
+
 <br>
-<a href="https://arxiv.org/abs/2609.33656">arXiv:2609.33656</a>
+
+<a href="https://arxiv.org/abs/2609.33656">
+arXiv:2609.33656
+</a>
+
 </li>
 
+
 <li class="paper-entry">
-<i>Virasoro Recursions for Simplicially Stable Curves with Colliding Markings</i>,
-with <a href="https://people.math.osu.edu/tseng.109/">Hsian-Hua Tseng</a>
+
+<i>
+Virasoro Recursions for Simplicially Stable Curves
+with Colliding Markings
+</i>,
+with
+<a href="https://people.math.osu.edu/tseng.109/">
+Hsian-Hua Tseng
+</a>
+
 <br>
-<a href="https://arxiv.org/abs/2608.12507">arXiv:2608.12507</a> |
+
+<a href="https://arxiv.org/abs/2608.12507">
+arXiv:2608.12507
+</a>
+|
 submitted
+
 </li>
 
+
 <li class="paper-entry">
-<i>On the K-theoretic logarithmic double ramification class</i>,
+
+<i>
+On the K-theoretic logarithmic double ramification class
+</i>,
 with Kamyar Amini,
 <a href="http://www.logetale.com">Leo Herr</a>,
 <a href="https://davidholmes.nl">David Holmes</a>,
 <a href="https://irit.hk">Irit Huq-Kuruvilla</a>,
-and <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+and
+<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+
 <br>
-<a href="https://arxiv.org/abs/2607.13376">arXiv:2607.13376</a> |
+
+<a href="https://arxiv.org/abs/2607.13376">
+arXiv:2607.13376
+</a>
+|
 submitted
+
 </li>
 
+
 <li class="paper-entry">
+
 <i>A theory of generalized Lamé curves</i>,
-with <a href="http://www.math.ntu.edu.tw/~dragon/">Chin-Lung Wang</a>
+with
+<a href="http://www.math.ntu.edu.tw/~dragon/">
+Chin-Lung Wang
+</a>
 and Po-Sheng Wu
+
 <br>
-<a href="https://arxiv.org/abs/2604.21880">arXiv:2604.21880</a> |
+
+<a href="https://arxiv.org/abs/2604.21880">
+arXiv:2604.21880
+</a>
+|
 submitted
+
 </li>
 
 </ul>
@@ -472,80 +574,197 @@ submitted
 <ul class="paper-list">
 
 <li class="paper-entry">
-<i>Characterization and enumeration on Lamé equations with finite monodromy</i>,
-with <a href="http://www.math.ntu.edu.tw/~dragon/">Chin-Lung Wang</a>
+
+<i>
+Characterization and enumeration on Lamé equations
+with finite monodromy
+</i>,
+with
+<a href="http://www.math.ntu.edu.tw/~dragon/">
+Chin-Lung Wang
+</a>
 and Po-Sheng Wu
+
 <br>
-<a href="https://arxiv.org/abs/2402.16286">arXiv:2402.16286</a> |
+
+<a href="https://arxiv.org/abs/2402.16286">
+arXiv:2402.16286
+</a>
+|
 Trans. Amer. Math. Soc. 378 (2025), no. 8, 5279–5304
-<a href="https://doi.org/10.1090/tran/9195">[link]</a>
+
+<a href="https://doi.org/10.1090/tran/9195">
+[link]
+</a>
+
 </li>
 
+
 <li class="paper-entry">
-<i>Integrality of genus zero Gopakumar-Vafa type invariants of semi-positive varieties</i>
+
+<i>
+Integrality of genus zero Gopakumar-Vafa type invariants
+of semi-positive varieties
+</i>
+
 <br>
-<a href="https://arxiv.org/abs/2312.01413">arXiv:2312.01413</a> |
+
+<a href="https://arxiv.org/abs/2312.01413">
+arXiv:2312.01413
+</a>
+|
 Internat. J. Modern Phys. A 39 (2024), no. 33, 2446014
-<a href="https://doi.org/10.1142/S0217751X2446014X">[link]</a>
+
+<a href="https://doi.org/10.1142/S0217751X2446014X">
+[link]
+</a>
+
 </li>
 
+
 <li class="paper-entry">
+
 <i>Higher-genus quantum K-theory</i>,
-with <a href="http://www.logetale.com">Leo Herr</a>
-and <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+with
+<a href="http://www.logetale.com">Leo Herr</a>
+and
+<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+
 <br>
-<a href="https://arxiv.org/abs/2305.10137">arXiv:2305.10137</a> |
+
+<a href="https://arxiv.org/abs/2305.10137">
+arXiv:2305.10137
+</a>
+|
 Pacific J. Math. 330 (2024), no. 1, 85–121
-<a href="https://doi.org/10.2140/pjm.2024.330.85">[link]</a>
+
+<a href="https://doi.org/10.2140/pjm.2024.330.85">
+[link]
+</a>
+
 </li>
 
+
 <li class="paper-entry">
-<i>Quantum K-invariants and Gopakumar-Vafa invariants II.
-Calabi-Yau threefolds at genus zero</i>,
-with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+
+<i>
+Quantum K-invariants and Gopakumar-Vafa invariants II.
+Calabi-Yau threefolds at genus zero
+</i>,
+with
+<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+
 <br>
-<a href="https://arxiv.org/abs/2305.08480">arXiv:2305.08480</a> |
+
+<a href="https://arxiv.org/abs/2305.08480">
+arXiv:2305.08480
+</a>
+|
 Geom. Topol. 29 (2025), no. 9, 4665–4693
-<a href="https://msp.org/gt/2025/29-9/p03.xhtml">[link]</a>
+
+<a href="https://msp.org/gt/2025/29-9/p03.xhtml">
+[link]
+</a>
+
 </li>
 
-<li class="paper-entry">
-<i>Gopakumar-Vafa Invariants = Quantum K-invariants on Calabi-Yau threefolds</i>,
-with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
-<br>
-<a href="https://arxiv.org/abs/2212.13432">arXiv:2212.13432</a> |
-in <i>Categorical and Enumerative Aspects of Mirror Symmetry</i>,
-KIAS Springer Ser. Math. 5, Springer, Singapore, 2026, pp. 1–19
-<a href="https://link.springer.com/chapter/10.1007/978-981-95-0385-8_1">[link]</a>
-</li>
 
 <li class="paper-entry">
-<i>Quantum K-invariants and Gopakumar-Vafa invariants I.
-The quintic threefold</i>,
-with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+
+<i>
+Gopakumar-Vafa Invariants = Quantum K-invariants
+on Calabi-Yau threefolds
+</i>,
+with
+<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+
 <br>
-<a href="https://arxiv.org/abs/2211.00788">arXiv:2211.00788</a> |
+
+<a href="https://arxiv.org/abs/2212.13432">
+arXiv:2212.13432
+</a>
+|
+in
+<i>Categorical and Enumerative Aspects of Mirror Symmetry</i>,
+KIAS Springer Ser. Math. 5,
+Springer, Singapore, 2026, pp. 1–19
+
+<a href="https://link.springer.com/chapter/10.1007/978-981-95-0385-8_1">
+[link]
+</a>
+
+</li>
+
+
+<li class="paper-entry">
+
+<i>
+Quantum K-invariants and Gopakumar-Vafa invariants I.
+The quintic threefold
+</i>,
+with
+<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+
+<br>
+
+<a href="https://arxiv.org/abs/2211.00788">
+arXiv:2211.00788
+</a>
+|
 Amer. J. Math., accepted for publication
-<a href="https://www.press.jhu.edu/journals/american-journal-mathematics">[link]</a>
+
+<a href="https://www.press.jhu.edu/journals/american-journal-mathematics">
+[link]
+</a>
+
 </li>
 
+
 <li class="paper-entry">
+
 <i>The Log Product Formula in quantum K-theory</i>,
-with <a href="http://www.logetale.com">Leo Herr</a>
-and <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+with
+<a href="http://www.logetale.com">Leo Herr</a>
+and
+<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+
 <br>
-<a href="https://arxiv.org/abs/2012.09379">arXiv:2012.09379</a> |
-Math. Proc. Cambridge Philos. Soc. 175 (2023), no. 2, 225–252
-<a href="https://doi.org/10.1017/S0305004123000063">[link]</a>
+
+<a href="https://arxiv.org/abs/2012.09379">
+arXiv:2012.09379
+</a>
+|
+Math. Proc. Cambridge Philos. Soc.
+175 (2023), no. 2, 225–252
+
+<a href="https://doi.org/10.1017/S0305004123000063">
+[link]
+</a>
+
 </li>
 
+
 <li class="paper-entry">
-<i>Virasoro constraints for moduli of weighted pointed stable curves</i>,
-with <a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+
+<i>
+Virasoro constraints for moduli of weighted pointed stable curves
+</i>,
+with
+<a href="https://www.math.utah.edu/~yplee/">Y.P. Lee</a>
+
 <br>
-<a href="https://arxiv.org/abs/1908.09027">arXiv:1908.09027</a> |
-J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
-<a href="https://doi.org/10.1112/jlms.12618">[link]</a>
+
+<a href="https://arxiv.org/abs/1908.09027">
+arXiv:1908.09027
+</a>
+|
+J. Lond. Math. Soc. (2)
+106 (2022), no. 3, 2050–2074
+
+<a href="https://doi.org/10.1112/jlms.12618">
+[link]
+</a>
+
 </li>
 
 </ul>
@@ -556,24 +775,53 @@ J. Lond. Math. Soc. (2) 106 (2022), no. 3, 2050–2074
 <ul class="paper-list">
 
 <li class="paper-entry">
-<i>New Results in Gromov-Witten Theory of a Point and the Quintic Threefold</i>
+
+<i>
+New Results in Gromov-Witten Theory
+of a Point and the Quintic Threefold
+</i>
+
 <br>
+
 PhD thesis, University of Utah, 2022
+
 <br>
-Not intended for separate publication; the main results are covered by
-<i>Virasoro constraints for moduli of weighted pointed stable curves</i>
+
+Not intended for separate publication;
+the main results are covered by
+<i>
+Virasoro constraints for moduli of weighted pointed stable curves
+</i>
 and
-<i>Quantum K-invariants and Gopakumar-Vafa invariants I: The quintic threefold</i>.
+<i>
+Quantum K-invariants and Gopakumar-Vafa invariants I:
+The quintic threefold
+</i>.
+
 </li>
 
+
 <li class="paper-entry">
+
 <i>Generalized Lamé equation with finite monodromy</i>
+
 <br>
-<a href="https://arxiv.org/abs/1611.06643">arXiv:1611.06643</a> |
+
+<a href="https://arxiv.org/abs/1611.06643">
+arXiv:1611.06643
+</a>
+|
 Bachelor thesis, National Taiwan University
+
 <br>
-Not intended for separate publication; the main results are covered and generalized by
-<i>Characterization and enumeration on Lamé equations with finite monodromy</i>.
+
+Not intended for separate publication;
+the main results are covered and generalized by
+<i>
+Characterization and enumeration on Lamé equations
+with finite monodromy
+</i>.
+
 </li>
 
 </ul>
@@ -585,7 +833,10 @@ Not intended for separate publication; the main results are covered and generali
 <!-- TALKS & TRAVELS -->
 <!-- ====================================================== -->
 
-<section id="talks" class="page-section">
+<section id="talks"
+         class="page-section"
+         role="tabpanel"
+         aria-labelledby="nav-talks">
 
 <h1>Talks &amp; Travels</h1>
 
@@ -599,7 +850,7 @@ Not intended for separate publication; the main results are covered and generali
 <div class="travel-row">
 
     <div class="travel-date">
-    12/7 – 12/11
+        12/7 – 12/11
     </div>
 
     <div>
@@ -618,7 +869,7 @@ Not intended for separate publication; the main results are covered and generali
 <div class="travel-row">
 
     <div class="travel-date">
-    9/14 – 9/18
+        9/14 – 9/18
     </div>
 
     <div>
@@ -635,13 +886,14 @@ Not intended for separate publication; the main results are covered and generali
 <div class="travel-row">
 
     <div class="travel-date">
-    6/22 – 6/25
+        6/22 – 6/25
     </div>
 
     <div>
         Moduli of generalized Lamé curves,
         <a href="https://www.kms.or.kr/file/fileboard/3068357271_09fd86a1_2026spring_DayByDay-Program.pdf">
-        International Conference for the 80th Anniversary of the Korean Mathematical Society
+        International Conference for the 80th Anniversary
+        of the Korean Mathematical Society
         </a>
         (Seoul)
     </div>
@@ -652,7 +904,7 @@ Not intended for separate publication; the main results are covered and generali
 <div class="travel-row">
 
     <div class="travel-date">
-    4/27 – 4/30
+        4/27 – 4/30
     </div>
 
     <div>
@@ -671,7 +923,7 @@ Not intended for separate publication; the main results are covered and generali
 <div class="travel-row">
 
     <div class="travel-date">
-    11/19 – 11/21
+        11/19 – 11/21
     </div>
 
     <div>
@@ -688,7 +940,7 @@ Not intended for separate publication; the main results are covered and generali
 <div class="travel-row">
 
     <div class="travel-date">
-    11/3 – 11/7
+        11/3 – 11/7
     </div>
 
     <div>
@@ -705,7 +957,7 @@ Not intended for separate publication; the main results are covered and generali
 <div class="travel-row">
 
     <div class="travel-date">
-    9/25 – 9/29
+        9/25 – 9/29
     </div>
 
     <div>
@@ -723,7 +975,7 @@ Not intended for separate publication; the main results are covered and generali
 <div class="travel-row">
 
     <div class="travel-date">
-    9/16 – 9/19
+        9/16 – 9/19
     </div>
 
     <div>
@@ -740,7 +992,7 @@ Not intended for separate publication; the main results are covered and generali
 <div class="travel-row">
 
     <div class="travel-date">
-    8/7
+        8/7
     </div>
 
     <div>
@@ -759,7 +1011,7 @@ Not intended for separate publication; the main results are covered and generali
 <div class="travel-row">
 
     <div class="travel-date">
-    10/16
+        10/16
     </div>
 
     <div>
@@ -776,7 +1028,7 @@ Not intended for separate publication; the main results are covered and generali
 <div class="travel-row">
 
     <div class="travel-date">
-    9/30 – 10/4
+        9/30 – 10/4
     </div>
 
     <div>
@@ -795,12 +1047,12 @@ Not intended for separate publication; the main results are covered and generali
 <div class="travel-row">
 
     <div class="travel-date">
-    11/6 – 11/10
+        11/6 – 11/10
     </div>
 
     <div>
-        Quantum K-invariants = Gopakumar-Vafa invariants on
-        Calabi-Yau threefolds at genus zero,
+        Quantum K-invariants = Gopakumar-Vafa invariants
+        on Calabi-Yau threefolds at genus zero,
         <a href="http://events.kias.re.kr/h/AGEA23/">
         Algebraic Geometry in East Asia
         </a>
@@ -813,12 +1065,12 @@ Not intended for separate publication; the main results are covered and generali
 <div class="travel-row">
 
     <div class="travel-date">
-    7/5 – 7/6
+        7/5 – 7/6
     </div>
 
     <div>
-        Quantum K-invariants = Gopakumar-Vafa invariants on
-        Calabi-Yau threefolds at genus zero,
+        Quantum K-invariants = Gopakumar-Vafa invariants
+        on Calabi-Yau threefolds at genus zero,
         Concerto in Quantum K-theory
         (Hangzhou)
     </div>
@@ -829,7 +1081,7 @@ Not intended for separate publication; the main results are covered and generali
 <div class="travel-row">
 
     <div class="travel-date">
-    6/2 – 6/16
+        6/2 – 6/16
     </div>
 
     <div>
@@ -864,7 +1116,10 @@ Not intended for separate publication; the main results are covered and generali
 <!-- TEACHING -->
 <!-- ====================================================== -->
 
-<section id="teaching" class="page-section">
+<section id="teaching"
+         class="page-section"
+         role="tabpanel"
+         aria-labelledby="nav-teaching">
 
 <h1>Teaching</h1>
 
@@ -906,12 +1161,18 @@ Not intended for separate publication; the main results are covered and generali
 
 <div class="teaching-row">
     <div class="teaching-date">Spring 2018</div>
-    <div>Math 2250 Differential Equations and Linear Algebra (Teaching Assistant)</div>
+    <div>
+        Math 2250 Differential Equations and Linear Algebra
+        (Teaching Assistant)
+    </div>
 </div>
 
 <div class="teaching-row">
     <div class="teaching-date">Fall 2017</div>
-    <div>Math 1210 Calculus I (Teaching Assistant)</div>
+    <div>
+        Math 1210 Calculus I
+        (Teaching Assistant)
+    </div>
 </div>
 
 </div>
@@ -924,45 +1185,100 @@ Not intended for separate publication; the main results are covered and generali
 
 <script>
 
-function showSection(sectionId) {
+/* ====================================================== */
+/* Tab navigation without browser anchor scrolling */
+/* ====================================================== */
+
+var validSections = ['home', 'papers', 'talks', 'teaching'];
+
+
+function showSection(sectionId, updateHistory = true) {
+
+    if (!validSections.includes(sectionId)) {
+        sectionId = 'home';
+    }
 
     var sections = document.querySelectorAll('.page-section');
-    var links = document.querySelectorAll('nav a');
+    var buttons = document.querySelectorAll('.nav-link');
 
     sections.forEach(function(section) {
         section.classList.remove('active');
     });
 
-    links.forEach(function(link) {
-        link.classList.remove('active');
+    buttons.forEach(function(button) {
+        button.classList.remove('active');
+        button.setAttribute('aria-selected', 'false');
     });
 
-    document.getElementById(sectionId).classList.add('active');
-    document.getElementById('nav-' + sectionId).classList.add('active');
-}
+    document
+        .getElementById(sectionId)
+        .classList.add('active');
+
+    var activeButton =
+        document.getElementById('nav-' + sectionId);
+
+    activeButton.classList.add('active');
+    activeButton.setAttribute('aria-selected', 'true');
 
 
-/* Allow direct links such as #papers or #talks */
-
-function loadSectionFromHash() {
-
-    var sectionId = window.location.hash.substring(1);
+    /*
+       Update the URL without triggering the browser's
+       normal #anchor scrolling behavior.
+    */
 
     if (
-        sectionId === 'home' ||
-        sectionId === 'papers' ||
-        sectionId === 'talks' ||
-        sectionId === 'teaching'
+        updateHistory &&
+        window.location.hash !== '#' + sectionId
     ) {
-        showSection(sectionId);
-    } else {
-        showSection('home');
+        history.pushState(
+            { section: sectionId },
+            '',
+            '#' + sectionId
+        );
     }
 }
 
-window.addEventListener('hashchange', loadSectionFromHash);
 
-loadSectionFromHash();
+/* ====================================================== */
+/* Read direct links such as #papers */
+/* ====================================================== */
+
+function sectionFromHash() {
+
+    var sectionId =
+        window.location.hash.substring(1);
+
+    if (validSections.includes(sectionId)) {
+        return sectionId;
+    }
+
+    return 'home';
+}
+
+
+/* ====================================================== */
+/* Browser Back / Forward */
+/* ====================================================== */
+
+window.addEventListener(
+    'popstate',
+    function() {
+        showSection(
+            sectionFromHash(),
+            false
+        );
+    }
+);
+
+
+/* ====================================================== */
+/* Initial page */
+/* ====================================================== */
+
+showSection(
+    sectionFromHash(),
+    false
+);
 
 </script>
 
