@@ -1,0 +1,938 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The two additional hemisphere seeds, labeled dual graphs, repeated decoration counts, admissibility, marked monodromy triangles, stable numerical period computation, and the status of cusp asymptotics."><title>Hemisphere Atlas — Mathematics</title>
+<link rel="stylesheet" href="styles.css?v=20261022-seeds2">
+<script src="main.js?v=20261021-repeats4" defer>
+</script>
+<style>
+ .math-page .content-stack{max-width:1040px}.math-page .panel{padding:clamp(20px,3vw,32px);scroll-margin-top:100px}.math-page .panel p{max-width:83ch}.math-page h3{margin:24px 0 10px;font-size:19px}.math-page .equation{overflow-x:auto;margin:18px 0;padding:16px;background:#eff3e9;border-left:3px solid var(--accent);border-radius:4px}.math-page math{font-family:"Cambria Math","STIX Two Math",serif;font-size:1.08em}.math-page math[display="block"]{width:max-content;margin:0 auto}.math-page .math-note{padding:15px 18px;border-left:3px solid #b55e3c;background:#f8f0e9;border-radius:3px;margin:18px 0;line-height:1.65}.math-page .table-scroll{overflow-x:auto;margin:18px 0}.math-page table{width:100%;border-collapse:collapse;text-align:left;font-size:14px}.math-page caption{text-align:left;font-weight:600;color:var(--accent);padding:0 0 10px}.math-page th,.math-page td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}.math-page th{background:#f0f3eb}.math-page .cusp-table{min-width:640px}.math-page .cusp-table td:nth-child(n+2){white-space:nowrap}.math-page .cusp-table tr:nth-child(3n+1) td{border-top:2px solid #cbd4c4}.math-page li+li{margin-top:12px}.math-page .page-links,.case-links{display:flex;flex-wrap:wrap;gap:12px 20px}.math-page .jump-links{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 22px;padding:14px 18px;border:1px solid var(--border);border-radius:5px;background:#fcfcf7;font-size:13px}.seed-card-grid,.operation-card-grid,.source-region-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.math-case-card{padding:18px;border:1px solid var(--border);border-radius:6px;background:#fbfbf6;min-width:0}.math-page .math-case-card h3{font-size:20px;margin:0 0 8px}.math-page .math-case-card p{font-size:14px}.math-page .math-case-card .weight-line{margin:8px 0;font-size:14px;color:#87482f}.math-dual-graphs{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px;margin:12px 0 14px}.math-dual-graphs figure{margin:0;flex:1;min-width:0}.math-dual-graphs svg{display:block;width:100%;height:120px}.seed-card-grid .math-dual-graphs svg{height:160px}.math-dual-graphs figcaption{font-size:11px;line-height:1.4;text-align:center;color:var(--muted)}.math-dual-graphs .case-graph-note{flex-basis:100%;font-size:10px}.math-dual-graphs .case-face-labels{font-size:14px}.math-page details{margin:18px 0;padding-top:12px;border-top:1px solid var(--border)}.math-page summary{cursor:pointer;font-weight:600;color:var(--accent);line-height:1.5}.math-page .case-links{font-size:12px;margin-bottom:0}.source-region-grid figure{margin:0;padding:12px;border:1px solid var(--border);border-radius:5px;background:#fafbf6}.math-source-diagram{display:block;width:100%;height:230px}.math-source-diagram text{font:17px system-ui,sans-serif;fill:#50644e}.source-region-grid figcaption{text-align:center;font-size:13px;color:var(--muted)}.math-page .algorithm-list{padding-left:24px}@media(max-width:720px){.seed-card-grid,.operation-card-grid{grid-template-columns:1fr}.math-page table{font-size:13px}.math-page th,.math-page td{padding:9px}.math-source-diagram{height:190px}}@media(max-width:450px){.source-region-grid{grid-template-columns:1fr}.math-page .equation{padding:12px}.math-page math{font-size:1em}}
+
+
+.repeated-labeled-graphs svg{display:block;width:100%;height:220px}.repeated-graph-text{font:14px system-ui,sans-serif;fill:#425d4a;paint-order:stroke;stroke:#fafbf6;stroke-width:3px;stroke-linejoin:round}.repeated-cusp-table{min-width:420px}.repeated-cusp-table td{white-space:nowrap}.repeated-cusp-table math{font-size:1.12em}.math-page a:focus-visible{outline:2px solid #285f65;outline-offset:3px}.math-page .equation math{padding:2px 0}@media(max-width:500px){.repeated-labeled-graphs svg{height:190px}.repeated-labeled-graphs{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="site-header"><a class="brand" href="test.html" data-page="test.html">Hemisphere Atlas</a>
+<nav aria-label="Main navigation"><a href="test.html" data-page="test.html">Home</a><a href="explore.html" data-page="explore.html">Explore</a><a href="limits.html" data-page="limits.html">Limits &amp; Zoom</a><a href="mathematics.html" data-page="mathematics.html" aria-current="page">Mathematics</a>
+</nav>
+</header>
+
+<main class="math-page">
+<section class="page-heading">
+<p class="eyebrow">MATHEMATICAL BACKGROUND
+</p>
+<h1>Geometry, monodromy, and computation
+</h1>
+<p class="description">From labeled repeated decorations to monodromy shifts, the selected τ-branch, and resolved cusp approaches. Exact graph rules and numerically tested asymptotic predictions are identified separately.
+</p>
+</section>
+<div class="content-stack">
+<nav class="jump-links" aria-label="On this page"><a href="#setting">Geometry</a><a href="#seeds">Seeds & graphs</a><a href="#decorations">Local operations</a><a href="#repeated">Repeated counts</a><a href="#monodromy">Monodromy triangles</a><a href="#equations">Analytic equations</a><a href="#algorithm">Numerical method</a><a href="#cusps">Cusp asymptotics</a><a href="#boundary">Boundary & zoom</a><a href="#precision">Precision</a>
+</nav>
+<section class="panel" id="setting" aria-labelledby="setting-heading">
+<h2 id="setting-heading">1. Spherical tori, marked poles, and unitary monodromy
+</h2>
+<p>The atlas computes the conformal structure of a spherical torus built by hemisphere gluing. A marked torus has periods 1 and τ, with Im τ &gt; 0. A developing map gives projective monodromy by rotations of the round sphere. In the semisimple unitary families used here, we record one eigencharacter; choosing the other simultaneously inverts both multipliers.
+</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="The marked torus is C modulo Z plus tau Z"><mrow><msub><mi>E</mi><mi>τ</mi></msub><mo>=</mo><mi>ℂ</mi><mo>/</mo><mrow><mo>(</mo><mi>ℤ</mi><mo>+</mo><mi>τ</mi><mi>ℤ</mi><mo>)</mo></mrow></mrow></math>
+</div>
+<p>The classical Lamé family has one conical point. The two additional seeds belong to a four-point Treibich–Verdier family. Its ordered weights correspond to these marked half-periods:
+</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="The pole ordering is zero, one half, tau over two, and one plus tau over two"><mrow><mrow><mo>(</mo><msub><mi>p</mi><mn>0</mn></msub><mo>,</mo><msub><mi>p</mi><mn>1</mn></msub><mo>,</mo><msub><mi>p</mi><mn>2</mn></msub><mo>,</mo><msub><mi>p</mi><mn>3</mn></msub><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mn>0</mn><mo>,</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mo>,</mo><mfrac><mrow><mi>τ</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo>,</mo><mfrac><mrow><mrow><mn>1</mn><mo>+</mo><mi>τ</mi></mrow></mrow><mrow><mn>2</mn></mrow></mfrac><mo>)</mo></mrow></mrow></math>
+</div>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="The Treibich Verdier equation, with weights n zero through n three"><mrow><msup><mi>y</mi><mo>″</mo></msup><mrow><mo>(</mo><mi>z</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>[</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mn>3</mn></munderover><msub><mi>n</mi><mi>j</mi></msub><mrow><mo>(</mo><msub><mi>n</mi><mi>j</mi></msub><mo>+</mo><mn>1</mn><mo>)</mo></mrow><mrow><mi>℘</mi><mrow><mo>(</mo><mi>z</mi><mo>−</mo><msub><mi>p</mi><mi>j</mi></msub><mo>;</mo><mi>τ</mi><mo>)</mo></mrow></mrow><mo>+</mo><mi>B</mi><mo>]</mo></mrow><mi>y</mi><mrow><mo>(</mo><mi>z</mi><mo>)</mo></mrow></mrow></math>
+</div>
+<p>Here B is the accessory parameter. A face Fᵢ of degree dᵢ in the labeled dual graph corresponds to an upstairs cone angle θᵢ. Degree counts repeated edge incidences, including both sides of a bridge.
+</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Face degree equals two n i plus one, and upstairs cone angle equals four n i plus two times pi"><mrow><msub><mi>d</mi><mi>i</mi></msub><mo>=</mo><mn>2</mn><msub><mi>n</mi><mi>i</mi></msub><mo>+</mo><mn>1</mn><mo>,</mo><mspace width="1em"></mspace><msub><mi>θ</mi><mi>i</mi></msub><mo>=</mo><mn>2</mn><mi>π</mi><msub><mi>d</mi><mi>i</mi></msub><mo>=</mo><mrow><mo>(</mo><mn>4</mn><msub><mi>n</mi><mi>i</mi></msub><mo>+</mo><mn>2</mn><mo>)</mo></mrow><mi>π</mi></mrow></math>
+</div>
+<p>Weight zero is a smooth marked point upstairs. Thus (1,1,0,0) has two cone points of angle 6π, while (1,1,1,1) has four. Gauss–Bonnet gives total area 4π times the sum of the weights. The integer n in the classical family is not a substitute for the whole four-component weight vector.
+</p>
+<p>Write N = n₀ + n₁ + n₂ + n₃. The dual graph has N vertices and describes N hemispheres on the downstairs sphere. Its double-cover torus has 2N hemispheres, hence area 4πN. The count shown by the repeated-decoration controls is the downstairs count N.</p></section>
+<section class="panel" id="seeds" aria-labelledby="seeds-heading">
+<h2 id="seeds-heading">2. The two additional seeds
+</h2>
+<p>These are labeled ribbon graphs: their cyclic orders and face labels are part of the data. A dot is a graph vertex, not a conical point; the faces F₀,…,F₃ record the four marked poles. The drawings show topology rather than spherical edge lengths.
+</p>
+<div class="seed-card-grid">
+<article class="math-case-card">
+<p class="case-badge">DOUBLE-EDGE
+</p>
+<h3>Seed (1,1,0,0)
+</h3>
+<div class="math-dual-graphs">
+<figure><svg viewBox="0 0 255 120" role="img" aria-label="Double-edge seed · (1,1,0,0), Seed only dual graph"><g><path d="M86 60 Q130 22 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M86 60 Q130 102 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M86 60 C30 0 30 120 86 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M178 60 C135 38 135 82 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><circle cx="86" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="178" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/></g><g text-anchor="middle" class="case-face-labels"><text x="130" y="14">F₀</text><text x="120" y="76">F₁</text><text x="54" y="65">F₂</text><text x="157" y="64">F₃</text></g></svg>
+<figcaption>Double-edge seed · (1,1,0,0)
+</figcaption>
+</figure>
+<p class="case-graph-note">Dual graph · dots are vertices; F labels identify faces. Drawings encode topology, not edge lengths.
+</p>
+</div>
+<p>Two four-valent vertices are joined by two connectors. The left monogon F₂ is outside the connector bigon; the right monogon F₃ is inside it. The two other faces have degree three. This placement is essential: putting both monogons outside would give the wrong face degrees.
+</p>
+<p>Source triangle: D. Cone angles: 6π, 6π, 2π, 2π. Area: 8π.
+</p>
+<p class="case-links"><a href="explore.html?seed=double&amp;decoration=seed">Explore this case →</a><a href="limits.html?seed=double&amp;decoration=seed">Limits &amp; Zoom →</a>
+</p>
+</article>
+<article class="math-case-card">
+<p class="case-badge">TETRAHEDRON
+</p>
+<h3>Seed (1,1,1,1)
+</h3>
+<div class="math-dual-graphs">
+<figure><svg viewBox="0 0 255 120" role="img" aria-label="Tetrahedral seed · (1,1,1,1), Seed only dual graph"><g><path d="M42 98 L212 98 L127 10 Z" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M42 98 L127 64 L212 98" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M127 10 L127 64" fill="none" stroke="#496351" stroke-width="2.3"/><circle cx="42" cy="98" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="212" cy="98" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="127" cy="10" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="127" cy="64" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/></g><g text-anchor="middle" class="case-face-labels"><text x="127" y="86">F₁</text><text x="230" y="26">F₀</text><text x="94" y="57">F₂</text><text x="160" y="57">F₃</text></g></svg>
+<figcaption>Tetrahedral seed · (1,1,1,1)
+</figcaption>
+</figure>
+<p class="case-graph-note">Dual graph · dots are vertices; F labels identify faces. Drawings encode topology, not edge lengths.
+</p>
+</div>
+<p>The planar tetrahedral graph has four trivalent vertices and four triangular faces. In this drawing, F₀ is the outer face, F₁ the lower inner face, and F₂,F₃ the left and right inner faces. The lower edge separates F₀ from F₁.
+</p>
+<p>Source triangle: T. All four cone angles are 6π. Area: 16π.
+</p>
+<p class="case-links"><a href="explore.html?seed=tetra&amp;decoration=seed">Explore this case →</a><a href="limits.html?seed=tetra&amp;decoration=seed">Limits &amp; Zoom →</a>
+</p>
+</article>
+</div>
+</section>
+<section class="panel" id="decorations" aria-labelledby="decorations-heading">
+<h2 id="decorations-heading">3. The local decoration operations
+</h2>
+<p>The single-decoration presets give one worked example of each operation available on these seeds. Repeated labeled counts are described in the next section. The orange parts below identify the selected change; the labels fix which face weights are affected. All four examples preserve projective monodromy, although the ordinary linear character may acquire central signs.
+</p>
+<div class="operation-card-grid">
+<article class="math-case-card" id="case-double-pair">
+<h3>Double-edge · pair insertion
+</h3>
+<p class="weight-line">Selected weights: <strong>(2,2,0,0)</strong>
+</p>
+<div class="math-dual-graphs">
+<figure><svg viewBox="0 0 255 120" role="img" aria-label="Double-edge seed · (1,1,0,0), Seed only dual graph"><g><path d="M86 60 Q130 22 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M86 60 Q130 102 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M86 60 C30 0 30 120 86 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M178 60 C135 38 135 82 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><circle cx="86" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="178" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/></g><g text-anchor="middle" class="case-face-labels"><text x="130" y="14">F₀</text><text x="120" y="76">F₁</text><text x="54" y="65">F₂</text><text x="157" y="64">F₃</text></g></svg>
+<figcaption>Double-edge seed · (1,1,0,0)
+</figcaption>
+</figure><span class="case-graph-arrow" aria-hidden="true">→</span>
+<figure><svg viewBox="0 0 255 120" role="img" aria-label="Double-edge seed · (1,1,0,0), Insert a pair on F₀ / F₁ dual graph"><g><path d="M86 60 Q130 22 178 60" fill="none" stroke="#b55e3c" stroke-width="3"/><path d="M86 60 Q130 102 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M86 60 C30 0 30 120 86 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M178 60 C135 38 135 82 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><circle cx="86" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="178" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="116" cy="43" r="4" fill="#b55e3c" stroke="#fcfcf7" stroke-width="1"/><circle cx="148" cy="43" r="4" fill="#b55e3c" stroke="#fcfcf7" stroke-width="1"/></g><g text-anchor="middle" class="case-face-labels"><text x="130" y="14">F₀</text><text x="120" y="76">F₁</text><text x="54" y="65">F₂</text><text x="157" y="64">F₃</text></g></svg>
+<figcaption>Insert a pair on F₀ / F₁
+</figcaption>
+</figure>
+<p class="case-graph-note">Dual graph · dots are vertices; F labels identify faces. Drawings encode topology, not edge lengths.
+</p>
+</div>
+<p>Insert a pair on the connector separating F₀ and F₁. An edge of length ℓ becomes a three-edge chain with lengths ℓ, 2π − ℓ, ℓ. The two orange dots are new bivalent vertices. Faces F₀ and F₁ each gain two sides, so their weights each increase by one.
+</p>
+<p class="caption">Area: 16π. Ordinary shift: (0, ½).
+</p>
+<p class="case-links"><a href="explore.html?seed=double&amp;decoration=pair">Explore this case →</a><a href="limits.html?seed=double&amp;decoration=pair">Limits &amp; Zoom →</a>
+</p>
+</article>
+<article class="math-case-card" id="case-double-split">
+<h3>Double-edge · vertex splitting
+</h3>
+<p class="weight-line">Selected weights: <strong>(3,1,0,0)</strong>
+</p>
+<div class="math-dual-graphs">
+<figure><svg viewBox="0 0 255 120" role="img" aria-label="Double-edge seed · (1,1,0,0), Seed only dual graph"><g><path d="M86 60 Q130 22 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M86 60 Q130 102 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M86 60 C30 0 30 120 86 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M178 60 C135 38 135 82 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><circle cx="86" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="178" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/></g><g text-anchor="middle" class="case-face-labels"><text x="130" y="14">F₀</text><text x="120" y="76">F₁</text><text x="54" y="65">F₂</text><text x="157" y="64">F₃</text></g></svg>
+<figcaption>Double-edge seed · (1,1,0,0)
+</figcaption>
+</figure><span class="case-graph-arrow" aria-hidden="true">→</span>
+<figure><svg viewBox="0 0 255 120" role="img" aria-label="Double-edge seed · (1,1,0,0), Split the F₂ loop-dart block dual graph"><g><path d="M86 60 Q130 22 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M86 60 Q130 102 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M42 60 C4 8 4 112 42 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M178 60 C135 38 135 82 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M42 60 L86 60" fill="none" stroke="#b55e3c" stroke-width="3"/><circle cx="86" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="178" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="42" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="64" cy="60" r="4" fill="#b55e3c" stroke="#fcfcf7" stroke-width="1"/></g><g text-anchor="middle" class="case-face-labels"><text x="130" y="14">F₀</text><text x="120" y="76">F₁</text><text x="21" y="65">F₂</text><text x="157" y="64">F₃</text></g></svg>
+<figcaption>Split the F₂ loop-dart block
+</figcaption>
+</figure>
+<p class="case-graph-note">Dual graph · dots are vertices; F labels identify faces. Drawings encode topology, not edge lengths.
+</p>
+</div>
+<p>At the left four-valent vertex, separate the two consecutive darts belonging to the F₂ monogon from the connector darts. A two-edge path joins the resulting pieces. Both sides of that path belong to F₀, whose degree rises from three to seven. A split needs at least two darts in each block.
+</p>
+<p class="caption">Area: 16π. Ordinary shift: (0, 0).
+</p>
+<p class="case-links"><a href="explore.html?seed=double&amp;decoration=split">Explore this case →</a><a href="limits.html?seed=double&amp;decoration=split">Limits &amp; Zoom →</a>
+</p>
+</article>
+<article class="math-case-card" id="case-double-sprout">
+<h3>Double-edge · monogon sprouting
+</h3>
+<p class="weight-line">Selected weights: <strong>(2,1,0,0)</strong>
+</p>
+<div class="math-dual-graphs">
+<figure><svg viewBox="0 0 255 120" role="img" aria-label="Double-edge seed · (1,1,0,0), Seed only dual graph"><g><path d="M86 60 Q130 22 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M86 60 Q130 102 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M86 60 C30 0 30 120 86 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M178 60 C135 38 135 82 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><circle cx="86" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="178" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/></g><g text-anchor="middle" class="case-face-labels"><text x="130" y="14">F₀</text><text x="120" y="76">F₁</text><text x="54" y="65">F₂</text><text x="157" y="64">F₃</text></g></svg>
+<figcaption>Double-edge seed · (1,1,0,0)
+</figcaption>
+</figure><span class="case-graph-arrow" aria-hidden="true">→</span>
+<figure><svg viewBox="0 0 255 120" role="img" aria-label="Double-edge seed · (1,1,0,0), Sprout the F₂ monogon dual graph"><g><path d="M86 60 Q130 22 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M86 60 Q130 102 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M42 60 C4 8 4 112 42 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M178 60 C135 38 135 82 178 60" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M42 60 L86 60" fill="none" stroke="#b55e3c" stroke-width="3"/><circle cx="86" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="178" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="42" cy="60" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/></g><g text-anchor="middle" class="case-face-labels"><text x="130" y="14">F₀</text><text x="120" y="76">F₁</text><text x="21" y="65">F₂</text><text x="157" y="64">F₃</text></g></svg>
+<figcaption>Sprout the F₂ monogon
+</figcaption>
+</figure>
+<p class="case-graph-note">Dual graph · dots are vertices; F labels identify faces. Drawings encode topology, not edge lengths.
+</p>
+</div>
+<p>Sprout the F₂ monogon into its exterior face F₀. A loop of length L, with 0 &lt; L &lt; π, is replaced by a bridge of length 2L and a loop of length π − L. The bridge is counted twice in F₀, so only n₀ increases by one.
+</p>
+<p class="caption">Area: 12π. Ordinary shift: (½, 0).
+</p>
+<p class="case-links"><a href="explore.html?seed=double&amp;decoration=sprout">Explore this case →</a><a href="limits.html?seed=double&amp;decoration=sprout">Limits &amp; Zoom →</a>
+</p>
+</article>
+<article class="math-case-card" id="case-tetra-pair">
+<h3>Tetrahedron · pair insertion
+</h3>
+<p class="weight-line">Selected weights: <strong>(2,2,1,1)</strong>
+</p>
+<div class="math-dual-graphs">
+<figure><svg viewBox="0 0 255 120" role="img" aria-label="Tetrahedral seed · (1,1,1,1), Seed only dual graph"><g><path d="M42 98 L212 98 L127 10 Z" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M42 98 L127 64 L212 98" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M127 10 L127 64" fill="none" stroke="#496351" stroke-width="2.3"/><circle cx="42" cy="98" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="212" cy="98" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="127" cy="10" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="127" cy="64" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/></g><g text-anchor="middle" class="case-face-labels"><text x="127" y="86">F₁</text><text x="230" y="26">F₀</text><text x="94" y="57">F₂</text><text x="160" y="57">F₃</text></g></svg>
+<figcaption>Tetrahedral seed · (1,1,1,1)
+</figcaption>
+</figure><span class="case-graph-arrow" aria-hidden="true">→</span>
+<figure><svg viewBox="0 0 255 120" role="img" aria-label="Tetrahedral seed · (1,1,1,1), Insert a pair on F₀ / F₁ dual graph"><g><path d="M42 98 L212 98 L127 10 Z" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M42 98 L127 64 L212 98" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M127 10 L127 64" fill="none" stroke="#496351" stroke-width="2.3"/><path d="M42 98 L212 98" fill="none" stroke="#b55e3c" stroke-width="3"/><circle cx="42" cy="98" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="212" cy="98" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="127" cy="10" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="127" cy="64" r="4.5" fill="#285f65" stroke="#fcfcf7" stroke-width="1"/><circle cx="98" cy="98" r="4" fill="#b55e3c" stroke="#fcfcf7" stroke-width="1"/><circle cx="155" cy="98" r="4" fill="#b55e3c" stroke="#fcfcf7" stroke-width="1"/></g><g text-anchor="middle" class="case-face-labels"><text x="127" y="86">F₁</text><text x="230" y="26">F₀</text><text x="94" y="57">F₂</text><text x="160" y="57">F₃</text></g></svg>
+<figcaption>Insert a pair on F₀ / F₁
+</figcaption>
+</figure>
+<p class="case-graph-note">Dual graph · dots are vertices; F labels identify faces. Drawings encode topology, not edge lengths.
+</p>
+</div>
+<p>Insert a pair on the lower edge separating F₀ and F₁. Its two new bivalent vertices increase the degrees of those two faces from three to five. The two other face degrees stay three.
+</p>
+<p class="caption">Area: 24π. Ordinary shift: (0, ½).
+</p>
+<p class="case-links"><a href="explore.html?seed=tetra&amp;decoration=pair">Explore this case →</a><a href="limits.html?seed=tetra&amp;decoration=pair">Limits &amp; Zoom →</a>
+</p>
+</article>
+</div>
+<aside class="math-note"><strong>Why only pair insertion on the tetrahedron?</strong> Its vertices are trivalent, so they cannot be split into two blocks of at least two darts. It has no monogon to sprout. Pair insertion adds only bivalent vertices and does not make either operation available. The repeated tetrahedral menu therefore exposes six pair counts. The double-edge menu also retains its admissible local arm and cross forms. These labeled families do not exhaust all Treibich–Verdier weights or gluing graphs.
+</aside>
+</section><section class="panel" id="repeated" aria-labelledby="repeated-heading">
+<h2 id="repeated-heading">4. Repeated decorations: labeled counts and admissibility</h2>
+<p>Choose <strong>Repeated decorations · choose counts</strong> in either interactive page. The entries describe the final labeled graph. Totals such as “three sprouts and two splits” would lose the attachment positions and cyclic partitions, so they are not a unique input.</p>
+<div class="source-region-grid repeated-labeled-graphs"><figure><svg viewBox="0 0 440 235" role="img" aria-label="Double-edge core: A on left, B on right; t and u connectors, ell left monogon, m right inner monogon; faces F zero through F three">
+<g fill="none" stroke="#496351" stroke-width="3"><path d="M145 119 Q245 15 345 119 Q245 223 145 119"/><path d="M145 119 C44 10 44 228 145 119"/><path d="M345 119 C245 63 245 175 345 119"/></g>
+<g fill="#285f65" stroke="#fcfcf7" stroke-width="2"><circle cx="145" cy="119" r="6"/><circle cx="345" cy="119" r="6"/></g>
+<g class="repeated-graph-text" text-anchor="middle"><text x="153" y="105">A</text><text x="361" y="119">B</text><text x="244" y="58">t · qₜ</text><text x="244" y="195">u · qᵤ</text><text x="66" y="120">ℓ · qℓ</text><text x="276" y="120">m · qₘ</text><text x="244" y="21">F₀</text><text x="209" y="124">F₁</text><text x="106" y="116">F₂</text><text x="315" y="122">F₃</text></g></svg><figcaption>Double-edge labels. The right monogon stays inside the connector bigon.</figcaption></figure><figure><svg viewBox="0 0 440 255" role="img" aria-label="Tetrahedral core: A lower left, B lower right, C top, D center; all six edges AB, AC, AD, BC, BD, CD have separate pair counts">
+<g fill="none" stroke="#496351" stroke-width="3"><path d="M70 210 L370 210 L220 28 Z M70 210 L220 148 L370 210 M220 148 V28"/></g>
+<g fill="#285f65" stroke="#fcfcf7" stroke-width="2"><circle cx="70" cy="210" r="6"/><circle cx="370" cy="210" r="6"/><circle cx="220" cy="28" r="6"/><circle cx="220" cy="148" r="6"/></g>
+<g class="repeated-graph-text" text-anchor="middle"><text x="51" y="215">A</text><text x="389" y="215">B</text><text x="220" y="18">C</text><text x="220" y="170">D</text><text x="220" y="232">AB</text><text x="126" y="113">AC</text><text x="158" y="190">AD</text><text x="315" y="113">BC</text><text x="285" y="190">BD</text><text x="237" y="93">CD</text><text x="350" y="48">F₀</text><text x="220" y="195">F₁</text><text x="180" y="129">F₂</text><text x="261" y="129">F₃</text></g></svg><figcaption>Tetrahedral labels. Every edge has its own pair count.</figcaption></figure></div>
+<h3>Chains and reduced cores</h3>
+<p>Suppress intermediate bivalent vertices to obtain a reduced core. A stable edge carries a chain of multiplicity mₑ. Its smallest allowed multiplicity εₑ is one for an odd chain and two for an even chain; qₑ counts additional pairs. The ×m labels in the small website diagrams give the full chain length, not the number of pair insertions.</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Chain multiplicity m e equals epsilon e plus twice q e, with epsilon one or two and nonnegative integer q e"><mrow><msub><mi>m</mi><mi>e</mi></msub><mo>=</mo><mrow><msub><mi>ε</mi><mi>e</mi></msub><mo>+</mo><mrow><mn>2</mn><msub><mi>q</mi><mi>e</mi></msub></mrow></mrow><mo>,</mo><msub><mi>ε</mi><mi>e</mi></msub><mo>∈</mo><mo>{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>}</mo><mo>,</mo><msub><mi>q</mi><mi>e</mi></msub><mo>∈</mo><msub><mi>ℤ</mi><mrow><mo>≥</mo><mn>0</mn></mrow></msub></mrow></math></div>
+<p>If the first edge has length ℓ, the chain alternates ℓ and 2π − ℓ. Thus each inserted bivalent vertex has perimeter 2π. The general face-incidence rule is</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Each face weight is its core weight plus the sum of edge pair counts times boundary incidence"><mrow><msub><mi>n</mi><mi>i</mi></msub><mo>=</mo><mrow><msup><msub><mi>n</mi><mi>i</mi></msub><mtext>core</mtext></msup><mo>+</mo><mrow><munder><mo>∑</mo><mi>e</mi></munder><msub><mi>I</mi><mrow><mi>i</mi><mi>e</mi></mrow></msub><msub><mi>q</mi><mi>e</mi></msub></mrow></mrow></mrow></math></div>
+<p>Here Iᵢₑ counts the incidences of the edge in face Fᵢ; it is two when both sides belong to the same face. A pair consequently adds two to the total weight, including when both increments occur in one face.</p>
+<h3>Double-edge: four local forms at each endpoint</h3>
+<p>The four original-edge pair counts are qₜ, qᵤ, qℓ, qₘ. At each original endpoint A or B, choose either an arm or a cross split. Write k for the arm count and c for the cross count. A zero arm is untouched; an active cross has c ≥ 1. The two local types cannot be chosen independently at the same endpoint:</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="At each endpoint the arm count and cross count have product zero"><mrow><msub><mi>k</mi><mi>A</mi></msub><msub><mi>c</mi><mi>A</mi></msub><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><msub><mi>c</mi><mi>B</mi></msub><mo>=</mo><mn>0</mn><mo>,</mo><mrow><mo>(</mo><msub><mi>k</mi><mi>A</mi></msub><mo>,</mo><msub><mi>k</mi><mi>B</mi></msub><mo>,</mo><msub><mi>c</mi><mi>A</mi></msub><mo>,</mo><msub><mi>c</mi><mi>B</mi></msub><mo>)</mo></mrow><mo>∈</mo><msup><msub><mi>ℤ</mi><mrow><mo>≥</mo><mn>0</mn></mrow></msub><mn>4</mn></msup></mrow></math></div>
+<div class="table-scroll"><table><caption>The four reduced endpoint forms</caption><thead><tr><th scope="col">Form</th><th scope="col">Count</th><th scope="col">Construction</th><th scope="col">Local chain</th></tr></thead><tbody>
+<tr><th scope="row">Untouched</th><td>k = c = 0</td><td>Keep the four-valent endpoint.</td><td>No new local chain</td></tr>
+<tr><th scope="row">Odd arm</th><td>k = 1, 3, 5, …</td><td>Sprout the monogon once, then insert pairs on its arm.</td><td>m = k; q<sub>arm</sub> = (k − 1)/2</td></tr>
+<tr><th scope="row">Even arm</th><td>k = 2, 4, 6, …</td><td>Split the loop-dart block from the connector block, then extend the arm by pairs.</td><td>m = k; q<sub>arm</sub> = (k − 2)/2</td></tr>
+<tr><th scope="row">Cross split</th><td>c = 1, 2, 3, …</td><td>Use the other consecutive 2 + 2 cyclic partition, then extend its even chain.</td><td>m = 2c; q<sub>cross</sub> = c − 1</td></tr></tbody></table></div>
+<p>The cyclic orders are A = (t, ℓ⁺, ℓ⁻, u) and B = (T, m⁺, m⁻, U), where T and U are the opposite connector darts. The cross split uses (t, ℓ⁺) | (ℓ⁻, u) at A and (T, m⁺) | (m⁻, U) at B. A split requires consecutive blocks with at least two darts each; a sprout requires the marked monogon. After a local expansion the stable vertices are trivalent. The four choices at A and B give sixteen labeled reduced cores, followed by arbitrary pair insertions.</p>
+<p>The arm count already includes pair insertions along that arm; there is no second, independent arm-pair control. With absent local types assigned count zero, the ordered weights and ordinary shifts are:</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Double-edge repeated weights n zero through n three from the six labeled counts"><mtable columnalign="left"><mtr><mtd><mrow><msub><mi>n</mi><mn>0</mn></msub><mo>=</mo><mrow><mn>1</mn><mo>+</mo><msub><mi>k</mi><mi>A</mi></msub><mo>+</mo><msub><mi>c</mi><mi>B</mi></msub><mo>+</mo><msub><mi>q</mi><mi>t</mi></msub><mo>+</mo><msub><mi>q</mi><mi>u</mi></msub><mo>+</mo><msub><mi>q</mi><mi>ℓ</mi></msub></mrow></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>=</mo><mrow><mn>1</mn><mo>+</mo><msub><mi>k</mi><mi>B</mi></msub><mo>+</mo><msub><mi>c</mi><mi>A</mi></msub><mo>+</mo><msub><mi>q</mi><mi>t</mi></msub><mo>+</mo><msub><mi>q</mi><mi>u</mi></msub><mo>+</mo><msub><mi>q</mi><mi>m</mi></msub></mrow></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>n</mi><mn>2</mn></msub><mo>=</mo><mrow><msub><mi>c</mi><mi>A</mi></msub><mo>+</mo><msub><mi>q</mi><mi>ℓ</mi></msub></mrow></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>n</mi><mn>3</mn></msub><mo>=</mo><mrow><msub><mi>c</mi><mi>B</mi></msub><mo>+</mo><msub><mi>q</mi><mi>m</mi></msub></mrow></mrow></mtd></mtr></mtable></math></div><div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Double-edge shifts: twice Delta R equals arm counts plus cross counts plus loop pair counts modulo two; twice Delta S equals cross counts plus connector pair counts modulo two"><mtable columnalign="left"><mtr><mtd><mrow><mn>2</mn><mrow><mi>Δ</mi><mi>R</mi></mrow><mo>≡</mo><mrow><msub><mi>k</mi><mi>A</mi></msub><mo>+</mo><msub><mi>k</mi><mi>B</mi></msub><mo>+</mo><msub><mi>c</mi><mi>A</mi></msub><mo>+</mo><msub><mi>c</mi><mi>B</mi></msub><mo>+</mo><msub><mi>q</mi><mi>ℓ</mi></msub><mo>+</mo><msub><mi>q</mi><mi>m</mi></msub></mrow><mo> </mo><mrow><mtext>(mod 2)</mtext></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mn>2</mn><mrow><mi>Δ</mi><mi>S</mi></mrow><mo>≡</mo><mrow><msub><mi>c</mi><mi>A</mi></msub><mo>+</mo><msub><mi>c</mi><mi>B</mi></msub><mo>+</mo><msub><mi>q</mi><mi>t</mi></msub><mo>+</mo><msub><mi>q</mi><mi>u</mi></msub></mrow><mo> </mo><mrow><mtext>(mod 2)</mtext></mrow></mrow></mtd></mtr></mtable></math></div><div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Double-edge total weight N from arms, crosses, and original edge pair counts"><mrow><mi>N</mi><mo>=</mo><mrow><mn>2</mn><mo>+</mo><msub><mi>k</mi><mi>A</mi></msub><mo>+</mo><msub><mi>k</mi><mi>B</mi></msub><mo>+</mo><mrow><mn>2</mn><mrow><mo>(</mo><mrow><msub><mi>c</mi><mi>A</mi></msub><mo>+</mo><msub><mi>c</mi><mi>B</mi></msub><mo>+</mo><msub><mi>q</mi><mi>t</mi></msub><mo>+</mo><msub><mi>q</mi><mi>u</mi></msub><mo>+</mo><msub><mi>q</mi><mi>ℓ</mi></msub><mo>+</mo><msub><mi>q</mi><mi>m</mi></msub></mrow><mo>)</mo></mrow></mrow></mrow></mrow></math></div>
+<p class="case-links"><a href="explore.html?seed=double&amp;decoration=repeated&amp;qt=1&amp;modeA=cross&amp;countA=1&amp;modeB=arm&amp;countB=1">Explore cross A + arm B + one t pair →</a><a href="limits.html?seed=double&amp;decoration=repeated&amp;qt=1&amp;modeA=cross&amp;countA=1&amp;modeB=arm&amp;countB=1">Follow its boundary approach →</a></p>
+<h3>Tetrahedron: six independent pair counts</h3>
+<p>All four original vertices are trivalent and there is no monogon. Pair insertion adds only bivalent vertices, so it never creates a splittable stable vertex or a monogon. Consequently pair insertion is the only admissible operation, with six independent nonnegative integers q<sub>AB</sub>, q<sub>AC</sub>, q<sub>AD</sub>, q<sub>BC</sub>, q<sub>BD</sub>, q<sub>CD</sub>.</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Tetrahedral repeated face weights in fixed face order"><mtable columnalign="left"><mtr><mtd><mrow><msub><mi>n</mi><mn>0</mn></msub><mo>=</mo><mrow><mn>1</mn><mo>+</mo><msub><mi>q</mi><mi>AB</mi></msub><mo>+</mo><msub><mi>q</mi><mi>AC</mi></msub><mo>+</mo><msub><mi>q</mi><mi>BC</mi></msub></mrow></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>=</mo><mrow><mn>1</mn><mo>+</mo><msub><mi>q</mi><mi>AB</mi></msub><mo>+</mo><msub><mi>q</mi><mi>AD</mi></msub><mo>+</mo><msub><mi>q</mi><mi>BD</mi></msub></mrow></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>n</mi><mn>2</mn></msub><mo>=</mo><mrow><mn>1</mn><mo>+</mo><msub><mi>q</mi><mi>AC</mi></msub><mo>+</mo><msub><mi>q</mi><mi>AD</mi></msub><mo>+</mo><msub><mi>q</mi><mi>CD</mi></msub></mrow></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>n</mi><mn>3</mn></msub><mo>=</mo><mrow><mn>1</mn><mo>+</mo><msub><mi>q</mi><mi>BC</mi></msub><mo>+</mo><msub><mi>q</mi><mi>BD</mi></msub><mo>+</mo><msub><mi>q</mi><mi>CD</mi></msub></mrow></mrow></mtd></mtr></mtable></math></div><div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Tetrahedral ordinary half-character shifts from all six labeled edge counts"><mtable columnalign="left"><mtr><mtd><mrow><mn>2</mn><mrow><mi>Δ</mi><mi>R</mi></mrow><mo>≡</mo><mrow><msub><mi>q</mi><mi>AC</mi></msub><mo>+</mo><msub><mi>q</mi><mi>BD</mi></msub><mo>+</mo><msub><mi>q</mi><mi>AD</mi></msub><mo>+</mo><msub><mi>q</mi><mi>BC</mi></msub></mrow><mrow><mtext>(mod 2)</mtext></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mn>2</mn><mrow><mi>Δ</mi><mi>S</mi></mrow><mo>≡</mo><mrow><msub><mi>q</mi><mi>AB</mi></msub><mo>+</mo><msub><mi>q</mi><mi>CD</mi></msub><mo>+</mo><msub><mi>q</mi><mi>AD</mi></msub><mo>+</mo><msub><mi>q</mi><mi>BC</mi></msub></mrow><mrow><mtext>(mod 2)</mtext></mrow></mrow></mtd></mtr></mtable></math></div><div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Tetrahedral total weight is four plus twice the sum of its six pair counts"><mrow><mi>N</mi><mo>=</mo><mrow><mn>4</mn><mo>+</mo><mrow><mn>2</mn><mrow><mo>(</mo><mrow><msub><mi>q</mi><mi>AB</mi></msub><mo>+</mo><msub><mi>q</mi><mi>AC</mi></msub><mo>+</mo><msub><mi>q</mi><mi>AD</mi></msub><mo>+</mo><msub><mi>q</mi><mi>BC</mi></msub><mo>+</mo><msub><mi>q</mi><mi>BD</mi></msub><mo>+</mo><msub><mi>q</mi><mi>CD</mi></msub></mrow><mo>)</mo></mrow></mrow></mrow></mrow></math></div>
+<p class="case-links"><a href="explore.html?seed=tetra&amp;decoration=repeated&amp;qAB=2&amp;qAC=1">Explore AB twice + AC once →</a><a href="limits.html?seed=tetra&amp;decoration=repeated&amp;qAB=2&amp;qAC=1&amp;path=edge0">Follow its infinity-edge approach →</a></p>
+<p>For example, AB twice and AC once, with the other four counts zero, gives weights (4,3,2,1), N = 10, and shift (½,0). It is a mixed decoration, so the one-connector cusp formulas below are not assigned to it.</p>
+<details><summary>Why counts do not shrink the source triangle</summary>
+<p>For the double-edge seed put P = 2π and use the positive lengths below. The source inequalities defining D give x, y, L &gt; 0 and x + y + 2L = P.</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Double-edge positive metric coordinates x, y, L"><mtable columnalign="left"><mtr><mtd><mrow><mi>x</mi><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mn>1</mn><mo>−</mo><mi>R</mi><mo>)</mo></mrow><mo>,</mo><mi>y</mi><mo>=</mo><mi>P</mi><mrow><mo>(</mo><mi>R</mi><mo>+</mo><mn>2</mn><mi>S</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mi>L</mi><mo>=</mo><mi>π</mi><mrow><mo>(</mo><mn>1</mn><mo>−</mo><mn>2</mn><mi>S</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math></div>
+<p>An odd arm has initial bridge length 2L and terminal loop π − L. An even arm alternates 2L and P − 2L and retains loop L. At A a cross uses y + L and x + L; the original loop becomes an ordinary edge of length L. The construction at B is analogous. Every first length and its P-complement remain positive throughout D.</p>
+<p>For the tetrahedron, opposite edges have lengths x = P(1 − R), y = P(1 − S), z = P(R + S − 1), with x + y + z = P. They and their complements remain positive throughout T. Extending any of these chains therefore imposes no count-dependent positivity restriction. This statement concerns the character source; the corresponding τ-image can change shape substantially.</p></details>
+<aside class="math-note"><strong>Mathematical counts and website limits.</strong> The graph rules allow unbounded nonnegative counts. The current controls use 0–32 per count, at most N = 144 and maximum face weight 72. These are computation limits, not failures of geometric admissibility. The displayed “hemisphere” total is N downstairs; the torus uses 2N hemispheres.</aside>
+</section>
+<section class="panel" id="monodromy" aria-labelledby="monodromy-heading">
+<h2 id="monodromy-heading">5. Monodromy triangles and coordinate conventions
+</h2>
+<p>For the new seeds, capital R,S always refer to the <strong>undecorated geometric source point</strong>. Fix the oriented period basis and use
+</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Geometric character chi of one is exponential minus two pi i R; chi of tau is exponential two pi i S"><mrow><mrow><mi>χ</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>2</mn><mi>π</mi><mi>i</mi><mi>R</mi></mrow></msup><mo>,</mo><mspace width="1em"></mspace><mrow><mi>χ</mi><mrow><mo>(</mo><mi>τ</mi><mo>)</mo></mrow></mrow><mo>=</mo><msup><mi>e</mi><mrow><mn>2</mn><mi>π</mi><mi>i</mi><mi>S</mi></mrow></msup></mrow></math>
+</div>
+<p>The open source triangles are
+</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Double edge source D and tetrahedral source T"><mtable columnalign="left"><mtr><mtd><mrow><mi>D</mi><mo>=</mo><mo>{</mo><mn>0</mn><mo>&lt;</mo><mi>R</mi><mo>&lt;</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo>&lt;</mo><mi>S</mi><mo>&lt;</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mo>,</mo><mi>R</mi><mo>+</mo><mn>2</mn><mi>S</mi><mo>&gt;</mo><mn>1</mn><mo>}</mo></mrow></mtd></mtr><mtr><mtd><mrow><mi>T</mi><mo>=</mo><mo>{</mo><mn>0</mn><mo>&lt;</mo><mi>R</mi><mo>&lt;</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo>&lt;</mo><mi>S</mi><mo>&lt;</mo><mn>1</mn><mo>,</mo><mi>R</mi><mo>+</mo><mi>S</mi><mo>&gt;</mo><mn>1</mn><mo>}</mo></mrow></mtd></mtr></mtable></math>
+</div>
+<div class="source-region-grid">
+<figure><svg class="math-source-diagram" viewBox="0 0 390 390" role="img" aria-label="Unrotated source triangle with vertices one zero, zero 0.5, and one 0.5"><path d="M48 42V330H345" fill="none" stroke="#9eac9f"/><polygon points="318,330 48,195.0 318,195.0" fill="none" stroke="#285f65" stroke-dasharray="6 5" stroke-width="2"/><polygon points="307.2,319.2 69.6,200.4 307.2,200.4" fill="#285f6520" stroke="#285f65"/><g text-anchor="middle"><text x="48" y="354">0</text><text x="183" y="354">½</text><text x="318" y="354">1</text><text x="34" y="201.0">½</text><text x="353" y="335">R</text><text x="40" y="32">S</text></g></svg>
+<figcaption>Double-edge D: vertices (1,0), (0,½), (1,½).
+</figcaption>
+</figure>
+<figure><svg class="math-source-diagram" viewBox="0 0 390 390" role="img" aria-label="Unrotated source triangle with vertices one zero, zero 1, and one 1"><path d="M48 42V330H345" fill="none" stroke="#9eac9f"/><polygon points="318,330 48,60 318,60" fill="none" stroke="#285f65" stroke-dasharray="6 5" stroke-width="2"/><polygon points="307.2,308.4 69.6,70.80000000000001 307.2,70.80000000000001" fill="#285f6520" stroke="#285f65"/><g text-anchor="middle"><text x="48" y="354">0</text><text x="183" y="354">½</text><text x="318" y="354">1</text><text x="34" y="66">1</text><text x="353" y="335">R</text><text x="40" y="32">S</text></g></svg>
+<figcaption>Tetrahedral T: vertices (1,0), (0,1), (1,1).
+</figcaption>
+</figure>
+</div>
+<p>The diagrams retain this orientation. The dashed boundary is excluded. Dragging is restricted to the compact triangle whose three barycentric coordinates are at least 0.04.
+</p>
+<div class="table-scroll">
+<table class="">
+<caption>The lifted character triangles used by the new cases
+</caption>
+<thead>
+<tr>
+<th scope="col">Case
+</th>
+<th scope="col">Weights
+</th>
+<th scope="col">Ordinary character triangle
+</th>
+<th scope="col">Shift (ΔR, ΔS)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Double-edge seed
+</td>
+<td>(1,1,0,0)
+</td>
+<td>D
+</td>
+<td>(0, 0)
+</td>
+</tr>
+<tr>
+<td>Double-edge pair
+</td>
+<td>(2,2,0,0)
+</td>
+<td>D + (0, ½)
+</td>
+<td>(0, ½)
+</td>
+</tr>
+<tr>
+<td>Double-edge split
+</td>
+<td>(3,1,0,0)
+</td>
+<td>D
+</td>
+<td>(0, 0)
+</td>
+</tr>
+<tr>
+<td>Double-edge sprout
+</td>
+<td>(2,1,0,0)
+</td>
+<td>D + (½, 0)
+</td>
+<td>(½, 0)
+</td>
+</tr>
+<tr>
+<td>Tetrahedral seed
+</td>
+<td>(1,1,1,1)
+</td>
+<td>T
+</td>
+<td>(0, 0)
+</td>
+</tr>
+<tr>
+<td>Tetrahedral pair
+</td>
+<td>(2,2,1,1)
+</td>
+<td>T + (0, ½)
+</td>
+<td>(0, ½)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Write (R′,S′) = (R + ΔR,S + ΔS) after decoration. These are unwrapped lifts: a coordinate above 1 is intentional. Reducing modulo integers may cut a triangle into pieces; simultaneous inversion exchanges eigenlines. The shift determines ordinary monodromy signs, but it does not determine the geometric branch.
+</p>
+<p class="math-note"><strong>Geometric versus analytic coordinates.</strong> At the original modulus τ the new-family evaluator uses (u,v) = (S′,R′), so its elliptic argument is u + vτ. Isogenies then change both the modulus and these parameters, as listed below. A change of eigenline may invert both multipliers without changing the zero equation.
+</p>
+<h3>Shifts for repeated labeled counts</h3>
+<p>Use the formulas in <a href="#repeated">Repeated counts</a> to choose the representative (ΔR, ΔS) with each entry 0 or ½. A pair on a stable edge contributes according to its incident faces:</p>
+<div class="table-scroll"><table><thead><tr><th scope="col">Incident faces</th><th scope="col">Pair contribution to (ΔR, ΔS)</th></tr></thead><tbody><tr><td>01 or 23</td><td>(0, ½)</td></tr><tr><td>02 or 13</td><td>(½, 0)</td></tr><tr><td>03 or 12</td><td>(½, ½)</td></tr><tr><td>Both incidences in Fᵢ</td><td>(0, 0)</td></tr></tbody></table></div>
+<p>With reduced-core parameters, add the core’s own shift to the stable-edge contributions. In the compact website controls, the <em>full</em> local contribution is (k/2, 0) for an arm at either endpoint, or (c/2, c/2) for a cross, modulo integers. These totals already include pairs on the local chain; do not add those pairs a second time. A sprout changes the monogon point antipodally, so its sign shift cannot be recovered from its weight increment alone.</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Apply the geometric half-shifts first; the analytic characters are u equals S prime and v equals R prime"><mrow><mrow><mo>(</mo><msup><mi>R</mi><mo>′</mo></msup><mo>,</mo><msup><mi>S</mi><mo>′</mo></msup><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mi>R</mi><mo>+</mo><mrow><mi>Δ</mi><mi>R</mi></mrow></mrow><mo>,</mo><mrow><mi>S</mi><mo>+</mo><mrow><mi>Δ</mi><mi>S</mi></mrow></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><msup><mi>S</mi><mo>′</mo></msup><mo>,</mo><msup><mi>R</mi><mo>′</mo></msup><mo>)</mo></mrow></mrow></math></div>
+<p>Every repeated double-edge graph uses D and every repeated tetrahedral graph uses T. The lifted ordinary character triangles are their translates by (ΔR, ΔS). All four half-shift classes can occur. Translation of the character triangle does <em>not</em> translate its conformal image in the τ-plane.</p>
+<aside class="math-note"><strong>The full labeled graph selects the conformal branch.</strong> The three tetrahedral patterns AB + CD, AC + BD, and AD + BC each give weights (2,2,2,2) and zero half-shift. At the same source point (R,S) = (0.58,0.62), the numerically selected marked periods are different:</aside>
+<div class="table-scroll"><table><caption>A branch comparison at the same source character</caption><thead><tr><th scope="col">Pair counts equal to one</th><th scope="col">Numerical τ</th><th scope="col">Open comparison</th></tr></thead><tbody>
+<tr><td>AB and CD</td><td>0.582378538 + 1.134182653 i</td><td><a href="explore.html?seed=tetra&amp;decoration=repeated&amp;qAB=1&amp;qCD=1&amp;r=.58&amp;s=.62">Explore →</a></td></tr>
+<tr><td>AC and BD</td><td>0.354486851 + 0.687999745 i</td><td><a href="explore.html?seed=tetra&amp;decoration=repeated&amp;qAC=1&amp;qBD=1&amp;r=.58&amp;s=.62">Explore →</a></td></tr>
+<tr><td>AD and BC</td><td>0.751509514 + 0.652443302 i</td><td><a href="explore.html?seed=tetra&amp;decoration=repeated&amp;qAD=1&amp;qBC=1&amp;r=.58&amp;s=.62">Explore →</a></td></tr>
+</tbody></table></div><p>The count vector, cyclic labels, face labels, and marking must therefore be retained in branch and cache data. The ordered weights and ordinary monodromy alone are insufficient.</p><details>
+<summary>The classical Lamé coordinates and attachments
+</summary>
+<p>The original panels retain their lower-case analytic chart: 0 &lt; r,s &lt; ½ and r + s &gt; ½. Counts (a,b,c) attach hemispheres along the three labeled edges, give n = 1 + a + b + c, and use these analytic shifts:
+</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Classical analytic character shifts for a b c"><mrow><msub><mi>u</mi><mi>att</mi></msub><mo>=</mo><mi>r</mi><mo>+</mo><mfrac><mrow><mrow><mi>a</mi><mo>+</mo><mi>c</mi></mrow></mrow><mrow><mn>2</mn></mrow></mfrac><mo>,</mo><mspace width="1em"></mspace><msub><mi>v</mi><mi>att</mi></msub><mo>=</mo><mi>s</mi><mo>+</mo><mfrac><mrow><mrow><mi>b</mi><mo>+</mo><mi>c</mi></mrow></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></math>
+</div>
+<p>The starting hemisphere triangle has angles π,π,π. The resulting angles are (1+b+c)π, (1+a+c)π, (1+a+b)π. Gluing the two copies gives cone angle (4n+2)π and area 4πn. One attachment to each copy raises the total cone angle by 4π and area by 4π. The four ordinary character cells are displayed using integer periods and simultaneous inversion.
+</p>
+<p>The classical lower-case (r,s) labels are not the new families’ capital geometric (R,S) labels. Reusing their values without the coordinate dictionary can exchange asymmetric face or cusp labels.
+</p>
+</details>
+</section>
+<section class="panel" id="equations" aria-labelledby="equations-heading">
+<h2 id="equations-heading">6. The analytic equations for τ
+</h2>
+<p>The solver finds zeros of a premodular equation while retaining a geometric branch label. In the following formulas, T is the <em>evaluation modulus</em>; it may be τ, 2τ, or −1/(2τ). The quasi-periods are η₁(T) = ζ(z+1;T) − ζ(z;T) and η₂(T) = ζ(z+T;T) − ζ(z;T). Set
+</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Elliptic data for the premodular equations"><mtable columnalign="left"><mtr><mtd><mrow><mi>α</mi><mo>=</mo><mi>u</mi><mo>+</mo><mi>v</mi><mi>T</mi><mo>,</mo><mspace width="1em"></mspace><mi>Z</mi><mo>=</mo><mrow><mi>ζ</mi><mrow><mo>(</mo><mi>α</mi><mo>;</mo><mi>T</mi><mo>)</mo></mrow></mrow><mo>−</mo><mi>u</mi><msub><mi>η</mi><mn>1</mn></msub><mo>−</mo><mi>v</mi><msub><mi>η</mi><mn>2</mn></msub></mrow></mtd></mtr><mtr><mtd><mrow><mi>x</mi><mo>=</mo><mrow><mi>℘</mi><mrow><mo>(</mo><mi>α</mi><mo>;</mo><mi>T</mi><mo>)</mo></mrow></mrow><mo>,</mo><mspace width="1em"></mspace><mi>y</mi><mo>=</mo><mrow><msup><mi>℘</mi><mo>′</mo></msup><mrow><mo>(</mo><mi>α</mi><mo>;</mo><mi>T</mi><mo>)</mo></mrow></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mi>e</mi><mo>=</mo><mrow><mi>℘</mi><mrow><mo>(</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mo>;</mo><mi>T</mi><mo>)</mo></mrow></mrow><mo>,</mo><mspace width="1em"></mspace><mi>g</mi><mo>=</mo><msub><mi>g</mi><mn>2</mn></msub><mrow><mo>(</mo><mi>T</mi><mo>)</mo></mrow></mrow></mtd></mtr></mtable></math>
+</div>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="P one equals Z and P two equals Z cubed minus three x Z minus y"><mrow><msub><mi>P</mi><mn>1</mn></msub><mo>=</mo><mi>Z</mi><mo>,</mo><mspace width="1em"></mspace><msub><mi>P</mi><mn>2</mn></msub><mo>=</mo><msup><mi>Z</mi><mn>3</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi><mi>Z</mi><mo>−</mo><mi>y</mi></mrow></math>
+</div>
+<p>For the two small single-operation examples, useful compact residuals are a quartic and a degree-seven polynomial. The repeated engine uses the generic determinant described below. Their subscripts 21 and 31 abbreviate the weight vectors (2,1,0,0) and (3,1,0,0); they do not denote powers.
+</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="The quartic premodular polynomial for weights two one zero zero"><mrow><msub><mi>P</mi><mn>21</mn></msub><mo>=</mo><msup><mi>Z</mi><mn>4</mn></msup><mo>+</mo><mn>3</mn><mrow><mo>(</mo><mi>e</mi><mo>−</mo><mn>2</mn><mi>x</mi><mo>)</mo></mrow><msup><mi>Z</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>y</mi><mi>Z</mi><mo>−</mo><mn>3</mn><mrow><mo>(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>e</mi><mi>x</mi><mo>+</mo><msup><mi>e</mi><mn>2</mn></msup><mo>−</mo><mfrac><mrow><mi>g</mi></mrow><mrow><mn>4</mn></mrow></mfrac><mo>)</mo></mrow></mrow></math>
+</div>
+<details>
+<summary>The degree-seven polynomial used for the split
+</summary>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="The degree seven premodular polynomial for weights three one zero zero"><mtable columnalign="left"><mtr><mtd><mrow><msub><mi>P</mi><mn>31</mn></msub><mo>=</mo><msup><mi>Z</mi><mn>7</mn></msup><mo>+</mo><mrow><mo>(</mo><mo>−</mo><mn>21</mn><mi>x</mi><mo>+</mo><mn>6</mn><mi>e</mi><mo>)</mo></mrow><msup><mi>Z</mi><mn>5</mn></msup><mo>−</mo><mn>35</mn><mi>y</mi><msup><mi>Z</mi><mn>4</mn></msup></mrow></mtd></mtr><mtr><mtd><mrow><mo>+</mo><mrow><mo>(</mo><mo>−</mo><mn>105</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>60</mn><mi>x</mi><mi>e</mi><mo>−</mo><mn>15</mn><msup><mi>e</mi><mn>2</mn></msup><mo>+</mo><mn>18</mn><mi>g</mi><mo>)</mo></mrow><msup><mi>Z</mi><mn>3</mn></msup></mrow></mtd></mtr><mtr><mtd><mrow><mo>+</mo><mrow><mo>(</mo><mo>−</mo><mn>42</mn><mi>y</mi><mi>x</mi><mo>−</mo><mn>60</mn><mi>y</mi><mi>e</mi><mo>)</mo></mrow><msup><mi>Z</mi><mn>2</mn></msup></mrow></mtd></mtr><mtr><mtd><mrow><mo>+</mo><mrow><mo>(</mo><mo>−</mo><mn>35</mn><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>90</mn><msup><mi>x</mi><mn>2</mn></msup><mi>e</mi><mo>+</mo><mn>45</mn><mi>x</mi><msup><mi>e</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mi>g</mi><mo>+</mo><mn>80</mn><msup><mi>e</mi><mn>3</mn></msup><mo>−</mo><mn>2</mn><mi>e</mi><mi>g</mi><mo>)</mo></mrow><mi>Z</mi></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>3</mn><mi>y</mi><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>12</mn><mi>y</mi><mi>x</mi><mi>e</mi><mo>+</mo><mn>15</mn><mi>y</mi><msup><mi>e</mi><mn>2</mn></msup></mrow></mtd></mtr></mtable></math>
+</div>
+<p>This expanded polynomial avoids a removable denominator that occurs in a shorter determinant formula. Both expressions were checked against the generic Bloch-jet determinant.
+</p>
+</details>
+<div class="table-scroll">
+<table class="">
+<caption>All source variables R,S below belong to the undecorated seed
+</caption>
+<thead>
+<tr>
+<th scope="col">Selected graph
+</th>
+<th scope="col">Equation selecting possible period ratios
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Double-edge seed (1,1,0,0)
+</td>
+<td><math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Double edge seed equation"><mrow><msub><mi>P</mi><mn>1</mn></msub><mrow><mo>(</mo><mrow><mn>2</mn><mi>τ</mi></mrow><mo>;</mo><mi>S</mi><mo>,</mo><mfrac><mrow><mi>R</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math>
+</td>
+</tr>
+<tr>
+<td>Tetrahedral seed (1,1,1,1)
+</td>
+<td><math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Tetrahedral seed equation"><mrow><msub><mi>P</mi><mn>1</mn></msub><mrow><mo>(</mo><mi>τ</mi><mo>;</mo><mfrac><mrow><mi>S</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo>,</mo><mfrac><mrow><mi>R</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math>
+</td>
+</tr>
+<tr>
+<td>Pair (2,2,0,0)
+</td>
+<td><math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Double edge pair equation"><mrow><msub><mi>P</mi><mn>2</mn></msub><mrow><mo>(</mo><mrow><mn>2</mn><mi>τ</mi></mrow><mo>;</mo><mrow><mi>S</mi><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow><mo>,</mo><mfrac><mrow><mi>R</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math>
+</td>
+</tr>
+<tr>
+<td>Split (3,1,0,0)
+</td>
+<td><math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Double edge split equation"><mrow><msub><mi>P</mi><mn>31</mn></msub><mrow><mo>(</mo><mi>τ</mi><mo>;</mo><mi>S</mi><mo>,</mo><mi>R</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math>
+</td>
+</tr>
+<tr>
+<td>Sprout (2,1,0,0)
+</td>
+<td><math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Double edge sprout equation"><mrow><msub><mi>P</mi><mn>21</mn></msub><mrow><mo>(</mo><mi>τ</mi><mo>;</mo><mi>S</mi><mo>,</mo><mrow><mi>R</mi><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math>
+</td>
+</tr>
+<tr>
+<td>Pair (2,2,1,1)
+</td>
+<td><math xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Tetrahedral pair equation"><mrow><msub><mi>P</mi><mn>21</mn></msub><mrow><mo>(</mo><mfrac><mrow><mrow><mo>−</mo><mn>1</mn></mrow></mrow><mrow><mrow><mn>2</mn><mi>τ</mi></mrow></mrow></mfrac><mo>;</mo><mfrac><mrow><mi>R</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo>,</mo><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mo>−</mo><mi>S</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The doubled-modulus equations come from exact isogenies. The tetrahedral pair reduces to weights (2,1,0,0) only after an isogeny and modular inversion; its geometric branch is selected separately from the double-edge sprout branch.
+</p>
+<h3>The determinant used for repeated graphs</h3>
+<p>At the original marked modulus, put (u,v) = (S + ΔS, R + ΔR). The repeated solver evaluates the generic Bloch-jet determinant, with ordered weights at the four marked half-periods. The jet indices at pᵢ have the parity of nᵢ − 1:</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="The generic Bloch-jet residual is the determinant of a matrix with parity-restricted jet indices and size the sum of ceilings of n i over two"><mtable columnalign="left"><mtr><mtd><mrow><msub><mi>J</mi><mi>i</mi></msub><mo>=</mo><mo>{</mo><msub><mi>n</mi><mi>i</mi></msub><mo>−</mo><mn>1</mn><mo>,</mo><msub><mi>n</mi><mi>i</mi></msub><mo>−</mo><mn>3</mn><mo>,</mo><mo>…</mo><mo>}</mo><mo>∩</mo><msub><mi>ℤ</mi><mrow><mo>≥</mo><mn>0</mn></mrow></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>D</mi><mi>𝐧</mi></msub><mrow><mo>(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo>,</mo><mi>τ</mi><mo>)</mo></mrow><mo>=</mo><mtext>det</mtext><msub><mi>M</mi><mi>𝐧</mi></msub><mrow><mo>(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo>,</mo><mi>τ</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd><mrow><mtext>size</mtext><mrow><mo>(</mo><msub><mi>M</mi><mi>𝐧</mi></msub><mo>)</mo></mrow><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>0</mn></mrow><mn>3</mn></munderover><mo>⌈</mo><mfrac><mrow><msub><mi>n</mi><mi>i</mi></msub></mrow><mrow><mn>2</mn></mrow></mfrac><mo>⌉</mo></mrow></mtd></mtr></mtable></math></div>
+<p>The entries use derivatives of a quasiperiodic elliptic kernel at differences of the marked half-periods; diagonal entries use its regular Laurent coefficients. Theta expansions evaluate these jets without expanding a large premodular polynomial. Modular reduction transforms both analytic characters and permutes the half-period weights; the answer is then returned to the original marking.</p>
+<p>Isogeny shortcuts are used only with a calibrated character lift. In particular, q pairs on the selected t connector give weights (n,n,0,0), and q pairs on AB give (n,n,1,1), with n = q + 1. Both use the selected doubled-modulus lift T = 2τ and analytic parameters (S + q/2, R/2). The reduced weights are respectively (n,0,0,0) and (n,0,1,0), after the corresponding half-period relabeling. Equal weights in another labeled graph do not justify reusing that lift.</p><aside class="math-note"><strong>A zero equation does not identify the requested surface.</strong> Several roots can occur at the same character. The labeled gluing, its marking, a geometric period anchor, and continuation choose the branch. An arbitrary root search can return another surface with the same monodromy.
+</aside>
+<p>The classical family instead uses its order-n premodular recurrence at the lower-case analytic characters from the previous section. Its current controls support a + b + c ≤ 11, hence 1 ≤ n ≤ 12.
+</p>
+</section>
+<section class="panel" id="algorithm" aria-labelledby="algorithm-heading">
+<h2 id="algorithm-heading">7. The stable numerical algorithm</h2>
+<h3>Select the marked geometric branch</h3>
+<p>The labeled graph is expanded into hemisphere disks with the specified lengths and edge identifications. Cotangent finite-element energies produce two discrete harmonic one-forms. Derivatives of the developing holonomy recover a full integer period marking; it is checked to be unimodular. This retains more information than the two ordinary monodromy signs. For the forms in that oriented basis, set Gᵢⱼ = ∫ωᵢ ∧ *ωⱼ. The marked period is</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="The period ratio is minus G twelve plus i square root determinant G, divided by G twenty two"><mrow><mi>τ</mi><mo>=</mo><mfrac><mrow><mrow><mo>−</mo><msub><mi>G</mi><mn>12</mn></msub><mo>+</mo><mi>i</mi><msqrt><mrow><mtext>det</mtext><mi>G</mi></mrow></msqrt></mrow></mrow><mrow><msub><mi>G</mi><mn>22</mn></msub></mrow></mfrac></mrow></math>
+</div>
+<p>For a new configuration, two differently refined meshes give two approximate periods. Each is independently corrected to an analytic determinant root. The worker accepts the anchor only when those roots agree within its branch check; otherwise it reports the configuration unresolved. Previously checked connector anchors and case-specific cached anchors avoid repeating this initialization. Two-mesh agreement is a numerical safeguard, not a proof of global uniqueness.</p>
+<h3>Continue the chosen root</h3>
+<ol class="algorithm-list">
+<li><strong>Keep the complete labeled counts.</strong> Construct the graph, validate its face degrees and metric cell, and apply its ordinary half-shift before evaluating analytic characters.</li>
+<li><strong>Reuse a nearby point.</strong> Dragging transports the previous resolved root. Small tested configurations use ordinary floating-point correction; larger weights or unsuccessful corrections switch to decimal multiprecision.</li>
+<li><strong>Subdivide unstable steps.</strong> A complex secant corrector is guarded against leaving the upper half-plane or moving too far. Boundary traces use finer internal steps than the displayed samples. For mixed graphs an intermediate geometric period check helps detect branch jumps.</li>
+<li><strong>Increase precision as the cusp deepens.</strong> The working precision grows with the number of decimal orders approached and the largest weight. Exact decimal source strings keep a point distinct from the boundary even when binary floating-point would round its coordinate to one.</li>
+<li><strong>Check the coordinates that matter.</strong> Repeating at higher precision compares the resulting τ and cusp coordinates. When a calibrated rational center is available, the small horizontal correction is checked relatively, rather than judging the much larger real coordinate alone.</li>
+<li><strong>Return actual finite samples.</strong> The website stores decimal coordinates and transforms them before converting small drawing offsets to plotting numbers. A failed correction leaves a gap or ends the trace; it never inserts a predicted cusp endpoint.</li>
+</ol>
+<h3>Why the infinity tail needs a different evaluator</h3>
+<p>Near a deep cusp, generic theta-jet formulas can subtract order-one terms whose difference is tiny. Merely asking for a small determinant residual can then accept cancellation or an underflowed zero. For the calibrated t-connector and AB-connector families approaching R = 1, the worker instead evaluates a Fourier form of the same reduced determinant.</p>
+<p>The even part of the leading Kronecker-kernel term is simplified <em>before</em> taking jets or forming the matrix. This removes its identically irrelevant odd part and avoids recovering a small source distance by subtraction. Derivative rescaling and row/pivot normalization control the remaining dynamic range. These transformations retain the zero set; the normalized numerical residual need not be holomorphic.</p>
+<details><summary>The cancellation removed before evaluating even jets</summary><p>For a scaled local coordinate z and small reduced-character displacement ξ, the trigonometric kernel term satisfies the exact even-part identity</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="The even part of exp i xi z over two sine z over two is i sine xi z over two sine z over two"><mrow><mtext>Even</mtext><mo>[</mo><mfrac><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>ξ</mi><mi>z</mi></mrow></msup></mrow><mrow><mrow><mn>2</mn><mi>sin</mi><mrow><mo>(</mo><mfrac><mrow><mi>z</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo>)</mo></mrow></mrow></mrow></mfrac><mo>]</mo><mo>=</mo><mfrac><mrow><mrow><mi>i</mi><mi>sin</mi><mrow><mo>(</mo><mi>ξ</mi><mi>z</mi><mo>)</mo></mrow></mrow></mrow><mrow><mrow><mn>2</mn><mi>sin</mi><mrow><mo>(</mo><mfrac><mrow><mi>z</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo>)</mo></mrow></mrow></mrow></mfrac></mrow></math></div>
+<p>The irrelevant odd term has identically zero even derivatives. Computing the right-hand side’s small-ξ jets directly avoids subtracting nearly equal order-one jets on the left. The other Fourier terms are still evaluated, and precision and mode counts are increased to test the resulting root.</p></details>
+<p>The Fourier solver repeats at higher precision and with twice as many modes. It checks the full coordinate absolutely and the small horizontal correction relatively. This special cancellation-free reduction currently applies to the two selected connector infinity families. Other source edges and arbitrary mixed decorations use the generic theta-jet evaluator at higher precision and guarded continuation; they do not inherit this fast path automatically.</p>
+<details><summary>Local computation, caching, and measured speed</summary>
+<p>All numerical work runs in browser workers on the visitor’s device. The static HTML site needs no remote computation service. The six seed/single-operation presets reuse stored 231-point compact images. Repeated count configurations build compact meshes on demand, with a smaller resolution cap for larger graphs. Case-specific anchors and completed traces can be reused; changing the source ray requires evaluating that ray.</p>
+<p>On the development machine, tested nearby point updates took about 1–3 milliseconds after initialization. Small repeated compact meshes took roughly 0.6–1.6 seconds. Examples with nine boundary samples took about 7–16 seconds, depending on the family and cusp. These measurements exclude or vary with startup, rendering, cache state, and concurrent work; large mixed configurations can be substantially slower.</p>
+<p>Separate count-32 checks on straight rays to the midpoints of the infinity edges reached ε = 10⁻⁸⁰ and retained horizontal corrections of order 10⁻¹⁶⁰. Those timing tests computed two deep nodes, not every sample of a full eighty-decade path. A deep target and high sampling density can exceed the page’s computation budget.</p></details>
+</section>
+<section class="panel" id="cusps" aria-labelledby="cusps-heading">
+<h2 id="cusps-heading">8. Cusp charts and the asymptotic constants
+</h2>
+<p>For the calibrated seed and single-operation branches, the following charts describe their matched open-edge cusp limits. Repeated connector counts use the predictions and qualifications below. For arbitrary mixed decorations these are target charts rather than a proved cusp assignment. The boundary itself is excluded from numerical evaluation.
+</p>
+<h3>Double-edge source D
+</h3>
+<div class="table-scroll">
+<table class="">
+<thead>
+<tr>
+<th scope="col">Source edge
+</th>
+<th scope="col">Raw cusp
+</th>
+<th scope="col">δ
+</th>
+<th scope="col">Cusp coordinate w
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R → 1
+</td>
+<td>∞
+</td>
+<td>1 − R
+</td>
+<td>τ
+</td>
+</tr>
+<tr>
+<td>S → ½
+</td>
+<td>0
+</td>
+<td>½ − S
+</td>
+<td>1 − 1/τ
+</td>
+</tr>
+<tr>
+<td>R + 2S → 1
+</td>
+<td>½
+</td>
+<td>R + 2S − 1
+</td>
+<td>τ/(1 − 2τ)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Tetrahedral source T
+</h3>
+<div class="table-scroll">
+<table class="">
+<thead>
+<tr>
+<th scope="col">Source edge
+</th>
+<th scope="col">Raw cusp
+</th>
+<th scope="col">δ
+</th>
+<th scope="col">Cusp coordinate w
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R → 1
+</td>
+<td>∞
+</td>
+<td>1 − R
+</td>
+<td>τ
+</td>
+</tr>
+<tr>
+<td>S → 1
+</td>
+<td>0
+</td>
+<td>1 − S
+</td>
+<td>1 − 1/τ
+</td>
+</tr>
+<tr>
+<td>R + S → 1
+</td>
+<td>1
+</td>
+<td>R + S − 1
+</td>
+<td>1/(1 − τ)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The coefficient tables use this asymptotic form, on a branch for which the stated expansion has been established or numerically matched:
+</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="Real w tends to x zero and imaginary w equals alpha over pi times logarithm C over delta, plus little o of one"><mrow><mtext>Re</mtext><mspace width=".15em"></mspace><mi>w</mi><mo>→</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mspace width="1em"></mspace><mtext>Im</mtext><mspace width=".15em"></mspace><mi>w</mi><mo>=</mo><mfrac><mrow><mi>α</mi></mrow><mrow><mi>π</mi></mrow></mfrac><mtext>log</mtext><mspace width=".15em"></mspace><mfrac><mrow><mi>C</mi></mrow><mrow><mi>δ</mi></mrow></mfrac><mo>+</mo><mi>o</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow></math>
+</div>
+<p>C is positive and is evaluated at the limiting point of the open edge. The displayed predictions concern tangential coordinates away from the vertices. They must not be used as uniform vertex asymptotics.
+</p>
+<h3>Repeated connector pairs: the implemented count-dependent predictions</h3>
+<p>Here q pairs are inserted on <strong>t only</strong> for the double-edge seed, or on <strong>AB only</strong> for the tetrahedron; all other pair and local counts are zero. Put n = q + 1. The weights are (n,n,0,0) and (n,n,1,1), respectively, and the ordinary shift is (0,q/2) modulo integers. This n is a parameter for these subfamilies, not the total weight N.</p>
+<aside class="math-note"><strong>Status of the all-count formulas.</strong> The expressions below reproduce the seed and one-pair results and organize checks at further finite counts. They are numerically supported all-count candidates in this computation project; an all-count symbolic proof is not supplied here. Their graph assignment relies on marked geometric anchors and continuation. They are reference predictions for comparison with solved points, not replacements for those points.</aside>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="B n is the central binomial coefficient two n choose n; the leading constant C equals K times the tangential sine factor f"><mrow><msub><mi>B</mi><mi>n</mi></msub><mo>=</mo><mrow><mo>(</mo><mfrac linethickness="0"><mrow><mn>2</mn><mi>n</mi></mrow><mi>n</mi></mfrac><mo>)</mo></mrow><mo>,</mo><mi>C</mi><mo>=</mo><mi>K</mi><mi>f</mi></mrow></math></div>
+<p>Use f = sin(2πS) on the double-edge infinity edge, f = sin(πS) on the tetrahedral infinity edge, and f = sin(πR) on the remaining edges. Evaluate the tangential coordinate at the limiting point of the open edge. The δ and w for each row are listed above.</p>
+<div class="table-scroll"><table class="repeated-cusp-table"><caption>Double-edge: q pairs on t; weights (n,n,0,0)</caption><thead><tr><th scope="col">Source edge</th><th scope="col">x₀</th><th scope="col">α</th><th scope="col">K</th></tr></thead><tbody><tr><th scope="row">R → 1</th><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>4</mn></mrow></mfrac></math></td><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></math></td><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>2</mn><mi>n</mi><mrow><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow></mrow></math></td></tr><tr><th scope="row">S → ½</th><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mrow><mrow><mi>n</mi></mrow></mfrac></math></td><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mn>2</mn></mrow><mrow><mi>n</mi></mrow></mfrac></math></td><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mi>n</mi><msub><mi>B</mi><mi>n</mi></msub></mrow></math></td></tr><tr><th scope="row">R + 2S → 1</th><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mrow><mn>1</mn><mo>−</mo><mn>2</mn><mi>n</mi></mrow></mrow><mrow><mrow><mn>4</mn><mi>n</mi></mrow></mrow></mfrac></math></td><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mn>1</mn></mrow><mrow><mrow><mn>2</mn><mi>n</mi></mrow></mrow></mfrac></math></td><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>2</mn><mi>n</mi><msub><mi>B</mi><mi>n</mi></msub></mrow></math></td></tr></tbody></table></div><div class="table-scroll"><table class="repeated-cusp-table"><caption>Tetrahedron: q pairs on AB; weights (n,n,1,1)</caption><thead><tr><th scope="col">Source edge</th><th scope="col">x₀</th><th scope="col">α</th><th scope="col">K</th></tr></thead><tbody><tr><th scope="row">R → 1</th><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></math></td><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn></math></td><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mrow><mn>8</mn><mi>n</mi><mrow><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow></mrow></msqrt></math></td></tr><tr><th scope="row">S → 1</th><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mi>n</mi></mrow><mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mrow></mfrac></math></td><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mn>2</mn></mrow><mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mrow></mfrac></math></td><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>2</mn><msub><mi>B</mi><mi>n</mi></msub></mrow></math></td></tr><tr><th scope="row">R + S → 1</th><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mn>1</mn></mrow><mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mrow></mfrac></math></td><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mrow><mn>2</mn></mrow><mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mrow></mfrac></math></td><td><math displaystyle="true" xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mn>2</mn><msub><mi>B</mi><mi>n</mi></msub></mrow></math></td></tr></tbody></table></div>
+<p>For example, two AB pairs mean n = 3. On R + S → 1 the prediction is Re w → 1/4 and Im w ≈ (1/2π) log(40 sin(πR)/δ). Limits &amp; Zoom places the rational line at 1/4 while continuing the actual period ratio in w = 1/(1 − τ).</p>
+<p class="case-links"><a href="limits.html?seed=tetra&amp;decoration=repeated&amp;qAB=2&amp;path=edge2&amp;t=.5&amp;depth=7&amp;density=1">Compare this prediction with the computed trace →</a></p>
+<h3>Arms and arbitrary mixed decorations</h3>
+<p>The single-sprout and single-split coefficients remain available in the table below. Further arm counts, crosses, and mixed edge counts use the selected graph’s numerical trace. The current website does not assert a closed rational center x₀, logarithmic slope α, or constant C for an arbitrary such configuration. The cusp named in its boundary selector is an <em>expected target chart</em>, to be checked against the resolved continuation. It is not an all-count pinching theorem.</p>
+<p>In particular, AB twice plus AC once is not the AB-only family. Its weights and ordinary shift are exact, but replacing its asymptotics by the AB-only row would ignore its graph and select unjustified reference data.</p>
+<details><summary>How a branch-specific asymptotic would be extracted</summary>
+<p>Transport the ordered weights and characters into the selected cusp chart. A local Fourier/Taylor expansion of the determinant can have several leading Newton faces. If the continued geometric root selects a simple balance of the form below, its magnitude fixes the logarithmic slope and its phase fixes the real center:</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="A selected Newton balance delta equals A Q to power p yields alpha one over two p, C modulus of A, and a phase-dependent real center"><mtable columnalign="left"><mtr><mtd><mrow><mi>δ</mi><mo>=</mo><mi>A</mi><msup><mi>Q</mi><mi>p</mi></msup><mrow><mo>(</mo><mn>1</mn><mo>+</mo><mi>o</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow><mo>)</mo></mrow><mo>,</mo><mi>Q</mi><mo>=</mo><msup><mi>e</mi><mrow><mn>2</mn><mi>π</mi><mi>i</mi><mi>w</mi></mrow></msup></mrow></mtd></mtr><mtr><mtd><mrow><mi>α</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mrow><mn>2</mn><mi>p</mi></mrow></mrow></mfrac><mo>,</mo><mi>C</mi><mo>=</mo><mo>|</mo><mi>A</mi><mo>|</mo><mo>,</mo><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mfrac><mrow><mrow><mo>−</mo><mtext>arg</mtext><mi>A</mi><mo>+</mo><mn>2</mn><mi>π</mi><mi>j</mi></mrow></mrow><mrow><mrow><mn>2</mn><mi>π</mi><mi>p</mi></mrow></mrow></mfrac></mrow></mtd></mtr></mtable></math></div>
+<p>In this display A is a complex leading coefficient and j an integer phase choice. Both the Newton face and phase must agree with the graph-selected continuation. Other determinant roots can have small residuals but different centers or slopes. General automatic, branch-certified coefficient extraction is not implemented by the current page.</p></details>
+<details><summary>Seed and single-operation coefficients</summary><div class="table-scroll">
+<table class="cusp-table">
+<caption>Double-edge seed and its three chosen decorations
+</caption>
+<thead>
+<tr>
+<th scope="col">Double-edge case
+</th>
+<th scope="col">Raw cusp
+</th>
+<th scope="col">x₀
+</th>
+<th scope="col">α
+</th>
+<th scope="col">C
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seed (1,1,0,0)
+</td>
+<td>∞
+</td>
+<td>¼
+</td>
+<td>½
+</td>
+<td>4 sin(2πS)
+</td>
+</tr>
+<tr>
+<td>Seed (1,1,0,0)
+</td>
+<td>0
+</td>
+<td>0
+</td>
+<td>2
+</td>
+<td>2 sin(πR)
+</td>
+</tr>
+<tr>
+<td>Seed (1,1,0,0)
+</td>
+<td>½
+</td>
+<td>−¼
+</td>
+<td>½
+</td>
+<td>4 sin(πR)
+</td>
+</tr>
+<tr>
+<td>Pair (2,2,0,0)
+</td>
+<td>∞
+</td>
+<td>¼
+</td>
+<td>½
+</td>
+<td>12 sin(2πS)
+</td>
+</tr>
+<tr>
+<td>Pair (2,2,0,0)
+</td>
+<td>0
+</td>
+<td>½
+</td>
+<td>1
+</td>
+<td>12 sin(πR)
+</td>
+</tr>
+<tr>
+<td>Pair (2,2,0,0)
+</td>
+<td>½
+</td>
+<td>−⅜
+</td>
+<td>¼
+</td>
+<td>24 sin(πR)
+</td>
+</tr>
+<tr>
+<td>Split (3,1,0,0)
+</td>
+<td>∞
+</td>
+<td>⅛
+</td>
+<td>¼
+</td>
+<td>40 sin(2πS)
+</td>
+</tr>
+<tr>
+<td>Split (3,1,0,0)
+</td>
+<td>0
+</td>
+<td>0
+</td>
+<td>2
+</td>
+<td>2√6 sin(πR)
+</td>
+</tr>
+<tr>
+<td>Split (3,1,0,0)
+</td>
+<td>½
+</td>
+<td>−⅛
+</td>
+<td>¼
+</td>
+<td>40 sin(πR)
+</td>
+</tr>
+<tr>
+<td>Sprout (2,1,0,0)
+</td>
+<td>∞
+</td>
+<td>⅙
+</td>
+<td>⅓
+</td>
+<td>12 sin(2πS)
+</td>
+</tr>
+<tr>
+<td>Sprout (2,1,0,0)
+</td>
+<td>0
+</td>
+<td>0
+</td>
+<td>2
+</td>
+<td>2√3 sin(πR)
+</td>
+</tr>
+<tr>
+<td>Sprout (2,1,0,0)
+</td>
+<td>½
+</td>
+<td>−⅙
+</td>
+<td>⅓
+</td>
+<td>12 sin(πR)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-scroll">
+<table class="cusp-table">
+<caption>Tetrahedral seed and its chosen pair insertion
+</caption>
+<thead>
+<tr>
+<th scope="col">Tetrahedral case
+</th>
+<th scope="col">Raw cusp
+</th>
+<th scope="col">x₀
+</th>
+<th scope="col">α
+</th>
+<th scope="col">C
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seed (1,1,1,1)
+</td>
+<td>∞
+</td>
+<td>½
+</td>
+<td>1
+</td>
+<td>4 sin(πS)
+</td>
+</tr>
+<tr>
+<td>Seed (1,1,1,1)
+</td>
+<td>0
+</td>
+<td>½
+</td>
+<td>1
+</td>
+<td>4 sin(πR)
+</td>
+</tr>
+<tr>
+<td>Seed (1,1,1,1)
+</td>
+<td>1
+</td>
+<td>½
+</td>
+<td>1
+</td>
+<td>4 sin(πR)
+</td>
+</tr>
+<tr>
+<td>Pair (2,2,1,1)
+</td>
+<td>∞
+</td>
+<td>½
+</td>
+<td>1
+</td>
+<td>4√3 sin(πS)
+</td>
+</tr>
+<tr>
+<td>Pair (2,2,1,1)
+</td>
+<td>0
+</td>
+<td>⅔
+</td>
+<td>⅔
+</td>
+<td>12 sin(πR)
+</td>
+</tr>
+<tr>
+<td>Pair (2,2,1,1)
+</td>
+<td>1
+</td>
+<td>⅓
+</td>
+<td>⅔
+</td>
+<td>12 sin(πR)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><p class="math-note"><strong>Keep the signs and the cusp coordinate.</strong> Negative limits such as −3/8 describe Re w, not Re τ. The double-edge marked cusp ½ is Γ(2)-equivalent to ∞, but the two ends are retained separately in this marking. The rational x₀ values depend on the selected branch and the chosen coordinate.
+</p>
+<details>
+<summary>Why the infinity real limits are 1/6 and 1/8
+</summary>
+<p>The leading Fourier balances on the sprout and split branches are
+</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="The selected sprout and split infinity balances"><mtable columnalign="left"><mtr><mtd><mrow><msup><mi>e</mi><mrow><mn>3</mn><mi>π</mi><mi>i</mi><mi>τ</mi></mrow></msup><mo>∼</mo><mfrac><mrow><mrow><mi>i</mi><mrow><mo>(</mo><mn>1</mn><mo>−</mo><mi>R</mi><mo>)</mo></mrow></mrow></mrow><mrow><mrow><mn>12</mn><mrow><mi>sin</mi><mrow><mo>(</mo><mn>2</mn><mi>π</mi><mi>S</mi><mo>)</mo></mrow></mrow></mrow></mrow></mfrac><mspace width="1em"></mspace><mtext>(2,1,0,0)</mtext></mrow></mtd></mtr><mtr><mtd><mrow><msup><mi>e</mi><mrow><mn>4</mn><mi>π</mi><mi>i</mi><mi>τ</mi></mrow></msup><mo>∼</mo><mfrac><mrow><mrow><mi>i</mi><mrow><mo>(</mo><mn>1</mn><mo>−</mo><mi>R</mi><mo>)</mo></mrow></mrow></mrow><mrow><mrow><mn>40</mn><mrow><mi>sin</mi><mrow><mo>(</mo><mn>2</mn><mi>π</mi><mi>S</mi><mo>)</mo></mrow></mrow></mrow></mrow></mfrac><mspace width="1em"></mspace><mtext>(3,1,0,0)</mtext></mrow></mtd></mtr></mtable></math>
+</div>
+<p>The phase on the right is positive imaginary. Continuation from the geometric anchor selects Re τ → 1/6 for the sprout and Re τ → 1/8 for the split. Taking absolute values recovers their logarithmic height coefficients. Other roots of the premodular equations can have different phases or Newton slopes; these balances are branch-specific.
+</p>
+</details>
+</section>
+<section class="panel" id="boundary" aria-labelledby="boundary-heading">
+<h2 id="boundary-heading">9. Finite boundary arcs, source paths, and the two zoom scales
+</h2>
+<p>In the calibrated examples, an open source edge has a cusp limit, while approaching a source vertex can produce a direction-dependent finite limiting arc. Thus the τ-image is not obtained by connecting three sampled vertex values. To describe such an arc, approach the vertex with a fixed ratio between its two vanishing source distances, expand the premodular equation, and remove its common vanishing or singular factor. The leading coefficient gives a regularized equation for the finite limit.
+</p>
+<p>The stored finite arcs belong to the six seed/single-operation presets: they sample 19 points per arc and stop before the unsampled ends. Arbitrary repeated configurations have no such precomputed boundary arcs; the compact mesh and requested source trace supply their picture. A regularized zero equation can contain additional branches, so neither stored arcs nor live traces certify the complete image boundary.
+</p>
+<h3>The slider ε is not the edge distance δ
+</h3>
+<p>The hollow circle chooses a compact starting point; the diamond chooses a boundary target. Limits follows the straight source segment
+</p>
+<div class="equation"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML" aria-label="The source ray is one minus epsilon times its boundary target plus epsilon times its starting point"><mrow><mrow><mo>(</mo><mi>R</mi><mo>,</mo><mi>S</mi><mo>)</mo></mrow><mrow><mo>(</mo><mi>ε</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mn>1</mn><mo>−</mo><mi>ε</mi><mo>)</mo></mrow><msub><mi>p</mi><mi>∂</mi></msub><mo>+</mo><mi>ε</mi><msub><mi>p</mi><mtext>start</mtext></msub><mo>,</mo><mspace width="1em"></mspace><mn>0</mn><mo>&lt;</mo><mi>ε</mi><mo>≤</mo><mn>1</mn></mrow></math>
+</div>
+<p>At ε = 1 the point is the start, and ε → 0 approaches the target. For an edge target, δ(ε) is ε times the corresponding edge distance of the starting point. For example, approaching R = 1 gives δ(ε) = ε(1 − R<sub>start</sub>). Substituting ε directly for δ would shift the logarithmic intercept. For a vertex target the starting point fixes the direction, and the open-edge formulas above do not apply.
+</p>
+<h3>What the overview and local graphs show
+</h3>
+<p>The classical chart retains its original right-hand region. New-seed images are shown in their original marked upper-half-plane representatives with Γ(2) reference guides; they are not folded into a single fundamental domain or clipped to the classical image region. The overview uses compressed height Im τ/(1 + Im τ), with no change to the reported τ.
+</p>
+<p>The two local plots use the selected ordinary coordinate τ or the cusp coordinate w. The first keeps equal coordinate units, making the near-vertical direction visible. The second magnifies the horizontal scale while retaining the vertical range. Both axes show absolute coordinates, including negative real w values. When a calibrated coefficient table supplies a rational center, a reference line marks that prediction. For mixed decorations without such a formula, no rational line is asserted. The curves consist of solved points and are never extended to an invented endpoint.
+</p>
+</section>
+<section class="panel" id="precision" aria-labelledby="precision-heading">
+<h2 id="precision-heading">10. What is exact, what is checked, and what remains open</h2>
+<div class="table-scroll"><table><thead><tr><th scope="col">Part of the construction</th><th scope="col">Status and checks</th></tr></thead><tbody>
+<tr><th scope="row">Labeled graph, weights, and admissibility</th><td>Exact integer/ribbon-graph rules and metric perimeter identities for the chosen normal forms. Face degrees, total vertex count, and half-character shifts are checked during construction. The graph rules do not require a numerical root.</td></tr>
+<tr><th scope="row">Source triangles and ordinary half-shifts</th><td>The original source D or T remains valid for all canonical counts. Shifts are exact modulo integers. They do not determine a unique conformal image.</td></tr>
+<tr><th scope="row">Analytic residual and isogenies</th><td>The kernel determinant and covariant modular transport supply the equations. An isogeny shortcut also requires the graph’s calibrated character lift.</td></tr>
+<tr><th scope="row">Marked branch anchor</th><td>Two Hodge meshes and independent root corrections must agree for a new general configuration. Accepted labeled anchors can be cached. This is numerical branch evidence, not a global injectivity theorem.</td></tr>
+<tr><th scope="row">Generic boundary continuation</th><td>Adaptive decimal arithmetic and a higher-precision repeat compare τ and its chart transforms. The working digits increase with cusp depth and weight. Mixed graphs receive an intermediate geometric branch check where the computation reaches it.</td></tr>
+<tr><th scope="row">Calibrated connector infinity tails</th><td>Cancellation-free Fourier jets; precision increased by 80 digits and Fourier modes doubled; relative comparison of the small horizontal correction. A rounded zero residual alone is rejected.</td></tr>
+<tr><th scope="row">Known connector reference centers at other cusps</th><td>Higher-precision corrections compare the small horizontal displacement relative to its rational reference, in addition to the absolute coordinate checks.</td></tr>
+<tr><th scope="row">All-count cusp formulas</th><td>The connector expressions above are finite-count-tested candidates. Arbitrary mixed graphs have no asserted universal center, slope, or leading coefficient in this website.</td></tr>
+<tr><th scope="row">Classical Lamé panel</th><td>Its existing recurrence and high-precision trace checks remain separate. The repeated double-edge/tetrahedral controls do not change the classical attachment convention.</td></tr>
+</tbody></table></div>
+<p>The decimal evaluator has a finite precision ceiling; the Fourier path also has a finite mode/precision budget. Repeating precision and doubling modes are convergence diagnostics, not interval enclosures. Two meshes can agree without establishing a theorem about every branch, and a determinant zero alone does not verify the requested gluing.</p>
+<p>Stored decimal strings survive the cusp-coordinate transformation and origin subtraction. Only the resulting small screen offsets are converted to ordinary plotting numbers. Consequently an absolute real coordinate can be labeled near 1/4 or 1/2 while the horizontal view resolves a much smaller displacement. Axis labels are rounded to the viewing scale; coincident printed labels do not imply an exactly constant real part.</p>
+<p>The current new-seed controls allow counts 0–32, N ≤ 144, and nᵢ ≤ 72. Final ε options extend through 10⁻⁸⁰. These choices are requests for a computation, not a guarantee that a whole high-density path will resolve. Compact meshes and traces have a nominal 45-second budget, and difficult cases retain their last resolved samples with a partial status. An unresolved step is not evidence that the corresponding surface does not exist.</p>
+<aside class="math-note"><strong>Limits of the picture.</strong> Sampled shading is an image of the compact source inset, not the complete domain. Numerical branch agreement, precision repeats, and small residuals do not certify a full image boundary, a Jordan domain, global injectivity, or an all-count asymptotic theorem. A completed calculation is a checked numerical trace on the retained marking.</aside>
+<p class="page-links"><a class="button" href="explore.html" data-page="explore.html">Return to Explore →</a><a class="button secondary" href="limits.html" data-page="limits.html">Follow a boundary approach →</a></p>
+</section>
+</div>
+</main>
+<footer class="site-footer">You-Cheng Chou / HCMC-KIAS
+</footer>
+</body>
+</html>
