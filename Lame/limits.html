@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="atlas-family.js"></script>
+  <title>Lamé Atlas — Limits &amp; Zoom</title>
+  <link rel="stylesheet" href="styles.css?v=20261021-overall-final1">
+  <script src="site-ui.js?v=20261022-sticky1" defer></script>
+  <script src="atlas-view.js?v=20261021-overall-final1" defer></script>
+  <link rel="stylesheet" href="repeated-controls.css?v=20261022-links2">
+  <script src="bouquet-layout.js?v=20261021-overall-final1" defer></script>
+  <script src="seed-cases.js?v=20261022-away1" defer></script>
+  <script src="result-cache.js?v=20261022-depth2" defer></script>
+  <script src="shared-numerics.js?v=20261022-depth2" defer></script>
+  <script src="main.js?v=20261022-auto2" defer></script>
+  <script src="limits.js?v=20261022-auto2" defer></script>
+  <link rel="stylesheet" href="shell.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><a class="brand" href="Lame.html" data-page="Lame.html">Lamé Atlas</a><nav aria-label="Main navigation"><a href="Lame.html" data-page="Lame.html">Home</a><a href="explore.html" data-page="explore.html">Explore</a><a href="limits.html" data-page="limits.html" aria-current="page">Limits &amp; Zoom</a><a href="overlap/index.html">Overlap Atlas</a><a href="mathematics.html" data-page="mathematics.html">Mathematics</a></nav></header>
+
+  <main id="main-content" class="limits-page">
+    <section class="page-heading">
+      <p class="eyebrow">LIMITS &amp; ZOOM</p>
+      <h1>Follow a boundary approach</h1>
+      <p class="description">Move through computed samples to connect a path in the monodromy triangle, its trajectory in the τ-domain, and a magnified local view.</p>
+      <div class="page-actions"><a href="#limits-step-4">Go to graphs ↓</a><button type="button" data-copy-view>Copy this view’s link</button><span id="view-action-status" class="caption" role="status"></span></div>
+    </section>
+
+    <nav class="workflow-nav" aria-label="Limits and Zoom steps"><ol><li><a href="#limits-step-1"><span aria-hidden="true">1</span>Choose attachments</a></li><li><a href="#limits-step-2"><span aria-hidden="true">2</span>Choose the approach</a></li><li><a href="#limits-step-3"><span aria-hidden="true">3</span>Compute the approach</a></li><li><a href="#limits-step-4"><span aria-hidden="true">4</span>Explore the results</a></li></ol></nav>
+
+    <div id="limits-step-1" class="workflow-step-heading"><p class="workflow-step-label">Step 1</p><h2 id="limits-step-1-title">Choose attachments</h2><p class="workflow-step-description">Choose the attachment counts a, b, c for the boundary approach.</p></div>
+    <section class="panel case-panel" aria-label="Choose seed and decoration">
+      <div class="case-control-column">
+        <div id="case-selector"></div>
+        <div id="lame-attachment-settings">
+          <section id="limits-legacy-attachment" class="panel limits-attachment-step" aria-labelledby="limits-attachment-heading">
+            <div class="limits-step-heading"><h2 id="limits-attachment-heading">Lamé attachment counts</h2></div>
+            <div class="limits-attachment-controls">
+              <div><label for="limit-a">Edge a</label><input id="limit-a" form="limits-controls" type="number" min="0" max="20" step="1" value="1" required></div>
+              <div><label for="limit-b">Edge b</label><input id="limit-b" form="limits-controls" type="number" min="0" max="20" step="1" value="0" required></div>
+              <div><label for="limit-c">Edge c</label><input id="limit-c" form="limits-controls" type="number" min="0" max="20" step="1" value="0" required></div>
+              <p class="caption">The attached monodromy diagram updates as you choose. Supported: a + b + c ≤ 20.</p>
+            </div>
+          </section>
+        </div>
+        <div id="case-summary"></div>
+      </div>
+      <div id="case-graph"></div>
+    </section>
+
+    <form id="limits-controls" class="limits-workflow">
+      <section class="panel limits-source-step" aria-labelledby="limits-source-heading">
+        <div id="limits-step-2" class="workflow-step-heading limits-step-heading"><p class="workflow-step-label">Step 2</p><h2 id="limits-source-heading">Choose the approach</h2><p class="workflow-step-description">Drag the starting point and boundary target in either diagram, or use the source controls.</p></div>
+        <div class="limits-source-controls">
+          <div><label for="limit-path">Source boundary</label>
+            <select id="limit-path">
+              <option value="edge0">Edge: s → 1/2 · cusp ∞</option>
+              <option value="edge1">Edge: r + s → 1/2 · cusp 1</option>
+              <option value="edge2" selected>Edge: r → 1/2 · cusp 0</option>
+              <option value="vertex0">Vertex: (r,s) → (1/2,0) · direction-dependent limit</option>
+              <option value="vertex1">Vertex: (r,s) → (1/2,1/2) · direction-dependent limit</option>
+              <option value="vertex2">Vertex: (r,s) → (0,1/2) · direction-dependent limit</option>
+            </select>
+          </div>
+          <div><label for="limit-position">Position / direction t</label><input id="limit-position" type="number" min="0.02" max="0.98" step="any" value="0.5" required></div>
+          <p id="limit-source-controls-note" class="caption">Use these controls or drag the handles below. For a vertex target, the starting point determines the direction.</p>
+        </div>
+        <div class="limits-handle-legend"><span class="source-start-key">○ Start · inside the compact triangle</span><span class="source-target-key">◆ Target · on the boundary</span><span>Either diagram controls both. Arrow keys move the focused handle.</span></div>
+        <div class="limits-source-row">
+          <div id="limit-base-source-panel" class="limits-source-comparison">
+            <h3 id="limit-base-source-title" class="source-branch-title legend-base">Base · n = 1 · Δ₀</h3>
+            <svg id="limit-source" viewBox="0 0 400 400" tabindex="0" role="group" aria-label="Base monodromy path editor. Drag the starting circle or boundary target diamond." aria-describedby="limit-source-caption"></svg>
+          </div>
+          <div class="limits-source-comparison">
+            <h3 id="limit-attached-source-title" class="source-branch-title legend-result">After attachment</h3>
+            <svg id="limit-source-attached" viewBox="0 0 400 400" tabindex="0" role="group" aria-label="Attached monodromy path editor. Drag the starting circle or boundary target diamond." aria-describedby="limit-source-caption"></svg>
+          </div>
+        </div>
+        <div class="limits-path-readouts"><p id="limit-start-readout" class="source-coordinates"></p><p id="limit-target-readout" class="source-coordinates"></p></div>
+        <p id="limit-source-caption" class="caption"></p>
+        <p id="limit-cusp-target" class="limits-cusp-note" aria-live="polite"></p>
+        <details class="limits-advanced"><summary>Limit formula &amp; path parameterization</summary><p id="limit-cusp-detail" class="caption"></p><p id="limit-path-note" class="caption"></p></details>
+      </section>
+
+      <section class="panel limits-compute-step" aria-labelledby="limits-compute-heading">
+        <div id="limits-step-3" class="workflow-step-heading limits-step-heading"><p class="workflow-step-label">Step 3</p><h2 id="limits-compute-heading">Compute the approach</h2><p class="workflow-step-description">Choose the final depth and sampling, then compute. A deeper run keeps matching checked points.</p></div>
+        <div class="limits-comparison-controls">
+          <div><label for="limit-preset">Computation</label><select id="limit-preset"><option value="preview">Quick preview · 5 decades</option><option value="compare" selected>Compare limits · 10 decades (recommended)</option><option value="deeper">Deeper check</option><option value="custom">Custom settings</option></select></div>
+          <div class="limits-compute-actions"><button id="limits-run" type="submit">Compute approach</button><button id="limits-cancel" type="button" disabled>Cancel</button></div>
+        </div>
+        <p id="limit-computation-summary" class="computation-summary" aria-live="polite"></p>
+        <div id="limit-job-progress" class="job-progress" hidden><progress id="limit-progress" aria-label="Resolved trace samples"></progress><span id="limit-progress-label" role="status"></span></div>
+        <details id="limit-custom-settings" class="limits-advanced">
+          <summary>Custom depth &amp; sampling</summary>
+          <div class="limits-epsilon-controls">
+            <div><label for="limit-depth">Final ε</label><select id="limit-depth"><option value="3">10⁻³</option><option value="5">10⁻⁵</option><option value="7">10⁻⁷</option><option value="8">10⁻⁸ (Explore overview)</option><option value="10" selected>10⁻¹⁰</option></select></div>
+            <div><label for="limit-density">Displayed samples per decade</label><select id="limit-density"><option value="1" selected>1 — fewer checks, faster</option><option value="2">2 — smoother trace</option><option value="3">3 — dense trace</option></select></div>
+          </div>
+          <p id="limit-depth-advice" class="caption">Start with the recommended comparison. Increasing only depth keeps matching checked points; changing the path or sampling starts a new trace. Internal continuation and precision checks remain adaptive at every sampling setting. More samples make the curve smoother; greater depth tests a later part of the approach.</p>
+          <p id="limit-research-advice" class="caption" hidden>Research depths 10⁻⁴⁰ and 10⁻⁸⁰ are optional cancellation and slow-convergence tests. They are usually unnecessary for a first comparison and can reach the time budget. A deeper requested ε is not a promise of more correct digits.</p>
+        </details>
+        <p id="limit-start-note" class="caption">ε = 1 is your chosen starting point. Smaller ε follows the straight segment toward the target. The boundary itself, ε = 0, is never numerically evaluated.</p>
+        <aside id="limit-interruption" class="trace-interruption" hidden aria-labelledby="limit-interruption-heading">
+          <h3 id="limit-interruption-heading"></h3><p id="limit-interruption-explanation"></p><p id="limit-interruption-advice"></p>
+          <p id="limit-interruption-range" class="trace-range"></p>
+          <div class="trace-recovery-actions"><button id="limit-resume" type="button" hidden>Continue calculation</button><button id="limit-retry" type="button">Try shorter preview</button></div>
+          <details><summary>Solver details</summary><p id="limit-interruption-detail" class="precision-note"></p></details>
+        </aside>
+        <p id="limit-draft-status" class="status" role="status" aria-live="polite"></p>
+        <div class="limit-statuses" aria-live="polite"><p id="limits-image-status" class="status" role="status"></p><p id="limits-trace-status" class="status" role="status"></p></div>
+        <p class="caption">Choose the graph, drag the source handles, then compute. Read the last three real parts below the plots; increase depth if they have not settled. Changing the handles does not launch a solve. Each run has a 45-second budget. A time stop keeps checked points; Continue calculation reuses a checkpoint when available. A failed precision or branch check is explained and never bypassed.</p>
+      </section>
+    </form>
+
+    <div id="limits-step-4" class="workflow-step-heading"><p class="workflow-step-label">Step 4</p><h2 id="limits-step-4-title">Explore the results</h2><p class="workflow-step-description">Move through the computed samples, compare the whole picture with the zoomed views, and inspect the real parts.</p></div>
+    <div class="limits-result-heading"><label class="check-label"><input id="limit-compare" type="checkbox" checked><span id="limit-compare-label">Include n = 1 in result plots</span></label></div>
+    <p class="results-progress-line"><span id="limit-result-summary" role="status"></span> <a id="limit-recovery-link" href="#limit-interruption" hidden>Why it stopped / continue ↑</a></p>
+    <p id="limit-results-state" class="status" role="status" hidden></p>
+    <section class="panel limits-playback" aria-label="Move through computed approach samples">
+      <button id="limit-play" type="button" disabled aria-pressed="false">▶ Play approach</button>
+      <div class="limits-scrubber"><label for="limit-step" id="limit-step-label">Waiting for computed samples</label><input id="limit-step" type="range" min="0" max="0" step="1" value="0" disabled></div>
+      <p id="limit-source-readout" class="source-coordinates"></p>
+      <p class="caption">Playback uses stored samples. It does not run another computation.</p>
+    </section>
+
+    <div id="limits-results" class="limits-visual-grid limits-results-row">
+      <section class="panel limits-overview-panel">
+        <p class="plot-step">Whole picture</p>
+        <h2>τ-domain overview</h2>
+        <canvas id="limit-overview" class="domain-canvas" role="img" aria-label="Full marked Gamma 2 domain with approach trajectory, selected sample, and dashed local zoom window">Whole τ-domain with linked zoom window.</canvas>
+        <div class="trajectory-legend"><span id="limit-result-legend" class="legend-result">● Attached trace</span><span id="limit-base-legend" class="legend-base">● n = 1</span><span>▱ Dashed box → local view</span></div>
+        <p id="limit-overview-caption" class="caption">Original τ marking. Height is compactified as Im τ / (1 + Im τ), so the cusp at infinity remains visible. Shading is only the computed compact interior.</p>
+        <p id="limit-overview-note" class="caption"></p>
+      </section>
+
+      <section class="panel limits-lens-panel">
+        <p class="plot-step">Magnified detail</p>
+        <h2>Compare the two scales</h2>
+        <div class="limits-coordinate-choice"><label for="limit-chart">Coordinates</label><select id="limit-chart"><option value="raw">τ — original marking</option><option value="zero">w = 1 − 1/τ (cusp 0 → ∞)</option><option value="one">w = 1/(1 − τ) (cusp 1 → ∞)</option></select></div>
+        <div class="lens-view-heading"><h3>Equal coordinate scales</h3><span>Compare horizontal and vertical motion</span></div>
+        <canvas id="limit-lens-scale" class="limit-canvas" tabindex="0" role="img" aria-label="Selected approach with equal horizontal and vertical coordinate scales. Drag or use arrow keys to pan.">Equal coordinate scales.</canvas>
+        <p id="limit-lens-scale-caption" class="caption"></p>
+        <div id="limit-horizontal-view">
+          <div class="lens-view-heading"><h3>Horizontal magnification</h3><span>Resolve the small horizontal deviation</span></div>
+          <canvas id="limit-lens" class="limit-canvas" tabindex="0" role="img" aria-label="Horizontally magnified approach. Drag or use arrow keys to pan.">Horizontally magnified approach.</canvas>
+          <p id="limit-horizontal-note" class="caption"></p>
+        </div>
+        <p id="limit-rational-target" class="limits-rational-target" aria-live="polite" hidden></p>
+        <p id="limit-lens-coordinate" class="precision-note" aria-live="polite"></p>
+        <div class="limits-lens-primary">
+          <div class="button-row"><button type="button" data-fit="trace">Fit trace</button><button type="button" data-fit="tail">Final steps</button><button type="button" data-fit="image">Fit image</button></div>
+          <label for="limit-zoom">Additional zoom: <output id="limit-zoom-value">1×</output></label>
+          <input id="limit-zoom" type="range" min="0" max="12" step="0.1" value="0">
+          <label id="limit-resolve-wrap" class="check-label"><input id="limit-resolve-horizontal" type="checkbox" checked>Show horizontal magnification</label>
+        </div>
+        <p class="caption">Axes give the actual real and imaginary coordinates. Drag to pan. Dots are computed samples; solid segments connect consecutive resolved samples and stop at the last computed point.</p>
+        <details class="limits-advanced">
+          <summary>Local coordinates &amp; positioning</summary>
+          <div class="button-row pan-buttons" aria-label="Pan the local view"><button type="button" data-pan="-1,0" aria-label="Pan left">←</button><button type="button" data-pan="1,0" aria-label="Pan right">→</button><button type="button" data-pan="0,1" aria-label="Pan up">↑</button><button type="button" data-pan="0,-1" aria-label="Pan down">↓</button><button id="limit-center" type="button">Center selected sample</button></div>
+        </details>
+        <p id="limit-lens-note" class="caption precision-note"></p>
+      </section>
+    </div>
+
+    <section id="limit-evidence" class="panel limit-evidence" aria-labelledby="limit-evidence-heading">
+      <div class="evidence-heading"><h2 id="limit-evidence-heading">Compare the last real parts</h2><span id="limit-evidence-reference" class="caption"></span></div>
+      <p id="limit-evidence-note" class="caption" aria-live="polite">Compute a trace to compare the last three resolved samples with a reference limit, when one is known.</p>
+      <div class="table-scroll"><table class="evidence-table"><thead><tr><th>ε</th><th id="limit-evidence-coordinate">Re τ</th><th id="limit-evidence-distance">Distance to reference</th><th>Numerical check</th></tr></thead><tbody id="limit-evidence-rows"></tbody></table></div>
+      <p class="caption">These coordinates come from computed roots. An ellipsis truncates the stored decimal; it does not mean the real part equals the limit. Distance to a reference is not numerical error. The numerical check compares working precisions in the displayed coordinate and is not a certified bound. Hover a real part or use the full data below for all stored digits.</p>
+    </section>
+
+    <details id="limits-quantities" class="panel limits-quantities">
+      <summary>Numerical quantities &amp; computed samples</summary>
+      <p id="limits-applied" class="context"></p>
+      <div class="limit-plots">
+        <section>
+          <h2>Behaviour along the approach</h2>
+          <label for="limit-metric">Vertical quantity</label><select id="limit-metric"><option value="imag">Imaginary part, relative to the last sample</option><option value="real">Real part, relative to the last sample</option><option value="change">Consecutive change — logarithmic scale</option></select>
+          <canvas id="limit-trend" class="limit-canvas" role="img" aria-label="Computed period-ratio behaviour against minus log epsilon">Computed asymptotic trend.</canvas>
+          <p id="limit-trend-note" class="caption precision-note"></p>
+        </section>
+        <section class="trace-record">
+          <h2>Stored coordinates</h2>
+          <p id="limit-selected" class="precision-note"></p>
+          <div class="table-scroll"><table class="trace-table"><thead><tr><th>ε</th><th>Re τ</th><th>Im τ</th><th>Numerical check in τ</th></tr></thead><tbody id="limit-table"></tbody></table></div>
+          <button id="limit-export" type="button" disabled>Export trace JSON</button>
+          <p id="limit-precision-note" class="caption">Table values are rounded; the selected sample shows its stored coordinates. Trace points are checked at 70 and 100 digits of working precision. Error figures are diagnostics, not certified bounds. The plots do not establish an exact asymptotic formula.</p>
+        </section>
+      </div>
+    </details>
+    <noscript><p>Enable JavaScript to run the numerical computation.</p></noscript>
+  </main>
+  <footer class="site-footer">You-Cheng Chou / HCMC-KIAS</footer>
+</body>
+</html>
+
+
+

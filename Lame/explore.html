@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="atlas-family.js"></script>
+  <title>Lamé Atlas — Explore</title>
+  <link rel="stylesheet" href="styles.css?v=20261021-overall-final1">
+  <link rel="stylesheet" href="repeated-controls.css?v=20261022-links2">
+  <script src="site-ui.js?v=20261022-sticky1" defer></script>
+  <script src="atlas-view.js?v=20261021-overall-final1" defer></script>
+  <script src="bouquet-layout.js?v=20261021-overall-final1" defer></script>
+  <script src="seed-cases.js?v=20261022-away1" defer></script>
+  <script src="result-cache.js?v=20261022-depth2" defer></script>
+  <script src="shared-numerics.js?v=20261022-depth2" defer></script>
+  <script src="preview-settings.js?v=20261022-auto2" defer></script>
+  <script src="main.js?v=20261022-auto2" defer></script>
+  <link rel="stylesheet" href="shell.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header"><a class="brand" href="Lame.html" data-page="Lame.html">Lamé Atlas</a><nav aria-label="Main navigation"><a href="Lame.html" data-page="Lame.html">Home</a><a href="explore.html" data-page="explore.html" aria-current="page">Explore</a><a href="limits.html" data-page="limits.html">Limits &amp; Zoom</a><a href="overlap/index.html">Overlap Atlas</a><a href="mathematics.html" data-page="mathematics.html">Mathematics</a></nav></header>
+
+  <main id="main-content" class="explore-page">
+    <section class="page-heading">
+      <p class="eyebrow">EXPLORE</p>
+      <h1>Drag a monodromy point</h1>
+      <p class="description">Compare ordinary monodromy and τ before and after hemisphere attachment.</p>
+      <div class="page-actions"><a href="#explore-step-3">Go to graphs ↓</a><button type="button" data-copy-view>Copy this view’s link</button><span id="view-action-status" class="caption" role="status"></span></div>
+    </section>
+
+    <nav class="workflow-nav" aria-label="Explore steps"><ol><li><a href="#explore-step-1"><span aria-hidden="true">1</span>Choose attachments</a></li><li><a href="#explore-step-2"><span aria-hidden="true">2</span>Compute the images</a></li><li><a href="#explore-step-3"><span aria-hidden="true">3</span>Explore the results</a></li></ol></nav>
+
+    <div id="explore-step-1" class="workflow-step-heading"><p class="workflow-step-label">Step 1</p><h2 id="explore-step-1-title">Choose attachments</h2><p class="workflow-step-description">Choose the attachment counts a, b, c. Apply &amp; compute starts the recommended interior image and cusp series.</p></div>
+    <section class="panel case-panel" aria-label="Active seed and decoration">
+      <div class="case-control-column">
+        <div id="case-selector"></div>
+        <div id="lame-attachment-settings"></div>
+        <div id="case-summary"></div>
+      </div>
+      <div class="case-graph-column"><div id="case-graph"></div><aside id="case-support" class="case-support" aria-label="Supported numerical range"></aside></div>
+    </section>
+
+    <form id="attachment-form" class="panel attachment-bar">
+      <div><label for="a">Edge a</label><input id="a" type="number" min="0" max="20" step="1" value="1" required></div>
+      <div><label for="b">Edge b</label><input id="b" type="number" min="0" max="20" step="1" value="0" required></div>
+      <div><label for="c">Edge c</label><input id="c" type="number" min="0" max="20" step="1" value="0" required></div>
+      <button id="compute" type="submit">Apply &amp; compute</button>
+    </form>
+    <p id="decoration-status" class="status" role="status" aria-live="polite"></p>
+
+    <aside class="sampling-warning" aria-label="Sampling limitations">
+      <strong>The full cusp boundary is not computed.</strong>
+      <p>Shading covers a compact source inset; cusp tails contain resolved numerical samples. Use Limits &amp; Zoom to test the real-part behaviour.</p>
+      <details><summary>How to read the sampled image</summary><p id="explore-sampling-note">Dark shading samples only the compact interior Kδ, δ = 0.04. Dashed image contours are artificial sampling cutoffs. Each cusp has two numerical approach series; the light ribbon interpolates between them and is not a certified image boundary. Curves stop at the last resolved sample.</p></details>
+    </aside>
+
+    <section class="explore-computation-row" aria-label="Image and cusp computations">
+      <div id="explore-step-2" class="workflow-step-heading computation-row-heading"><p class="workflow-step-label">Step 2</p><h2 id="explore-step-2-title">Compute the images</h2><p id="preview-recommendation" class="workflow-step-description" role="status" aria-live="polite">Applying decorations chooses a fast preview for this graph: interior first, then cusp approaches. Adjust the settings below to refine either image.</p></div>
+      <section class="panel mesh-control-panel" aria-labelledby="mesh-controls-heading">
+        <h2 id="mesh-controls-heading">Interior image</h2>
+        <p class="caption calculation-intro">Compute the compact interior of the base and decorated τ-images.</p>
+        <form id="mesh-controls" class="mesh-controls">
+          <div><label for="quality">Interior mesh</label><select id="quality"><option value="4">Quick — 15 points</option><option value="8">Standard — 45 points</option><option value="12" selected>Fine — 91 points</option><option value="18">Extra fine — 190 points</option></select></div>
+          <div class="mesh-actions"><button id="mesh-run" type="submit">Compute interior image</button><button id="cancel" type="button" disabled>Stop mesh</button></div>
+        </form>
+        <p id="attachment-status" class="status" role="status" aria-live="polite"></p>
+        <p id="attachment-caption" class="caption">Apply &amp; compute starts both recommended previews. These controls let you refine the interior separately. Matching computed images are reused.</p>
+      </section>
+      <section class="panel cusp-control-panel" aria-labelledby="cusp-controls-heading">
+        <h2 id="cusp-controls-heading">Cusp asymptotics</h2>
+        <p class="caption calculation-intro">Compute two approach series per cusp for the same applied decorations.</p>
+        <div class="computed-cusp-controls">
+          <form id="cusp-controls">
+            <div class="cusp-setting-fields">
+              <div><label for="cusp-position">Paired edge positions t and 1 − t</label><div class="numeric-stepper"><input id="cusp-position" type="number" min="0.02" max="0.48" step="any" value="0.2" required><span class="numeric-stepper-buttons"><button id="cusp-position-up" type="button" data-number-for="cusp-position" data-number-direction="1" aria-label="Increase paired edge position">▲</button><button id="cusp-position-down" type="button" data-number-for="cusp-position" data-number-direction="-1" aria-label="Decrease paired edge position">▼</button></span></div></div>
+              <div><label for="cusp-depth">Trace to ε</label><select id="cusp-depth"><option value="3">10⁻³ · quick preview</option><option value="5">10⁻⁵ · balanced preview</option><option value="8" selected>10⁻⁸</option><option value="10">10⁻¹⁰</option></select></div>
+            </div>
+            <div class="cusp-actions"><button id="cusp-run" type="submit">Compute or extend series</button><button id="cusp-cancel" type="button" disabled>Stop series</button></div>
+          </form>
+          <p id="cusp-status" class="status" role="status" aria-live="polite"></p>
+          <details class="calculation-notes"><summary>Numerical notes</summary>
+            <p id="cusp-sampling-note" class="caption">Two approaches per cusp show the width of the tail. Recommended sampling and depth depend on the decorated graph; arithmetic precision and branch checks stay adaptive. A deeper trace keeps matching checked samples. Numerical interpolation does not complete the boundary. Slower cases may return a checked partial preview; manual reruns use the longer calculation budget.</p>
+          </details>
+        </div>
+      </section>
+    </section>
+
+    <div id="explore-step-3" class="workflow-step-heading"><p class="workflow-step-label">Step 3</p><h2 id="explore-step-3-title">Explore the results</h2><p class="workflow-step-description">Drag a monodromy point to compare period ratios. Choose separate or overlapping images below.</p></div>
+    <div class="explore-front-controls">
+      <section class="panel source-control-panel" aria-labelledby="point-controls-heading">
+        <h2 id="point-controls-heading">Choose a point</h2>
+        <form id="point-form" class="point-form">
+          <div><label for="source-r">r</label><div class="numeric-stepper"><input id="source-r" type="number" min="0.04" max="0.48" step="any" required><span class="numeric-stepper-buttons"><button id="source-r-up" type="button" data-number-for="source-r" data-number-direction="1" aria-label="Increase r">▲</button><button id="source-r-down" type="button" data-number-for="source-r" data-number-direction="-1" aria-label="Decrease r">▼</button></span></div></div>
+          <div><label for="source-s">s</label><div class="numeric-stepper"><input id="source-s" type="number" min="0.04" max="0.48" step="any" required><span class="numeric-stepper-buttons"><button id="source-s-up" type="button" data-number-for="source-s" data-number-direction="1" aria-label="Increase s">▲</button><button id="source-s-down" type="button" data-number-for="source-s" data-number-direction="-1" aria-label="Decrease s">▼</button></span></div></div>
+          <button type="submit">Set point</button>
+        </form>
+        <p id="source-coordinates" class="source-coordinates"></p>
+        <p id="point-status" class="status" role="status" aria-live="polite"></p>
+        <p class="caption">Drag either highlighted point: the other moves with it. Both diagrams support arrow keys; Shift takes a larger step.</p>
+      </section>
+      <section class="panel image-control-panel" aria-labelledby="image-controls-heading">
+        <div class="plot-heading"><h2 id="image-controls-heading">Compare images</h2><div><label for="explore-view">Display</label><select id="explore-view"><option value="separate">Separate</option><option value="overlay">Overlap</option></select></div></div>
+        <div id="explore-case-asymptotics" class="case-asymptotics" hidden></div>
+      </section>
+    </div>
+
+    <div id="explore-plots" class="explore-workspace">
+      <section class="panel source-panel" aria-labelledby="source-heading">
+        <h2 id="source-heading">Ordinary monodromy</h2>
+        <h3 id="base-source-label">Base: n = 1 · Δ₀</h3>
+        <svg id="monodromy-source" viewBox="0 0 400 400" tabindex="0" role="img" aria-label="Interactive base monodromy triangle in the four-cell large triangle. Drag within the shaded compact region or use arrow keys." aria-describedby="source-domain-note source-coordinates">
+          <title>Base monodromy triangle and compact sampling region</title>
+          <desc>The four grey cells show ordinary characters modulo integer periods and simultaneous inversion. The dashed base triangle is excluded; the shaded compact triangle allows dragging.</desc>
+          <g class="source-character-cells" aria-hidden="true">
+            <polygon points="200,360 200,200 40,200"/>
+            <polygon points="40,200 40,360 200,360"/>
+            <polygon points="200,200 200,360 360,360"/>
+            <polygon points="40,40 40,200 200,200"/>
+            <text x="142" y="258">Δ₀</text><text x="88" y="312">Δ₁</text><text x="248" y="312">Δ₂</text><text x="88" y="152">Δ₃</text>
+          </g>
+          <path d="M40 22V360H378" class="source-axes"/>
+          <polygon id="source-full" points="200,360 200,200 40,200" class="source-full"/>
+          <polygon id="source-compact" points="193.6,347.2 193.6,206.4 52.8,206.4" class="source-compact"/>
+          <text x="40" y="385" text-anchor="middle">0</text><text x="200" y="385" text-anchor="middle">½</text><text x="360" y="385" text-anchor="middle">1</text>
+          <text x="28" y="205" text-anchor="end">½</text><text x="28" y="45" text-anchor="end">1</text><text x="382" y="365">r</text><text x="32" y="18">s</text>
+          <circle id="source-halo" r="13" class="source-halo"/>
+          <circle id="source-dot" r="8" class="source-dot"/>
+        </svg>
+        <h3 id="attached-source-label">Selected attachment</h3>
+        <svg id="monodromy-attached" viewBox="0 0 400 400" tabindex="0" role="img" aria-label="Interactive ordinary monodromy triangle after attachment. Drag the point or use arrow keys to move both points." aria-describedby="attached-source-coordinates source-domain-note">
+          <title>Attached ordinary monodromy triangle</title>
+          <desc>The highlighted triangle is obtained by half-integer character shifts and simultaneous inversion into the same four-cell large triangle. Delta 3 is at the upper left.</desc>
+          <g class="source-character-cells" aria-hidden="true">
+            <polygon points="200,360 200,200 40,200"/>
+            <polygon points="40,200 40,360 200,360"/>
+            <polygon points="200,200 200,360 360,360"/>
+            <polygon points="40,40 40,200 200,200"/>
+            <text x="142" y="258">Δ₀</text><text x="88" y="312">Δ₁</text><text x="248" y="312">Δ₂</text><text x="88" y="152">Δ₃</text>
+          </g>
+          <path d="M40 22V360H378" class="source-axes"/>
+          <polygon id="attached-source-full" points="200,360 200,200 40,200" class="source-full"/>
+          <polygon id="attached-source-compact" points="193.6,347.2 193.6,206.4 52.8,206.4" class="source-compact attached-source-compact"/>
+          <text x="40" y="385" text-anchor="middle">0</text><text x="200" y="385" text-anchor="middle">½</text><text x="360" y="385" text-anchor="middle">1</text>
+          <text x="28" y="205" text-anchor="end">½</text><text x="28" y="45" text-anchor="end">1</text><text x="382" y="365">R</text><text x="32" y="18">S</text>
+          <circle id="attached-source-halo" r="13" class="source-halo"/>
+          <circle id="attached-source-dot" r="8" class="source-dot attached-source-dot"/>
+        </svg>
+        <p id="attached-source-coordinates" class="source-coordinates"></p>
+        <p id="source-domain-note" class="caption">Both graphs use ordinary characters modulo integer periods and simultaneous sign. Attachment parity chooses one of four cells; the full triple chooses the analytic branch. Projective monodromy stays unchanged.</p>
+        <details id="source-region-details" class="plot-diagnostics"><summary>Source region and cusp correspondence</summary>
+          <p class="caption">Kδ: r ≤ 0.48, s ≤ 0.48, r + s ≥ 0.52. Its perimeter is allowed; the dashed true source boundary is excluded.</p>
+          <div class="edge-cusp-key"><strong>Open base edges → cusps</strong><span>s → ½ : ∞</span><span>r + s → ½ : 1</span><span>r → ½ : 0</span></div>
+          <p class="caption">Source vertices have direction-dependent limits. The paired cusp series approach open edges.</p>
+        </details>
+      </section>
+
+      <section class="panel tau-workspace" aria-label="Conformal image comparison">
+        <h2 id="tau-workspace-heading">Images in the marked Γ(2) chart</h2>
+        <div class="tau-readouts">
+          <div><h3 id="base-heading">Base: n = 1</h3><output id="base-tau" class="tau-value" aria-label="Base period ratio">Computing…</output></div>
+          <div><h3 id="result-heading">Selected attachment</h3><output id="result-tau" class="tau-value" aria-label="Attached period ratio">Computing…</output></div>
+        </div>
+        <div id="separate-plots" class="tau-plots">
+          <div><p class="plot-label"><span class="legend-dot base-dot"></span> Base</p><canvas id="base-image" class="domain-canvas" role="img" aria-label="Sampled base image with numerically computed cusp approaches">Sampled base image.</canvas></div>
+          <div><p class="plot-label"><span class="legend-dot result-dot"></span> Attachment</p><canvas id="result-image" class="domain-canvas" role="img" aria-label="Sampled attached image with numerically computed cusp approaches">Sampled attached image.</canvas></div>
+        </div>
+        <div id="overlap-plot" hidden><p class="plot-label"><span class="legend-dot base-dot"></span> Base <span class="legend-dot result-dot"></span> Attachment · solid arrow: base point → attached point</p><canvas id="overlay-image" class="domain-canvas" role="img" aria-label="Overlapping base and attached images with an arrow from the base period ratio to the attached period ratio">Overlapping images.</canvas><p id="overlap-note" class="caption"></p></div>
+        <p id="tau-image-caption" class="caption">Hollow endpoints label cusps 0 and 1; the entire open upper end represents cusp ∞. The horizontal behaviour comes from the computed points. Joining segments interpolate neighbouring samples in τ coordinates and stop across unresolved samples or a segment leaving the marked domain.</p>
+        <div id="cusp-progress" class="cusp-progress" hidden></div>
+        <details class="plot-diagnostics"><summary>Last computed cusp samples</summary><p id="cusp-endpoints" class="precision-note cusp-endpoints"></p></details>
+        <details class="plot-diagnostics"><summary>Numerical diagnostics</summary><div class="tau-readouts"><p id="base-diagnostic" class="tau-diagnostic"></p><p id="result-diagnostic" class="tau-diagnostic"></p></div></details>
+      </section>
+    </div>
+
+    <p id="explore-chart-caption" class="caption">The tall chart uses 0 &lt; Re τ &lt; 1 and compressed height Im τ / (1 + Im τ), so every cusp stays in view. Numerical readouts give the original τ. Shading approximates the image of Kδ; unresolved cells and points are omitted. Numerical checks are not interval certificates.</p>
+    <p class="next-step"><a class="button" href="limits.html" data-page="limits.html">Follow a boundary approach in Limits &amp; Zoom →</a></p>
+    <noscript><p>Enable JavaScript to run the numerical computation.</p></noscript>
+  </main>
+  <footer class="site-footer">You-Cheng Chou / HCMC-KIAS</footer>
+</body>
+</html>
+
