@@ -1,0 +1,31 @@
+/* Shared appearance within each independent atlas. No parent-site assets. */
+.site-header{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 22px;min-height:68px;padding:14px max(24px,calc((100% - 1440px)/2));background:#f6f4ed;border-bottom:1px solid #d6ded2;font:14px/1.5 system-ui,sans-serif;color:#253b33}
+.site-header .brand{font-size:17px;font-weight:650;letter-spacing:-.02em;color:#253b33;text-decoration:none;white-space:nowrap}
+.site-header nav{display:flex;align-items:center;flex-wrap:wrap;gap:5px}
+.site-header nav a{padding:7px 10px;border-radius:5px;font-size:13px;font-weight:450;line-height:1.5;color:#285f65;text-decoration:none;white-space:nowrap}
+.site-header nav a:hover,.site-header nav a:focus-visible{background:#e9eee4}
+.site-header nav a[aria-current="page"]{background:#285f65;color:white}
+.site-header a:focus-visible{outline:2px solid #285f65;outline-offset:3px}
+html[data-atlas-family="lame"] #case-selector{display:none}
+html[data-atlas-family="tv"] #attachment-form,html[data-atlas-family="tv"] #decoration-status,html[data-atlas-family="tv"] #limits-legacy-attachment{display:none!important}
+.atlas-home-note{font-size:14px;color:var(--muted,#596e62);max-width:85ch}
+.family-pills{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}.family-pills a{font-size:13px;padding:7px 12px;border:1px solid #c7d2c7;border-radius:5px;text-decoration:none;background:#fcfcf7}
+.home-routes.lame-home-routes{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:700px){.site-header{padding:11px 16px;gap:8px}.site-header nav{gap:2px}.site-header nav a{font-size:12px;padding:6px 8px}.home-routes.lame-home-routes{grid-template-columns:1fr}}
+
+/* Routine explanations stay available without separating controls and plots. */
+:is(.explore-page,.limits-page) :is(.control-help,.compact-help){min-width:0;margin:8px 0 0;padding:0;border:0}
+:is(.control-help,.compact-help)>summary{font:500 12px/1.6 system-ui,sans-serif;color:#285f65;cursor:pointer;min-height:24px}
+:is(.control-help,.compact-help)[open]>summary{margin-bottom:6px}
+:is(.control-help,.compact-help) :is(p,.caption){margin:6px 0;font-size:13px;line-height:1.6;max-width:95ch}
+:is(.control-help,.compact-help)>summary:focus-visible{outline:2px solid #285f65;outline-offset:3px;border-radius:2px}
+.explore-page .sampling-warning{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 18px;margin-top:8px;padding:7px 12px}
+.explore-page .sampling-warning>strong{font-size:12px;font-weight:550}
+.explore-page .sampling-warning>.control-help{margin:0;flex:1 1 220px}
+.computation-row-heading>.control-help{grid-column:2;max-width:95ch}
+.case-support:has(>.control-help){padding:7px 10px}
+.case-support>.control-help{margin:0}
+.bouquet-core-preview>.control-help{flex:1;min-width:0;margin:0}
+.explore-computation-row .calculation-notes.control-help>summary{margin:0;font:500 12px/1.6 system-ui,sans-serif}
+.limits-page #limit-draft-status:empty{display:none}
+@media(max-width:650px){.computation-row-heading>.control-help{grid-column:1/-1}.explore-page .sampling-warning>.control-help{flex-basis:100%}}

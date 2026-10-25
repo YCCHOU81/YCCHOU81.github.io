@@ -1,0 +1,244 @@
+/* Decoration choices stay beside readable labelled graphs. */
+.case-control-column{grid-column:1;grid-row:1;display:grid;gap:.7rem;min-width:0}
+.case-control-column #case-summary{min-width:0}
+.case-panel>.case-control-column+#case-graph{grid-row:1}
+.case-panel>.case-control-column+#case-graph.case-graph-expanded{grid-row:auto}
+#lame-attachment-settings:empty{display:none}
+#lame-attachment-settings .attachment-bar,#lame-attachment-settings .limits-attachment-step{margin:0;padding:.8rem;border:1px solid #dce1d4;border-radius:10px;background:#fcfcf7;box-shadow:none}
+#lame-attachment-settings .attachment-bar{grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;align-items:end}
+#lame-attachment-settings .attachment-bar>div:nth-child(4){grid-column:1/-1}
+#lame-attachment-settings .attachment-bar #compute{grid-column:span 2}
+#lame-attachment-settings .attachment-bar #cancel{grid-column:span 1}
+#lame-attachment-settings input,#lame-attachment-settings select{width:100%;min-width:0;box-sizing:border-box;margin-bottom:0}
+#lame-attachment-settings label{font-size:.86rem;line-height:1.4}
+#lame-attachment-settings .status{margin:.55rem 0 0;min-height:1.5em;font-size:.8rem;line-height:1.5}
+#lame-attachment-settings>.caption{margin:.4rem 0 0;font-size:.8rem;line-height:1.5}
+#lame-attachment-settings .limits-step-heading{gap:.3rem .8rem;margin-bottom:.7rem}
+#lame-attachment-settings .limits-step-heading .plot-step{min-width:0;font-size:.72rem}
+#lame-attachment-settings .limits-step-heading h2{font-size:1rem;line-height:1.4}
+#lame-attachment-settings .limits-attachment-controls{grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+#lame-attachment-settings .limits-attachment-controls .caption{grid-column:1/-1;margin:0;font-size:.8rem;line-height:1.5}
+.case-panel:has(#case-graph.case-graph-expanded)>.case-control-column{grid-column:1/-1}
+.repeat-settings{grid-column:1/-1;display:grid;gap:.7rem;margin-top:.35rem;padding:.8rem;border:1px solid #dce1d4;border-radius:10px;background:#fcfcf7}
+.repeat-settings[hidden]{display:none}
+.repeat-settings p{margin:0}
+.repeat-count-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem 1rem}
+.repeat-local-grid{display:grid;grid-template-columns:1fr;gap:.8rem}
+.repeat-local{display:grid;grid-template-columns:minmax(0,1fr) 90px;gap:.65rem;align-items:end}
+.repeat-settings label{font-size:.86rem;line-height:1.4}
+.repeat-settings input,.repeat-settings select{display:block;width:100%;min-width:0;box-sizing:border-box;min-height:40px;margin:0;padding:.5rem .65rem;font-size:.86rem;line-height:1.4}
+.repeat-count-field{display:grid;grid-template-rows:auto auto 1fr;align-content:start;min-width:0;gap:.25rem}
+.repeat-count-field label{display:grid;align-content:start;gap:.12rem;margin:0;line-height:1.35}
+.repeat-edge-name{font-weight:600}
+.repeat-face-pair{font-size:.77rem;color:#607262;white-space:nowrap}
+.repeat-local>div{min-width:0}
+.repeat-local label{margin:0 0 .25rem;line-height:1.35}
+.repeat-local .repeat-count-field label{margin:0}
+.repeat-local .repeat-count-field{grid-template-rows:auto auto}
+.repeat-instruction,.repeat-budget-note{font-size:.82rem;line-height:1.5}
+.repeat-budget-note{padding:.55rem .65rem;border-left:3px solid #8aa6a0;background:#edf1e9;color:#334d40}
+.repeat-actions{display:flex;gap:.8rem;align-items:center;flex-wrap:wrap}
+.repeat-actions button{margin:0;width:auto;flex:0 0 auto}
+.repeat-actions [role="status"]{font-size:.8rem;line-height:1.4}
+.repeat-graph-label{font-size:10.5px;fill:#33483a;paint-order:stroke;stroke:#fcfcf7;stroke-width:4px;stroke-linejoin:round}
+.repeat-graph-multiplicity{font-size:10px;fill:#b55e3c;font-weight:650}
+.repeat-invalid{color:#983d2c}
+.bouquet-core-grid{display:grid;grid-template-columns:minmax(130px,.7fr) minmax(0,1.3fr);gap:.75rem}
+.bouquet-core-preview{display:flex;align-items:center;gap:.8rem;min-width:0;padding:.4rem .6rem;border:1px solid #e4e6dc;border-radius:6px;background:#fffef9}
+.bouquet-core-preview .caption{max-width:260px;font-size:.8rem;line-height:1.5}
+.bouquet-split-svg{flex:0 0 210px;width:210px;height:175px;overflow:visible}
+.bouquet-split-svg text{font-size:10px;fill:#496351;paint-order:stroke;stroke:#fffef9;stroke-width:3px}
+.bouquet-split-svg .bouquet-gap-label{font-size:9px;fill:#b55e3c;font-weight:650}
+#bouquet-count-fields small{display:block;margin-top:.2rem;font-size:.74rem;line-height:1.35}
+.case-panel{grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);grid-template-rows:auto 1fr;align-items:start}
+.case-essential{font-size:.83rem;line-height:1.5;color:#3e5848}
+.case-rules{font-size:.8rem;line-height:1.55;margin-top:.4rem}
+.case-rules summary{cursor:pointer;color:#285f65;font-weight:600}
+.case-rules p{margin:.45rem 0 0!important}
+#case-graph{display:block;min-width:0;padding:0 0 0 .35rem}
+.case-graph-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:.35rem;font-size:.83rem}
+.case-graph-toolbar button{display:block;width:auto;margin:0;padding:.25rem .55rem;border:1px solid #bccbbd;border-radius:5px;background:#f6f8f1;color:#285f65;white-space:nowrap;font-size:.75rem;line-height:1.5}
+.case-graph-toolbar button:hover{background:#e7eee3}
+.case-graph-comparison{display:grid;grid-template-columns:minmax(0,1fr);gap:3px;justify-items:center}
+#case-graph figure{width:100%;max-width:370px;min-width:0;margin:0;flex:none}
+#case-graph .case-graph-base svg{height:125px}
+#case-graph .case-graph-result svg{height:220px}
+#case-graph .case-graph-single svg{height:205px}
+#case-graph svg{width:100%;display:block;overflow:visible}
+#case-graph figcaption{font-size:12px;line-height:1.4;color:#455f4e;margin-top:3px}
+#case-graph .case-face-labels{font-size:12px}
+#case-graph .case-graph-arrow{transform:rotate(90deg);font-size:20px;line-height:1;margin:3px 0 1px}
+#case-graph .case-graph-note{font-size:11.5px;line-height:1.45;margin:.55rem 0 0;text-align:center}
+#case-graph.case-graph-expanded{grid-column:1/-1;grid-row:auto;padding:.75rem 0 0;border-top:1px solid #dce1d4;margin-top:.35rem}
+.case-panel:has(#case-graph.case-graph-expanded) #case-selector,.case-panel:has(#case-graph.case-graph-expanded) #case-summary{grid-column:1/-1}
+#case-graph.case-graph-expanded .case-graph-comparison{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:18px}
+#case-graph.case-graph-expanded figure{max-width:480px}
+#case-graph.case-graph-expanded svg{height:300px}
+#case-graph.case-graph-expanded .case-graph-arrow{transform:none;font-size:26px}
+#case-graph.case-graph-expanded .case-graph-single{grid-template-columns:1fr}
+@media(max-width:1000px){.repeat-count-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.repeat-local-grid{grid-template-columns:1fr}.bouquet-core-preview{flex-wrap:wrap;justify-content:center}.bouquet-core-preview .caption{max-width:none}}
+@media(max-width:850px){.case-panel{grid-template-columns:1fr}#case-graph{grid-column:1;grid-row:auto;padding:.75rem 0 0;border-top:1px solid #dce1d4}.case-graph-comparison{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:12px}#case-graph .case-graph-base svg,#case-graph .case-graph-result svg{height:220px}#case-graph .case-graph-arrow{transform:none}#case-graph .case-graph-single{grid-template-columns:1fr}#case-graph .case-graph-note{text-align:center}}
+@media(max-width:700px){.bouquet-core-grid{grid-template-columns:1fr}.bouquet-core-preview{flex-wrap:nowrap;gap:.7rem;padding:.45rem}.bouquet-split-svg{flex-basis:185px;width:185px;height:155px}.bouquet-core-preview .caption{font-size:.78rem}.repeat-local{grid-template-columns:minmax(0,1fr) 90px}.case-graph-comparison,#case-graph.case-graph-expanded .case-graph-comparison{grid-template-columns:1fr;gap:5px}#case-graph .case-graph-base svg{height:125px}#case-graph .case-graph-result svg{height:220px}#case-graph .case-graph-arrow,#case-graph.case-graph-expanded .case-graph-arrow{transform:rotate(90deg)}#case-graph.case-graph-expanded svg{height:265px}}
+@media(max-width:480px){.case-graph-toolbar{font-size:.8rem}.bouquet-core-preview{flex-wrap:wrap}.bouquet-split-svg{flex-basis:210px;width:210px;height:175px}#case-graph .case-graph-result svg{height:210px}#case-graph svg{height:190px}}
+@media(max-width:850px){.case-panel>.case-control-column+#case-graph{grid-row:auto}}
+@media(max-width:480px){#lame-attachment-settings .attachment-bar{gap:.6rem}#lame-attachment-settings .attachment-bar button{font-size:.8rem;padding:.6rem .35rem}}
+/* Keep chain annotations out of the ribbon faces, including very large counts. */
+.graph-chain-key{list-style:none;margin:.45rem 0 .35rem;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.38rem .7rem;text-align:left}
+.graph-chain-key li{display:flex;align-items:center;gap:.4rem;min-width:0;font-size:12px;line-height:1.25;color:#334d40}
+.graph-chain-key strong{font-weight:600;white-space:nowrap}
+.graph-chain-key small{display:block;margin-top:.12rem;color:#607262;font-size:10.5px;white-space:nowrap}
+.graph-key-stroke{flex:0 0 21px;width:21px;border-top:3px solid var(--chain-color);border-radius:2px}
+.graph-vertex-label{font-size:10px;fill:#375343}
+#case-graph .graph-face-leader{fill:none;stroke:#899989;stroke-width:.8;stroke-dasharray:2 2;paint-order:normal}
+#case-graph .graph-face-target{fill:#70856f;stroke:none;paint-order:normal}
+#case-graph .case-face-labels{font-size:11.5px;fill:#294b38;paint-order:stroke;stroke:#fcfcf7;stroke-width:2px;stroke-linejoin:round}
+#case-graph .case-graph-base .graph-chain-key{display:none}
+#case-graph .case-graph-base svg{height:155px}
+#case-graph .case-graph-result svg{height:250px}
+#case-graph .case-graph-result{max-width:400px}
+#case-graph.case-graph-expanded .case-graph-base svg,#case-graph.case-graph-expanded .case-graph-result svg{height:330px}
+#case-graph.case-graph-expanded .graph-chain-key{font-size:13px;gap:.5rem 1rem}
+@media(max-width:850px){#case-graph .case-graph-base svg,#case-graph .case-graph-result svg{height:240px}}
+@media(max-width:700px){#case-graph .case-graph-base svg{height:155px}#case-graph .case-graph-result svg{height:250px}#case-graph.case-graph-expanded .case-graph-base svg,#case-graph.case-graph-expanded .case-graph-result svg{height:300px}}
+
+/* Explore: apply the labelled graph first, then choose each numerical layer. */
+.explore-page .case-panel{grid-template-rows:auto}
+.explore-page .case-graph-column{grid-column:2;grid-row:1;min-width:0}
+.explore-page .case-graph-column #case-graph{padding-left:0}
+.explore-page .case-panel:has(#case-graph.case-graph-expanded)>.case-graph-column{grid-column:1/-1;grid-row:2}
+.explore-page .control-step{margin:0;color:var(--accent);font-size:.74rem;font-weight:650;letter-spacing:.09em;text-transform:uppercase}
+.explore-page #lame-attachment-settings .attachment-bar #compute{grid-column:1/-1;width:100%}
+.explore-page #decoration-status{margin:.5rem 0 0;font-size:.8rem;line-height:1.5}
+.explore-page .repeat-budget-note{display:none}
+.explore-page .case-support{margin:.8rem 0 0;padding:.85rem 1rem;border-left:3px solid #8aa6a0;border-radius:0 7px 7px 0;background:#edf1e9;color:#334d40}
+.explore-page .case-support h3{margin:0 0 .35rem;font:600 .88rem system-ui,sans-serif}
+.explore-page .case-support p{margin:.3rem 0;font-size:.82rem;line-height:1.55}
+.explore-page .case-support .caption{font-size:.77rem;color:#506653}
+.explore-page .repeat-count-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem 1rem}
+.explore-page .repeat-count-grid>.repeat-count-field{display:grid;grid-template-rows:auto auto 1fr;align-content:start;min-width:0;gap:.25rem}
+.explore-page .repeat-count-field label{display:grid;align-content:start;gap:.12rem;margin:0;line-height:1.35}
+.explore-page .repeat-edge-name{font-weight:600}
+.explore-page .repeat-face-pair{font-size:.77rem;color:#607262;white-space:nowrap}
+.explore-page .repeat-count-field input{display:block;width:100%;margin:0;padding:.5rem .65rem}
+.limits-page .repeat-count-field input{margin:0}
+.limits-source-row{grid-template-rows:auto 1fr;row-gap:8px}
+.limits-source-row>.limits-source-comparison{display:grid;grid-row:span 2;grid-template-rows:subgrid;align-content:start}
+@media(max-width:620px){.limits-source-row{grid-template-rows:none}.limits-source-row>.limits-source-comparison{display:block;grid-row:auto}}
+.explore-page #bouquet-count-fields small{margin:.1rem 0 0}
+.explore-page .repeat-local-grid input,.explore-page .repeat-local-grid select{margin:0}
+.explore-computation-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:14px;margin-top:14px;align-items:stretch}
+.computation-row-heading{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:8px 20px}
+.computation-row-heading .caption{margin:0;font-size:.8rem}
+.explore-computation-row>.panel{margin:0;padding:16px 18px;min-width:0}
+.explore-computation-row h2{font-size:22px;margin:0 0 6px}
+.explore-computation-row .caption,.explore-computation-row .status{font-size:.78rem;line-height:1.55}
+.explore-computation-row .caption{margin:.45rem 0 .75rem}
+.explore-computation-row .status:empty{display:none}
+.explore-computation-row .status{margin:.65rem 0 0}
+.mesh-controls{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:end}
+.mesh-controls>div{grid-column:1/-1}
+.mesh-controls label{font-size:12px}
+.mesh-controls select{width:100%;box-sizing:border-box;margin:0;padding:7px;font-size:13px}
+.mesh-controls button{width:auto;margin:0;padding:8px 10px;font-size:12px}
+.explore-computation-row .computed-cusp-controls{border:0;margin:0;padding:0}
+.explore-computation-row .computed-cusp-controls details>summary{font-size:.8rem;color:var(--accent);margin:.2rem 0 .65rem;cursor:pointer}
+.explore-computation-row #cusp-controls{grid-template-columns:minmax(0,1.4fr) minmax(80px,.7fr);gap:10px}
+.explore-computation-row #cusp-controls input,.explore-computation-row #cusp-controls select{width:100%;box-sizing:border-box}
+.explore-computation-row #cusp-controls button{width:100%;margin:0}
+.explore-computation-row #cusp-controls .numeric-stepper-buttons button{margin:0;padding:0}
+@media(max-width:850px){
+  .explore-page .case-graph-column{grid-column:1;grid-row:auto}
+  .explore-page .case-panel:has(#case-graph.case-graph-expanded)>.case-graph-column{grid-column:1;grid-row:auto}
+  .explore-computation-row{grid-template-columns:1fr 1fr}
+  .computation-row-heading{display:block}
+  .computation-row-heading .caption{margin-top:.35rem}
+}
+@media(max-width:650px){
+  .explore-computation-row{grid-template-columns:1fr}
+  .explore-page .repeat-count-grid{gap:.75rem}
+  .explore-computation-row>.panel{padding:14px}
+}
+
+.explore-computation-row .cusp-actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;margin:.7rem 0 0;align-items:end}
+.explore-computation-row .cusp-actions button{width:auto;margin:0;padding:8px 10px;font-size:12px}
+
+/* One visual language for each page's complete workflow. */
+.workflow-nav{margin:0 0 22px;padding:0}
+.workflow-nav ol{display:flex;flex-wrap:wrap;gap:8px 12px;margin:0;padding:0;list-style:none}
+.workflow-nav li{margin:0;min-width:0}
+.workflow-nav a{display:flex;align-items:center;gap:8px;padding:7px 11px;border:1px solid #d6dfd2;border-radius:7px;color:#365d52;background:#fafbf5;font-size:12px;text-decoration:none;line-height:1.4}
+.workflow-nav a:hover,.workflow-nav a:focus-visible{border-color:#648e81;background:#edf2e9;color:#234f47}
+.workflow-nav a span{display:grid;place-items:center;flex:0 0 20px;width:20px;height:20px;border-radius:50%;background:#e3ebe0;color:#285f65;font-size:11px;font-weight:700}
+.explore-page .workflow-step-heading,.limits-page .workflow-step-heading{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:12px;row-gap:4px;align-items:center;margin:22px 0 12px;scroll-margin-top:95px}
+.workflow-step-heading .workflow-step-label{grid-column:1;grid-row:1;margin:0;padding:5px 9px;border:1px solid #b9cec3;border-radius:6px;background:#eaf0e5;color:#285f65;font:650 11px/1.4 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.explore-page .workflow-step-heading h2,.limits-page .workflow-step-heading h2{grid-column:2;grid-row:1;margin:0;font-size:25px;line-height:1.2}
+.workflow-step-heading .workflow-step-description{grid-column:2;grid-row:2;margin:0;color:#607061;font-size:12px;line-height:1.55;max-width:90ch}
+.explore-computation-row>.workflow-step-heading{grid-column:1/-1;margin:4px 0 0}
+.limits-page .limits-step-heading.workflow-step-heading{margin:0 0 14px}
+.limits-page .limits-result-heading{justify-content:flex-end;margin-top:0}
+#explore-step-3{margin-bottom:0}
+#limits-step-4{margin-top:24px}
+@media(max-width:650px){
+  .workflow-nav ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .workflow-nav a{height:100%;box-sizing:border-box;padding:7px 8px;font-size:11px}
+  .explore-page .workflow-step-heading,.limits-page .workflow-step-heading{column-gap:9px}
+  .explore-page .workflow-step-heading h2,.limits-page .workflow-step-heading h2{font-size:22px}
+  .workflow-step-heading .workflow-step-description{grid-column:1/-1;margin-top:2px}
+}
+
+/* Keep the workflow in view without taking a second tall toolbar row. */
+.workflow-nav{position:sticky;top:var(--workflow-header-height,76px);z-index:9;margin:0 0 22px;padding:6px 0;background:var(--background,#f7f5ed);border-bottom:1px solid #d6dfd2;box-shadow:0 3px 6px #324e3b08;overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;scrollbar-width:thin}
+.workflow-nav ol{display:flex;flex-wrap:nowrap;gap:8px;width:max-content;min-width:100%;margin:0;padding:0}
+.workflow-nav li{flex:0 0 auto}
+.workflow-nav a{white-space:nowrap;padding:5px 9px;min-height:30px;box-sizing:border-box;font-size:12px}
+.workflow-nav a[aria-current="step"]{background:#285f65;border-color:#285f65;color:#fff;font-weight:600}
+.workflow-nav a[aria-current="step"] span{background:#ffffff26;color:#fff}
+.workflow-nav a:focus-visible{outline:2px solid #b55e3c;outline-offset:2px}
+.explore-page .workflow-step-heading,.limits-page .workflow-step-heading,#explore-plots,#limits-results{scroll-margin-top:var(--workflow-scroll-offset,136px)}
+/* Both computations read settings, action, status, then numerical notes. */
+.mesh-controls,.explore-computation-row #cusp-controls{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.explore-computation-row .cusp-setting-fields{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(85px,.7fr);gap:10px;align-items:end}
+.explore-computation-row .mesh-actions,.explore-computation-row .cusp-actions{display:grid;grid-template-columns:minmax(0,1fr) 88px;gap:10px;margin:0;align-items:end}
+.explore-computation-row .mesh-actions button,.explore-computation-row .cusp-actions button{width:100%;margin:0;padding:8px 10px;min-height:36px;font-size:12px;line-height:1.4}
+.explore-computation-row .mesh-controls select,.explore-computation-row #cusp-controls input,.explore-computation-row #cusp-controls select{height:36px;padding:7px;font-size:13px;margin:0;box-sizing:border-box}
+.explore-computation-row .calculation-intro{margin:0 0 10px}
+.explore-computation-row .calculation-notes{margin-top:8px}
+.explore-computation-row .calculation-notes>summary{margin:0;font-size:12px;color:var(--accent);cursor:pointer}
+@supports(grid-template-rows:subgrid){
+  .explore-computation-row{row-gap:8px}
+  .explore-computation-row>.mesh-control-panel,.explore-computation-row>.cusp-control-panel{display:grid;grid-template-rows:subgrid;grid-row:2/span 5;row-gap:8px}
+  .explore-computation-row .mesh-controls,.explore-computation-row #cusp-controls,.explore-computation-row .computed-cusp-controls{display:contents}
+  .explore-computation-row>.panel>h2{grid-row:1;margin:0}
+  .explore-computation-row .mesh-controls>div:first-child,.explore-computation-row .cusp-setting-fields{grid-row:2;align-self:end}
+  .explore-computation-row .mesh-actions,.explore-computation-row .cusp-actions{grid-row:3;margin:0}
+  .explore-computation-row #attachment-status,.explore-computation-row #cusp-status{grid-row:4;margin:0}
+  .explore-computation-row .calculation-notes{grid-row:5;margin:0;align-self:start}
+  @media(max-width:650px){
+    .explore-computation-row>.mesh-control-panel,.explore-computation-row>.cusp-control-panel{grid-row:auto;grid-template-rows:repeat(5,auto)}
+  }
+}
+@media(max-width:650px){
+  .workflow-nav ol{display:flex;gap:6px}
+  .workflow-nav a{font-size:11px;padding:5px 7px;min-height:29px}
+  .workflow-nav a span{flex-basis:18px;width:18px;height:18px}
+}
+
+/* Link a decoration field to its edge without moving either panel. */
+#case-graph .graph-control-link{cursor:pointer;outline:none;pointer-events:all}
+#case-graph .graph-chain-halo{fill:none;stroke:#d6a142;stroke-width:11;stroke-linecap:round;stroke-linejoin:round;opacity:0;pointer-events:none}
+#case-graph .graph-chain-hit{fill:none;stroke:transparent;stroke-width:16;stroke-linecap:round;pointer-events:stroke}
+#case-graph .graph-link-selected>.graph-chain-halo,#case-graph .graph-control-link:focus-visible>.graph-chain-halo{opacity:.4}
+#case-graph .graph-link-selected>.graph-chain{stroke-width:4.2}
+#case-graph .graph-control-link:hover>.graph-chain-halo{opacity:.23}
+#case-graph .graph-edge-count.graph-link-selected rect,#case-graph .graph-edge-count:focus-visible rect{fill:#fff1d3;stroke:#a66b20;stroke-width:1.6}
+#case-graph .graph-control-link:focus-visible>.graph-chain-halo{stroke:#a66b20;opacity:.65}
+#case-graph .graph-chain-key .graph-key-link{display:flex;align-items:center;gap:.4rem;min-width:0;width:100%;margin:0;padding:4px 5px;border:1px solid transparent;border-radius:5px;background:transparent;box-shadow:none;color:inherit;font:inherit;text-align:left;line-height:inherit;cursor:pointer}
+#case-graph .graph-chain-key .graph-key-link:hover{background:#f2f0e3}
+#case-graph .graph-chain-key .graph-key-link.graph-link-selected{border-color:#bb8a37;background:#fff2d7}
+#case-graph .graph-chain-key .graph-key-link:focus-visible{outline:2px solid #a66b20;outline-offset:2px}
+.case-panel .graph-control-selected{outline:2px solid #bb8a37;outline-offset:4px;border-radius:5px;background:#fff2d7}
+.case-panel .graph-control-selected>label{color:#784d17}
+.case-panel .graph-control-selected>input,.case-panel .graph-control-selected>select{border-color:#bb8a37;background:#fffdf6}
+#case-graph #graph-control-feedback{min-height:1.5em;margin:.4rem 0 0;color:#795222;font-size:12px;line-height:1.5;text-align:left}
+#case-graph .graph-control-link.graph-link-selected:hover>.graph-chain-halo{opacity:.4}
+@media(max-width:400px){#case-graph #graph-control-feedback{min-height:3em}}
