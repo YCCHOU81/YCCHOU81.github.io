@@ -1,0 +1,3360 @@
+{
+  "date": "2026-10-24",
+  "status": "Conjectures supported by finite numerical tests; no all-count proof is claimed.",
+  "method": "Independently refined marked elliptic roots with geometric Hodge branch checks and repeated-precision checks. The improved mixed double-edge solver uses bounded local correction, health-checked meshes, adaptive continuation, and preserved checked prefixes. Formula annotations are not imported by the workers and never enter root guesses. The three-loop solver uses stable combined Fourier exponents, conditioned matching matrices, graph-selected initialization and bounded branch continuation; routine correction targets18digits with an independently perturbed higher-precision repeat.",
+  "precision": "Stored coordinates have more digits than the numerical error diagnostic. Decimal length is not a certified accuracy bound.",
+  "records": [
+    {
+      "seed": "double",
+      "counts": {
+        "countA": 1,
+        "qt": 2
+      },
+      "edge": 0,
+      "chart": "raw",
+      "epsilon": "1e-8",
+      "proposed": "1/6",
+      "lastRe": "0.16666679072461636164674623241112922258971060507872450020363355110249993970187740936736335232345710171979174065519536442900444628873418149603",
+      "absoluteDifference": 1.2405794969083672e-7,
+      "samples": 17,
+      "status": "ok",
+      "seconds": 27.828,
+      "report": "double-conjecture-holdout.json"
+    },
+    {
+      "seed": "double",
+      "counts": {
+        "countA": 1,
+        "qt": 2
+      },
+      "edge": 1,
+      "chart": "zero",
+      "epsilon": "1e-8",
+      "proposed": "2/3",
+      "lastRe": "0.66666621695294072712531617485402293575307566758662721902906640835332493905615356090618220545254089146607722739623268331316734154907991166919",
+      "absoluteDifference": 4.4971372592517156e-7,
+      "samples": 17,
+      "status": "ok",
+      "seconds": 26.716,
+      "report": "double-conjecture-holdout.json"
+    },
+    {
+      "seed": "double",
+      "counts": {
+        "countA": 1,
+        "qt": 2
+      },
+      "edge": 2,
+      "chart": "half",
+      "epsilon": "1e-8",
+      "proposed": "-5/14",
+      "lastRe": "-0.35716075404696724439563937400470203130303618935591507811724208571116515883517326732127151259014532787734477571547080699869074751134108128559",
+      "absoluteDifference": 0.000017896904110081824,
+      "samples": 17,
+      "status": "ok",
+      "seconds": 31.566,
+      "report": "double-conjecture-holdout.json"
+    },
+    {
+      "seed": "double",
+      "counts": {
+        "countA": 3,
+        "qt": 1
+      },
+      "edge": 0,
+      "chart": "raw",
+      "epsilon": "1e-8",
+      "proposed": "1/10",
+      "lastRe": "0.10002304178177398114404045171080255754542130372985522954800481916071811611101849411544471795891873197883457082238891635945757368321550149065",
+      "absoluteDifference": 0.000023041781773980308,
+      "samples": 17,
+      "status": "ok",
+      "seconds": 30.346,
+      "report": "double-conjecture-holdout31.json"
+    },
+    {
+      "seed": "tetra",
+      "counts": {
+        "qAC": 1
+      },
+      "edge": 0,
+      "chart": "raw",
+      "epsilon": "1e-7",
+      "proposed": "1/3",
+      "lastRe": "0.3333346854909879086308689080268568991096185031838585549976972562473854580767345061140562845419956488407007093938137380720612854222",
+      "absoluteDifference": 0.0000013521576545660885,
+      "samples": 8,
+      "status": "partial",
+      "seconds": 28.011594100000003,
+      "report": "tetra-conjecture-AC1-AD1-ABCD1-ACBD1-ADBC1-e0.json"
+    },
+    {
+      "seed": "tetra",
+      "counts": {
+        "qAD": 1
+      },
+      "edge": 0,
+      "chart": "raw",
+      "epsilon": "1e-7",
+      "proposed": "2/3",
+      "lastRe": "0.6666653904602726986545114434546182786705411334243582594737341341432948809791742910358571381037758083783250264116123953153100884148",
+      "absoluteDifference": 0.000001276206393896473,
+      "samples": 8,
+      "status": "partial",
+      "seconds": 28.010880300000004,
+      "report": "tetra-conjecture-AC1-AD1-ABCD1-ACBD1-ADBC1-e0.json"
+    },
+    {
+      "seed": "tetra",
+      "counts": {
+        "qAB": 1,
+        "qCD": 1
+      },
+      "edge": 0,
+      "chart": "raw",
+      "epsilon": "1e-7",
+      "proposed": "1/2",
+      "lastRe": "0.5000000763953478305329948870169885337822647288108212707071858944032589048734652830697980047536173745640600848631571213225556338308",
+      "absoluteDifference": 7.639534782555302e-8,
+      "samples": 8,
+      "status": "partial",
+      "seconds": 28.045178500000002,
+      "report": "tetra-conjecture-AC1-AD1-ABCD1-ACBD1-ADBC1-e0.json"
+    },
+    {
+      "seed": "tetra",
+      "counts": {
+        "qAC": 1,
+        "qBD": 1
+      },
+      "edge": 0,
+      "chart": "raw",
+      "epsilon": "0.000001",
+      "proposed": "1/4",
+      "lastRe": "0.2500002961826674730000733976853252918154953564774842351419699946516076916361442157305123381630343926401068013649071183202559261369",
+      "absoluteDifference": 2.9618266744746435e-7,
+      "samples": 7,
+      "status": "partial",
+      "seconds": 28.118191299999992,
+      "report": "tetra-conjecture-AC1-AD1-ABCD1-ACBD1-ADBC1-e0.json"
+    },
+    {
+      "seed": "tetra",
+      "counts": {
+        "qAD": 1,
+        "qBC": 1
+      },
+      "edge": 0,
+      "chart": "raw",
+      "epsilon": "1e-7",
+      "proposed": "3/4",
+      "lastRe": "0.7500000133761335740799646774148548808433630379639790224031129653707099710850032730982873153058751214273267419006277218915362370815",
+      "absoluteDifference": 1.337613353413758e-8,
+      "samples": 8,
+      "status": "partial",
+      "seconds": 28.03166499999998,
+      "report": "tetra-conjecture-AC1-AD1-ABCD1-ACBD1-ADBC1-e0.json"
+    },
+    {
+      "seed": "tetra",
+      "counts": {
+        "qAC": 1
+      },
+      "edge": 1,
+      "chart": "zero",
+      "epsilon": "1e-7",
+      "proposed": "1/2",
+      "lastRe": "0.4999999300258093895252837410324488165470622797407908482596801756299689763944561517956493135711686865996537732341099743984077517736",
+      "absoluteDifference": 6.997419060850163e-8,
+      "samples": 8,
+      "status": "partial",
+      "seconds": 28.07221,
+      "report": "tetra-conjecture-AC1-e12.json"
+    },
+    {
+      "seed": "tetra",
+      "counts": {
+        "qAC": 1
+      },
+      "edge": 2,
+      "chart": "one",
+      "epsilon": "1e-7",
+      "proposed": "2/3",
+      "lastRe": "0.666665884047314258766418790012333668950918505145185704389606808088477486016355924578418800080893648206718433640101927580804469829",
+      "absoluteDifference": 7.826193523241542e-7,
+      "samples": 8,
+      "status": "partial",
+      "seconds": 28.035071899999995,
+      "report": "tetra-conjecture-AC1-e12.json"
+    },
+    {
+      "seed": "tetra",
+      "counts": {
+        "qAC": 2
+      },
+      "edge": 0,
+      "chart": "raw",
+      "epsilon": "0.000001",
+      "proposed": "1/4",
+      "lastRe": "0.2500843067392831115730204374415929361059621864577178978379227795674782166197382661181411652859824133235695020554295326997779861958",
+      "absoluteDifference": 0.00008430673928311316,
+      "samples": 7,
+      "status": "partial",
+      "seconds": 28.068247900000003,
+      "report": "tetra-conjecture-AC2-e0.json"
+    },
+    {
+      "seed": "tetra",
+      "counts": {
+        "qAB": 1,
+        "qAC": 1,
+        "qAD": 2
+      },
+      "edge": 0,
+      "chart": "raw",
+      "epsilon": "1e-8",
+      "proposed": "3/5",
+      "lastRe": "0.59996841332669449425155188864902602896431775068647123025245144395429070464145219605599007244029673845744593247207806420551037945074361059771",
+      "absoluteDifference": 0.000031586673305494806,
+      "samples": 9,
+      "status": "ok",
+      "seconds": 57.7257926,
+      "report": "tetra-conjecture-AB1AC1AD2-e0.json"
+    }
+  ],
+  "doubleEdgeAllDecorations": {
+    "status": "Conjectural all-count elliptic law, supported by finite computations; exact arithmetic for the proposed finite products is not a proof of the cusp law.",
+    "summary": {
+      "distinctPaths": 22,
+      "decoratedGraphs": 8,
+      "checkedSelectedSamples": 426,
+      "newlyComputedSamples": 372,
+      "minimumDepth": 16,
+      "maximumDepth": 28,
+      "maximumReportedCrossPrecisionError": "9.629273049015247107754990498865107203378783295005829606627563900807744989314726182260505520669083356766837533217921680768652063557E-25",
+      "allChecksPass": true
+    },
+    "formula": {
+      "totals": "K=kA+kB; C=cA+cB; Q=ql+qm; T=qt; U=qu",
+      "M": [
+        "2+K+C+Q+2U",
+        "1+C+T+U",
+        "2+K+C+Q+2T"
+      ],
+      "p": [
+        "1+2(U+C)",
+        "T-U",
+        "-1-2(T+C)"
+      ],
+      "horizontal": [
+        "p0/(2M0)",
+        "p1/M1",
+        "p2/(2M2)"
+      ],
+      "alpha": [
+        "1/M0",
+        "2/M1",
+        "1/M2"
+      ],
+      "charts": [
+        "tau",
+        "1-1/tau",
+        "tau/(1-2tau)"
+      ],
+      "normalDistances": [
+        "1-R",
+        "1/2-S",
+        "R+2S-1"
+      ],
+      "law": "w_i = x_i + i alpha_i/pi log(K_i sin(pi*t)/delta_i) + o(1)",
+      "constantFormula": "See REPORT.txt and formula-audit-utility.py: exact cap residue products."
+    },
+    "notes": [
+      "Full marked horizontal values are not reduced modulo one.",
+      "Fits leave the limiting real part, logarithmic slope, correction exponent and coefficients free.",
+      "The last computed point is recorded separately from the fitted limit. Slow fractional corrections remain visible at depth 28.",
+      "Fit-window ranges are sensitivity checks, not confidence intervals or certified error bounds."
+    ],
+    "patternChecks": {
+      "nonComplementaryPositionSineCheck": {
+        "positions": [
+          "0.23",
+          "0.37",
+          "0.63"
+        ],
+        "depth": "16.0",
+        "actualHeightDifference23Minus37": "-0.0417246342240902590968149563125441",
+        "conjecturalHeightDifference23Minus37": "-0.041724636106748111679409320169924298",
+        "finiteDepthDiscrepancy": "0.0000000018826578525825943638573801976285261",
+        "freelyFittedConstants": [
+          "91.651513899037704051946232411779961",
+          "91.651513899082621080176906583819141",
+          "91.651513899157291638037993972646869"
+        ],
+        "freeConstantRange": "0.000000000119587586091761560866908",
+        "conjecturalConstant": "sqrt(8400)"
+      },
+      "CrossAllocationCheck": [
+        {
+          "edge": 0,
+          "sharedConjecturalX": "7/10",
+          "sharedConjecturalAlpha": "1/5",
+          "countsA": {
+            "qt": 1,
+            "qu": 0,
+            "ql": 0,
+            "qm": 0,
+            "modeA": "cross",
+            "countA": 3,
+            "modeB": "arm",
+            "countB": 0
+          },
+          "countsB": {
+            "qt": 1,
+            "qu": 0,
+            "ql": 0,
+            "qm": 0,
+            "modeA": "cross",
+            "countA": 2,
+            "modeB": "cross",
+            "countB": 1
+          },
+          "KExactA": "11760",
+          "KExactB": "2160",
+          "freelyFittedRatio": "5.4444439199684153797691729285573184",
+          "conjecturalRatio": "49/9",
+          "relativeRatioDiscrepancy": "-0.000000096332331869021988645775186412005453",
+          "freeXDifference": "0.00000000035809603939972023867176757",
+          "freeAlphaDifference": "0.00000000038865269443264115044953533"
+        },
+        {
+          "edge": 1,
+          "sharedConjecturalX": "1/5",
+          "sharedConjecturalAlpha": "2/5",
+          "countsA": {
+            "qt": 1,
+            "qu": 0,
+            "ql": 0,
+            "qm": 0,
+            "modeA": "cross",
+            "countA": 3,
+            "modeB": "arm",
+            "countB": 0
+          },
+          "countsB": {
+            "qt": 1,
+            "qu": 0,
+            "ql": 0,
+            "qm": 0,
+            "modeA": "cross",
+            "countA": 2,
+            "modeB": "cross",
+            "countB": 1
+          },
+          "KExactA": "sqrt(75600)",
+          "KExactB": "sqrt(8400)",
+          "freelyFittedRatio": "3.0000000000011185776910019785954079",
+          "conjecturalRatio": "3",
+          "relativeRatioDiscrepancy": "3.7285923033399286513595569053903329e-13",
+          "freeXDifference": "-6.9457771802584606641e-16",
+          "freeAlphaDifference": "-3.28204668206743861532e-15"
+        },
+        {
+          "edge": 2,
+          "sharedConjecturalX": "-9/14",
+          "sharedConjecturalAlpha": "1/7",
+          "countsA": {
+            "qt": 1,
+            "qu": 0,
+            "ql": 0,
+            "qm": 0,
+            "modeA": "cross",
+            "countA": 3,
+            "modeB": "arm",
+            "countB": 0
+          },
+          "countsB": {
+            "qt": 1,
+            "qu": 0,
+            "ql": 0,
+            "qm": 0,
+            "modeA": "cross",
+            "countA": 2,
+            "modeB": "cross",
+            "countB": 1
+          },
+          "KExactA": "3024",
+          "KExactB": "2800/3",
+          "freelyFittedRatio": "3.2400004462806926783410030702875213",
+          "conjecturalRatio": "81/25",
+          "relativeRatioDiscrepancy": "0.0000001377409545303521614414467658308742",
+          "freeXDifference": "0.00000000064486320180652232451169274",
+          "freeAlphaDifference": "-0.00000000034081418395748939096532593"
+        }
+      ]
+    },
+    "records": [
+      {
+        "id": "crossA3-t1-e0",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 0,
+          "cA": 3,
+          "cB": 0,
+          "qt": 1,
+          "qu": 0,
+          "ql": 0,
+          "qm": 0
+        },
+        "weights": [
+          2,
+          5,
+          3,
+          0
+        ],
+        "edge": 0,
+        "chart": "raw",
+        "position": "0.37",
+        "depth": "20.0",
+        "samples": 21,
+        "historicalPrefixSamples": 0,
+        "proposed": "7/10",
+        "alpha": "1/5",
+        "constant": "11760",
+        "M": 5,
+        "p": 7,
+        "lastRe": "0.6999864823819097528527839304942232",
+        "lastIm": "3.5781648587302210556202569833950798",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "16.0",
+          "toDepth": "20.0",
+          "beta": 0.20000000202860518,
+          "x": "0.69999999999973956462087786520281102",
+          "alpha": "0.19999999999967276526318065786001319",
+          "verticalIntercept": "0.64643228403678172843799124039233829",
+          "normalizedResidual": 2.1362765267633845e-18,
+          "nearestRational": "7/10",
+          "K": "11760.000001166991046960349460682417",
+          "xMinusConjecture": "-2.6043537912213479718898e-13",
+          "alphaMinusConjecture": "-3.2723473681934213998681e-13",
+          "relativeKMinusConjecture": "9.923393256465556638455928218437247e-11"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "0.69999999988094220388308811699995073",
+            "max": "0.69999999999973956462087786520281102",
+            "spread": "0.00000000011879736073778974820286029"
+          },
+          "alpha": {
+            "min": "0.19999999997035271349950423572814363",
+            "max": "0.19999999999967276526318065786001319",
+            "spread": "2.932005176367642213186956e-11"
+          },
+          "K": {
+            "min": "11760.000001166991046960349460682417",
+            "max": "11760.000092128034937783650299225625",
+            "spread": "0.000090961043890823300838543208"
+          },
+          "relativeKMinusConjecture": {
+            "min": "9.923393256465556638455928218437247e-11",
+            "max": "0.0000000078340165763421471342878932608337147",
+            "spread": "0.0000000077347826437774915679033339786493422"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "5.0000000000081808684204969388212929",
+          "nearestM": 5,
+          "p": "6.9999999999973956462087786520281102",
+          "nearestP": 7,
+          "reconstructedX": "7/10"
+        }
+      },
+      {
+        "id": "crossA3-t1-e1",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 0,
+          "cA": 3,
+          "cB": 0,
+          "qt": 1,
+          "qu": 0,
+          "ql": 0,
+          "qm": 0
+        },
+        "weights": [
+          2,
+          5,
+          3,
+          0
+        ],
+        "edge": 1,
+        "chart": "zero",
+        "position": "0.37",
+        "depth": "20.0",
+        "samples": 21,
+        "historicalPrefixSamples": 0,
+        "proposed": "1/5",
+        "alpha": "2/5",
+        "constant": "sqrt(75600)",
+        "M": 5,
+        "p": 1,
+        "lastRe": "0.20000000026346035000626035606981778",
+        "lastIm": "6.7791365080670484758741905886737527",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "16.0",
+          "toDepth": "20.0",
+          "beta": 0.4000000001358878,
+          "x": "0.20000000000000000009531124929370615",
+          "alpha": "0.40000000000000000046508949148695123",
+          "verticalIntercept": "0.91565171739424860757079503403449594",
+          "normalizedResidual": 8.514820330694167e-23,
+          "nearestRational": "1/5",
+          "K": "274.95454169735038257932479133802804",
+          "xMinusConjecture": "9.531124929370615e-20",
+          "alphaMinusConjecture": "4.6508949148695123e-19",
+          "relativeKMinusConjecture": "-6.4796012934735007351792607922945103e-17"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "0.19999999999999942548612428231342347",
+            "max": "0.20000000000000000050994424623140275",
+            "spread": "5.7502381996391797928e-16"
+          },
+          "alpha": {
+            "min": "0.40000000000000000046508949148695123",
+            "max": "0.40000000000000406788754588927627351",
+            "spread": "4.06742245639778932228e-15"
+          },
+          "K": {
+            "min": "274.95454169720775026665733046658234",
+            "max": "274.95454169735038257932479133802804",
+            "spread": "0.0000000001426323126674608714457"
+          },
+          "relativeKMinusConjecture": {
+            "min": "-5.1881350184249677061278765514415525e-13",
+            "max": "-6.4796012934735007351792607922945103e-17",
+            "spread": "5.187487058295620356054358625362323e-13"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "4.9999999999999999941863813564131096",
+          "nearestM": 5,
+          "p": "1.0000000000000000004765562464685307",
+          "nearestP": 1,
+          "reconstructedX": "1/5"
+        }
+      },
+      {
+        "id": "crossA3-t1-e2",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 0,
+          "cA": 3,
+          "cB": 0,
+          "qt": 1,
+          "qu": 0,
+          "ql": 0,
+          "qm": 0
+        },
+        "weights": [
+          2,
+          5,
+          3,
+          0
+        ],
+        "edge": 2,
+        "chart": "half",
+        "position": "0.37",
+        "depth": "20.0",
+        "samples": 21,
+        "historicalPrefixSamples": 0,
+        "proposed": "-9/14",
+        "alpha": "1/7",
+        "constant": "3024",
+        "M": 7,
+        "p": -9,
+        "lastRe": "-0.6427550976652516869732334486296664",
+        "lastIm": "2.5277702191306694268822985713785138",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "16.0",
+          "toDepth": "20.0",
+          "beta": 0.1428580605623596,
+          "x": "-0.64285714226815007095200678029880295",
+          "alpha": "0.14285714271024600601094624469250501",
+          "verticalIntercept": "0.43371761382797953658037970499393275",
+          "normalizedResidual": 3.8566784374331335e-14,
+          "nearestRational": "-9/14",
+          "K": "3024.0001868508700746807977002018481",
+          "xMinusConjecture": "0.00000000058899278619085036255833990714285714",
+          "alphaMinusConjecture": "-0.00000000014689685113191089816463784714285714",
+          "relativeKMinusConjecture": "0.000000061789308887129893419378918016122166"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "-0.64285714226815007095200678029880295",
+            "max": "-0.64285711212948296114960591082107325",
+            "spread": "0.0000000301386671098024008694777297"
+          },
+          "alpha": {
+            "min": "0.1428571412956314933674672548182522",
+            "max": "0.14285714271024600601094624469250501",
+            "spread": "0.00000000141461451264347898987425281"
+          },
+          "K": {
+            "min": "3024.0001868508700746807977002018481",
+            "max": "3024.0013771962462673190036679914349",
+            "spread": "0.0011903453761926382059677895868"
+          },
+          "relativeKMinusConjecture": {
+            "min": "0.000000061789308887129893419378918016122166",
+            "max": "0.0000004554220391095631625886215062662371",
+            "spread": "0.00000039363273022243326916924258825011493"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "7.0000000071979457128651229289355241",
+          "nearestM": 7,
+          "p": "-8.9999999917541009933280949241832413",
+          "nearestP": -9,
+          "reconstructedX": "-9/14"
+        }
+      },
+      {
+        "id": "double-5620-e0",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 1,
+          "cA": 1,
+          "cB": 0,
+          "qt": 1,
+          "qu": 2,
+          "ql": 1,
+          "qm": 0
+        },
+        "weights": [
+          5,
+          6,
+          2,
+          0
+        ],
+        "edge": 0,
+        "chart": "raw",
+        "position": "0.4",
+        "depth": "28.0",
+        "samples": 29,
+        "historicalPrefixSamples": 9,
+        "proposed": "7/18",
+        "alpha": "1/9",
+        "constant": "24750",
+        "M": 9,
+        "p": 7,
+        "lastRe": "0.38888271397923793778195369911628593",
+        "lastIm": "2.6669539399855648239660034088302589",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "24.0",
+          "toDepth": "28.0",
+          "beta": 0.11110888306943568,
+          "x": "0.38888888897853533554367195470369207",
+          "alpha": "0.11111111109822171225801765299663558",
+          "verticalIntercept": "0.3867075913973977498175400575354363",
+          "normalizedResidual": 1.2283889696586348e-13,
+          "nearestRational": "7/18",
+          "K": "24750.000234670993860369879945996376",
+          "xMinusConjecture": "8.9646446654783065814803181111111111e-11",
+          "alphaMinusConjecture": "-1.2889398853093458114475531111111111e-11",
+          "relativeKMinusConjecture": "0.0000000094816563175907022200402576205264911"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "0.38888888897853533554367195470369207",
+            "max": "0.38888889036870209580767914213706026",
+            "spread": "0.00000000139016676026400718743336819"
+          },
+          "alpha": {
+            "min": "0.11111111099057593047471842974449174",
+            "max": "0.11111111109822171225801765299663558",
+            "spread": "0.00000000010764578178329922325214384"
+          },
+          "K": {
+            "min": "24750.000234670993860369879945996376",
+            "max": "24750.001963244798460676770697262902",
+            "spread": "0.001728573804600306890751266526"
+          },
+          "relativeKMinusConjecture": {
+            "min": "0.0000000094816563175907022200402576205264911",
+            "max": "0.00000007932302216002734427059648090409709",
+            "spread": "0.000000069841365842436642050556223283570599"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "9.0000000010440413072216836907234863",
+          "nearestM": 9,
+          "p": "7.0000000016136360397860951846664573",
+          "nearestP": 7,
+          "reconstructedX": "7/18"
+        }
+      },
+      {
+        "id": "double-6610-e1",
+        "seed": "double",
+        "counts": {
+          "kA": 1,
+          "kB": 2,
+          "cA": 0,
+          "cB": 0,
+          "qt": 2,
+          "qu": 1,
+          "ql": 1,
+          "qm": 0
+        },
+        "weights": [
+          6,
+          6,
+          1,
+          0
+        ],
+        "edge": 1,
+        "chart": "zero",
+        "position": "0.65",
+        "depth": "20.0",
+        "samples": 21,
+        "historicalPrefixSamples": 9,
+        "proposed": "1/4",
+        "alpha": "1/2",
+        "constant": "sqrt(116424000)",
+        "M": 4,
+        "p": 1,
+        "lastRe": "0.24999999999402307771296150630226914",
+        "lastIm": "9.0532749529625145053339669806552497",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "16.0",
+          "toDepth": "20.0",
+          "beta": 0.49999999963945796,
+          "x": "0.25000000000000000000368567467221116",
+          "alpha": "0.50000000000000000003384970471999951",
+          "verticalIntercept": "1.7239189641622601738029688924370164",
+          "normalizedResidual": 4.827486847566485e-22,
+          "nearestRational": "1/4",
+          "K": "10789.995366078708334349897687328604",
+          "xMinusConjecture": "3.68567467221116e-21",
+          "alphaMinusConjecture": "3.384970471999951e-20",
+          "relativeKMinusConjecture": "-3.9433100377087385360399352811220785e-18"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "0.24999999999999981053943061837441689",
+            "max": "0.25000000000000000000368567467221116",
+            "spread": "1.8946425505629779427e-16"
+          },
+          "alpha": {
+            "min": "0.50000000000000000003384970471999951",
+            "max": "0.50000000000000039695493238714931831",
+            "spread": "3.969210826824293188e-16"
+          },
+          "K": {
+            "min": "10789.995366078247696604706086719474",
+            "max": "10789.995366078708334349897687328604",
+            "spread": "0.00000000046063774519160060913"
+          },
+          "relativeKMinusConjecture": {
+            "min": "-4.2695133580586009809621597854365526e-14",
+            "max": "-3.9433100377087385360399352811220785e-18",
+            "spread": "4.2691190270548301071085557919084404e-14"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "3.9999999999999999997292023622400039",
+          "nearestM": 4,
+          "p": "1.0000000000000000000147426986888446",
+          "nearestP": 1,
+          "reconstructedX": "1/4"
+        }
+      },
+      {
+        "id": "armA1-crossB1-t1-l1-m1-e0",
+        "seed": "double",
+        "counts": {
+          "kA": 1,
+          "kB": 0,
+          "cA": 0,
+          "cB": 1,
+          "qt": 1,
+          "qu": 0,
+          "ql": 1,
+          "qm": 1
+        },
+        "weights": [
+          5,
+          3,
+          1,
+          2
+        ],
+        "edge": 0,
+        "chart": "raw",
+        "position": "0.63",
+        "depth": "16.0",
+        "samples": 17,
+        "historicalPrefixSamples": 0,
+        "proposed": "1/4",
+        "alpha": "1/6",
+        "constant": "24696/5",
+        "M": 6,
+        "p": 3,
+        "lastRe": "0.24995167448110651341593929062726478",
+        "lastIm": "2.4472146684323976289057985910847789",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "12.0",
+          "toDepth": "16.0",
+          "beta": 0.16665829757461745,
+          "x": "0.2500000007261341325960625546777532",
+          "alpha": "0.16666667069477943079548171393647207",
+          "verticalIntercept": "0.49267117774862467194153453812141587",
+          "normalizedResidual": 6.815206512343701e-12,
+          "nearestRational": "1/4",
+          "K": "4939.1935117657568597577316917683457",
+          "xMinusConjecture": "0.0000000007261341325960625546777532",
+          "alphaMinusConjecture": "0.0000000040281127641288150472698054033333333",
+          "relativeKMinusConjecture": "-0.000001313620473586864728763409389026162"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "0.24999996559716720017968248411122037",
+            "max": "0.2500000007261341325960625546777532",
+            "spread": "0.00000003512896693241638007056653283"
+          },
+          "alpha": {
+            "min": "0.16666667069477943079548171393647207",
+            "max": "0.16666686675912183065513949973531075",
+            "spread": "0.00000019606434239985965778579883868"
+          },
+          "K": {
+            "min": "4938.9091141627345598298278786581706",
+            "max": "4939.1935117657568597577316917683457",
+            "spread": "0.2843976030222999279038131101751"
+          },
+          "relativeKMinusConjecture": {
+            "min": "-0.000058893310103952091466658839858554429",
+            "max": "-0.000001313620473586864728763409389026162",
+            "spread": "0.000057579689630365226737895430469528267"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "5.9999998549879439961121407492265314",
+          "nearestM": 6,
+          "p": "3.0000000087136095911527506561330384",
+          "nearestP": 3,
+          "reconstructedX": "1/4"
+        }
+      },
+      {
+        "id": "armA1-crossB1-t1-l1-m1-e1",
+        "seed": "double",
+        "counts": {
+          "kA": 1,
+          "kB": 0,
+          "cA": 0,
+          "cB": 1,
+          "qt": 1,
+          "qu": 0,
+          "ql": 1,
+          "qm": 1
+        },
+        "weights": [
+          5,
+          3,
+          1,
+          2
+        ],
+        "edge": 1,
+        "chart": "zero",
+        "position": "0.63",
+        "depth": "16.0",
+        "samples": 17,
+        "historicalPrefixSamples": 0,
+        "proposed": "1/3",
+        "alpha": "2/3",
+        "constant": "sqrt(60480)",
+        "M": 3,
+        "p": 1,
+        "lastRe": "0.33333333333222144365141262281556259",
+        "lastIm": "9.3203896508977945901539346624942112",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "12.0",
+          "toDepth": "16.0",
+          "beta": 0.6666239278776294,
+          "x": "0.33333333333333313882323282546802549",
+          "alpha": "0.66666666666666787984986249074581269",
+          "verticalIntercept": "1.5024099295165756822193036256847144",
+          "normalizedResidual": 5.141006935007186e-12,
+          "nearestRational": "1/3",
+          "K": "245.92681838301055609535544334167012",
+          "xMinusConjecture": "-1.9451010050786530784333333333333333e-16",
+          "alphaMinusConjecture": "1.2131831958240791460233333333333333e-15",
+          "relativeKMinusConjecture": "-8.0532501821898080160430227060596452e-14"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "0.33333333331791638999855134206834608",
+            "max": "0.33333333333333313882323282546802549",
+            "spread": "1.541674882468148339967941e-11"
+          },
+          "alpha": {
+            "min": "0.66666666666666787984986249074581269",
+            "max": "0.66666666667709918149943253516685791",
+            "spread": "1.043130164957004442104522e-11"
+          },
+          "K": {
+            "min": "245.9268182288803962453921807006965",
+            "max": "245.92681838301055609535544334167012",
+            "spread": "0.00000015413015984996326264097362"
+          },
+          "relativeKMinusConjecture": {
+            "min": "-0.00000000062681234183993951377001977475570995",
+            "max": "-8.0532501821898080160430227060596452e-14",
+            "spread": "0.00000000062673180933811761568985934452864935"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "2.9999999999999945406756187916537776",
+          "nearestM": 3,
+          "p": "0.99999999999999941646969847640407647",
+          "nearestP": 1,
+          "reconstructedX": "1/3"
+        }
+      },
+      {
+        "id": "extend-armA1-crossB1-t1-l1-m1-e2",
+        "seed": "double",
+        "counts": {
+          "kA": 1,
+          "kB": 0,
+          "cA": 0,
+          "cB": 1,
+          "qt": 1,
+          "qu": 0,
+          "ql": 1,
+          "qm": 1
+        },
+        "weights": [
+          5,
+          3,
+          1,
+          2
+        ],
+        "edge": 2,
+        "chart": "half",
+        "position": "0.63",
+        "depth": "24.0",
+        "samples": 25,
+        "historicalPrefixSamples": 0,
+        "proposed": "-5/16",
+        "alpha": "1/8",
+        "constant": "14256/7",
+        "M": 8,
+        "p": -5,
+        "lastRe": "-0.31248778667901445139413284389874861",
+        "lastIm": "2.5625889123358808768222365888294221",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "20.0",
+          "toDepth": "24.0",
+          "beta": 0.12499957099368368,
+          "x": "-0.31250000004509569517974050742704221",
+          "alpha": "0.12499999996895581388111953902072439",
+          "verticalIntercept": "0.36377391663838659468032066373093237",
+          "normalizedResidual": 3.245932777108165e-14,
+          "nearestRational": "-5/16",
+          "K": "2036.5714656064763277015443959491296",
+          "xMinusConjecture": "-4.509569517974050742704221e-11",
+          "alphaMinusConjecture": "-3.104418611888046097927561e-11",
+          "relativeKMinusConjecture": "0.000000018184998196823148903734841975688055"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "-0.31250000152688857971594169674933189",
+            "max": "-0.31250000004509569517974050742704221",
+            "spread": "0.00000000148179288453620118932228968"
+          },
+          "alpha": {
+            "min": "0.12499999958308606464977944916809539",
+            "max": "0.12499999996895581388111953902072439",
+            "spread": "0.000000000385869749231340089852629"
+          },
+          "K": {
+            "min": "2036.5714656064763277015443959491296",
+            "max": "2036.5718748546568380274865363914748",
+            "spread": "0.0004092481805103259421404423452"
+          },
+          "relativeKMinusConjecture": {
+            "min": "0.000000018184998196823148903734841975688055",
+            "max": "0.00000021913458178073740219940658836261094",
+            "spread": "0.00000020094958358391425329567174638692288"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "8.0000000019868279121017851465894349",
+          "nearestM": 8,
+          "p": "-5.0000000007215311228758481188326754",
+          "nearestP": -5,
+          "reconstructedX": "-5/16"
+        }
+      },
+      {
+        "id": "both-cross-2-1-t1-alt-e0",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 0,
+          "cA": 2,
+          "cB": 1,
+          "qt": 1,
+          "qu": 0,
+          "ql": 0,
+          "qm": 0
+        },
+        "weights": [
+          3,
+          4,
+          2,
+          1
+        ],
+        "edge": 0,
+        "chart": "raw",
+        "position": "0.63",
+        "depth": "16.0",
+        "samples": 17,
+        "historicalPrefixSamples": 0,
+        "proposed": "7/10",
+        "alpha": "1/5",
+        "constant": "2160",
+        "M": 5,
+        "p": 7,
+        "lastRe": "0.69998667610752941691374605713185722",
+        "lastIm": "2.8839352314084899448412821519171732",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "12.0",
+          "toDepth": "16.0",
+          "beta": 0.20000298534396993,
+          "x": "0.69999999964171836411459862245293479",
+          "alpha": "0.19999999961091059686952400751599917",
+          "verticalIntercept": "0.53855097492319845250902392431307387",
+          "normalizedResidual": 3.4307747476610606e-12,
+          "nearestRational": "7/10",
+          "K": "2160.0002083540374894622015606837519",
+          "xMinusConjecture": "-0.00000000035828163588540137754706521",
+          "alphaMinusConjecture": "-0.00000000038908940313047599248400083",
+          "relativeKMinusConjecture": "0.000000096460202541417685907723959190277359"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "0.69999978947893616778465431344007647",
+            "max": "0.69999999964171836411459862245293479",
+            "spread": "0.00000021016278219632994430901285832"
+          },
+          "alpha": {
+            "min": "0.19999999673637692714802546891822301",
+            "max": "0.20000000119865986446524764746870716",
+            "spread": "0.00000000446228293731722217855048415"
+          },
+          "K": {
+            "min": "2159.9970544109971693728532471195998",
+            "max": "2160.001474688297052335993382542721",
+            "spread": "0.0044202772998829631401354231212"
+          },
+          "relativeKMinusConjecture": {
+            "min": "-0.0000013636986124215866420152224075053749",
+            "max": "0.00000068272606345015555249191792639262101",
+            "spread": "0.0000020464246758717421945071403338979959"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "5.0000000097272350971857203024690685",
+          "nearestM": 5,
+          "p": "6.9999999964171836411459862245293479",
+          "nearestP": 7,
+          "reconstructedX": "7/10"
+        }
+      },
+      {
+        "id": "both-cross-2-1-t1-alt-e1",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 0,
+          "cA": 2,
+          "cB": 1,
+          "qt": 1,
+          "qu": 0,
+          "ql": 0,
+          "qm": 0
+        },
+        "weights": [
+          3,
+          4,
+          2,
+          1
+        ],
+        "edge": 1,
+        "chart": "zero",
+        "position": "0.63",
+        "depth": "16.0",
+        "samples": 17,
+        "historicalPrefixSamples": 0,
+        "proposed": "1/5",
+        "alpha": "2/5",
+        "constant": "sqrt(8400)",
+        "M": 5,
+        "p": 1,
+        "lastRe": "0.19999999023403593300521763643432171",
+        "lastIm": "5.4665599026378562675466751448586021",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "12.0",
+          "toDepth": "16.0",
+          "beta": 0.4000000233017387,
+          "x": "0.19999999999999956876087190950414634",
+          "alpha": "0.39999999999999608292567222843816382",
+          "verticalIntercept": "0.77577205636787335820415228484644821",
+          "normalizedResidual": 6.322296533186929e-18,
+          "nearestRational": "1/5",
+          "K": "91.651513899157291638037993972646869",
+          "xMinusConjecture": "-4.3123912809049585366e-16",
+          "alphaMinusConjecture": "-3.91707432777156183618e-15",
+          "relativeKMinusConjecture": "4.4179855361276574080723648453432249e-13"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "0.19999999999999956876087190950414634",
+            "max": "0.20000000001210423230772706058011245",
+            "spread": "1.210466354685515107596611e-11"
+          },
+          "alpha": {
+            "min": "0.39999999997098899439844597091838321",
+            "max": "0.39999999999999608292567222843816382",
+            "spread": "2.900708852722625751978061e-11"
+          },
+          "K": {
+            "min": "91.651513899157291638037993972646869",
+            "max": "91.651514167222440632384893140247739",
+            "spread": "0.00000026806514899434689916760087"
+          },
+          "relativeKMinusConjecture": {
+            "min": "4.4179855361276574080723648453432249e-13",
+            "max": "0.000000002925272361520779521241995264200824",
+            "spread": "0.0000000029248305629671667555011880277162897"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "5.0000000000000489634290971450024357",
+          "nearestM": 5,
+          "p": "0.9999999999999978438043595475207317",
+          "nearestP": 1,
+          "reconstructedX": "1/5"
+        }
+      },
+      {
+        "id": "both-cross-2-1-t1-alt-e2",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 0,
+          "cA": 2,
+          "cB": 1,
+          "qt": 1,
+          "qu": 0,
+          "ql": 0,
+          "qm": 0
+        },
+        "weights": [
+          3,
+          4,
+          2,
+          1
+        ],
+        "edge": 2,
+        "chart": "half",
+        "position": "0.63",
+        "depth": "16.0",
+        "samples": 17,
+        "historicalPrefixSamples": 0,
+        "proposed": "-9/14",
+        "alpha": "1/7",
+        "constant": "2800/3",
+        "M": 7,
+        "p": -9,
+        "lastRe": "-0.64280612502345988124019658905229088",
+        "lastIm": "2.055519081674060304910793819428405",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "12.0",
+          "toDepth": "16.0",
+          "beta": 0.14285801277466045,
+          "x": "-0.64285714291310726375219254032815967",
+          "alpha": "0.1428571430510714449596044194642316",
+          "verticalIntercept": "0.38026094955356583143204484747362283",
+          "normalizedResidual": 1.0838943611094153e-13,
+          "nearestRational": "-9/14",
+          "K": "933.33326244159144332420126431002025",
+          "xMinusConjecture": "-5.5964406609335397471016812857142857e-11",
+          "alphaMinusConjecture": "0.00000000019392858781674727660708874285714286",
+          "relativeKMinusConjecture": "-0.000000075955437739295498645382121159147253"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "-0.64285714291310726375219254032815967",
+            "max": "-0.64285707238198226802137078938100678",
+            "spread": "0.00000007053112499573082175094715289"
+          },
+          "alpha": {
+            "min": "0.1428571430510714449596044194642316",
+            "max": "0.14285718296691476718183129132411952",
+            "spread": "0.00000003991584332222222687185988792"
+          },
+          "K": {
+            "min": "933.31929461512112413251998445595031",
+            "max": "933.33326244159144332420126431002025",
+            "spread": "0.01396782647031919168127985406994"
+          },
+          "relativeKMinusConjecture": {
+            "min": "-0.000015041483798795572300016654338957706",
+            "max": "-0.000000075955437739295498645382121159147253",
+            "spread": "0.000014965528361056276801371272217798559"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "6.9999999904974992098790293589424469",
+          "nearestM": 7,
+          "p": "-9.0000000007835016925306955645942354",
+          "nearestP": -9,
+          "reconstructedX": "-9/14"
+        }
+      },
+      {
+        "id": "both-cross-2-1-t1-e0",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 0,
+          "cA": 2,
+          "cB": 1,
+          "qt": 1,
+          "qu": 0,
+          "ql": 0,
+          "qm": 0
+        },
+        "weights": [
+          3,
+          4,
+          2,
+          1
+        ],
+        "edge": 0,
+        "chart": "raw",
+        "position": "0.37",
+        "depth": "16.0",
+        "samples": 17,
+        "historicalPrefixSamples": 0,
+        "proposed": "7/10",
+        "alpha": "1/5",
+        "constant": "2160",
+        "M": 5,
+        "p": 7,
+        "lastRe": "0.69998667610752945992665728726288953",
+        "lastIm": "2.8839352314084899367391725476095783",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "12.0",
+          "toDepth": "16.0",
+          "beta": 0.20000298717480564,
+          "x": "0.69999999964164352522115762653104345",
+          "alpha": "0.19999999961102007083053950741047786",
+          "verticalIntercept": "0.53855097492167075913839036600664277",
+          "normalizedResidual": 3.4295206110585357e-12,
+          "nearestRational": "7/10",
+          "K": "2160.0002082922021967006992402676902",
+          "xMinusConjecture": "-0.00000000035835647477884237346895655",
+          "alphaMinusConjecture": "-0.00000000038897992916946049258952214",
+          "relativeKMinusConjecture": "0.000000096431575091065138537160967694469936"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "0.69999979074925704313195538788200567",
+            "max": "0.69999999964164352522115762653104345",
+            "spread": "0.00000020889238648208920223864903778"
+          },
+          "alpha": {
+            "min": "0.19999999675404241861777408495677637",
+            "max": "0.20000000164077917451341664480912084",
+            "spread": "0.00000000488673675589564255985234447"
+          },
+          "K": {
+            "min": "2159.9968396918563570504237282505412",
+            "max": "2160.0014654288231058233116307973384",
+            "spread": "0.0046257369667487728879025467972"
+          },
+          "relativeKMinusConjecture": {
+            "min": "-0.0000014631056220569211001258099346196437",
+            "max": "0.00000067843926995639968131055432333352216",
+            "spread": "0.0000021415448920133207814363642579531659"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "5.0000000097244982481496855136070901",
+          "nearestM": 5,
+          "p": "6.9999999964164352522115762653104345",
+          "nearestP": 7,
+          "reconstructedX": "7/10"
+        }
+      },
+      {
+        "id": "both-cross-2-1-t1-e1",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 0,
+          "cA": 2,
+          "cB": 1,
+          "qt": 1,
+          "qu": 0,
+          "ql": 0,
+          "qm": 0
+        },
+        "weights": [
+          3,
+          4,
+          2,
+          1
+        ],
+        "edge": 1,
+        "chart": "zero",
+        "position": "0.37",
+        "depth": "16.0",
+        "samples": 17,
+        "historicalPrefixSamples": 0,
+        "proposed": "1/5",
+        "alpha": "2/5",
+        "constant": "sqrt(8400)",
+        "M": 5,
+        "p": 1,
+        "lastRe": "0.19999999023403589514891828067794454",
+        "lastIm": "5.4665599026378562650541015645743084",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "12.0",
+          "toDepth": "16.0",
+          "beta": 0.39999997360917633,
+          "x": "0.20000000000000069467302927513977256",
+          "alpha": "0.40000000000000328251177155892556655",
+          "verticalIntercept": "0.77577205636778358759775615961644732",
+          "normalizedResidual": 2.9741853426662762e-18,
+          "nearestRational": "1/5",
+          "K": "91.651513899082621080176906583819141",
+          "xMinusConjecture": "6.9467302927513977256e-16",
+          "alphaMinusConjecture": "3.28251177155892556655e-15",
+          "relativeKMinusConjecture": "-3.7292402634678855197787838268041588e-13"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "0.19999999999713951865451924659002715",
+            "max": "0.2000000000000119278233574847296397",
+            "spread": "2.87240916883823813961255e-12"
+          },
+          "alpha": {
+            "min": "0.40000000000000328251177155892556655",
+            "max": "0.40000000002455687241634281558795744",
+            "spread": "2.455358990457125666239089e-11"
+          },
+          "K": {
+            "min": "91.651513669836215015919409532976557",
+            "max": "91.651513899082621080176906583819141",
+            "spread": "0.000000229246406064257497050842584"
+          },
+          "relativeKMinusConjecture": {
+            "min": "-0.0000000025016562778026408228977253496191868",
+            "max": "-3.7292402634678855197787838268041588e-13",
+            "spread": "0.0000000025012833537762940343457474712365064"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "4.9999999999999589686028555137671332",
+          "nearestM": 5,
+          "p": "1.0000000000000034733651463756988628",
+          "nearestP": 1,
+          "reconstructedX": "1/5"
+        }
+      },
+      {
+        "id": "both-cross-2-1-t1-e2",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 0,
+          "cA": 2,
+          "cB": 1,
+          "qt": 1,
+          "qu": 0,
+          "ql": 0,
+          "qm": 0
+        },
+        "weights": [
+          3,
+          4,
+          2,
+          1
+        ],
+        "edge": 2,
+        "chart": "half",
+        "position": "0.37",
+        "depth": "16.0",
+        "samples": 17,
+        "historicalPrefixSamples": 0,
+        "proposed": "-9/14",
+        "alpha": "1/7",
+        "constant": "2800/3",
+        "M": 7,
+        "p": -9,
+        "lastRe": "-0.64280612502345986992735168812878642",
+        "lastIm": "2.0555190816740603066073633499647302",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "12.0",
+          "toDepth": "16.0",
+          "beta": 0.142858012889481,
+          "x": "-0.64285714291301327275852910481049569",
+          "alpha": "0.14285714305106018996843563565783094",
+          "verticalIntercept": "0.38026094955370878571238169544939324",
+          "normalizedResidual": 1.0831404867292486e-13,
+          "nearestRational": "-9/14",
+          "K": "933.33326244514049719989602676162594",
+          "xMinusConjecture": "-5.5870415615671961953352832857142857e-11",
+          "alphaMinusConjecture": "0.00000000019391733282557849280068808285714286",
+          "relativeKMinusConjecture": "-0.000000075951635181571539971326829348984806"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "-0.64285714291301327275852910481049569",
+            "max": "-0.64285707021729352320845864866238709",
+            "spread": "0.0000000726957197495500704561481086"
+          },
+          "alpha": {
+            "min": "0.14285714305106018996843563565783094",
+            "max": "0.14285718343935370920754238435050059",
+            "spread": "0.00000004038829351923910674869266965"
+          },
+          "K": {
+            "min": "933.31913006311495591126180582287771",
+            "max": "933.33326244514049719989602676162594",
+            "spread": "0.01413238202554128863422093874823"
+          },
+          "relativeKMinusConjecture": {
+            "min": "-0.000015217789519690095076636618345316002",
+            "max": "-0.000000075951635181571539971326829348984806",
+            "spread": "0.000015141837884508523536665291515967017"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "6.9999999904980507044448025010319223",
+          "nearestM": 7,
+          "p": "-9.0000000007821858186194074673469397",
+          "nearestP": -9,
+          "reconstructedX": "-9/14"
+        }
+      },
+      {
+        "id": "both-cross-2-1-t1-sine23-e1",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 0,
+          "cA": 2,
+          "cB": 1,
+          "qt": 1,
+          "qu": 0,
+          "ql": 0,
+          "qm": 0
+        },
+        "weights": [
+          3,
+          4,
+          2,
+          1
+        ],
+        "edge": 1,
+        "chart": "zero",
+        "position": "0.23",
+        "depth": "16.0",
+        "samples": 17,
+        "historicalPrefixSamples": 0,
+        "proposed": "1/5",
+        "alpha": "2/5",
+        "constant": "sqrt(8400)",
+        "M": 5,
+        "p": 1,
+        "lastRe": "0.1999999888662043556623975178470855",
+        "lastIm": "5.4248352684137660059572866082617643",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "12.0",
+          "toDepth": "16.0",
+          "beta": 0.3999999361375425,
+          "x": "0.20000000000000217360270725777058058",
+          "alpha": "0.40000000000000761100277548900824041",
+          "verticalIntercept": "0.73404742026098067725373265418114023",
+          "normalizedResidual": 8.906309365939834e-18,
+          "nearestRational": "1/5",
+          "K": "91.651513899037704051946232411779961",
+          "xMinusConjecture": "2.17360270725777058058e-15",
+          "alphaMinusConjecture": "7.61100277548900824041e-15",
+          "relativeKMinusConjecture": "-8.6300898315519992954988804720522336e-13"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "0.20000000000000217360270725777058058",
+            "max": "0.20000000000584316516433662700553805",
+            "spread": "5.84099156162936923495747e-12"
+          },
+          "alpha": {
+            "min": "0.40000000000000761100277548900824041",
+            "max": "0.40000000005681389987996203155835687",
+            "spread": "5.680628887718654255011646e-11"
+          },
+          "K": {
+            "min": "91.651513368983840011317753364799029",
+            "max": "91.651513899037704051946232411779961",
+            "spread": "0.000000530053864040628479046980932"
+          },
+          "relativeKMinusConjecture": {
+            "min": "-0.0000000057842248051022299272188291730281934",
+            "max": "-8.6300898315519992954988804720522336e-13",
+            "spread": "0.0000000057833617961190747272892792849809882"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "4.999999999999904862465306389207225",
+          "nearestM": 5,
+          "p": "1.0000000000000108680135362888529029",
+          "nearestP": 1,
+          "reconstructedX": "1/5"
+        }
+      },
+      {
+        "id": "crossA1-armB2-u1-m1-e0",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 2,
+          "cA": 1,
+          "cB": 0,
+          "qt": 0,
+          "qu": 1,
+          "ql": 0,
+          "qm": 1
+        },
+        "weights": [
+          2,
+          6,
+          1,
+          1
+        ],
+        "edge": 0,
+        "chart": "raw",
+        "position": "0.63",
+        "depth": "16.0",
+        "samples": 17,
+        "historicalPrefixSamples": 0,
+        "proposed": "5/16",
+        "alpha": "1/8",
+        "constant": "2640",
+        "M": 8,
+        "p": 5,
+        "lastRe": "0.31250367252932046645225059677070497",
+        "lastIm": "1.8104515087824147992545343848729454",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "12.0",
+          "toDepth": "16.0",
+          "beta": 0.250000179627732,
+          "x": "0.31250000000375114443010041860101792",
+          "alpha": "0.1250000000011308392831573821751146",
+          "verticalIntercept": "0.34457878940942340798450096645920521",
+          "normalizedResidual": 1.6984363077620863e-15,
+          "nearestRational": "5/16",
+          "K": "2639.9999988977514245676363608748675",
+          "xMinusConjecture": "3.75114443010041860101792e-12",
+          "alphaMinusConjecture": "1.1308392831573821751146e-12",
+          "relativeKMinusConjecture": "-0.00000000041751839978498622694133804969071765"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "0.31250000000375114443010041860101792",
+            "max": "0.31250000530970120220742745003129906",
+            "spread": "0.00000000530595005777732703143028114"
+          },
+          "alpha": {
+            "min": "0.1250000000011308392831573821751146",
+            "max": "0.12500000038846264961706666120712154",
+            "spread": "0.00000000038733181033390927903200694"
+          },
+          "K": {
+            "min": "2639.9997032962818919991226057134506",
+            "max": "2639.9999988977514245676363608748675",
+            "spread": "0.0002956014695325685137551614169"
+          },
+          "relativeKMinusConjecture": {
+            "min": "-0.00000011238777201060639295238126870869844",
+            "max": "-0.00000000041751839978498622694133804969071765",
+            "spread": "0.00000011197025361082140672543993065900772"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "7.9999999999276262858785822851046376",
+          "nearestM": 8,
+          "p": "5.0000000000600183108816066976162867",
+          "nearestP": 5,
+          "reconstructedX": "5/16"
+        }
+      },
+      {
+        "id": "crossA1-armB2-u1-m1-e1",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 2,
+          "cA": 1,
+          "cB": 0,
+          "qt": 0,
+          "qu": 1,
+          "ql": 0,
+          "qm": 1
+        },
+        "weights": [
+          2,
+          6,
+          1,
+          1
+        ],
+        "edge": 1,
+        "chart": "zero",
+        "position": "0.63",
+        "depth": "16.0",
+        "samples": 17,
+        "historicalPrefixSamples": 0,
+        "proposed": "-1/3",
+        "alpha": "2/3",
+        "constant": "sqrt(50400)",
+        "M": 3,
+        "p": -1,
+        "lastRe": "-0.33333333333220794047531599649798598",
+        "lastIm": "9.3010447329004905920485328108897836",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "12.0",
+          "toDepth": "16.0",
+          "beta": 0.6667198689475106,
+          "x": "-0.3333333333333332676954416453508324",
+          "alpha": "0.66666666666666598556258795322781384",
+          "verticalIntercept": "1.4830650115192864233222230299860458",
+          "normalizedResidual": 9.674679351919675e-13,
+          "nearestRational": "-1/3",
+          "K": "224.4994432064466838013066857278757",
+          "xMinusConjecture": "6.5637891687982500933333333333333333e-17",
+          "alphaMinusConjecture": "-6.8110407871343885282666666666666667e-16",
+          "relativeKMinusConjecture": "4.5437378979964133644864041430726605e-14"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "-0.3333333333356206619949281660004419",
+            "max": "-0.3333333333333332676954416453508324",
+            "spread": "2.2873942994865206496095e-12"
+          },
+          "alpha": {
+            "min": "0.66666666666199798189081662711332277",
+            "max": "0.66666666666666598556258795322781384",
+            "spread": "4.66800367177132611449107e-12"
+          },
+          "K": {
+            "min": "224.4994432064466838013066857278757",
+            "max": "224.49944326989027174288706534863594",
+            "spread": "0.00000006344358794158037962076024"
+          },
+          "relativeKMinusConjecture": {
+            "min": "4.5437378979964133644864041430726605e-14",
+            "max": "0.00000000028264563912309470494151693803372223",
+            "spread": "0.0000000002826002017441147408078720739922915"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "3.0000000000000030649683542104779691",
+          "nearestM": 3,
+          "p": "-0.9999999999999998030863249360524972",
+          "nearestP": -1,
+          "reconstructedX": "-1/3"
+        }
+      },
+      {
+        "id": "crossA1-armB2-u1-m1-e2",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 2,
+          "cA": 1,
+          "cB": 0,
+          "qt": 0,
+          "qu": 1,
+          "ql": 0,
+          "qm": 1
+        },
+        "weights": [
+          2,
+          6,
+          1,
+          1
+        ],
+        "edge": 2,
+        "chart": "half",
+        "position": "0.63",
+        "depth": "16.0",
+        "samples": 17,
+        "historicalPrefixSamples": 0,
+        "proposed": "-1/4",
+        "alpha": "1/6",
+        "constant": "7056",
+        "M": 6,
+        "p": -3,
+        "lastRe": "-0.25000002718874062365936395214619561",
+        "lastIm": "2.5054493579708000699986441137077768",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "12.0",
+          "toDepth": "16.0",
+          "beta": 0.3333429658884177,
+          "x": "-0.25000000000196002136035136466676905",
+          "alpha": "0.16666666666666614995030554120127067",
+          "verticalIntercept": "0.55095442762554059352717709077428329",
+          "normalizedResidual": 7.188546844057047e-12,
+          "nearestRational": "-1/4",
+          "K": "7056.0000000010716783712291742454635",
+          "xMinusConjecture": "-1.96002136035136466676905e-12",
+          "alphaMinusConjecture": "-5.1671636112546539599666666666666667e-16",
+          "relativeKMinusConjecture": "1.518818553329328579171691764894205e-13"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "-0.25000000163577061915360705113998494",
+            "max": "-0.25000000000196002136035136466676905",
+            "spread": "0.00000000163381059779325568647321589"
+          },
+          "alpha": {
+            "min": "0.16666666666065419954287092821216626",
+            "max": "0.16666666666666614995030554120127067",
+            "spread": "6.01195040743461298910441e-12"
+          },
+          "K": {
+            "min": "7056.0000000010716783712291742454635",
+            "max": "7056.0000113445275452314213914996798",
+            "spread": "0.0000113434558668601922172542163"
+          },
+          "relativeKMinusConjecture": {
+            "min": "1.518818553329328579171691764894205e-13",
+            "max": "0.0000000016077845160475370452805668629900365",
+            "spread": "0.0000000016076326341922041124226496938135471"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "6.000000000000018601789000516811927",
+          "nearestM": 6,
+          "p": "-3.0000000000235202563242163760012286",
+          "nearestP": -3,
+          "reconstructedX": "-1/4"
+        }
+      },
+      {
+        "id": "extend-double-4420-e2",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 0,
+          "cA": 1,
+          "cB": 0,
+          "qt": 1,
+          "qu": 1,
+          "ql": 1,
+          "qm": 0
+        },
+        "weights": [
+          4,
+          4,
+          2,
+          0
+        ],
+        "edge": 2,
+        "chart": "half",
+        "position": "0.4",
+        "depth": "24.0",
+        "samples": 25,
+        "historicalPrefixSamples": 9,
+        "proposed": "-5/12",
+        "alpha": "1/6",
+        "constant": "2352",
+        "M": 6,
+        "p": -5,
+        "lastRe": "-0.41666666681054138488047890910190893",
+        "lastIm": "3.4263045738009680980961946652684835",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "20.0",
+          "toDepth": "24.0",
+          "beta": 0.3333333333333763,
+          "x": "-0.41666666666666666666668835437635574",
+          "alpha": "0.16666666666666666666658433089187811",
+          "verticalIntercept": "0.49456217803405881014153876606986415",
+          "normalizedResidual": 1.8845850072275176e-29,
+          "nearestRational": "-5/12",
+          "K": "2352.000000000000000079228839317595",
+          "xMinusConjecture": "-2.1687709689073333333333333333333333e-23",
+          "alphaMinusConjecture": "-8.2335774788556666666666666666666667e-23",
+          "relativeKMinusConjecture": "3.3685731002378842901978411266046735e-20"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "-0.41666666666666666666728990915214933",
+            "max": "-0.4166666666666666666087325937899033",
+            "spread": "5.855731536224603e-20"
+          },
+          "alpha": {
+            "min": "0.16666666666666666599658799100740807",
+            "max": "0.16666666666666666666658433089187811",
+            "spread": "6.6999633988447004e-19"
+          },
+          "K": {
+            "min": "2352.000000000000000079228839317595",
+            "max": "2352.0000000000005965801883911742959",
+            "spread": "5.965009595518567009e-13"
+          },
+          "relativeKMinusConjecture": {
+            "min": "3.3685731002378842901978411266046735e-20",
+            "max": "2.5364803928196186049470040101973177e-16",
+            "spread": "2.5361435355095948165179842260846572e-16"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "6.000000000000000000002964087892388",
+          "nearestM": 6,
+          "p": "-5.0000000000000000000002602525162689",
+          "nearestP": -5,
+          "reconstructedX": "-5/12"
+        }
+      },
+      {
+        "id": "extend-double-4510-e1",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 0,
+          "cA": 1,
+          "cB": 0,
+          "qt": 1,
+          "qu": 2,
+          "ql": 0,
+          "qm": 0
+        },
+        "weights": [
+          4,
+          5,
+          1,
+          0
+        ],
+        "edge": 1,
+        "chart": "zero",
+        "position": "0.4",
+        "depth": "16.0",
+        "samples": 17,
+        "historicalPrefixSamples": 9,
+        "proposed": "-1/5",
+        "alpha": "2/5",
+        "constant": "420",
+        "M": 5,
+        "p": -1,
+        "lastRe": "-0.1999999738152031313192682645397514",
+        "lastIm": "5.6649185053704779164088431598151241",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "12.0",
+          "toDepth": "16.0",
+          "beta": 0.40000000833728744,
+          "x": "-0.19999999999999941933849460967890215",
+          "alpha": "0.39999999999999716685553679649461781",
+          "verticalIntercept": "0.9741306365018909787991861467072793",
+          "normalizedResidual": 3.181533574087775e-19,
+          "nearestRational": "-1/5",
+          "K": "420.00000000013975063844434384831094",
+          "xMinusConjecture": "5.8066150539032109785e-16",
+          "alphaMinusConjecture": "-2.83314446320350538219e-15",
+          "relativeKMinusConjecture": "3.3273961534367582931175886786784889e-13"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "-0.20000000000312194017702381750197701",
+            "max": "-0.19999999999999657988515086222629891",
+            "spread": "3.1253602918729552756781e-12"
+          },
+          "alpha": {
+            "min": "0.39999999997731434683621394522610588",
+            "max": "0.39999999999999716685553679649461781",
+            "spread": "2.268282001932285126851193e-11"
+          },
+          "K": {
+            "min": "420.00000000013975063844434384831094",
+            "max": "420.00000100691853272131147609775967",
+            "spread": "0.00000100677878208286713224944873"
+          },
+          "relativeKMinusConjecture": {
+            "min": "3.3273961534367582931175886786784889e-13",
+            "max": "0.0000000023974250779078844668994277938884256",
+            "spread": "0.0000000023970923382925407910701160350205578"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "5.000000000000035414305790044068112",
+          "nearestM": 5,
+          "p": "-0.99999999999999709669247304839451075",
+          "nearestP": -1,
+          "reconstructedX": "-1/5"
+        }
+      },
+      {
+        "id": "extend-double-5620-e1",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 1,
+          "cA": 1,
+          "cB": 0,
+          "qt": 1,
+          "qu": 2,
+          "ql": 1,
+          "qm": 0
+        },
+        "weights": [
+          5,
+          6,
+          2,
+          0
+        ],
+        "edge": 1,
+        "chart": "zero",
+        "position": "0.4",
+        "depth": "16.0",
+        "samples": 17,
+        "historicalPrefixSamples": 9,
+        "proposed": "-1/5",
+        "alpha": "2/5",
+        "constant": "sqrt(11642400)",
+        "M": 5,
+        "p": -1,
+        "lastRe": "-0.19999997885502398654818435216177491",
+        "lastIm": "5.931640203250520815855391447498699",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "12.0",
+          "toDepth": "16.0",
+          "beta": 0.4000000097307737,
+          "x": "-0.19999999999999945161756415122805875",
+          "alpha": "0.39999999999999733812030119380419544",
+          "verticalIntercept": "1.240852341318650914701338112042593",
+          "normalizedResidual": 4.28010124644034e-19,
+          "nearestRational": "-1/5",
+          "K": "3412.0961299482177136998767399309049",
+          "xMinusConjecture": "5.4838243584877194125e-16",
+          "alphaMinusConjecture": "-2.66187969880619580456e-15",
+          "relativeKMinusConjecture": "3.2659170910958973070979159704310177e-13"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "-0.2000000000027609222393694993512235",
+            "max": "-0.19999999999999576060914431219457954",
+            "spread": "2.76516163022518715664396e-12"
+          },
+          "alpha": {
+            "min": "0.39999999997933062102239460663795747",
+            "max": "0.39999999999999733812030119380419544",
+            "spread": "2.066671709790658716623797e-11"
+          },
+          "K": {
+            "min": "3412.0961299482177136998767399309049",
+            "max": "3412.0961377708597039330377593314344",
+            "spread": "0.0000078226419902331610194005295"
+          },
+          "relativeKMinusConjecture": {
+            "min": "3.2659170910958973070979159704310177e-13",
+            "max": "0.0000000022929472249837157677892593257401625",
+            "spread": "0.0000000022926206332746061780585495341431194"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "5.0000000000000332734962350776689821",
+          "nearestM": 5,
+          "p": "-0.99999999999999725808782075614029375",
+          "nearestP": -1,
+          "reconstructedX": "-1/5"
+        }
+      },
+      {
+        "id": "extend-double-5620-e2",
+        "seed": "double",
+        "counts": {
+          "kA": 0,
+          "kB": 1,
+          "cA": 1,
+          "cB": 0,
+          "qt": 1,
+          "qu": 2,
+          "ql": 1,
+          "qm": 0
+        },
+        "weights": [
+          5,
+          6,
+          2,
+          0
+        ],
+        "edge": 2,
+        "chart": "half",
+        "position": "0.4",
+        "depth": "24.0",
+        "samples": 25,
+        "historicalPrefixSamples": 9,
+        "proposed": "-5/14",
+        "alpha": "1/7",
+        "constant": "24192",
+        "M": 7,
+        "p": -5,
+        "lastRe": "-0.35713780220458438379971599149140634",
+        "lastIm": "3.0428210247959701245283304161342438",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "20.0",
+          "toDepth": "24.0",
+          "beta": 0.1428567985709586,
+          "x": "-0.3571428571537647421207438450310728",
+          "alpha": "0.14285714285423930814816058572379119",
+          "verticalIntercept": "0.52989653373043240767790866384234104",
+          "normalizedResidual": 5.648415688908537e-15,
+          "nearestRational": "-5/14",
+          "K": "24192.000035239575263812444222383744",
+          "xMinusConjecture": "-1.0907599263600987888215657142857143e-11",
+          "alphaMinusConjecture": "-2.9035489946965571333516671428571429e-12",
+          "relativeKMinusConjecture": "0.0000000014566623372938344999331904679927753"
+        },
+        "windowRanges": {
+          "x": {
+            "min": "-0.35714285767693516076916298636148409",
+            "max": "-0.3571428571537647421207438450310728",
+            "spread": "0.00000000052317041864841914133041129"
+          },
+          "alpha": {
+            "min": "0.1428571428106937470944203884619041",
+            "max": "0.14285714285423930814816058572379119",
+            "spread": "4.354556105374019726188709e-11"
+          },
+          "K": {
+            "min": "24192.000035239575263812444222383744",
+            "max": "24192.000473548723602622895131647091",
+            "spread": "0.000438309148338810450909263347"
+          },
+          "relativeKMinusConjecture": {
+            "min": "0.0000000014566623372938344999331904679927753",
+            "max": "0.000000019574600016642811472042290467160862",
+            "spread": "0.000000018117937679348976972109099999168087"
+          }
+        },
+        "recoveredIntegers": {
+          "M": "7.0000000001422739007430229942245494",
+          "nearestM": 7,
+          "p": "-5.0000000001527063896904138304350192",
+          "nearestP": -5,
+          "reconstructedX": "-5/14"
+        }
+      }
+    ]
+  },
+  "tetrahedralAllDecorations": {
+    "status": "Conjectural all-count marked elliptic law; exact finite-product arithmetic is not a proof of the cusp law.",
+    "summary": {
+      "decoratedGraphs": 9,
+      "deepMarkedApproaches": 14,
+      "shallowMarkedApproaches": 3,
+      "selectedOutputs": 269,
+      "independentCoefficientExperiments": 72,
+      "coefficientExperimentGraphs": 7,
+      "maxReportedGenericPrecisionDiscrepancy": "9.93420601379179043735206843040064965183998117E-29",
+      "allArithmeticChecksPass": true
+    },
+    "formula": {
+      "totals": "A=qAB+qCD; B=qAC+qBD; C=qAD+qBC",
+      "orderedWeights": [
+        "1+qAB+qAC+qBC",
+        "1+qAB+qAD+qBD",
+        "1+qAC+qAD+qCD",
+        "1+qBC+qBD+qCD"
+      ],
+      "M": [
+        "B+C+2",
+        "A+C+2",
+        "A+B+2"
+      ],
+      "p": [
+        "C+1",
+        "A+1",
+        "B+1"
+      ],
+      "horizontal": "x_i=p_i/M_i",
+      "alpha": "alpha_i=2/M_i",
+      "charts": [
+        "tau",
+        "1-1/tau",
+        "1/(1-tau)"
+      ],
+      "normalDistances": [
+        "1-R",
+        "1-S",
+        "R+S-1"
+      ],
+      "limitingSourcePoints": [
+        "(1,t)",
+        "(t,1)",
+        "(t,1-t)"
+      ],
+      "law": "w_i=x_i+i alpha_i/pi log(K_i sin(pi*t)/delta_i)+o(1)",
+      "capPoles": "J(a,b)={1,...,|a-b|} union {|a-b|+2,|a-b|+4,...,a+b}",
+      "capResidue": "R_ab(M)=2M product over h in J(a,b),h!=M of (M+h)/(M-h)",
+      "squaredConstants": [
+        "abs(R_n0,n1(M0)*R_n2,n3(M0))",
+        "abs(R_n0,n2(M1)*R_n3,n1(M1))",
+        "abs(R_n0,n3(M2)*R_n1,n2(M2))"
+      ],
+      "constantConvention": "K_i is the positive square root of the product of two separate simple residues."
+    },
+    "arithmeticChecks": {
+      "runtimeCountVectors": 4096,
+      "runtimeExactCuspChecks": 12288,
+      "reference": "Independent Python Fraction evaluator; exact x, alpha, M, p, K and K squared compared against the browser module.",
+      "researchProductVsFactorialResidues": 24576,
+      "researchGraphWeightsAndShiftVectors": 4096,
+      "note": "Arithmetic coverage is distinct from high-precision conformal trace coverage.",
+      "overflowCheck": [
+        {
+          "edge": 0,
+          "logConstant": 1056.4124891434885,
+          "exactLabelLength": 459
+        },
+        {
+          "edge": 1,
+          "logConstant": 1056.4124891434885,
+          "exactLabelLength": 459
+        },
+        {
+          "edge": 2,
+          "logConstant": 1056.4124891434885,
+          "exactLabelLength": 459
+        }
+      ]
+    },
+    "notes": [
+      "The claim fixes finite decoration counts and t in a compact open-edge interval; it is not uniform at vertices or in a joint large-count limit.",
+      "Opposite-edge totals determine proposed rational limits and slopes. The constants retain individual edge allocations.",
+      "The recorded periods are actual selected roots. No proposed rational center, exponent or constant enters a numerical initializer or replaces a point.",
+      "Generic root outputs use repeated precision. The symmetric count-two factor trace has full-TV checks only at five selected depths.",
+      "Free fit parameters and window sensitivity are numerical diagnostics, not certified accuracy bounds.",
+      "Shallow approaches are not counted as asymptotic evidence.",
+      "The former coarse count-two branch hop is quarantined and excluded from this evidence."
+    ],
+    "records": [
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 2,
+          "qAC": 1,
+          "qAD": 1,
+          "qBC": 0,
+          "qBD": 0,
+          "qCD": 0
+        },
+        "weights": [
+          4,
+          4,
+          3,
+          1
+        ],
+        "edge": 0,
+        "chart": "raw",
+        "position": "0.4",
+        "depth": "20.0",
+        "samples": 21,
+        "sourceDistanceScale": "0.42",
+        "proposed": "1/2",
+        "alpha": "1/2",
+        "constant": "120",
+        "constantSquared": "14400",
+        "M": 4,
+        "p": 2,
+        "lastCoordinate": [
+          "0.500000000000000000005526454504327566610980846",
+          "8.22138928823568021929118438205852537441988354"
+        ],
+        "lastXMinusConjecture": "5.52645450432756661098084627890918492388813562e-21",
+        "lastImpliedKRelativeError": "-1.07556115807766669814396288418562671023177616e-21",
+        "maxPrecisionDiscrepancy": "1.78064523064644607672127199958957689947502233e-31",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "16.0",
+          "toDepth": "20.0",
+          "beta": 0.9833728034123047,
+          "x": "0.50000000000000000000222830814421546",
+          "alpha": "0.4999999999999999999995459394825537",
+          "verticalIntercept": "0.89203329944140281057008939436979674",
+          "normalizedResidual": 3.5794534726061417e-8,
+          "nearestRational": "1/2",
+          "K": "120.000000000000000005593178235885458618287971",
+          "xMinusConjecture": "2.22830814421546e-21",
+          "alphaMinusConjecture": "-4.540605174463e-22",
+          "relativeKMinusConjecture": "4.660981863237882181906642317501405634998061e-20"
+        },
+        "report": "compute-A2B1C1-direct-e0-deep-trace.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 2,
+          "qAC": 1,
+          "qAD": 1,
+          "qBC": 0,
+          "qBD": 0,
+          "qCD": 0
+        },
+        "weights": [
+          4,
+          4,
+          3,
+          1
+        ],
+        "edge": 1,
+        "chart": "zero",
+        "position": "0.4",
+        "depth": "20.0",
+        "samples": 21,
+        "sourceDistanceScale": "0.38",
+        "proposed": "3/5",
+        "alpha": "2/5",
+        "constant": "sqrt(50400)",
+        "constantSquared": "50400",
+        "M": 5,
+        "p": 3,
+        "lastCoordinate": [
+          "0.599999999518904551382656902763358789815334101",
+          "6.66960781973649374764765122689012005784553145"
+        ],
+        "lastXMinusConjecture": "-0.000000000481095448617343097236641210184665899269028536",
+        "lastImpliedKRelativeError": "-0.00000000122771390611837512511467422015135308891914207",
+        "maxPrecisionDiscrepancy": "2.3582938191982501520402936418223926342460009e-30",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "16.0",
+          "toDepth": "20.0",
+          "beta": 0.39999999990396534,
+          "x": "0.60000000000000000011071836390998396",
+          "alpha": "0.39999999999999999984276205365195256",
+          "verticalIntercept": "0.8061230288573892126735758668998378",
+          "normalizedResidual": 6.112129470414123e-23,
+          "nearestRational": "3/5",
+          "K": "224.499443206436487966288291229760182983015482",
+          "xMinusConjecture": "1.1071836390998396e-19",
+          "alphaMinusConjecture": "-1.5723794634804744e-19",
+          "relativeKMinusConjecture": "2.15201574591355293585371691487000628316567178e-17"
+        },
+        "report": "compute-A2B1C1-direct-e1-deep-trace.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 1,
+          "qAC": 1,
+          "qAD": 1,
+          "qBC": 0,
+          "qBD": 0,
+          "qCD": 1
+        },
+        "weights": [
+          3,
+          3,
+          4,
+          2
+        ],
+        "edge": 0,
+        "chart": "raw",
+        "position": "0.4",
+        "depth": "20.0",
+        "samples": 21,
+        "sourceDistanceScale": "0.42",
+        "proposed": "1/2",
+        "alpha": "1/2",
+        "constant": "sqrt(24000)",
+        "constantSquared": "24000",
+        "M": 4,
+        "p": 2,
+        "lastCoordinate": [
+          "0.500000000000000000005496273333681996975458331",
+          "8.26203949977585931166089380891095051871209112"
+        ],
+        "lastXMinusConjecture": "5.496273333681996975458330711391471314158746e-21",
+        "lastImpliedKRelativeError": "-1.11012824785321091364497335073177963285268688e-21",
+        "maxPrecisionDiscrepancy": "1.18926214312089068410516989333227628227242602e-31",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "16.0",
+          "toDepth": "20.0",
+          "beta": 0.9832658080146258,
+          "x": "0.50000000000000000000222631135619694",
+          "alpha": "0.4999999999999999999995282844663149",
+          "verticalIntercept": "0.93268351098158190294006127410248711",
+          "normalizedResidual": 3.6250785265446936e-8,
+          "nearestRational": "1/2",
+          "K": "154.919333848296675414709480638562656466696097",
+          "xMinusConjecture": "2.22631135619694e-21",
+          "alphaMinusConjecture": "-4.717155336851e-22",
+          "relativeKMinusConjecture": "4.86631620469594550484097400220488728643948628e-20"
+        },
+        "report": "compute-A2B1C1-split-e0-deep-trace.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 1,
+          "qAC": 1,
+          "qAD": 1,
+          "qBC": 0,
+          "qBD": 0,
+          "qCD": 1
+        },
+        "weights": [
+          3,
+          3,
+          4,
+          2
+        ],
+        "edge": 1,
+        "chart": "zero",
+        "position": "0.4",
+        "depth": "20.0",
+        "samples": 21,
+        "sourceDistanceScale": "0.38",
+        "proposed": "3/5",
+        "alpha": "2/5",
+        "constant": "sqrt(21600)",
+        "constantSquared": "21600",
+        "M": 5,
+        "p": 3,
+        "lastCoordinate": [
+          "0.600000000189978890552774078992112616826253917",
+          "6.6156671628538149960763602887079619019070445"
+        ],
+        "lastXMinusConjecture": "0.000000000189978890552774078992112616826253917315334341",
+        "lastImpliedKRelativeError": "0.000000000484809691092515147845983956755120404780186198",
+        "maxPrecisionDiscrepancy": "3.52136841911263087901347374433356783508234909e-29",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "16.0",
+          "toDepth": "20.0",
+          "beta": 0.4000000002378518,
+          "x": "0.60000000000000000010847291162636397",
+          "alpha": "0.39999999999999999984610102924548923",
+          "verticalIntercept": "0.7521823717566651844436764816272767",
+          "normalizedResidual": 3.748595607066904e-22,
+          "nearestRational": "3/5",
+          "K": "146.969384566990688963456716792702114002544844",
+          "xMinusConjecture": "1.0847291162636397e-19",
+          "alphaMinusConjecture": "-1.5389897075451077e-19",
+          "relativeKMinusConjecture": "2.08997246695978490671142514827699133884545194e-17"
+        },
+        "report": "compute-A2B1C1-split-e1-deep-trace.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 1,
+          "qAC": 1,
+          "qAD": 0,
+          "qBC": 0,
+          "qBD": 0,
+          "qCD": 0
+        },
+        "weights": [
+          3,
+          2,
+          2,
+          1
+        ],
+        "edge": 0,
+        "chart": "raw",
+        "position": "0.4",
+        "depth": "12.0",
+        "samples": 13,
+        "sourceDistanceScale": "0.42",
+        "proposed": "1/3",
+        "alpha": "2/3",
+        "constant": "24",
+        "constantSquared": "576",
+        "M": 3,
+        "p": 1,
+        "lastCoordinate": [
+          "0.333333333910329567845360667093424499216413558",
+          "6.71132919080667483150761183390502263631503394"
+        ],
+        "lastXMinusConjecture": "0.000000000576996234512027333760091165883080224753000724",
+        "lastImpliedKRelativeError": "-0.00000000156812633894471861238767820680123923640274086",
+        "maxPrecisionDiscrepancy": "9.93420601379179043735206843040064965183998117e-29",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "8.0",
+          "toDepth": "12.0",
+          "beta": 0.6676523161647666,
+          "x": "0.33333333333170669870630991606428183",
+          "alpha": "0.66666666667872546458932194229626196",
+          "verticalIntercept": "0.84784439999649729006260286638719696",
+          "normalizedResidual": 1.777021505543771e-9,
+          "nearestRational": "1/3",
+          "K": "23.9999999861050496146209631657172109021746272",
+          "xMinusConjecture": "-0.00000000000162663462702341726905150333333333333333333333",
+          "alphaMinusConjecture": "0.0000000000120587979226552756295952933333333333333333333",
+          "relativeKMinusConjecture": "-0.000000000578956266057459868095116212409390533530977197"
+        },
+        "report": "compute-AB1AC1-e0-trace.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 1,
+          "qAC": 1,
+          "qAD": 0,
+          "qBC": 0,
+          "qBD": 0,
+          "qCD": 0
+        },
+        "weights": [
+          3,
+          2,
+          2,
+          1
+        ],
+        "edge": 1,
+        "chart": "zero",
+        "position": "0.4",
+        "depth": "12.0",
+        "samples": 13,
+        "sourceDistanceScale": "0.38",
+        "proposed": "2/3",
+        "alpha": "2/3",
+        "constant": "24",
+        "constantSquared": "576",
+        "M": 3,
+        "p": 2,
+        "lastCoordinate": [
+          "0.666666666126929276261826426283100133114395594",
+          "6.732567560362917452331348994509036971327186"
+        ],
+        "lastXMinusConjecture": "-0.000000000539737390404840240383566533552271072178643153",
+        "lastImpliedKRelativeError": "-0.00000000146693347365151202845599410899154837731309156",
+        "maxPrecisionDiscrepancy": "1.39892719619967402480574464169253530833763257e-29",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "8.0",
+          "toDepth": "12.0",
+          "beta": 0.6676315094997904,
+          "x": "0.66666666666805798166506725359649019",
+          "alpha": "0.66666666667746846354487346094527031",
+          "verticalIntercept": "0.86908276954245095581866201380125832",
+          "normalizedResidual": 1.611076887362372e-9,
+          "nearestRational": "2/3",
+          "K": "23.9999999875119048096292954986552216543819936",
+          "xMinusConjecture": "0.00000000000139131499840058692982352333333333333333333333",
+          "alphaMinusConjecture": "0.0000000000108017968782067942786036433333333333333333333",
+          "relativeKMinusConjecture": "-0.000000000520337299598779354222699097734083601661118836"
+        },
+        "report": "compute-AB1AC1-e1-trace.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 1,
+          "qAC": 1,
+          "qAD": 0,
+          "qBC": 0,
+          "qBD": 0,
+          "qCD": 0
+        },
+        "weights": [
+          3,
+          2,
+          2,
+          1
+        ],
+        "edge": 2,
+        "chart": "one",
+        "position": "0.4",
+        "depth": "12.0",
+        "samples": 13,
+        "sourceDistanceScale": "0.2",
+        "proposed": "1/2",
+        "alpha": "1/2",
+        "constant": "sqrt(960)",
+        "constantSquared": "960",
+        "M": 4,
+        "p": 2,
+        "lastCoordinate": [
+          "0.500000000000174394166045276153054042577213724",
+          "5.19223010077292156773345965053596409287679698"
+        ],
+        "lastXMinusConjecture": "0.000000000000174394166045276153054042577213723982802109673",
+        "lastImpliedKRelativeError": "0.0000000000000333969813220233827689845999634393101786780553",
+        "maxPrecisionDiscrepancy": "3.1239838940520784710413512223915747934435668e-38",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "8.0",
+          "toDepth": "12.0",
+          "beta": 0.9725356109720866,
+          "x": "0.50000000000009649151433670824400198",
+          "alpha": "0.50000000000002351906661881650717309",
+          "verticalIntercept": "0.79461650749614537048339460335348637",
+          "normalizedResidual": 9.606698442895297e-8,
+          "nearestRational": "1/2",
+          "K": "30.9838667696122593671376478682452132747769422",
+          "xMinusConjecture": "0.00000000000009649151433670824400198",
+          "alphaMinusConjecture": "0.00000000000002351906661881650717309",
+          "relativeKMinusConjecture": "-0.00000000000151936214567556131392480335106103290457198035"
+        },
+        "report": "compute-AB1AC1-e2-trace.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 1,
+          "qAC": 0,
+          "qAD": 0,
+          "qBC": 1,
+          "qBD": 0,
+          "qCD": 0
+        },
+        "weights": [
+          3,
+          2,
+          1,
+          2
+        ],
+        "edge": 0,
+        "chart": "raw",
+        "position": "0.4",
+        "depth": "3.0",
+        "samples": 4,
+        "sourceDistanceScale": "0.42",
+        "proposed": "2/3",
+        "alpha": "2/3",
+        "constant": "24",
+        "constantSquared": "576",
+        "M": 3,
+        "p": 2,
+        "lastCoordinate": [
+          "0.666285719175490702004071236439626560065186155",
+          "2.31337168768734069715708059691094709336551011"
+        ],
+        "lastXMinusConjecture": "-0.000380947491175964662595430227040106601480511714",
+        "lastImpliedKRelativeError": "-0.00161932599596091764630242224154666603112070766",
+        "maxPrecisionDiscrepancy": "8.7944856366027105979151301267605636325042503e-29",
+        "freeFit": null,
+        "report": "compute-AB1BC1-e0-trace.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 1,
+          "qAC": 0,
+          "qAD": 0,
+          "qBC": 1,
+          "qBD": 0,
+          "qCD": 0
+        },
+        "weights": [
+          3,
+          2,
+          1,
+          2
+        ],
+        "edge": 1,
+        "chart": "zero",
+        "position": "0.4",
+        "depth": "3.0",
+        "samples": 4,
+        "sourceDistanceScale": "0.38",
+        "proposed": "1/2",
+        "alpha": "1/2",
+        "constant": "sqrt(960)",
+        "constantSquared": "960",
+        "M": 4,
+        "p": 2,
+        "lastCoordinate": [
+          "0.499878564583730013499384166952307380193026635",
+          "1.79184988617058076118783324863189096045621847"
+        ],
+        "lastXMinusConjecture": "-0.000121435416269986500615833047692619806973364995",
+        "lastImpliedKRelativeError": "-0.0000992751666520587134060606845778191376702046197",
+        "maxPrecisionDiscrepancy": "6.64118327858667061685323392192371206190111651e-33",
+        "freeFit": null,
+        "report": "compute-AB1BC1-e1-trace.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 1,
+          "qAC": 0,
+          "qAD": 0,
+          "qBC": 1,
+          "qBD": 0,
+          "qCD": 0
+        },
+        "weights": [
+          3,
+          2,
+          1,
+          2
+        ],
+        "edge": 2,
+        "chart": "one",
+        "position": "0.4",
+        "depth": "3.0",
+        "samples": 4,
+        "sourceDistanceScale": "0.2",
+        "proposed": "1/3",
+        "alpha": "2/3",
+        "constant": "24",
+        "constantSquared": "576",
+        "M": 3,
+        "p": 1,
+        "lastCoordinate": [
+          "0.33378615610008757359334739844314836317792462",
+          "2.47098190533576206529033390272031747532519258"
+        ],
+        "lastXMinusConjecture": "0.000452822766754240260014065109815029844591286866",
+        "lastImpliedKRelativeError": "-0.000836979945072822172222995108822683822499941259",
+        "maxPrecisionDiscrepancy": "4.57298886672424913864923146475662519364143455e-38",
+        "freeFit": null,
+        "report": "compute-AB1BC1-e2-trace.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 1,
+          "qAC": 1,
+          "qAD": 2,
+          "qBC": 0,
+          "qBD": 0,
+          "qCD": 0
+        },
+        "weights": [
+          3,
+          4,
+          4,
+          1
+        ],
+        "edge": 0,
+        "chart": "raw",
+        "position": "0.4",
+        "depth": "22.0",
+        "samples": 23,
+        "sourceDistanceScale": "0.42",
+        "proposed": "3/5",
+        "alpha": "2/5",
+        "constant": "sqrt(50400)",
+        "constantSquared": "50400",
+        "M": 5,
+        "p": 3,
+        "lastCoordinate": [
+          "0.59999999992063710037458358410948448161947562",
+          "7.24321327724970546392170655060631884502303608"
+        ],
+        "lastXMinusConjecture": "-0.0000000000793628996254164158905155183805243802206683272",
+        "lastImpliedKRelativeError": "-0.000000000202527241729279375049956299758938805572946116",
+        "maxPrecisionDiscrepancy": "1.2085893239454883992644387522079553333597675e-40",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "18.0",
+          "toDepth": "22.0",
+          "beta": 0.4000000000072229,
+          "x": "0.59999999999999999999859800834708011",
+          "alpha": "0.40000000000000000000194451432941908",
+          "verticalIntercept": "0.79338000713652791351655805533038358",
+          "normalizedResidual": 3.3751699210391008e-25,
+          "nearestRational": "3/5",
+          "K": "224.499443206436483070362891815706739250729422",
+          "xMinusConjecture": "-1.40199165291989e-21",
+          "alphaMinusConjecture": "1.94451432941908e-21",
+          "relativeKMinusConjecture": "-2.88027583497509245363812398045266104835713448e-19"
+        },
+        "report": "root-AB1AC1AD2-e0-deep.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 1,
+          "qAC": 2,
+          "qAD": 1,
+          "qBC": 0,
+          "qBD": 1,
+          "qCD": 1
+        },
+        "weights": [
+          4,
+          4,
+          5,
+          3
+        ],
+        "edge": 0,
+        "chart": "raw",
+        "position": "0.37",
+        "depth": "18.0",
+        "samples": 19,
+        "sourceDistanceScale": "0.42",
+        "proposed": "1/3",
+        "alpha": "1/3",
+        "constant": "sqrt(987840)",
+        "constantSquared": "987840",
+        "M": 6,
+        "p": 2,
+        "lastCoordinate": [
+          "0.333333333333350912964490397214303573706043114",
+          "5.21283846047882001177410566500556534851219541"
+        ],
+        "lastXMinusConjecture": "0.0000000000000175796311570638809702403727097806237729456214",
+        "lastImpliedKRelativeError": "0.0000000000000956562237722533268524699381845577589805654108",
+        "maxPrecisionDiscrepancy": "7.73300278681887964112876871607223321641829899e-40",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "14.0",
+          "toDepth": "18.0",
+          "beta": 0.6666868398391788,
+          "x": "0.33333333333333333299634558314517386",
+          "alpha": "0.33333333333333332729049472773656096",
+          "verticalIntercept": "0.81522486720224349769883459653186071",
+          "normalizedResidual": 4.236381003677333e-13,
+          "nearestRational": "1/3",
+          "K": "993.901403560736388612235684234182068420432034",
+          "xMinusConjecture": "-3.36987750188159473333333333333333333333333333e-19",
+          "alphaMinusConjecture": "-6.04283860559677237333333333333333333333333333e-18",
+          "relativeKMinusConjecture": "8.98943216430073256297090902715292668016167909e-16"
+        },
+        "report": "root-all6-mixed-e0-deep.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 1,
+          "qAC": 2,
+          "qAD": 1,
+          "qBC": 0,
+          "qBD": 1,
+          "qCD": 1
+        },
+        "weights": [
+          4,
+          4,
+          5,
+          3
+        ],
+        "edge": 1,
+        "chart": "zero",
+        "position": "0.37",
+        "depth": "18.0",
+        "samples": 19,
+        "sourceDistanceScale": "0.38",
+        "proposed": "3/5",
+        "alpha": "2/5",
+        "constant": "sqrt(453600)",
+        "constantSquared": "453600",
+        "M": 5,
+        "p": 3,
+        "lastCoordinate": [
+          "0.600000001102305850251320164749058605963011676",
+          "6.21860074016697098701350965252347637715715273"
+        ],
+        "lastXMinusConjecture": "0.00000000110230585025132016474905860596301167618010019",
+        "lastImpliedKRelativeError": "0.00000000281298992823269293437798333451126739120611612",
+        "maxPrecisionDiscrepancy": "4.01834172787048733064071932311340644185314624e-39",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "14.0",
+          "toDepth": "18.0",
+          "beta": 0.40000000454826756,
+          "x": "0.600000000000000010969816200876309",
+          "alpha": "0.39999999999999998153979483589226746",
+          "verticalIntercept": "0.94146442787693050860353687229049734",
+          "normalizedResidual": 1.7672987595302688e-19,
+          "nearestRational": "3/5",
+          "K": "673.498329619311038287935911354076332213310675",
+          "xMinusConjecture": "1.0969816200876309e-17",
+          "alphaMinusConjecture": "-1.846020516410773254e-17",
+          "relativeKMinusConjecture": "2.35914892623066014301783625368954789191688657e-15"
+        },
+        "report": "root-all6-mixed-e1-deep.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 1,
+          "qAC": 2,
+          "qAD": 1,
+          "qBC": 0,
+          "qBD": 1,
+          "qCD": 1
+        },
+        "weights": [
+          4,
+          4,
+          5,
+          3
+        ],
+        "edge": 2,
+        "chart": "one",
+        "position": "0.37",
+        "depth": "18.0",
+        "samples": 19,
+        "sourceDistanceScale": "0.2",
+        "proposed": "4/7",
+        "alpha": "2/7",
+        "constant": "sqrt(627200)",
+        "constantSquared": "627200",
+        "M": 7,
+        "p": 4,
+        "lastCoordinate": [
+          "0.571428511805989172798836046487517445744426687",
+          "4.51496695815997775878204857531128340857568822"
+        ],
+        "lastXMinusConjecture": "-0.000000059622582255772592524941053982827001884137625",
+        "lastImpliedKRelativeError": "-0.000000149616093053077028988605071517842687141324243",
+        "maxPrecisionDiscrepancy": "2.79696794153748229333829269388020470018784502e-39",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "14.0",
+          "toDepth": "18.0",
+          "beta": 0.28571429016844296,
+          "x": "0.57142857142856999637483144873279309",
+          "alpha": "0.28571428571428555728957565569034793",
+          "verticalIntercept": "0.74558389181557567274199362246496514",
+          "normalizedResidual": 5.59462856020135e-19,
+          "nearestRational": "4/7",
+          "K": "791.959594928954014218718241576781491838740608",
+          "xMinusConjecture": "-1.43219659712269577833857142857142857142857143e-15",
+          "alphaMinusConjecture": "-1.56996138630023937784285714285714285714285714e-16",
+          "relativeKMinusConjecture": "0.0000000000000262474119963422353789594496460409674803266814"
+        },
+        "report": "root-all6-mixed-e2-deep.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 1,
+          "qAC": 2,
+          "qAD": 0,
+          "qBC": 1,
+          "qBD": 0,
+          "qCD": 2
+        },
+        "weights": [
+          5,
+          2,
+          5,
+          4
+        ],
+        "edge": 0,
+        "chart": "raw",
+        "position": "0.37",
+        "depth": "18.0",
+        "samples": 19,
+        "sourceDistanceScale": "0.42",
+        "proposed": "2/5",
+        "alpha": "2/5",
+        "constant": "sqrt(1058400)",
+        "constantSquared": "1058400",
+        "M": 5,
+        "p": 2,
+        "lastCoordinate": [
+          "0.400000002905456016790051741782960852065383677",
+          "6.25979837424463271897924701825811615879079052"
+        ],
+        "lastXMinusConjecture": "0.00000000290545601679005174178296085206538367685331809",
+        "lastImpliedKRelativeError": "-0.00000000741447278214384591396673283379158626888916531",
+        "maxPrecisionDiscrepancy": "2.18013376400115823617748576503640356630456585e-31",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "14.0",
+          "toDepth": "18.0",
+          "beta": 0.3999999980759827,
+          "x": "0.3999999999999999883131959280336162",
+          "alpha": "0.39999999999999997869712640081788611",
+          "verticalIntercept": "0.98266206325679327940794180557560178",
+          "normalizedResidual": 3.532087258454249e-20,
+          "nearestRational": "2/5",
+          "K": "1028.78569196893761785610853507337624729968027",
+          "xMinusConjecture": "-1.16868040719663838e-17",
+          "alphaMinusConjecture": "-2.130287359918211389e-17",
+          "relativeKMinusConjecture": "2.7378036759367638223468605028588098387076275e-15"
+        },
+        "report": "root-asym-holdout-e0-deep.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 1,
+          "qAC": 1,
+          "qAD": 1,
+          "qBC": 1,
+          "qBD": 1,
+          "qCD": 1
+        },
+        "weights": [
+          4,
+          4,
+          4,
+          4
+        ],
+        "edge": 0,
+        "chart": "raw",
+        "position": "0.23",
+        "depth": "16.0",
+        "samples": 17,
+        "sourceDistanceScale": "0.42",
+        "proposed": "1/2",
+        "alpha": "1/3",
+        "constant": "840",
+        "constantSquared": "705600",
+        "M": 6,
+        "p": 3,
+        "lastCoordinate": [
+          "0.500000000000000072872541157454955326183380501",
+          "4.67159379124784019256926136308792098615531402"
+        ],
+        "lastXMinusConjecture": "7.28725411574549553261833805013187406159110131e-17",
+        "lastImpliedKRelativeError": "0.0000000000134103197642001337121540331922842730588186687",
+        "maxPrecisionDiscrepancy": "5.94890798666186362048000773591515289474445847e-35",
+        "freeFit": {
+          "window": 5,
+          "fromDepth": "12.0",
+          "toDepth": "16.0",
+          "beta": 0.4914961214893147,
+          "x": "0.49999999999999979222320893866991015",
+          "alpha": "0.33333333334177588196686532467904247",
+          "verticalIntercept": "0.76260393045443235343346568539754226",
+          "normalizedResidual": 0.000017811826267101678,
+          "nearestRational": "1/2",
+          "K": "839.999999041918017623898801599109696454993612",
+          "xMinusConjecture": "-2.0777679106133008985e-16",
+          "alphaMinusConjecture": "0.00000000000844254863353199134570913666666666666666666667",
+          "relativeKMinusConjecture": "-0.00000000114057378854297761714391702802976950989994465"
+        },
+        "report": "theory-all-equal-q1-e0-t23-deep.json"
+      },
+      {
+        "seed": "tetra",
+        "counts": {
+          "qAB": 2,
+          "qAC": 2,
+          "qAD": 2,
+          "qBC": 2,
+          "qBD": 2,
+          "qCD": 2
+        },
+        "weights": [
+          7,
+          7,
+          7,
+          7
+        ],
+        "edge": 0,
+        "chart": "raw",
+        "position": ".23",
+        "depth": "20",
+        "samples": 18,
+        "proposed": "1/2",
+        "alpha": "1/5",
+        "constant": "166320",
+        "constantSquared": "27662342400",
+        "M": 10,
+        "p": 5,
+        "lastCoordinate": [
+          "0.500000000000000000003478334613436569944914924695369863170014535084101169656365570571211836927186074196507",
+          "3.72596628965302014039921922358238547559987857722147470562838987299912887058994060648449144379101681998774"
+        ],
+        "freeFit": {
+          "model": "y=beta*log(1/delta)+intercept+amplitude*delta^gamma; beta,intercept,amplitude,gamma all free; four consecutive depths",
+          "depths": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "alpha": "0.200000000000000099936609820360024610729567647539293528659501894173541901308287112987258478404106870766632696809104493888",
+          "K": "166319.999999994846749664845458743652536929656416955281181846998474106522234807891012272138626344569915410526108289390044",
+          "correctionExponent": "0.399999962453703572956374997990692043901558568370748204809620437093250659680433723905760313743894276393537175075226508829",
+          "intercept": "0.738997092269561207893988801090098299031203453133755278265650328617331658074390106451012859271971345068546756773143961495",
+          "ratio": "0.398107204971273907654165701124590893649689525899937714199493259685609926151196209639596028183168022879923537549286611209",
+          "usesProposedM": false,
+          "usesProposedAlpha": false,
+          "usesProposedK": false
+        },
+        "maximumDifferenceFromUnfactoredTV": "4.8117523564977138606989296831483832773057010508438463196313480851981820671609121036580495195948551782086945215e-78",
+        "fullTVVerificationDepths": [
+          3,
+          8,
+          12,
+          16,
+          20
+        ],
+        "report": "analytic-isogeny-q2-tail.json",
+        "precisionNote": "Separately selected marked Lamé-factor trace; two full-TV precisions at five selected depths, not at every point."
+      }
+    ]
+  },
+  "threeLoopMixedDecorations": {
+    "updated": "2026-10-24",
+    "status": "Conjectural formulas checked against numerical data.",
+    "purpose": "Simulation and conjecture testing; research depths do not prescribe the precision or depth of normal plots.",
+    "formula": "w_i = P_i/(2M_i) + i/(pi M_i) log(K_i sin(pi t)/delta_i) + o(1)",
+    "conventions": {
+      "charts": [
+        "tau",
+        "1-1/tau",
+        "1/(1-tau)"
+      ],
+      "delta": [
+        "1/2-R",
+        "1/2-S",
+        "R+S-1/2"
+      ],
+      "normalizedPosition": "t in (0,1), physical endpoint coordinate t/2",
+      "phase": "Full marked P, without reduction modulo one or two in the horizontal limit.",
+      "constant": "Absolute simple cap-product residue at M, computed with exact rational arithmetic."
+    },
+    "summary": {
+      "decoratedGraphs": 10,
+      "sourcePaths": 12,
+      "independentSelectedRoots": 11,
+      "exactCoreArithmeticChecks": 88,
+      "exactMixedEdgeChecks": 1056,
+      "trappedCaseRepaired": true,
+      "defaultCorrectorDigits": 18,
+      "simulationRecommendation": "Start with 5–10 decades and one displayed sample per decade. Increase depth only to inspect a later regime; large M slows asymptotic convergence."
+    },
+    "independence": "Roots start from the marked graph and are continued numerically. The formula and its cap constant are evaluated afterward, not used as root initializers.",
+    "precision": "Very small finite-cutoff differences come from selected independent high-precision refinements; default plot precision has a much earlier arithmetic floor.",
+    "count32": {
+      "counts": [
+        32,
+        1,
+        0
+      ],
+      "edge": 2,
+      "M": 34,
+      "P": 3,
+      "proposed": "3/68",
+      "constant": "4587594892086642581434917940951031156400/11",
+      "depth40RelativeConstantDifference": "-0.6949880511",
+      "depth80RelativeConstantDifference": "-0.07423041325",
+      "depth240RelativeConstantDifference": "-1.515585254e-6",
+      "note": "A very small source epsilon is not by itself evidence that the leading asymptotic has settled."
+    },
+    "trappedCase": {
+      "core": "bouquet_B0_T15_24",
+      "counts": [
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "edge": 0,
+      "M": 1,
+      "P": 1,
+      "proposed": "1/2",
+      "constant": "90",
+      "depth": 160,
+      "solverReferenceDifference": "0.000000000000000000000000000136866087232748786925559939363550788779062264098000074634872287936578902815432941494007260527465822488092189717728401090561946501860137953362021976755757108399968249603684630465728690635789324674686717319632395427010703283140335790462040419860244714099745421719701120878009820775461726516196198815802012944632542971987369941634427690066180076871374278035422712074796560232565439681846618824001610469711798485461809398881786661358273250991539251248938159488442441819229651154971108",
+      "realDifference": "0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000213778931711428750861535804720115665957287958119321506027453328984788410191081362934165709468075135299857988298758029116878573502525681751031620444405563761303812102791103747426540881721013413712780475361573175018733340866951033691114302107043218383128902325940842010004071062417427971928405167498003378199282718170334478899999999999999999999999999999999999999999999999999999999999999999999999999999999975612619656400602125031674846852156580822623638981929065381984328024257357658959443657111127199410772535944823310749480112064766316642604049484588587934142",
+      "relativeConstantDifference": "0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000054379541576357401650550505587151380423140001072757408268563900291885213469668100162429930461594551369712536745965176042032669193815680071326857699166406560908839645638951183253723173053632662851612961609894492829676556648819432805233151008136398362109417336347719628976433948672252771479437295928805771898944458338163463562937148642850672349518940291839646298166951792976336808772403739950582409127024128413674909365480663132920438674145324904655667058132195726723749750287093490745521879424814518591175926522392061637721665176583559775355820779573243927088168",
+      "precisionNote": "Independent refinement checks the formula below the default solver arithmetic floor; these digits are not requested for the UI."
+    },
+    "records": [
+      {
+        "core": "bouquet_B12_T0",
+        "counts": {
+          "bq0": 0,
+          "bq1": 0,
+          "bq2": 1,
+          "bq3": 0,
+          "bq4": 1
+        },
+        "edge": 2,
+        "position": "0.37",
+        "M": 4,
+        "P": 5,
+        "proposed": "5/8",
+        "constant": "7000/3",
+        "depth": 48,
+        "realDifference": "-0.000000000000048404431886608745464745732114774875166634207629547055545623276508067061849363615687967058148319734029243153986436479129078727916454036965022766868854116799243999223543520864794552365727929999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999428684724379",
+        "relativeConstantDifference": "-0.000000000000251952867776464225090277069951365152336056307453847182908249607798109026574812568909143108847900360947339782863654111078469920819061095490322456645783430931217024164269614274591780851980790124616093031410448916061842781997703804434806696563858682313503776233444884427504282683448197526757811853542271472181025963552257596823504598369041109059358675790917482390333290423570233665107280049210450637648469638389685500057519681973972852698465955300416408502926754029013192764375429005922444111680086094",
+        "finiteCutoff": true,
+        "graphSelected": true,
+        "formulaInputsUsed": false
+      },
+      {
+        "core": "bouquet_B0_T0",
+        "counts": {
+          "bq0": 2,
+          "bq1": 1,
+          "bq2": 0
+        },
+        "edge": 1,
+        "position": "0.37",
+        "M": 3,
+        "P": 5,
+        "proposed": "5/6",
+        "constant": "2400",
+        "depth": 48,
+        "realDifference": "-0.0000000000000000094934884387643359129508904434408548751461331451048007515758550760383462516966006686314689445976733578993790008732485116726181506965823987452293632964520014625963287136193703057884526311291355979874866",
+        "relativeConstantDifference": "-0.0000000000000001549735496513608246547764264491926000328124599555798036746328562859695150876805947531912515821417889429232468041430025631380495375099957748572720269114271039416114782389955632599225745197461968232857",
+        "finiteCutoff": true,
+        "graphSelected": true,
+        "formulaInputsUsed": false
+      },
+      {
+        "core": "bouquet_B0_T0",
+        "counts": {
+          "bq0": 2,
+          "bq1": 1,
+          "bq2": 0
+        },
+        "edge": 2,
+        "position": "0.37",
+        "M": 4,
+        "P": 3,
+        "proposed": "3/8",
+        "constant": "9800/3",
+        "depth": 48,
+        "realDifference": "0.000000000000063570419644140248283816707354334159094997915333814155283810030368058277313572853055114079415233647346983131243946176025212250485932606234816400236582822723277659045229372951367508670348373902410279839",
+        "relativeConstantDifference": "-0.00000000000033089427787598368439866074920942574278765975712172807798318108538276597588954711861643844075380387266134420653922420349223368248503987440569434795140253054939627730912433957567974405754315300559713965",
+        "finiteCutoff": true,
+        "graphSelected": true,
+        "formulaInputsUsed": false
+      },
+      {
+        "core": "bouquet_B0_T0",
+        "counts": {
+          "bq0": 2,
+          "bq1": 1,
+          "bq2": 0
+        },
+        "edge": 2,
+        "position": "0.61",
+        "M": 4,
+        "P": 3,
+        "proposed": "3/8",
+        "constant": "9800/3",
+        "depth": 48,
+        "realDifference": "0.00000000000006317613832223520005964725659720500523815168875963218740464813686209714410536514117218978957350614218588847700732635725077410968471102194660418963969028705726163462876162758431238515317414001024012996",
+        "relativeConstantDifference": "-0.00000000000032884198006164972747323877535246770701702545459906738305513659668741525580235401142261668783522408964545006275919815000772236934696724238507078253413887133684084728668956434269929734167286042894728959",
+        "finiteCutoff": true,
+        "graphSelected": true,
+        "formulaInputsUsed": false
+      },
+      {
+        "core": "bouquet_B0_T15_24",
+        "counts": {
+          "bq0": 1,
+          "bq1": 0,
+          "bq2": 0,
+          "bq3": 1,
+          "bq4": 0
+        },
+        "edge": 0,
+        "position": "0.37",
+        "M": 1,
+        "P": 1,
+        "proposed": "1/2",
+        "constant": "90",
+        "depth": 160,
+        "realDifference": "0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000213778931711428750861535804720115665957287958119321506027453328984788410191081362934165709468075135299857988298758029116878573502525681751031620444405563761303812102791103747426540881721013413712780475361573175018733340866951033691114302107043218383128902325940842010004071062417427971928405167498003378199282718170334478899999999999999999999999999999999999999999999999999999999999999999999999999999999975612619656400602125031674846852156580822623638981929065381984328024257357658959443657111127199410772535944823310749480112064766316642604049484588587934142",
+        "relativeConstantDifference": "0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000054379541576357401650550505587151380423140001072757408268563900291885213469668100162429930461594551369712536745965176042032669193815680071326857699166406560908839645638951183253723173053632662851612961609894492829676556648819432805233151008136398362109417336347719628976433948672252771479437295928805771898944458338163463562937148642850672349518940291839646298166951792976336808772403739950582409127024128413674909365480663132920438674145324904655667058132195726723749750287093490745521879424814518591175926522392061637721665176583559775355820779573243927088168",
+        "finiteCutoff": true,
+        "graphSelected": true,
+        "formulaInputsUsed": false,
+        "note": "The former arithmetic failure is repaired; depth160 is a stress test, not a simulation default."
+      },
+      {
+        "core": "bouquet_B0_T25_35",
+        "counts": {
+          "bq0": 1,
+          "bq1": 0,
+          "bq2": 1,
+          "bq3": 0,
+          "bq4": 1
+        },
+        "edge": 2,
+        "position": "0.37",
+        "M": 4,
+        "P": -3,
+        "proposed": "-3/8",
+        "constant": "441000",
+        "depth": 48,
+        "realDifference": "0.000000000000050354165197571609214112119366201420422489583774817346951252030930480902881895331554952434425818279916259081241926012321451129446680671854805832008771897556833989238848241732794910903013999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999863305902888",
+        "relativeConstantDifference": "0.00000000000026210154383621682460308929410047860480988942552313007110703311298258940476532449512831991639735798195564481865751559269771558438806010681012962243403735082390358397886840053786025581544303705362456049196888760002482639505743581955855985165223594782125519355059775384901534544958885782183491049840515528656283273432268084914991258353933046567050868531339587535856529305414607801607883876931759994717102117726004870346365172220512783217055169615521765588559108758595254308312798337612993381883502000742",
+        "finiteCutoff": true,
+        "graphSelected": true,
+        "formulaInputsUsed": false
+      },
+      {
+        "core": "bouquet_B1_T0",
+        "counts": {
+          "bq0": 1,
+          "bq1": 0,
+          "bq2": 1,
+          "bq3": 1
+        },
+        "edge": 0,
+        "position": "0.37",
+        "M": 2,
+        "P": 3,
+        "proposed": "3/4",
+        "constant": "2268",
+        "depth": 48,
+        "realDifference": "-0.00000000000000000000000016076719158583623086827207529024078943528579294244281218656045326117351926422784538719757390338961329883342874218313978326799995206669060399865957414915839631087898184718298924999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999976343852285440714873012",
+        "relativeConstantDifference": "-0.0000000000000000000000010101300560486518486418707812269218556497830492359218342689071985667623796332792684881231333406103201305616061520728133829828888926316936262967686540916509326058748441630368566000470279679172695227153393103298686984852332522904944580436485691737749617996095035026951297461195279618057218252723150572710991336301401062776526866141639715336102630066246539666142040760294886202313447045058421613118323356581561871077853944031786556176482371732993804382012925854379572834500110851744738723132017779542641",
+        "finiteCutoff": true,
+        "graphSelected": true,
+        "formulaInputsUsed": false
+      },
+      {
+        "core": "bouquet_B123_T0",
+        "counts": {
+          "bq0": 1,
+          "bq1": 0,
+          "bq2": 1,
+          "bq3": 0,
+          "bq4": 1,
+          "bq5": 0
+        },
+        "edge": 2,
+        "position": "0.37",
+        "M": 6,
+        "P": 5,
+        "proposed": "5/12",
+        "constant": "3531528",
+        "depth": 48,
+        "realDifference": "-0.00000000020241317086205359858573710131169034447715615372752421286386144862437663109285137476419321875365545305116547596434701991905799128881518391073359100155648310042400386122050398735965208381201471666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666639792688",
+        "relativeConstantDifference": "0.0000000010223329369050931821503877076762199490898456147519840607113142091023302298086627127850389377280608840034365244347735945978286838529113017139910741553631337862272407857521944986429901838307912766276407990602830881323759158965916333899410603223510337662069336938345520042792620137468165631997935089275766691039056020241664851013566516989259929621406761038520446095694171217943015511301736397953976389708178653397770438391420016963491646297871765858135934784227859831706364841206266170342187099598759508",
+        "finiteCutoff": true,
+        "graphSelected": true,
+        "formulaInputsUsed": false
+      },
+      {
+        "core": "bouquet_B0_T03",
+        "counts": {
+          "bq0": 1,
+          "bq1": 1,
+          "bq2": 0,
+          "bq3": 1
+        },
+        "edge": 2,
+        "position": "0.37",
+        "M": 5,
+        "P": 11,
+        "proposed": "11/10",
+        "constant": "39690",
+        "depth": 48,
+        "realDifference": "-0.0000000000079494981661513099517404188466603257362295005513334283853319165490764728069282242905402563510330275761743037494504265061434394525506958336807176019783439907086320075243018572717482596588937503459192174",
+        "relativeConstantDifference": "0.0000000003843116519600866478699963537532073583322145467802878900807641450417729609171603860076366170864502720880139680751306173958539027444079934806812883528755370349148239037316821640298511709795875542409039",
+        "finiteCutoff": true,
+        "graphSelected": true,
+        "formulaInputsUsed": false
+      },
+      {
+        "core": "bouquet_B0_T03",
+        "counts": {
+          "bq0": 0,
+          "bq1": 1,
+          "bq2": 0,
+          "bq3": 1
+        },
+        "edge": 2,
+        "position": "0.37",
+        "M": 4,
+        "P": 11,
+        "proposed": "11/8",
+        "constant": "9800/3",
+        "depth": 48,
+        "realDifference": "-0.000000000000063570419644204503904504536312524014135411761847163639206232099190203295902938917126961577982048928365721540788985862782969196815233004861655417358702974143479156689908904497348531820939428611175874041",
+        "relativeConstantDifference": "0.00000000000033089427787528571547817264381552621159398414430837078181848304416525845203573812076043293901707687229895430936711385203807901652894227784454360634735469531137227125189408177217187996771988799043505734",
+        "finiteCutoff": true,
+        "graphSelected": true,
+        "formulaInputsUsed": false
+      },
+      {
+        "core": "bouquet_B0_T0",
+        "counts": {
+          "bq0": 4,
+          "bq1": 3,
+          "bq2": 2
+        },
+        "edge": 2,
+        "position": "0.37",
+        "M": 8,
+        "P": 7,
+        "proposed": "7/16",
+        "constant": "5962928400/7",
+        "depth": 64,
+        "realDifference": "0.00000000030361292904896742451063673442928970869195089578426838485074069338085014618641273110730258779418870256615502613733300481961033862762912541748765898799767506259010013420410672949945079102053522999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999980404117",
+        "relativeConstantDifference": "-0.00000000151782582498784249885103030990920709328271809895052632852882110439535818928266476583850994816584504485708544581003431889148855523843176344532257424248787681223427659541735943165705044224114501302066232429593011339815609096624520929393201195372178469037521458522512575475073091071666772981450983795805488635671215645324286678723769581617393135426994099662728238520352125475996787206429607609856316680805563314066914002654461277113347637408620030354589691816582314490451139204404971344497560103359153",
+        "finiteCutoff": true,
+        "graphSelected": true,
+        "formulaInputsUsed": false
+      },
+      {
+        "core": "bouquet_B0_T0",
+        "counts": {
+          "bq0": 32,
+          "bq1": 1,
+          "bq2": 0
+        },
+        "edge": 2,
+        "position": "0.37",
+        "M": 34,
+        "P": 3,
+        "proposed": "3/68",
+        "constant": "4587594892086642581434917940951031156400/11",
+        "depth": 240,
+        "realDifference": "0.00000000197928159799448444092467747900738198376189596782730234599398674426567804790611483242142821658367534310179567783704410866317176855997304417030547841219956599568850878551502073186776525610458629520432673881533888576602392746455137254850101828700814409310339306291878975541772052651120107627903190057522775547147770535098689888254795540701208978147765173390844183",
+        "relativeConstantDifference": "-0.00000151558525407929731593328410511510672467316130109077617519900247156968030907746435426449901843697613499630337628375422220128747899498544583421560241146328647519266058521164144497732246389361725534215761116564107147330667565738761646280503849782709661568741788330972303037407622896239435242118178545117037745902080321672881091826995725765904894629087720861235295",
+        "finiteCutoff": true,
+        "graphSelected": true,
+        "formulaInputsUsed": false
+      }
+    ]
+  }
+}

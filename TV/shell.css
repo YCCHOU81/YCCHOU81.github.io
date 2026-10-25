@@ -1,0 +1,56 @@
+/* Shared appearance within each independent atlas. No parent-site assets. */
+.site-header{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 22px;min-height:68px;padding:14px max(24px,calc((100% - 1440px)/2));background:#f6f4ed;border-bottom:1px solid #d6ded2;font:14px/1.5 system-ui,sans-serif;color:#253b33}
+.site-header .brand{font-size:17px;font-weight:650;letter-spacing:-.02em;color:#253b33;text-decoration:none;white-space:nowrap}
+.site-header nav{display:flex;align-items:center;flex-wrap:wrap;gap:5px}
+.site-header nav a{padding:7px 10px;border-radius:5px;font-size:13px;font-weight:450;line-height:1.5;color:#285f65;text-decoration:none;white-space:nowrap}
+.site-header nav a:hover,.site-header nav a:focus-visible{background:#e9eee4}
+.site-header nav a[aria-current="page"]{background:#285f65;color:white}
+.site-header a:focus-visible{outline:2px solid #285f65;outline-offset:3px}
+html[data-atlas-family="lame"] #case-selector{display:none}
+html[data-atlas-family="tv"] #attachment-form,html[data-atlas-family="tv"] #decoration-status,html[data-atlas-family="tv"] #limits-legacy-attachment{display:none!important}
+.atlas-home-note{font-size:14px;color:var(--muted,#596e62);max-width:85ch}
+.family-pills{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}.family-pills a{font-size:13px;padding:7px 12px;border:1px solid #c7d2c7;border-radius:5px;text-decoration:none;background:#fcfcf7}
+.home-routes.lame-home-routes{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:700px){.site-header{padding:11px 16px;gap:8px}.site-header nav{gap:2px}.site-header nav a{font-size:12px;padding:6px 8px}.home-routes.lame-home-routes{grid-template-columns:1fr}}
+
+/* TV graph lab and proposed cusp references. */
+html[data-atlas-family="tv"] .home-routes{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tv-cusp-predictions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px;grid-column:1/-1;margin:13px 0;min-width:0}
+.tv-cusp-prediction{min-width:0;border:1px solid #d7d9cb;border-left:3px solid #9c6b2f;background:#fbf8ef;border-radius:5px;padding:12px 14px;line-height:1.5}
+.tv-cusp-prediction h3,.tv-cusp-prediction h4{font:600 13px/1.45 system-ui,sans-serif;margin:0 0 6px;color:#344d45}
+.tv-cusp-prediction p{font-size:12px;margin:6px 0;color:#59685c;overflow-wrap:anywhere}
+.tv-rational-number{display:inline-block;font:600 26px/1.25 Georgia,"Times New Roman",serif;color:#87571f;font-variant-numeric:tabular-nums;margin:3px 0}
+.tv-rational-number math{font-size:1em}.tv-prediction-kind{display:block;font:550 10px/1.4 system-ui,sans-serif;letter-spacing:.035em;color:#7a5c2a;margin-top:4px}
+.tv-cusp-prediction[data-status="pending"]{border-left-color:#a5ac9d;background:#f6f7f1}.tv-cusp-prediction[data-status="pending"] .tv-rational-number{font:500 14px/1.45 system-ui,sans-serif;color:#647360}
+.tv-proposal-note{font-size:13px;line-height:1.65}.tv-cusp-prediction .caption{font-size:11px;line-height:1.5}
+.tv-reference-section{padding:20px 24px;margin:22px 0}.tv-reference-section>h2{margin:0 0 12px;font-size:24px}
+.tv-prediction-detail{display:block;font-size:11px;font-weight:400;line-height:1.6;color:#64705f;margin-top:6px;overflow-wrap:anywhere}.tv-cusp-prediction strong{display:block;font-size:12px;font-weight:600}.tv-rational-unresolved{font:500 13px/1.5 system-ui,sans-serif;color:#65705f}.tv-cusp-prediction[data-prediction-status="unresolved"]{border-left-color:#a5ac9d;background:#f6f7f1}.tv-cusp-prediction[data-prediction-status="unresolved"] .tv-rational-number{font-size:15px}.tv-cusp-prediction[data-prediction-status="numerical-candidate"]{border-left-color:#557aa0;background:#f4f7f8}.tv-cusp-prediction[data-prediction-status="numerical-candidate"] .tv-prediction-kind,.tv-cusp-prediction[data-prediction-status="numerical-candidate"] .tv-rational-number{color:#3b607f}
+#limit-rational-target{border-left:3px solid #9c6b2f;background:#fbf6e8;color:#6c4b23;padding:10px 13px;border-radius:4px;font-weight:550;line-height:1.65}
+#limit-rational-target .tv-prediction-kind{display:inline-block;margin:0 12px 0 0;vertical-align:middle}#limit-rational-target .tv-rational-number{vertical-align:middle}.tv-reference-method{font-size:11px;font-weight:400;margin-top:5px;line-height:1.55}.tv-reference-method summary{cursor:pointer;color:#7a5c2a}.tv-reference-method p{margin:7px 0 0;color:#65705f;max-width:90ch}
+@media(max-width:700px){html[data-atlas-family="tv"] .home-routes{grid-template-columns:1fr}.tv-cusp-predictions{grid-template-columns:1fr}}
+
+/* Count formulas remain readable without displacing the numerical plots. */
+.tv-count-formula{padding:12px 15px;margin:12px 0;border:1px solid #d2dcd4;border-left:3px solid #497673;border-radius:5px;background:#fafcf8;color:#314b41;font:13px/1.6 system-ui,sans-serif;min-width:0}
+.tv-count-formula>strong{font-size:13px;color:#285f65}.tv-count-equation{font:21px/1.5 Georgia,"Times New Roman",serif;overflow-x:auto;padding:8px 0;max-width:100%}.tv-count-equation math{white-space:nowrap}.tv-count-formula p{font-size:12px;margin:5px 0;max-width:110ch}.tv-count-formula .caption{font-size:11px;color:#64705f}.tv-cusp-prediction .tv-count-formula{padding:8px 10px;margin:8px 0;background:#fffefa;border-left-width:2px}.tv-cusp-prediction .tv-count-equation{font-size:20px}.tv-cusp-prediction .tv-count-formula p{font-size:11px}
+.tv-math-conjectures{padding:23px;margin:30px 0;border:1px solid #ccd9d0;border-left:4px solid #497673;background:#fafcf8;border-radius:6px;scroll-margin-top:95px}.tv-math-conjectures h3{margin-top:0}.tv-math-conjectures h4{font-size:18px;color:#285f65;margin:25px 0 10px}.tv-math-conjectures .eyebrow{font-size:11px;letter-spacing:.07em;color:#497673}.tv-math-conjectures td{font-variant-numeric:tabular-nums;white-space:nowrap}.tv-math-conjectures details{margin:22px 0 5px}.tv-math-conjectures .equation{overflow-x:auto}
+.tv-count-evaluated{color:#87571f}.tv-count-evaluated math{font-size:19px;vertical-align:middle;margin-left:5px}
+@media(max-width:700px){.tv-math-conjectures{padding:15px}.tv-count-equation{font-size:19px}}
+
+/* Routine explanations stay available without separating controls and plots. */
+:is(.explore-page,.limits-page) :is(.control-help,.compact-help){min-width:0;margin:8px 0 0;padding:0;border:0}
+:is(.control-help,.compact-help)>summary{font:500 12px/1.6 system-ui,sans-serif;color:#285f65;cursor:pointer;min-height:24px}
+:is(.control-help,.compact-help)[open]>summary{margin-bottom:6px}
+:is(.control-help,.compact-help) :is(p,.caption){margin:6px 0;font-size:13px;line-height:1.6;max-width:95ch}
+:is(.control-help,.compact-help)>summary:focus-visible{outline:2px solid #285f65;outline-offset:3px;border-radius:2px}
+.explore-page .sampling-warning{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 18px;margin-top:8px;padding:7px 12px}
+.explore-page .sampling-warning>strong{font-size:12px;font-weight:550}
+.explore-page .sampling-warning>.control-help{margin:0;flex:1 1 220px}
+.computation-row-heading>.control-help{grid-column:2;max-width:95ch}
+.case-support:has(>.control-help){padding:7px 10px}
+.case-support>.control-help{margin:0}
+.bouquet-core-preview>.control-help{flex:1;min-width:0;margin:0}
+.tv-cusp-prediction>.control-help{margin-top:6px}
+.tv-cusp-prediction .control-help .tv-count-formula{margin-top:6px}
+.explore-computation-row .calculation-notes.control-help>summary{margin:0;font:500 12px/1.6 system-ui,sans-serif}
+.limits-page #limit-draft-status:empty{display:none}
+@media(max-width:650px){.computation-row-heading>.control-help{grid-column:1/-1}.explore-page .sampling-warning>.control-help{flex-basis:100%}}
